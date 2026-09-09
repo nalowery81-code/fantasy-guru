@@ -1,0 +1,55 @@
+name: Update ffanalytics ROS projections
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '15 9 * * *'
+
+permissions:
+  contents: write
+
+jobs:
+  update-projections:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up R
+        uses: r-lib/actions/setup-r@v2
+        with:
+          use-public-rspm: true
+
+      - name: Install dependencies
+        run: |
+          install.packages(c('remotes','jsonlite','dplyr'))
+          remotes::install_github('FantasyFootballAnalytics/ffanalytics', upgrade = 'never')
+        shell: Rscript {0}
+
+      - name: Build equal-average ROS dataset
+        run: Rscript scripts/update_ffanalytics.R
+
+      - name: Validate generated JSON
+        run: |
+          node - <<'NODE'
+          const fs=require('fs');
+          const p='data/ffanalytics_projections.json';
+          const d=JSON.parse(fs.readFileSync(p,'utf8'));
+          if(!Array.isArray(d.players)||d.players.length<25) throw new Error('Too few projection rows; refusing to overwrite dataset');
+          const usable=d.players.filter(x=>Number.isFinite(Number(x.ros_points)));
+          if(usable.length<25) throw new Error('Too few usable ROS values; refusing to overwrite dataset');
+          console.log(`Validated ${usable.length} usable ROS players from ${(d.working_sources||[]).length} sources`);
+          NODE
+
+      - name: Commit refreshed dataset
+        run: |
+          if git diff --quiet -- data/ffanalytics_projections.json; then
+            echo 'No projection changes to commit.'
+            exit 0
+          fi
+          git config user.name 'fantasy-guru-bot'
+          git config user.email 'fantasy-guru-bot@users.noreply.github.com'
+          git add data/ffanalytics_projections.json
+          git commit -m 'Refresh ffanalytics ROS projections'
+          git push
