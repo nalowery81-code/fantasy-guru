@@ -6,7 +6,6 @@ const finite=v=>v!==null&&v!==undefined&&v!==''&&Number.isFinite(Number(v));
 const norm=s=>String(s||'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]/g,'');
 const posNorm=p=>String(p||'').toUpperCase()==='DST'?'DEF':String(p||'').toUpperCase();
 
-// ESPN raw fantasy stat ids -> Fantasy Guru normalized stat names.
 const ESPN_TO_NORMALIZED={
   3:'pass_yds',4:'pass_tds',19:'pass_2pt',20:'pass_int',
   24:'rush_yds',25:'rush_tds',26:'rush_2pt',
@@ -33,24 +32,32 @@ function scoreRow(context,row,position){
   const scored=scoreConsensusStats(context,normalizedEspnStats(row.stats||{}),position);
   return finite(scored?.points)?Number(scored.points):null;
 }
-function identityForEspnPlayer(espnId,name,position){
-  const idx=getIdentityIndexes();
-  const byId=espnId&&idx.byEspn.get(String(espnId));
-  if(byId)return byId;
-  return idx.byNamePos.get(norm(name)+'|'+posNorm(position))||null;
+async function liveIdentityFallback(){
+  try{
+    const r=await fetch('https://api.sleeper.app/v1/players/nfl',{headers:{Accept:'application/json','User-Agent':'FantasyGuru/1.0'}});
+    if(!r.ok)return null;
+    const raw=await r.json(),byEspn=new Map(),byNamePos=new Map();
+    for(const [sid,p] of Object.entries(raw||{})){
+      const espn=p?.espn_id!=null?String(p.espn_id):null;
+      const name=p?.full_name||[p?.first_name,p?.last_name].filter(Boolean).join(' ');
+      const position=posNorm(p?.position);
+      const rec={canonical_player_id:p?.gsis_id?String(p.gsis_id):`sleeper:${sid}`,sleeper_id:String(sid),espn_id:espn,gsis_id:p?.gsis_id?String(p.gsis_id):null,name,position};
+      if(espn)byEspn.set(espn,rec);
+      if(name)byNamePos.set(norm(name)+'|'+position,rec);
+    }
+    return{byEspn,byNamePos};
+  }catch{return null;}
 }
 
 export async function getUniversalEspnProjections(context){
   if(!context?.league?.season)throw new Error('League context missing');
   if(!process.env.ESPN_S2||!process.env.ESPN_SWID)throw new Error('ESPN credentials are not configured.');
   const season=String(context.league.season||'2026'),week=Number(context.current_week||1);
-  // The authenticated ESPN league is only the transport for ESPN's player pool.
-  // Raw projected/actual stats are rescored with the TARGET league's settings,
-  // so the values are valid for either an ESPN-hosted or Sleeper-hosted league.
   const sourceLeagueId='1673474732';
   const base='https://lm-api-reads.fantasy.espn.com/apis/v3/games/ffl/seasons/'+season+'/segments/0/leagues/'+sourceLeagueId;
   const filter=JSON.stringify({players:{limit:3000}});
   const headers={'Cookie':'espn_s2='+process.env.ESPN_S2+'; SWID='+process.env.ESPN_SWID,'Accept':'application/json','User-Agent':'Mozilla/5.0','x-fantasy-filter':filter};
+  const staticStatus=identityMapStatus(),staticIdx=getIdentityIndexes(),fallback=staticStatus.ready?null:await liveIdentityFallback();
   const er=await fetch(base+'?view=kona_player_info&scoringPeriodId='+week,{headers});
   const txt=await er.text();let data;try{data=JSON.parse(txt)}catch{throw new Error('ESPN player-pool response was not JSON')}
   if(!er.ok)throw new Error(data?.messages?.[0]||'ESPN projection feed failed');
@@ -61,15 +68,15 @@ export async function getUniversalEspnProjections(context){
     const name=p.fullName||p.name||'';
     const position=POS[p.defaultPositionId]||posNorm(p.position||'');
     if(!espnId||!name||!position)continue;
-    const ids=identityForEspnPlayer(espnId,name,position)||{};
+    const ids=staticIdx.byEspn.get(espnId)||staticIdx.byNamePos.get(norm(name)+'|'+position)||fallback?.byEspn.get(espnId)||fallback?.byNamePos.get(norm(name)+'|'+position)||{};
     const wk=findStat(p,{season,week,source:1,split:1});
     const proj=findStat(p,{season,week,source:1,split:0});
     const actual=findStat(p,{season,week,source:0,split:0});
     const weekly=scoreRow(context,wk,position),projectedSeason=scoreRow(context,proj,position),actualSeason=scoreRow(context,actual,position);
     const ros=finite(projectedSeason)&&finite(actualSeason)?Math.max(0,projectedSeason-actualSeason):null;
-    players.push({name,position,canonical_player_id:ids.canonical_player_id||null,espn_id:espnId,sleeper_id:ids.sleeper_id||null,gsis_id:ids.gsis_id||null,id_match_method:ids?'canonical_identity_map':null,espn_weekly_points:weekly,espn_projected_season_points:projectedSeason,espn_actual_season_points:actualSeason,espn_ros_points:ros});
+    players.push({name,position,canonical_player_id:ids.canonical_player_id||null,espn_id:espnId,sleeper_id:ids.sleeper_id||null,gsis_id:ids.gsis_id||null,id_match_method:staticStatus.ready?'canonical_identity_map':'live_sleeper_fallback',espn_weekly_points:weekly,espn_projected_season_points:projectedSeason,espn_actual_season_points:actualSeason,espn_ros_points:ros});
   }
-  return{source:'ESPN raw projected stats rescored to target league rules',season,week,player_count:players.length,identity_map:identityMapStatus(),players};
+  return{source:'ESPN raw projected stats rescored to target league rules',season,week,player_count:players.length,identity_map:staticStatus,players};
 }
 
 export default async function handler(req,res){
