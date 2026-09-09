@@ -1,7 +1,7 @@
 {
   "schema_version": "2.0",
   "season": 2026,
-  "generated_at": "2026-09-09 23:07:01 UTC",
+  "generated_at": "2026-09-09 23:11:22 UTC",
   "source": "ffanalytics",
   "projection_type": "season_projection_stats",
   "scoring_basis": "unscored source-stat consensus; score at request time with exact league rules",
@@ -11,7 +11,7 @@
   "failed_sources": "Yahoo",
   "players": [
     {
-      "name": "10313",
+      "name": "Andy Dalton",
       "position": "QB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -41,7 +41,7 @@
       "sources": "CBS"
     },
     {
-      "name": "10413",
+      "name": "Tyrod Taylor",
       "position": "QB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -71,7 +71,7 @@
       "sources": "CBS"
     },
     {
-      "name": "10700",
+      "name": "Kirk Cousins",
       "position": "QB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -101,7 +101,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "11150",
+      "name": "Geno Smith",
       "position": "QB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -131,7 +131,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "12140",
+      "name": "Jameis Winston",
       "position": "QB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -161,7 +161,7 @@
       "sources": ["CBS", "ESPN", "FFToday"]
     },
     {
-      "name": "12141",
+      "name": "Marcus Mariota",
       "position": "QB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -191,7 +191,7 @@
       "sources": "CBS"
     },
     {
-      "name": "12611",
+      "name": "Jared Goff",
       "position": "QB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -221,7 +221,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "12616",
+      "name": "Jacoby Brissett",
       "position": "QB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -251,7 +251,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "12620",
+      "name": "Dak Prescott",
       "position": "QB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -281,7 +281,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "13113",
+      "name": "Deshaun Watson",
       "position": "QB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -311,7 +311,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "13115",
+      "name": "Mitchell Trubisky",
       "position": "QB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -341,7 +341,7 @@
       "sources": ["CBS", "FFToday"]
     },
     {
-      "name": "13116",
+      "name": "Patrick Mahomes",
       "position": "QB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -371,7 +371,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "13119",
+      "name": "Joshua Dobbs",
       "position": "QB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -401,7 +401,7 @@
       "sources": "CBS"
     },
     {
-      "name": "13589",
+      "name": "Josh Allen",
       "position": "QB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -431,7 +431,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "13590",
+      "name": "Baker Mayfield",
       "position": "QB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -461,7 +461,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "13592",
+      "name": "Sam Darnold",
       "position": "QB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -491,7 +491,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "13593",
+      "name": "Lamar Jackson",
       "position": "QB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -521,7 +521,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "13595",
+      "name": "Mason Rudolph",
       "position": "QB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -551,7 +551,7 @@
       "sources": "CBS"
     },
     {
-      "name": "13879",
+      "name": "Kyle Allen",
       "position": "QB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -581,7 +581,7 @@
       "sources": ["CBS", "FFToday"]
     },
     {
-      "name": "14056",
+      "name": "Kyler Murray",
       "position": "QB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -611,7 +611,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "14057",
+      "name": "Drew Lock",
       "position": "QB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -641,7 +641,7 @@
       "sources": "CBS"
     },
     {
-      "name": "14059",
+      "name": "Daniel Jones",
       "position": "QB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -671,7 +671,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "14063",
+      "name": "Jarrett Stidham",
       "position": "QB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -701,7 +701,7 @@
       "sources": "CBS"
     },
     {
-      "name": "14067",
+      "name": "Gardner Minshew",
       "position": "QB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -731,7 +731,7 @@
       "sources": "CBS"
     },
     {
-      "name": "14777",
+      "name": "Joe Burrow",
       "position": "QB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -761,7 +761,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "14778",
+      "name": "Tua Tagovailoa",
       "position": "QB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -791,7 +791,7 @@
       "sources": ["CBS", "ESPN", "FFToday"]
     },
     {
-      "name": "14779",
+      "name": "Justin Herbert",
       "position": "QB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -821,7 +821,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "14782",
+      "name": "Jordan Love",
       "position": "QB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -851,7 +851,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "14783",
+      "name": "Jalen Hurts",
       "position": "QB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -881,7 +881,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "14789",
+      "name": "Tyler Huntley",
       "position": "QB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -911,7 +911,7 @@
       "sources": "CBS"
     },
     {
-      "name": "15237",
+      "name": "Trevor Lawrence",
       "position": "QB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -941,7 +941,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "15238",
+      "name": "Justin Fields",
       "position": "QB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -971,7 +971,7 @@
       "sources": ["CBS", "ESPN", "FFToday"]
     },
     {
-      "name": "15240",
+      "name": "Trey Lance",
       "position": "QB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -1001,7 +1001,7 @@
       "sources": "CBS"
     },
     {
-      "name": "15241",
+      "name": "Mac Jones",
       "position": "QB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -1031,7 +1031,7 @@
       "sources": ["CBS", "ESPN", "FFToday"]
     },
     {
-      "name": "15252",
+      "name": "Davis Mills",
       "position": "QB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -1061,7 +1061,7 @@
       "sources": ["CBS", "FFToday"]
     },
     {
-      "name": "15692",
+      "name": "Kenny Pickett",
       "position": "QB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -1091,7 +1091,7 @@
       "sources": ["CBS", "FFToday"]
     },
     {
-      "name": "15693",
+      "name": "Sam Howell",
       "position": "QB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -1121,7 +1121,7 @@
       "sources": "CBS"
     },
     {
-      "name": "15694",
+      "name": "Malik Willis",
       "position": "QB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -1151,7 +1151,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "15698",
+      "name": "Brock Purdy",
       "position": "QB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -1181,7 +1181,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "15702",
+      "name": "Tanner McKee",
       "position": "QB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -1211,7 +1211,7 @@
       "sources": "CBS"
     },
     {
-      "name": "16148",
+      "name": "Bryce Young",
       "position": "QB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -1241,7 +1241,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "16150",
+      "name": "C.J. Stroud",
       "position": "QB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -1271,7 +1271,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "16152",
+      "name": "Anthony Richardson",
       "position": "QB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -1301,7 +1301,7 @@
       "sources": "CBS"
     },
     {
-      "name": "16153",
+      "name": "Stetson Bennett",
       "position": "QB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -1331,7 +1331,7 @@
       "sources": "CBS"
     },
     {
-      "name": "16384",
+      "name": "Tyson Bagent",
       "position": "QB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -1361,7 +1361,7 @@
       "sources": ["CBS", "FFToday"]
     },
     {
-      "name": "16441",
+      "name": "Tommy DeVito",
       "position": "QB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -1391,7 +1391,7 @@
       "sources": "CBS"
     },
     {
-      "name": "16579",
+      "name": "Caleb Williams",
       "position": "QB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -1421,7 +1421,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "16580",
+      "name": "Drake Maye",
       "position": "QB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -1451,7 +1451,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "16581",
+      "name": "Jayden Daniels",
       "position": "QB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -1481,7 +1481,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "16582",
+      "name": "Bo Nix",
       "position": "QB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -1511,7 +1511,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "16583",
+      "name": "Michael Penix Jr.",
       "position": "QB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -1541,7 +1541,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "16584",
+      "name": "J.J. McCarthy",
       "position": "QB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -1571,7 +1571,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "16585",
+      "name": "Joe Milton",
       "position": "QB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -1601,7 +1601,7 @@
       "sources": "FFToday"
     },
     {
-      "name": "16586",
+      "name": "Spencer Rattler",
       "position": "QB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -1631,7 +1631,7 @@
       "sources": "CBS"
     },
     {
-      "name": "17030",
+      "name": "Cam Ward",
       "position": "QB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -1661,7 +1661,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "17031",
+      "name": "Shedeur Sanders",
       "position": "QB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -1691,7 +1691,7 @@
       "sources": ["CBS", "ESPN", "FFToday"]
     },
     {
-      "name": "17032",
+      "name": "Jaxson Dart",
       "position": "QB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -1721,7 +1721,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "17033",
+      "name": "Jalen Milroe",
       "position": "QB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -1751,7 +1751,7 @@
       "sources": "CBS"
     },
     {
-      "name": "17034",
+      "name": "Quinn Ewers",
       "position": "QB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -1781,7 +1781,7 @@
       "sources": "CBS"
     },
     {
-      "name": "17035",
+      "name": "Riley Leonard",
       "position": "QB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -1811,7 +1811,7 @@
       "sources": "FFToday"
     },
     {
-      "name": "17036",
+      "name": "Will Howard",
       "position": "QB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -1841,7 +1841,7 @@
       "sources": "FFToday"
     },
     {
-      "name": "17038",
+      "name": "Kyle McCord",
       "position": "QB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -1871,7 +1871,7 @@
       "sources": "CBS"
     },
     {
-      "name": "17039",
+      "name": "Tyler Shough",
       "position": "QB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -1901,7 +1901,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "17040",
+      "name": "Brady Cook",
       "position": "QB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -1931,7 +1931,7 @@
       "sources": "CBS"
     },
     {
-      "name": "17462",
+      "name": "Fernando Mendoza",
       "position": "QB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -1961,7 +1961,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "17463",
+      "name": "Ty Simpson",
       "position": "QB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -1991,7 +1991,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "17466",
+      "name": "Carson Beck",
       "position": "QB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -2021,7 +2021,7 @@
       "sources": ["ESPN", "FFToday"]
     },
     {
-      "name": "17467",
+      "name": "Cade Klubnik",
       "position": "QB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -2051,7 +2051,7 @@
       "sources": ["CBS", "FFToday"]
     },
     {
-      "name": "17469",
+      "name": "Jalon Daniels",
       "position": "QB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -2081,7 +2081,7 @@
       "sources": "CBS"
     },
     {
-      "name": "17654",
+      "name": "Cole Payton",
       "position": "QB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -2111,7 +2111,7 @@
       "sources": "CBS"
     },
     {
-      "name": "7836",
+      "name": "Aaron Rodgers",
       "position": "QB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -2141,7 +2141,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "9064",
+      "name": "Joe Flacco",
       "position": "QB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -2171,7 +2171,7 @@
       "sources": ["CBS", "ESPN"]
     },
     {
-      "name": "9431",
+      "name": "Matthew Stafford",
       "position": "QB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -2201,7 +2201,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "11367",
+      "name": "Kyle Juszczyk",
       "position": "RB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -2227,7 +2227,7 @@
       "sources": "FFToday"
     },
     {
-      "name": "12155",
+      "name": "Ameer Abdullah",
       "position": "RB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -2253,7 +2253,7 @@
       "sources": ["CBS", "ESPN"]
     },
     {
-      "name": "12325",
+      "name": "Michael Burton",
       "position": "RB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -2279,7 +2279,7 @@
       "sources": []
     },
     {
-      "name": "12626",
+      "name": "Derrick Henry",
       "position": "RB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -2305,7 +2305,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "13130",
+      "name": "Christian McCaffrey",
       "position": "RB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -2331,7 +2331,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "13132",
+      "name": "Alvin Kamara",
       "position": "RB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -2357,7 +2357,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "13133",
+      "name": "Samaje Perine",
       "position": "RB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -2383,7 +2383,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "13146",
+      "name": "James Conner",
       "position": "RB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -2409,7 +2409,7 @@
       "sources": ["ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "13319",
+      "name": "Aaron Jones",
       "position": "RB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -2435,7 +2435,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "13604",
+      "name": "Saquon Barkley",
       "position": "RB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -2461,7 +2461,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "14071",
+      "name": "David Montgomery",
       "position": "RB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -2487,7 +2487,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "14073",
+      "name": "Josh Jacobs",
       "position": "RB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -2513,7 +2513,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "14080",
+      "name": "Devin Singletary",
       "position": "RB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -2539,7 +2539,7 @@
       "sources": "CBS"
     },
     {
-      "name": "14085",
+      "name": "Tony Pollard",
       "position": "RB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -2565,7 +2565,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "14086",
+      "name": "Justice Hill",
       "position": "RB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -2591,7 +2591,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "14095",
+      "name": "Ty Johnson",
       "position": "RB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -2617,7 +2617,7 @@
       "sources": ["CBS", "ESPN", "FFToday"]
     },
     {
-      "name": "14319",
+      "name": "Andrew Beck",
       "position": "RB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -2643,7 +2643,7 @@
       "sources": []
     },
     {
-      "name": "14797",
+      "name": "D'Andre Swift",
       "position": "RB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -2669,7 +2669,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "14800",
+      "name": "J.K. Dobbins",
       "position": "RB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -2695,7 +2695,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "14802",
+      "name": "Jonathan Taylor",
       "position": "RB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -2721,7 +2721,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "14805",
+      "name": "AJ Dillon",
       "position": "RB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -2747,7 +2747,7 @@
       "sources": "CBS"
     },
     {
-      "name": "14823",
+      "name": "Rico Dowdle",
       "position": "RB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -2773,7 +2773,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "15253",
+      "name": "Travis Etienne",
       "position": "RB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -2799,7 +2799,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "15254",
+      "name": "Najee Harris",
       "position": "RB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -2825,7 +2825,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "15255",
+      "name": "Kenneth Gainwell",
       "position": "RB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -2851,7 +2851,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "15256",
+      "name": "Javonte Williams",
       "position": "RB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -2877,7 +2877,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "15259",
+      "name": "Rhamondre Stevenson",
       "position": "RB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -2903,7 +2903,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "15261",
+      "name": "Chuba Hubbard",
       "position": "RB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -2929,7 +2929,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "15414",
+      "name": "Kene Nwangwu",
       "position": "RB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -2955,7 +2955,7 @@
       "sources": ["CBS", "ESPN"]
     },
     {
-      "name": "15708",
+      "name": "Breece Hall",
       "position": "RB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -2981,7 +2981,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "15710",
+      "name": "Kyren Williams",
       "position": "RB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -3007,7 +3007,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "15711",
+      "name": "Kenneth Walker III",
       "position": "RB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -3033,7 +3033,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "15712",
+      "name": "Tyler Allgeier",
       "position": "RB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -3059,7 +3059,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "15715",
+      "name": "James Cook",
       "position": "RB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -3085,7 +3085,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "15716",
+      "name": "Brian Robinson",
       "position": "RB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -3111,7 +3111,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "15721",
+      "name": "Rachaad White",
       "position": "RB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -3137,7 +3137,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "15727",
+      "name": "Bam Knight",
       "position": "RB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -3163,7 +3163,7 @@
       "sources": ["CBS", "ESPN"]
     },
     {
-      "name": "15738",
+      "name": "Malik Davis",
       "position": "RB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -3189,7 +3189,7 @@
       "sources": ["CBS", "ESPN", "FFToday"]
     },
     {
-      "name": "15742",
+      "name": "Jaylen Warren",
       "position": "RB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -3215,7 +3215,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "15749",
+      "name": "Isiah Pacheco",
       "position": "RB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -3241,7 +3241,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "15972",
+      "name": "Jordan Mason",
       "position": "RB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -3267,7 +3267,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "16161",
+      "name": "Bijan Robinson",
       "position": "RB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -3293,7 +3293,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "16162",
+      "name": "Jahmyr Gibbs",
       "position": "RB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -3319,7 +3319,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "16164",
+      "name": "Tank Bigsby",
       "position": "RB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -3345,7 +3345,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "16165",
+      "name": "Tyjae Spears",
       "position": "RB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -3371,7 +3371,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "16166",
+      "name": "Sean Tucker",
       "position": "RB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -3397,7 +3397,7 @@
       "sources": ["CBS", "ESPN", "FFToday"]
     },
     {
-      "name": "16167",
+      "name": "De'Von Achane",
       "position": "RB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -3423,7 +3423,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "16169",
+      "name": "Zach Charbonnet",
       "position": "RB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -3449,7 +3449,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "16171",
+      "name": "Kendre Miller",
       "position": "RB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -3475,7 +3475,7 @@
       "sources": ["CBS", "ESPN", "FFToday"]
     },
     {
-      "name": "16174",
+      "name": "Chris Rodriguez",
       "position": "RB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -3501,7 +3501,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "16175",
+      "name": "Roschon Johnson",
       "position": "RB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -3527,7 +3527,7 @@
       "sources": ["CBS", "FFToday"]
     },
     {
-      "name": "16178",
+      "name": "Keaton Mitchell",
       "position": "RB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -3553,7 +3553,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "16181",
+      "name": "Chase Brown",
       "position": "RB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -3579,7 +3579,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "16385",
+      "name": "Emari Demercado",
       "position": "RB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -3605,7 +3605,7 @@
       "sources": ["CBS", "ESPN", "FFToday"]
     },
     {
-      "name": "16387",
+      "name": "Chris Brooks",
       "position": "RB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -3631,7 +3631,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "16432",
+      "name": "Emanuel Wilson",
       "position": "RB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -3657,7 +3657,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "16593",
+      "name": "Blake Corum",
       "position": "RB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -3683,7 +3683,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "16595",
+      "name": "Audric Estime",
       "position": "RB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -3709,7 +3709,7 @@
       "sources": "CBS"
     },
     {
-      "name": "16596",
+      "name": "Braelon Allen",
       "position": "RB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -3735,7 +3735,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "16597",
+      "name": "Jonathon Brooks",
       "position": "RB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -3761,7 +3761,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "16598",
+      "name": "Bucky Irving",
       "position": "RB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -3787,7 +3787,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "16601",
+      "name": "Will Shipley",
       "position": "RB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -3813,7 +3813,7 @@
       "sources": ["ESPN", "FFToday"]
     },
     {
-      "name": "16603",
+      "name": "Ray Davis",
       "position": "RB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -3839,7 +3839,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "16604",
+      "name": "MarShawn Lloyd",
       "position": "RB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -3865,7 +3865,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "16608",
+      "name": "George Holani",
       "position": "RB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -3891,7 +3891,7 @@
       "sources": ["CBS", "ESPN", "FFToday"]
     },
     {
-      "name": "16610",
+      "name": "Jaylen Wright",
       "position": "RB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -3917,7 +3917,7 @@
       "sources": ["CBS", "ESPN", "FFToday"]
     },
     {
-      "name": "16678",
+      "name": "Sione Vaki",
       "position": "RB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -3943,7 +3943,7 @@
       "sources": "ESPN"
     },
     {
-      "name": "16688",
+      "name": "Isaac Guerendo",
       "position": "RB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -3969,7 +3969,7 @@
       "sources": ["CBS", "WalterFootball"]
     },
     {
-      "name": "16746",
+      "name": "Rasheen Ali",
       "position": "RB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -3995,7 +3995,7 @@
       "sources": ["CBS", "ESPN", "FFToday"]
     },
     {
-      "name": "16747",
+      "name": "Tyrone Tracy",
       "position": "RB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -4021,7 +4021,7 @@
       "sources": ["CBS", "ESPN", "FFToday"]
     },
     {
-      "name": "16752",
+      "name": "Isaiah Davis",
       "position": "RB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -4047,7 +4047,7 @@
       "sources": ["CBS", "ESPN", "FFToday"]
     },
     {
-      "name": "16757",
+      "name": "Kimani Vidal",
       "position": "RB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -4073,7 +4073,7 @@
       "sources": ["CBS", "ESPN", "FFToday"]
     },
     {
-      "name": "16850",
+      "name": "Jacob Saylors",
       "position": "RB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -4099,7 +4099,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "17042",
+      "name": "Ashton Jeanty",
       "position": "RB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -4125,7 +4125,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "17043",
+      "name": "TreVeyon Henderson",
       "position": "RB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -4151,7 +4151,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "17044",
+      "name": "Omarion Hampton",
       "position": "RB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -4177,7 +4177,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "17045",
+      "name": "Cam Skattebo",
       "position": "RB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -4203,7 +4203,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "17047",
+      "name": "Dylan Sampson",
       "position": "RB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -4229,7 +4229,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "17048",
+      "name": "Kaleb Johnson",
       "position": "RB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -4255,7 +4255,7 @@
       "sources": "ESPN"
     },
     {
-      "name": "17049",
+      "name": "Brashard Smith",
       "position": "RB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -4281,7 +4281,7 @@
       "sources": ["CBS", "ESPN", "WalterFootball"]
     },
     {
-      "name": "17051",
+      "name": "Quinshon Judkins",
       "position": "RB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -4307,7 +4307,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "17052",
+      "name": "Bhayshul Tuten",
       "position": "RB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -4333,7 +4333,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "17053",
+      "name": "Woody Marks",
       "position": "RB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -4359,7 +4359,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "17055",
+      "name": "Jordan James",
       "position": "RB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -4385,7 +4385,7 @@
       "sources": ["CBS", "ESPN", "FFToday"]
     },
     {
-      "name": "17056",
+      "name": "Trevor Etienne",
       "position": "RB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -4411,7 +4411,7 @@
       "sources": "FFToday"
     },
     {
-      "name": "17058",
+      "name": "Tahj Brooks",
       "position": "RB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -4437,7 +4437,7 @@
       "sources": ["ESPN", "FFToday"]
     },
     {
-      "name": "17059",
+      "name": "Ollie Gordon",
       "position": "RB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -4463,7 +4463,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "17060",
+      "name": "DJ Giddens",
       "position": "RB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -4489,7 +4489,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "17061",
+      "name": "LeQuint Allen",
       "position": "RB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -4515,7 +4515,7 @@
       "sources": ["CBS", "ESPN", "FFToday"]
     },
     {
-      "name": "17062",
+      "name": "Raheim Sanders",
       "position": "RB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -4541,7 +4541,7 @@
       "sources": ["CBS", "FFToday"]
     },
     {
-      "name": "17066",
+      "name": "Kyle Monangai",
       "position": "RB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -4567,7 +4567,7 @@
       "sources": ["CBS", "ESPN", "FFToday"]
     },
     {
-      "name": "17068",
+      "name": "RJ Harvey",
       "position": "RB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -4593,7 +4593,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "17256",
+      "name": "Jacory Croskey-Merritt",
       "position": "RB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -4619,7 +4619,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "17274",
+      "name": "Corey Kiner",
       "position": "RB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -4645,7 +4645,7 @@
       "sources": "CBS"
     },
     {
-      "name": "17472",
+      "name": "Jeremiyah Love",
       "position": "RB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -4671,7 +4671,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "17473",
+      "name": "Jadarian Price",
       "position": "RB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -4697,7 +4697,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "17474",
+      "name": "Emmett Johnson",
       "position": "RB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -4723,7 +4723,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "17475",
+      "name": "Seth McGowan",
       "position": "RB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -4749,7 +4749,7 @@
       "sources": ["CBS", "ESPN", "FFToday"]
     },
     {
-      "name": "17476",
+      "name": "Nicholas Singleton",
       "position": "RB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -4775,7 +4775,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "17477",
+      "name": "Jonah Coleman",
       "position": "RB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -4801,7 +4801,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "17478",
+      "name": "Kaytron Allen",
       "position": "RB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -4827,7 +4827,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "17481",
+      "name": "Demond Claiborne",
       "position": "RB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -4853,7 +4853,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "17482",
+      "name": "Mike Washington Jr.",
       "position": "RB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -4879,7 +4879,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "17485",
+      "name": "Kaelon Black",
       "position": "RB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -4905,7 +4905,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "17648",
+      "name": "Riley Nowakowski",
       "position": "TE",
       "gsis_id": null,
       "sleeper_id": null,
@@ -4925,7 +4925,7 @@
       "sources": "ESPN"
     },
     {
-      "name": "17652",
+      "name": "Adam Randall",
       "position": "RB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -4951,7 +4951,7 @@
       "sources": ["CBS", "ESPN"]
     },
     {
-      "name": "17685",
+      "name": "Eli Heidenreich",
       "position": "RB",
       "gsis_id": null,
       "sleeper_id": null,
@@ -4977,7 +4977,7 @@
       "sources": "CBS"
     },
     {
-      "name": "11222",
+      "name": "Keenan Allen",
       "position": "WR",
       "gsis_id": null,
       "sleeper_id": null,
@@ -5003,7 +5003,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "11671",
+      "name": "Mike Evans",
       "position": "WR",
       "gsis_id": null,
       "sleeper_id": null,
@@ -5029,7 +5029,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "11675",
+      "name": "Davante Adams",
       "position": "WR",
       "gsis_id": null,
       "sleeper_id": null,
@@ -5055,7 +5055,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "11679",
+      "name": "Odell Beckham",
       "position": "WR",
       "gsis_id": null,
       "sleeper_id": null,
@@ -5081,7 +5081,7 @@
       "sources": "ESPN"
     },
     {
-      "name": "12186",
+      "name": "Stefon Diggs",
       "position": "WR",
       "gsis_id": null,
       "sleeper_id": null,
@@ -5107,7 +5107,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "12645",
+      "name": "Laquon Treadwell",
       "position": "WR",
       "gsis_id": null,
       "sleeper_id": null,
@@ -5127,7 +5127,7 @@
       "sources": "ESPN"
     },
     {
-      "name": "12785",
+      "name": "Demarcus Robinson",
       "position": "WR",
       "gsis_id": null,
       "sleeper_id": null,
@@ -5153,7 +5153,7 @@
       "sources": ["CBS", "ESPN"]
     },
     {
-      "name": "12801",
+      "name": "Tyreek Hill",
       "position": "WR",
       "gsis_id": null,
       "sleeper_id": null,
@@ -5173,7 +5173,7 @@
       "sources": "WalterFootball"
     },
     {
-      "name": "13066",
+      "name": "Kalif Raymond",
       "position": "WR",
       "gsis_id": null,
       "sleeper_id": null,
@@ -5199,7 +5199,7 @@
       "sources": ["ESPN", "FFToday"]
     },
     {
-      "name": "13163",
+      "name": "Chris Godwin",
       "position": "WR",
       "gsis_id": null,
       "sleeper_id": null,
@@ -5225,7 +5225,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "13164",
+      "name": "Cooper Kupp",
       "position": "WR",
       "gsis_id": null,
       "sleeper_id": null,
@@ -5251,7 +5251,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "13289",
+      "name": "Mack Hollins",
       "position": "WR",
       "gsis_id": null,
       "sleeper_id": null,
@@ -5277,7 +5277,7 @@
       "sources": ["ESPN", "FFToday"]
     },
     {
-      "name": "13418",
+      "name": "Kendrick Bourne",
       "position": "WR",
       "gsis_id": null,
       "sleeper_id": null,
@@ -5303,7 +5303,7 @@
       "sources": ["ESPN", "FFToday"]
     },
     {
-      "name": "13629",
+      "name": "Calvin Ridley",
       "position": "WR",
       "gsis_id": null,
       "sleeper_id": null,
@@ -5329,7 +5329,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "13630",
+      "name": "Courtland Sutton",
       "position": "WR",
       "gsis_id": null,
       "sleeper_id": null,
@@ -5355,7 +5355,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "13633",
+      "name": "Christian Kirk",
       "position": "WR",
       "gsis_id": null,
       "sleeper_id": null,
@@ -5381,7 +5381,7 @@
       "sources": "CBS"
     },
     {
-      "name": "13635",
+      "name": "D.J. Moore",
       "position": "WR",
       "gsis_id": null,
       "sleeper_id": null,
@@ -5407,7 +5407,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "14102",
+      "name": "DK Metcalf",
       "position": "WR",
       "gsis_id": null,
       "sleeper_id": null,
@@ -5433,7 +5433,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "14104",
+      "name": "A.J. Brown",
       "position": "WR",
       "gsis_id": null,
       "sleeper_id": null,
@@ -5459,7 +5459,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "14105",
+      "name": "Marquise Brown",
       "position": "WR",
       "gsis_id": null,
       "sleeper_id": null,
@@ -5485,7 +5485,7 @@
       "sources": ["CBS", "ESPN", "FFToday"]
     },
     {
-      "name": "14109",
+      "name": "Terry McLaurin",
       "position": "WR",
       "gsis_id": null,
       "sleeper_id": null,
@@ -5511,7 +5511,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "14122",
+      "name": "Darius Slayton",
       "position": "WR",
       "gsis_id": null,
       "sleeper_id": null,
@@ -5537,7 +5537,7 @@
       "sources": "FFToday"
     },
     {
-      "name": "14127",
+      "name": "Jakobi Meyers",
       "position": "WR",
       "gsis_id": null,
       "sleeper_id": null,
@@ -5563,7 +5563,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "14136",
+      "name": "Deebo Samuel",
       "position": "WR",
       "gsis_id": null,
       "sleeper_id": null,
@@ -5589,7 +5589,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "14315",
+      "name": "Ashton Dulin",
       "position": "WR",
       "gsis_id": null,
       "sleeper_id": null,
@@ -5615,7 +5615,7 @@
       "sources": ["CBS", "ESPN"]
     },
     {
-      "name": "14592",
+      "name": "Olamide Zaccheaus",
       "position": "WR",
       "gsis_id": null,
       "sleeper_id": null,
@@ -5641,7 +5641,7 @@
       "sources": ["ESPN", "FFToday"]
     },
     {
-      "name": "14832",
+      "name": "CeeDee Lamb",
       "position": "WR",
       "gsis_id": null,
       "sleeper_id": null,
@@ -5667,7 +5667,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "14833",
+      "name": "Jerry Jeudy",
       "position": "WR",
       "gsis_id": null,
       "sleeper_id": null,
@@ -5693,7 +5693,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "14835",
+      "name": "Tee Higgins",
       "position": "WR",
       "gsis_id": null,
       "sleeper_id": null,
@@ -5719,7 +5719,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "14836",
+      "name": "Justin Jefferson",
       "position": "WR",
       "gsis_id": null,
       "sleeper_id": null,
@@ -5745,7 +5745,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "14840",
+      "name": "Brandon Aiyuk",
       "position": "WR",
       "gsis_id": null,
       "sleeper_id": null,
@@ -5765,7 +5765,7 @@
       "sources": "WalterFootball"
     },
     {
-      "name": "14842",
+      "name": "Michael Pittman",
       "position": "WR",
       "gsis_id": null,
       "sleeper_id": null,
@@ -5791,7 +5791,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "14847",
+      "name": "Devin Duvernay",
       "position": "WR",
       "gsis_id": null,
       "sleeper_id": null,
@@ -5817,7 +5817,7 @@
       "sources": "FFToday"
     },
     {
-      "name": "14860",
+      "name": "Jauan Jennings",
       "position": "WR",
       "gsis_id": null,
       "sleeper_id": null,
@@ -5843,7 +5843,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "14974",
+      "name": "Darnell Mooney",
       "position": "WR",
       "gsis_id": null,
       "sleeper_id": null,
@@ -5869,7 +5869,7 @@
       "sources": ["ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "15281",
+      "name": "Ja'Marr Chase",
       "position": "WR",
       "gsis_id": null,
       "sleeper_id": null,
@@ -5895,7 +5895,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "15282",
+      "name": "DeVonta Smith",
       "position": "WR",
       "gsis_id": null,
       "sleeper_id": null,
@@ -5921,7 +5921,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "15284",
+      "name": "Jaylen Waddle",
       "position": "WR",
       "gsis_id": null,
       "sleeper_id": null,
@@ -5947,7 +5947,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "15287",
+      "name": "Amon-Ra St. Brown",
       "position": "WR",
       "gsis_id": null,
       "sleeper_id": null,
@@ -5973,7 +5973,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "15290",
+      "name": "Nico Collins",
       "position": "WR",
       "gsis_id": null,
       "sleeper_id": null,
@@ -5999,7 +5999,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "15292",
+      "name": "Dyami Brown",
       "position": "WR",
       "gsis_id": null,
       "sleeper_id": null,
@@ -6025,7 +6025,7 @@
       "sources": ["ESPN", "FFToday"]
     },
     {
-      "name": "15293",
+      "name": "Rashod Bateman",
       "position": "WR",
       "gsis_id": null,
       "sleeper_id": null,
@@ -6051,7 +6051,7 @@
       "sources": ["CBS", "ESPN", "FFToday"]
     },
     {
-      "name": "15301",
+      "name": "Tutu Atwell",
       "position": "WR",
       "gsis_id": null,
       "sleeper_id": null,
@@ -6077,7 +6077,7 @@
       "sources": "ESPN"
     },
     {
-      "name": "15319",
+      "name": "Joshua Palmer",
       "position": "WR",
       "gsis_id": null,
       "sleeper_id": null,
@@ -6103,7 +6103,7 @@
       "sources": ["CBS", "ESPN", "FFToday"]
     },
     {
-      "name": "15751",
+      "name": "Drake London",
       "position": "WR",
       "gsis_id": null,
       "sleeper_id": null,
@@ -6129,7 +6129,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "15752",
+      "name": "Treylon Burks",
       "position": "WR",
       "gsis_id": null,
       "sleeper_id": null,
@@ -6155,7 +6155,7 @@
       "sources": ["ESPN", "FFToday"]
     },
     {
-      "name": "15753",
+      "name": "Garrett Wilson",
       "position": "WR",
       "gsis_id": null,
       "sleeper_id": null,
@@ -6181,7 +6181,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "15754",
+      "name": "Chris Olave",
       "position": "WR",
       "gsis_id": null,
       "sleeper_id": null,
@@ -6207,7 +6207,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "15755",
+      "name": "Jahan Dotson",
       "position": "WR",
       "gsis_id": null,
       "sleeper_id": null,
@@ -6233,7 +6233,7 @@
       "sources": ["ESPN", "FFToday"]
     },
     {
-      "name": "15756",
+      "name": "Jameson Williams",
       "position": "WR",
       "gsis_id": null,
       "sleeper_id": null,
@@ -6259,7 +6259,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "15757",
+      "name": "Wan'Dale Robinson",
       "position": "WR",
       "gsis_id": null,
       "sleeper_id": null,
@@ -6285,7 +6285,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "15761",
+      "name": "Khalil Shakir",
       "position": "WR",
       "gsis_id": null,
       "sleeper_id": null,
@@ -6311,7 +6311,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "15762",
+      "name": "George Pickens",
       "position": "WR",
       "gsis_id": null,
       "sleeper_id": null,
@@ -6337,7 +6337,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "15768",
+      "name": "Alec Pierce",
       "position": "WR",
       "gsis_id": null,
       "sleeper_id": null,
@@ -6363,7 +6363,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "15771",
+      "name": "Tay Martin",
       "position": "WR",
       "gsis_id": null,
       "sleeper_id": null,
@@ -6389,7 +6389,7 @@
       "sources": "ESPN"
     },
     {
-      "name": "15779",
+      "name": "Romeo Doubs",
       "position": "WR",
       "gsis_id": null,
       "sleeper_id": null,
@@ -6415,7 +6415,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "15785",
+      "name": "Bo Melton",
       "position": "WR",
       "gsis_id": null,
       "sleeper_id": null,
@@ -6441,7 +6441,7 @@
       "sources": "ESPN"
     },
     {
-      "name": "15786",
+      "name": "Jalen Nailor",
       "position": "WR",
       "gsis_id": null,
       "sleeper_id": null,
@@ -6467,7 +6467,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "15787",
+      "name": "Tyquan Thornton",
       "position": "WR",
       "gsis_id": null,
       "sleeper_id": null,
@@ -6493,7 +6493,7 @@
       "sources": ["CBS", "ESPN", "FFToday"]
     },
     {
-      "name": "15788",
+      "name": "Jalen Tolbert",
       "position": "WR",
       "gsis_id": null,
       "sleeper_id": null,
@@ -6519,7 +6519,7 @@
       "sources": ["ESPN", "FFToday"]
     },
     {
-      "name": "15789",
+      "name": "Christian Watson",
       "position": "WR",
       "gsis_id": null,
       "sleeper_id": null,
@@ -6545,7 +6545,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "15981",
+      "name": "KaVontae Turpin",
       "position": "WR",
       "gsis_id": null,
       "sleeper_id": null,
@@ -6571,7 +6571,7 @@
       "sources": ["ESPN", "FFToday"]
     },
     {
-      "name": "16080",
+      "name": "Rashid Shaheed",
       "position": "WR",
       "gsis_id": null,
       "sleeper_id": null,
@@ -6597,7 +6597,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "16184",
+      "name": "Jayden Reed",
       "position": "WR",
       "gsis_id": null,
       "sleeper_id": null,
@@ -6623,7 +6623,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "16185",
+      "name": "Jaxon Smith-Njigba",
       "position": "WR",
       "gsis_id": null,
       "sleeper_id": null,
@@ -6649,7 +6649,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "16186",
+      "name": "Jordan Addison",
       "position": "WR",
       "gsis_id": null,
       "sleeper_id": null,
@@ -6675,7 +6675,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "16187",
+      "name": "Josh Downs",
       "position": "WR",
       "gsis_id": null,
       "sleeper_id": null,
@@ -6701,7 +6701,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "16188",
+      "name": "Quentin Johnston",
       "position": "WR",
       "gsis_id": null,
       "sleeper_id": null,
@@ -6727,7 +6727,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "16189",
+      "name": "Marvin Mims",
       "position": "WR",
       "gsis_id": null,
       "sleeper_id": null,
@@ -6753,7 +6753,7 @@
       "sources": "ESPN"
     },
     {
-      "name": "16190",
+      "name": "Zay Flowers",
       "position": "WR",
       "gsis_id": null,
       "sleeper_id": null,
@@ -6779,7 +6779,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "16192",
+      "name": "Parker Washington",
       "position": "WR",
       "gsis_id": null,
       "sleeper_id": null,
@@ -6805,7 +6805,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "16193",
+      "name": "Kayshon Boutte",
       "position": "WR",
       "gsis_id": null,
       "sleeper_id": null,
@@ -6831,7 +6831,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "16194",
+      "name": "Rashee Rice",
       "position": "WR",
       "gsis_id": null,
       "sleeper_id": null,
@@ -6857,33 +6857,33 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "16195",
+      "name": "Dontayvion Wicks",
       "position": "WR",
       "gsis_id": null,
       "sleeper_id": null,
       "espn_id": null,
       "consensus_stats": {
-        "rec": 34.3333,
-        "rec_tds": 2.6667,
-        "rec_yds": 462,
-        "rush_att": 0,
+        "rec": 35.25,
+        "rec_tds": 2.75,
+        "rec_yds": 447.25,
+        "rush_att": 0.5,
         "rush_tds": 0,
-        "rush_yds": 0
+        "rush_yds": 2.5
       },
       "stat_source_counts": {
-        "rec": 3,
-        "rec_tds": 3,
-        "rec_yds": 3,
-        "rush_att": 1,
-        "rush_tds": 1,
-        "rush_yds": 1
+        "rec": 4,
+        "rec_tds": 4,
+        "rec_yds": 4,
+        "rush_att": 2,
+        "rush_tds": 2,
+        "rush_yds": 2
       },
-      "default_scoring_points": 62.2,
-      "source_count": 3,
-      "sources": ["ESPN", "FFToday", "WalterFootball"]
+      "default_scoring_points": 61.35,
+      "source_count": 4,
+      "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "16201",
+      "name": "Xavier Hutchinson",
       "position": "WR",
       "gsis_id": null,
       "sleeper_id": null,
@@ -6909,7 +6909,7 @@
       "sources": ["CBS", "ESPN", "FFToday"]
     },
     {
-      "name": "16204",
+      "name": "Tank Dell",
       "position": "WR",
       "gsis_id": null,
       "sleeper_id": null,
@@ -6935,7 +6935,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "16206",
+      "name": "Michael Wilson",
       "position": "WR",
       "gsis_id": null,
       "sleeper_id": null,
@@ -6961,7 +6961,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "16207",
+      "name": "Andrei Iosivas",
       "position": "WR",
       "gsis_id": null,
       "sleeper_id": null,
@@ -6987,7 +6987,7 @@
       "sources": ["CBS", "ESPN", "FFToday"]
     },
     {
-      "name": "16211",
+      "name": "Puka Nacua",
       "position": "WR",
       "gsis_id": null,
       "sleeper_id": null,
@@ -7013,7 +7013,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "16287",
+      "name": "Tre Tucker",
       "position": "WR",
       "gsis_id": null,
       "sleeper_id": null,
@@ -7039,7 +7039,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "16299",
+      "name": "Derius Davis",
       "position": "WR",
       "gsis_id": null,
       "sleeper_id": null,
@@ -7065,7 +7065,7 @@
       "sources": "ESPN"
     },
     {
-      "name": "16342",
+      "name": "Demario Douglas",
       "position": "WR",
       "gsis_id": null,
       "sleeper_id": null,
@@ -7091,7 +7091,7 @@
       "sources": ["ESPN", "FFToday"]
     },
     {
-      "name": "16428",
+      "name": "Xavier Smith",
       "position": "WR",
       "gsis_id": null,
       "sleeper_id": null,
@@ -7111,7 +7111,7 @@
       "sources": "ESPN"
     },
     {
-      "name": "16614",
+      "name": "Marvin Harrison Jr.",
       "position": "WR",
       "gsis_id": null,
       "sleeper_id": null,
@@ -7137,7 +7137,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "16615",
+      "name": "Malik Nabers",
       "position": "WR",
       "gsis_id": null,
       "sleeper_id": null,
@@ -7163,7 +7163,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "16616",
+      "name": "Rome Odunze",
       "position": "WR",
       "gsis_id": null,
       "sleeper_id": null,
@@ -7189,7 +7189,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "16617",
+      "name": "Keon Coleman",
       "position": "WR",
       "gsis_id": null,
       "sleeper_id": null,
@@ -7215,7 +7215,7 @@
       "sources": ["ESPN", "FFToday"]
     },
     {
-      "name": "16618",
+      "name": "Brian Thomas Jr.",
       "position": "WR",
       "gsis_id": null,
       "sleeper_id": null,
@@ -7241,7 +7241,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "16619",
+      "name": "Troy Franklin",
       "position": "WR",
       "gsis_id": null,
       "sleeper_id": null,
@@ -7267,7 +7267,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "16620",
+      "name": "Xavier Worthy",
       "position": "WR",
       "gsis_id": null,
       "sleeper_id": null,
@@ -7293,7 +7293,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "16621",
+      "name": "Devontez Walker",
       "position": "WR",
       "gsis_id": null,
       "sleeper_id": null,
@@ -7319,7 +7319,7 @@
       "sources": ["CBS", "ESPN", "FFToday"]
     },
     {
-      "name": "16622",
+      "name": "Ricky Pearsall",
       "position": "WR",
       "gsis_id": null,
       "sleeper_id": null,
@@ -7339,7 +7339,7 @@
       "sources": "WalterFootball"
     },
     {
-      "name": "16626",
+      "name": "Adonai Mitchell",
       "position": "WR",
       "gsis_id": null,
       "sleeper_id": null,
@@ -7365,7 +7365,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "16627",
+      "name": "Ladd McConkey",
       "position": "WR",
       "gsis_id": null,
       "sleeper_id": null,
@@ -7391,7 +7391,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "16628",
+      "name": "Jalen McMillan",
       "position": "WR",
       "gsis_id": null,
       "sleeper_id": null,
@@ -7417,7 +7417,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "16629",
+      "name": "Roman Wilson",
       "position": "WR",
       "gsis_id": null,
       "sleeper_id": null,
@@ -7443,7 +7443,7 @@
       "sources": ["ESPN", "FFToday"]
     },
     {
-      "name": "16630",
+      "name": "Isaiah Williams",
       "position": "WR",
       "gsis_id": null,
       "sleeper_id": null,
@@ -7469,7 +7469,7 @@
       "sources": ["ESPN", "FFToday"]
     },
     {
-      "name": "16633",
+      "name": "Jordan Whittington",
       "position": "WR",
       "gsis_id": null,
       "sleeper_id": null,
@@ -7495,7 +7495,7 @@
       "sources": ["ESPN", "FFToday"]
     },
     {
-      "name": "16635",
+      "name": "Luke McCaffrey",
       "position": "WR",
       "gsis_id": null,
       "sleeper_id": null,
@@ -7521,7 +7521,7 @@
       "sources": ["CBS", "ESPN"]
     },
     {
-      "name": "16636",
+      "name": "Malachi Corley",
       "position": "WR",
       "gsis_id": null,
       "sleeper_id": null,
@@ -7547,7 +7547,7 @@
       "sources": "ESPN"
     },
     {
-      "name": "16639",
+      "name": "Xavier Legette",
       "position": "WR",
       "gsis_id": null,
       "sleeper_id": null,
@@ -7573,7 +7573,7 @@
       "sources": ["ESPN", "FFToday"]
     },
     {
-      "name": "16640",
+      "name": "Jacob Cowing",
       "position": "WR",
       "gsis_id": null,
       "sleeper_id": null,
@@ -7593,7 +7593,7 @@
       "sources": "ESPN"
     },
     {
-      "name": "16684",
+      "name": "Malik Washington",
       "position": "WR",
       "gsis_id": null,
       "sleeper_id": null,
@@ -7619,7 +7619,7 @@
       "sources": ["CBS", "ESPN", "FFToday"]
     },
     {
-      "name": "16778",
+      "name": "Ryan Flournoy",
       "position": "WR",
       "gsis_id": null,
       "sleeper_id": null,
@@ -7645,7 +7645,7 @@
       "sources": ["ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "16788",
+      "name": "Devaughn Vele",
       "position": "WR",
       "gsis_id": null,
       "sleeper_id": null,
@@ -7671,7 +7671,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "16809",
+      "name": "Jalen Coker",
       "position": "WR",
       "gsis_id": null,
       "sleeper_id": null,
@@ -7697,7 +7697,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "17070",
+      "name": "Luther Burden",
       "position": "WR",
       "gsis_id": null,
       "sleeper_id": null,
@@ -7723,7 +7723,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "17071",
+      "name": "Tetairoa McMillan",
       "position": "WR",
       "gsis_id": null,
       "sleeper_id": null,
@@ -7749,7 +7749,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "17072",
+      "name": "Tre Harris",
       "position": "WR",
       "gsis_id": null,
       "sleeper_id": null,
@@ -7775,7 +7775,7 @@
       "sources": ["ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "17073",
+      "name": "Elic Ayomanor",
       "position": "WR",
       "gsis_id": null,
       "sleeper_id": null,
@@ -7801,7 +7801,7 @@
       "sources": ["CBS", "ESPN", "FFToday"]
     },
     {
-      "name": "17074",
+      "name": "Travis Hunter",
       "position": "WR",
       "gsis_id": null,
       "sleeper_id": null,
@@ -7831,7 +7831,7 @@
       "sources": ["ESPN", "FFToday"]
     },
     {
-      "name": "17075",
+      "name": "Matthew Golden",
       "position": "WR",
       "gsis_id": null,
       "sleeper_id": null,
@@ -7857,7 +7857,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "17076",
+      "name": "Isaiah Bond",
       "position": "WR",
       "gsis_id": null,
       "sleeper_id": null,
@@ -7883,7 +7883,7 @@
       "sources": ["ESPN", "FFToday"]
     },
     {
-      "name": "17078",
+      "name": "Jack Bech",
       "position": "WR",
       "gsis_id": null,
       "sleeper_id": null,
@@ -7909,7 +7909,7 @@
       "sources": ["ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "17079",
+      "name": "Tez Johnson",
       "position": "WR",
       "gsis_id": null,
       "sleeper_id": null,
@@ -7935,7 +7935,7 @@
       "sources": "ESPN"
     },
     {
-      "name": "17080",
+      "name": "Jaylin Noel",
       "position": "WR",
       "gsis_id": null,
       "sleeper_id": null,
@@ -7961,7 +7961,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "17081",
+      "name": "Emeka Egbuka",
       "position": "WR",
       "gsis_id": null,
       "sleeper_id": null,
@@ -7987,7 +7987,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "17082",
+      "name": "Pat Bryant",
       "position": "WR",
       "gsis_id": null,
       "sleeper_id": null,
@@ -8013,7 +8013,7 @@
       "sources": ["ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "17083",
+      "name": "Jayden Higgins",
       "position": "WR",
       "gsis_id": null,
       "sleeper_id": null,
@@ -8033,7 +8033,7 @@
       "sources": "WalterFootball"
     },
     {
-      "name": "17086",
+      "name": "Jalen Royals",
       "position": "WR",
       "gsis_id": null,
       "sleeper_id": null,
@@ -8053,7 +8053,7 @@
       "sources": "ESPN"
     },
     {
-      "name": "17096",
+      "name": "Savion Williams",
       "position": "WR",
       "gsis_id": null,
       "sleeper_id": null,
@@ -8079,7 +8079,7 @@
       "sources": ["ESPN", "FFToday"]
     },
     {
-      "name": "17097",
+      "name": "Tai Felton",
       "position": "WR",
       "gsis_id": null,
       "sleeper_id": null,
@@ -8105,7 +8105,7 @@
       "sources": ["ESPN", "FFToday"]
     },
     {
-      "name": "17098",
+      "name": "Tory Horton",
       "position": "WR",
       "gsis_id": null,
       "sleeper_id": null,
@@ -8131,7 +8131,7 @@
       "sources": ["CBS", "ESPN", "FFToday"]
     },
     {
-      "name": "17134",
+      "name": "Kyle Williams",
       "position": "WR",
       "gsis_id": null,
       "sleeper_id": null,
@@ -8157,7 +8157,7 @@
       "sources": "ESPN"
     },
     {
-      "name": "17157",
+      "name": "Isaac TeSlaa",
       "position": "WR",
       "gsis_id": null,
       "sleeper_id": null,
@@ -8183,7 +8183,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "17171",
+      "name": "Chimere Dike",
       "position": "WR",
       "gsis_id": null,
       "sleeper_id": null,
@@ -8209,7 +8209,7 @@
       "sources": ["CBS", "ESPN", "FFToday"]
     },
     {
-      "name": "17184",
+      "name": "Jaylin Lane",
       "position": "WR",
       "gsis_id": null,
       "sleeper_id": null,
@@ -8229,7 +8229,7 @@
       "sources": "ESPN"
     },
     {
-      "name": "17205",
+      "name": "KeAndre Lambert-Smith",
       "position": "WR",
       "gsis_id": null,
       "sleeper_id": null,
@@ -8255,7 +8255,7 @@
       "sources": ["ESPN", "FFToday"]
     },
     {
-      "name": "17234",
+      "name": "Jimmy Horn",
       "position": "WR",
       "gsis_id": null,
       "sleeper_id": null,
@@ -8281,7 +8281,7 @@
       "sources": "ESPN"
     },
     {
-      "name": "17254",
+      "name": "Konata Mumpfield",
       "position": "WR",
       "gsis_id": null,
       "sleeper_id": null,
@@ -8307,7 +8307,7 @@
       "sources": ["ESPN", "FFToday"]
     },
     {
-      "name": "17269",
+      "name": "Efton Chism",
       "position": "WR",
       "gsis_id": null,
       "sleeper_id": null,
@@ -8327,7 +8327,7 @@
       "sources": "ESPN"
     },
     {
-      "name": "17353",
+      "name": "Jahdae Walker",
       "position": "WR",
       "gsis_id": null,
       "sleeper_id": null,
@@ -8353,7 +8353,7 @@
       "sources": ["CBS", "FFToday"]
     },
     {
-      "name": "17497",
+      "name": "Carnell Tate",
       "position": "WR",
       "gsis_id": null,
       "sleeper_id": null,
@@ -8379,7 +8379,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "17498",
+      "name": "Jordyn Tyson",
       "position": "WR",
       "gsis_id": null,
       "sleeper_id": null,
@@ -8405,7 +8405,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "17499",
+      "name": "Makai Lemon",
       "position": "WR",
       "gsis_id": null,
       "sleeper_id": null,
@@ -8431,7 +8431,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "17500",
+      "name": "Denzel Boston",
       "position": "WR",
       "gsis_id": null,
       "sleeper_id": null,
@@ -8457,7 +8457,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "17501",
+      "name": "KC Concepcion",
       "position": "WR",
       "gsis_id": null,
       "sleeper_id": null,
@@ -8483,7 +8483,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "17502",
+      "name": "Omar Cooper Jr.",
       "position": "WR",
       "gsis_id": null,
       "sleeper_id": null,
@@ -8509,7 +8509,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "17503",
+      "name": "Germie Bernard",
       "position": "WR",
       "gsis_id": null,
       "sleeper_id": null,
@@ -8535,7 +8535,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "17505",
+      "name": "Elijah Sarratt",
       "position": "WR",
       "gsis_id": null,
       "sleeper_id": null,
@@ -8555,7 +8555,7 @@
       "sources": "ESPN"
     },
     {
-      "name": "17506",
+      "name": "Chris Bell",
       "position": "WR",
       "gsis_id": null,
       "sleeper_id": null,
@@ -8581,7 +8581,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "17507",
+      "name": "Zachariah Branch",
       "position": "WR",
       "gsis_id": null,
       "sleeper_id": null,
@@ -8607,7 +8607,7 @@
       "sources": ["ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "17508",
+      "name": "Skyler Bell",
       "position": "WR",
       "gsis_id": null,
       "sleeper_id": null,
@@ -8627,7 +8627,7 @@
       "sources": "ESPN"
     },
     {
-      "name": "17511",
+      "name": "Malachi Fields",
       "position": "WR",
       "gsis_id": null,
       "sleeper_id": null,
@@ -8653,7 +8653,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "17512",
+      "name": "Antonio Williams",
       "position": "WR",
       "gsis_id": null,
       "sleeper_id": null,
@@ -8679,7 +8679,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "17514",
+      "name": "De'Zhaun Stribling",
       "position": "WR",
       "gsis_id": null,
       "sleeper_id": null,
@@ -8705,7 +8705,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "17517",
+      "name": "Ja'Kobi Lane",
       "position": "WR",
       "gsis_id": null,
       "sleeper_id": null,
@@ -8731,7 +8731,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "17518",
+      "name": "Cyrus Allen",
       "position": "WR",
       "gsis_id": null,
       "sleeper_id": null,
@@ -8757,7 +8757,7 @@
       "sources": ["ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "17519",
+      "name": "Bryce Lance",
       "position": "WR",
       "gsis_id": null,
       "sleeper_id": null,
@@ -8783,7 +8783,7 @@
       "sources": ["CBS", "ESPN", "WalterFootball"]
     },
     {
-      "name": "17520",
+      "name": "Ted Hurst",
       "position": "WR",
       "gsis_id": null,
       "sleeper_id": null,
@@ -8809,33 +8809,27 @@
       "sources": ["CBS", "ESPN", "FFToday"]
     },
     {
-      "name": "17521",
+      "name": "Zavion Thomas",
       "position": "WR",
       "gsis_id": null,
       "sleeper_id": null,
       "espn_id": null,
       "consensus_stats": {
-        "rec": 28,
-        "rec_tds": 2.3333,
-        "rec_yds": 412.3333,
-        "rush_att": 3,
-        "rush_tds": 0,
-        "rush_yds": 13
+        "rec": 25,
+        "rec_tds": 2,
+        "rec_yds": 392
       },
       "stat_source_counts": {
-        "rec": 3,
-        "rec_tds": 3,
-        "rec_yds": 3,
-        "rush_att": 1,
-        "rush_tds": 1,
-        "rush_yds": 1
+        "rec": 2,
+        "rec_tds": 2,
+        "rec_yds": 2
       },
-      "default_scoring_points": 53.6667,
-      "source_count": 3,
-      "sources": ["CBS", "ESPN", "WalterFootball"]
+      "default_scoring_points": 51.2,
+      "source_count": 2,
+      "sources": ["ESPN", "WalterFootball"]
     },
     {
-      "name": "17528",
+      "name": "Kevin Coleman",
       "position": "WR",
       "gsis_id": null,
       "sleeper_id": null,
@@ -8855,7 +8849,7 @@
       "sources": "ESPN"
     },
     {
-      "name": "17529",
+      "name": "Brenen Thompson",
       "position": "WR",
       "gsis_id": null,
       "sleeper_id": null,
@@ -8881,7 +8875,7 @@
       "sources": "ESPN"
     },
     {
-      "name": "17541",
+      "name": "Barion Brown",
       "position": "WR",
       "gsis_id": null,
       "sleeper_id": null,
@@ -8901,7 +8895,7 @@
       "sources": "ESPN"
     },
     {
-      "name": "17542",
+      "name": "Colbie Young",
       "position": "WR",
       "gsis_id": null,
       "sleeper_id": null,
@@ -8921,7 +8915,7 @@
       "sources": "ESPN"
     },
     {
-      "name": "17599",
+      "name": "Caleb Douglas",
       "position": "WR",
       "gsis_id": null,
       "sleeper_id": null,
@@ -8947,7 +8941,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "17706",
+      "name": "Malik Benson",
       "position": "WR",
       "gsis_id": null,
       "sleeper_id": null,
@@ -8973,7 +8967,7 @@
       "sources": ["CBS", "ESPN", "FFToday"]
     },
     {
-      "name": "17752",
+      "name": "Dohnte Meyers",
       "position": "WR",
       "gsis_id": null,
       "sleeper_id": null,
@@ -8993,7 +8987,7 @@
       "sources": "ESPN"
     },
     {
-      "name": "11244",
+      "name": "Travis Kelce",
       "position": "TE",
       "gsis_id": null,
       "sleeper_id": null,
@@ -9013,7 +9007,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "12263",
+      "name": "Darren Waller",
       "position": "TE",
       "gsis_id": null,
       "sleeper_id": null,
@@ -9033,7 +9027,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "12676",
+      "name": "Hunter Henry",
       "position": "TE",
       "gsis_id": null,
       "sleeper_id": null,
@@ -9053,7 +9047,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "12677",
+      "name": "Austin Hooper",
       "position": "TE",
       "gsis_id": null,
       "sleeper_id": null,
@@ -9073,7 +9067,7 @@
       "sources": ["CBS", "ESPN", "FFToday"]
     },
     {
-      "name": "12678",
+      "name": "Tyler Higbee",
       "position": "TE",
       "gsis_id": null,
       "sleeper_id": null,
@@ -9093,7 +9087,7 @@
       "sources": ["CBS", "ESPN", "FFToday"]
     },
     {
-      "name": "12955",
+      "name": "Chris Manhertz",
       "position": "TE",
       "gsis_id": null,
       "sleeper_id": null,
@@ -9113,7 +9107,7 @@
       "sources": "CBS"
     },
     {
-      "name": "13189",
+      "name": "Evan Engram",
       "position": "TE",
       "gsis_id": null,
       "sleeper_id": null,
@@ -9133,7 +9127,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "13192",
+      "name": "David Njoku",
       "position": "TE",
       "gsis_id": null,
       "sleeper_id": null,
@@ -9153,7 +9147,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "13193",
+      "name": "Jonnu Smith",
       "position": "TE",
       "gsis_id": null,
       "sleeper_id": null,
@@ -9179,7 +9173,7 @@
       "sources": ["CBS", "ESPN", "WalterFootball"]
     },
     {
-      "name": "13299",
+      "name": "George Kittle",
       "position": "TE",
       "gsis_id": null,
       "sleeper_id": null,
@@ -9199,7 +9193,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "13671",
+      "name": "Mark Andrews",
       "position": "TE",
       "gsis_id": null,
       "sleeper_id": null,
@@ -9225,7 +9219,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "13672",
+      "name": "Mike Gesicki",
       "position": "TE",
       "gsis_id": null,
       "sleeper_id": null,
@@ -9245,7 +9239,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "13674",
+      "name": "Dallas Goedert",
       "position": "TE",
       "gsis_id": null,
       "sleeper_id": null,
@@ -9265,7 +9259,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "13676",
+      "name": "Durham Smythe",
       "position": "TE",
       "gsis_id": null,
       "sleeper_id": null,
@@ -9285,7 +9279,7 @@
       "sources": "CBS"
     },
     {
-      "name": "13678",
+      "name": "Ian Thomas",
       "position": "TE",
       "gsis_id": null,
       "sleeper_id": null,
@@ -9305,7 +9299,7 @@
       "sources": "CBS"
     },
     {
-      "name": "13772",
+      "name": "Dalton Schultz",
       "position": "TE",
       "gsis_id": null,
       "sleeper_id": null,
@@ -9325,7 +9319,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "14137",
+      "name": "Noah Fant",
       "position": "TE",
       "gsis_id": null,
       "sleeper_id": null,
@@ -9345,7 +9339,7 @@
       "sources": ["CBS", "ESPN", "FFToday"]
     },
     {
-      "name": "14138",
+      "name": "T.J. Hockenson",
       "position": "TE",
       "gsis_id": null,
       "sleeper_id": null,
@@ -9365,7 +9359,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "14143",
+      "name": "Dawson Knox",
       "position": "TE",
       "gsis_id": null,
       "sleeper_id": null,
@@ -9385,7 +9379,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "14146",
+      "name": "Drew Sample",
       "position": "TE",
       "gsis_id": null,
       "sleeper_id": null,
@@ -9405,7 +9399,7 @@
       "sources": ["CBS", "ESPN"]
     },
     {
-      "name": "14209",
+      "name": "Josh Oliver",
       "position": "TE",
       "gsis_id": null,
       "sleeper_id": null,
@@ -9425,7 +9419,7 @@
       "sources": ["CBS", "ESPN", "FFToday"]
     },
     {
-      "name": "14239",
+      "name": "Foster Moreau",
       "position": "TE",
       "gsis_id": null,
       "sleeper_id": null,
@@ -9445,7 +9439,7 @@
       "sources": "CBS"
     },
     {
-      "name": "14861",
+      "name": "Juwan Johnson",
       "position": "TE",
       "gsis_id": null,
       "sleeper_id": null,
@@ -9465,7 +9459,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "14867",
+      "name": "Cole Kmet",
       "position": "TE",
       "gsis_id": null,
       "sleeper_id": null,
@@ -9485,7 +9479,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "14870",
+      "name": "Adam Trautman",
       "position": "TE",
       "gsis_id": null,
       "sleeper_id": null,
@@ -9505,7 +9499,7 @@
       "sources": ["CBS", "ESPN", "FFToday"]
     },
     {
-      "name": "14871",
+      "name": "Colby Parkinson",
       "position": "TE",
       "gsis_id": null,
       "sleeper_id": null,
@@ -9525,7 +9519,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "14984",
+      "name": "Charlie Woerner",
       "position": "TE",
       "gsis_id": null,
       "sleeper_id": null,
@@ -9545,7 +9539,7 @@
       "sources": "CBS"
     },
     {
-      "name": "15329",
+      "name": "Kyle Pitts",
       "position": "TE",
       "gsis_id": null,
       "sleeper_id": null,
@@ -9565,7 +9559,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "15331",
+      "name": "Pat Freiermuth",
       "position": "TE",
       "gsis_id": null,
       "sleeper_id": null,
@@ -9585,7 +9579,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "15332",
+      "name": "Tommy Tremble",
       "position": "TE",
       "gsis_id": null,
       "sleeper_id": null,
@@ -9605,7 +9599,7 @@
       "sources": ["CBS", "ESPN", "FFToday"]
     },
     {
-      "name": "15334",
+      "name": "Hunter Long",
       "position": "TE",
       "gsis_id": null,
       "sleeper_id": null,
@@ -9625,7 +9619,7 @@
       "sources": "CBS"
     },
     {
-      "name": "15337",
+      "name": "Noah Gray",
       "position": "TE",
       "gsis_id": null,
       "sleeper_id": null,
@@ -9645,7 +9639,7 @@
       "sources": ["CBS", "ESPN", "FFToday"]
     },
     {
-      "name": "15344",
+      "name": "John Bates",
       "position": "TE",
       "gsis_id": null,
       "sleeper_id": null,
@@ -9665,7 +9659,7 @@
       "sources": "CBS"
     },
     {
-      "name": "15419",
+      "name": "Kylen Granson",
       "position": "TE",
       "gsis_id": null,
       "sleeper_id": null,
@@ -9685,7 +9679,7 @@
       "sources": "CBS"
     },
     {
-      "name": "15626",
+      "name": "Brock Wright",
       "position": "TE",
       "gsis_id": null,
       "sleeper_id": null,
@@ -9705,7 +9699,7 @@
       "sources": "CBS"
     },
     {
-      "name": "15794",
+      "name": "Trey McBride",
       "position": "TE",
       "gsis_id": null,
       "sleeper_id": null,
@@ -9725,7 +9719,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "15795",
+      "name": "Charlie Kolar",
       "position": "TE",
       "gsis_id": null,
       "sleeper_id": null,
@@ -9745,7 +9739,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "15796",
+      "name": "Jeremy Ruckert",
       "position": "TE",
       "gsis_id": null,
       "sleeper_id": null,
@@ -9765,7 +9759,7 @@
       "sources": "CBS"
     },
     {
-      "name": "15797",
+      "name": "Greg Dulcich",
       "position": "TE",
       "gsis_id": null,
       "sleeper_id": null,
@@ -9785,7 +9779,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "15798",
+      "name": "Isaiah Likely",
       "position": "TE",
       "gsis_id": null,
       "sleeper_id": null,
@@ -9805,7 +9799,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "15799",
+      "name": "Jake Ferguson",
       "position": "TE",
       "gsis_id": null,
       "sleeper_id": null,
@@ -9825,7 +9819,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "15800",
+      "name": "Connor Heyward",
       "position": "TE",
       "gsis_id": null,
       "sleeper_id": null,
@@ -9845,7 +9839,7 @@
       "sources": []
     },
     {
-      "name": "15802",
+      "name": "Cade Otton",
       "position": "TE",
       "gsis_id": null,
       "sleeper_id": null,
@@ -9865,7 +9859,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "15804",
+      "name": "Grant Calcaterra",
       "position": "TE",
       "gsis_id": null,
       "sleeper_id": null,
@@ -9885,7 +9879,7 @@
       "sources": "CBS"
     },
     {
-      "name": "15873",
+      "name": "Daniel Bellinger",
       "position": "TE",
       "gsis_id": null,
       "sleeper_id": null,
@@ -9905,7 +9899,7 @@
       "sources": "CBS"
     },
     {
-      "name": "15889",
+      "name": "Chigoziem Okonkwo",
       "position": "TE",
       "gsis_id": null,
       "sleeper_id": null,
@@ -9925,7 +9919,7 @@
       "sources": ["CBS", "ESPN", "FFToday"]
     },
     {
-      "name": "15916",
+      "name": "Drew Ogletree",
       "position": "TE",
       "gsis_id": null,
       "sleeper_id": null,
@@ -9945,7 +9939,7 @@
       "sources": "CBS"
     },
     {
-      "name": "15929",
+      "name": "Ko Kieft",
       "position": "TE",
       "gsis_id": null,
       "sleeper_id": null,
@@ -9965,7 +9959,7 @@
       "sources": "CBS"
     },
     {
-      "name": "16036",
+      "name": "Jake Tonges",
       "position": "TE",
       "gsis_id": null,
       "sleeper_id": null,
@@ -9985,7 +9979,7 @@
       "sources": ["CBS", "ESPN", "WalterFootball"]
     },
     {
-      "name": "16212",
+      "name": "Michael Mayer",
       "position": "TE",
       "gsis_id": null,
       "sleeper_id": null,
@@ -10005,7 +9999,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "16213",
+      "name": "Dalton Kincaid",
       "position": "TE",
       "gsis_id": null,
       "sleeper_id": null,
@@ -10025,7 +10019,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "16214",
+      "name": "Sam LaPorta",
       "position": "TE",
       "gsis_id": null,
       "sleeper_id": null,
@@ -10045,7 +10039,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "16215",
+      "name": "Luke Musgrave",
       "position": "TE",
       "gsis_id": null,
       "sleeper_id": null,
@@ -10065,7 +10059,7 @@
       "sources": ["CBS", "FFToday"]
     },
     {
-      "name": "16216",
+      "name": "Darnell Washington",
       "position": "TE",
       "gsis_id": null,
       "sleeper_id": null,
@@ -10085,7 +10079,7 @@
       "sources": ["CBS", "ESPN", "FFToday"]
     },
     {
-      "name": "16218",
+      "name": "Payne Durham",
       "position": "TE",
       "gsis_id": null,
       "sleeper_id": null,
@@ -10105,7 +10099,7 @@
       "sources": "CBS"
     },
     {
-      "name": "16219",
+      "name": "Davis Allen",
       "position": "TE",
       "gsis_id": null,
       "sleeper_id": null,
@@ -10125,7 +10119,7 @@
       "sources": "CBS"
     },
     {
-      "name": "16220",
+      "name": "Will Mallory",
       "position": "TE",
       "gsis_id": null,
       "sleeper_id": null,
@@ -10145,7 +10139,7 @@
       "sources": "CBS"
     },
     {
-      "name": "16221",
+      "name": "Luke Schoonmaker",
       "position": "TE",
       "gsis_id": null,
       "sleeper_id": null,
@@ -10165,7 +10159,7 @@
       "sources": "CBS"
     },
     {
-      "name": "16222",
+      "name": "Tucker Kraft",
       "position": "TE",
       "gsis_id": null,
       "sleeper_id": null,
@@ -10191,7 +10185,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "16269",
+      "name": "Brenton Strange",
       "position": "TE",
       "gsis_id": null,
       "sleeper_id": null,
@@ -10211,7 +10205,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "16312",
+      "name": "Josh Whyle",
       "position": "TE",
       "gsis_id": null,
       "sleeper_id": null,
@@ -10231,7 +10225,7 @@
       "sources": "CBS"
     },
     {
-      "name": "16333",
+      "name": "Elijah Higgins",
       "position": "TE",
       "gsis_id": null,
       "sleeper_id": null,
@@ -10251,7 +10245,7 @@
       "sources": ["CBS", "ESPN"]
     },
     {
-      "name": "16474",
+      "name": "Nate Adkins",
       "position": "TE",
       "gsis_id": null,
       "sleeper_id": null,
@@ -10271,7 +10265,7 @@
       "sources": "CBS"
     },
     {
-      "name": "16641",
+      "name": "Brock Bowers",
       "position": "TE",
       "gsis_id": null,
       "sleeper_id": null,
@@ -10297,7 +10291,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "16642",
+      "name": "Cade Stover",
       "position": "TE",
       "gsis_id": null,
       "sleeper_id": null,
@@ -10323,7 +10317,7 @@
       "sources": ["CBS", "ESPN"]
     },
     {
-      "name": "16643",
+      "name": "Ja'Tavion Sanders",
       "position": "TE",
       "gsis_id": null,
       "sleeper_id": null,
@@ -10343,7 +10337,7 @@
       "sources": ["CBS", "ESPN"]
     },
     {
-      "name": "16644",
+      "name": "Ben Sinnott",
       "position": "TE",
       "gsis_id": null,
       "sleeper_id": null,
@@ -10363,7 +10357,7 @@
       "sources": "CBS"
     },
     {
-      "name": "16645",
+      "name": "Erick All",
       "position": "TE",
       "gsis_id": null,
       "sleeper_id": null,
@@ -10383,7 +10377,7 @@
       "sources": ["CBS", "ESPN"]
     },
     {
-      "name": "16647",
+      "name": "Brevyn Spann-Ford",
       "position": "TE",
       "gsis_id": null,
       "sleeper_id": null,
@@ -10403,7 +10397,7 @@
       "sources": "CBS"
     },
     {
-      "name": "16648",
+      "name": "Jared Wiley",
       "position": "TE",
       "gsis_id": null,
       "sleeper_id": null,
@@ -10423,7 +10417,7 @@
       "sources": "CBS"
     },
     {
-      "name": "16649",
+      "name": "Theo Johnson",
       "position": "TE",
       "gsis_id": null,
       "sleeper_id": null,
@@ -10443,7 +10437,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "16723",
+      "name": "AJ Barner",
       "position": "TE",
       "gsis_id": null,
       "sleeper_id": null,
@@ -10469,7 +10463,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "17099",
+      "name": "Oronde Gadsden",
       "position": "TE",
       "gsis_id": null,
       "sleeper_id": null,
@@ -10489,7 +10483,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "17102",
+      "name": "Tyler Warren",
       "position": "TE",
       "gsis_id": null,
       "sleeper_id": null,
@@ -10515,7 +10509,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "17103",
+      "name": "Harold Fannin",
       "position": "TE",
       "gsis_id": null,
       "sleeper_id": null,
@@ -10541,7 +10535,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "17104",
+      "name": "Colston Loveland",
       "position": "TE",
       "gsis_id": null,
       "sleeper_id": null,
@@ -10561,7 +10555,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "17105",
+      "name": "Gunnar Helm",
       "position": "TE",
       "gsis_id": null,
       "sleeper_id": null,
@@ -10581,7 +10575,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "17106",
+      "name": "Mason Taylor",
       "position": "TE",
       "gsis_id": null,
       "sleeper_id": null,
@@ -10601,7 +10595,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "17107",
+      "name": "Terrance Ferguson",
       "position": "TE",
       "gsis_id": null,
       "sleeper_id": null,
@@ -10621,7 +10615,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "17108",
+      "name": "Elijah Arroyo",
       "position": "TE",
       "gsis_id": null,
       "sleeper_id": null,
@@ -10641,7 +10635,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "17109",
+      "name": "Mitchell Evans",
       "position": "TE",
       "gsis_id": null,
       "sleeper_id": null,
@@ -10661,7 +10655,7 @@
       "sources": "CBS"
     },
     {
-      "name": "17213",
+      "name": "Jackson Hawes",
       "position": "TE",
       "gsis_id": null,
       "sleeper_id": null,
@@ -10681,7 +10675,7 @@
       "sources": "CBS"
     },
     {
-      "name": "17243",
+      "name": "Thomas Fidone",
       "position": "TE",
       "gsis_id": null,
       "sleeper_id": null,
@@ -10701,7 +10695,7 @@
       "sources": "CBS"
     },
     {
-      "name": "17543",
+      "name": "Kenyon Sadiq",
       "position": "TE",
       "gsis_id": null,
       "sleeper_id": null,
@@ -10721,7 +10715,7 @@
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
     {
-      "name": "17544",
+      "name": "Eli Stowers",
       "position": "TE",
       "gsis_id": null,
       "sleeper_id": null,
@@ -10747,7 +10741,7 @@
       "sources": ["CBS", "ESPN", "WalterFootball"]
     },
     {
-      "name": "17545",
+      "name": "Jack Endries",
       "position": "TE",
       "gsis_id": null,
       "sleeper_id": null,
@@ -10767,7 +10761,7 @@
       "sources": "CBS"
     },
     {
-      "name": "17547",
+      "name": "Max Klare",
       "position": "TE",
       "gsis_id": null,
       "sleeper_id": null,
@@ -10787,7 +10781,7 @@
       "sources": ["CBS", "ESPN"]
     },
     {
-      "name": "17548",
+      "name": "Justin Joly",
       "position": "TE",
       "gsis_id": null,
       "sleeper_id": null,
@@ -10807,7 +10801,7 @@
       "sources": "CBS"
     },
     {
-      "name": "17549",
+      "name": "Sam Roush",
       "position": "TE",
       "gsis_id": null,
       "sleeper_id": null,
@@ -10827,7 +10821,7 @@
       "sources": "CBS"
     },
     {
-      "name": "17567",
+      "name": "Oscar Delp",
       "position": "TE",
       "gsis_id": null,
       "sleeper_id": null,
@@ -10847,7 +10841,7 @@
       "sources": "CBS"
     },
     {
-      "name": "17591",
+      "name": "Nate Boerkircher",
       "position": "TE",
       "gsis_id": null,
       "sleeper_id": null,
@@ -10867,7 +10861,7 @@
       "sources": "CBS"
     },
     {
-      "name": "17593",
+      "name": "Marlin Klein",
       "position": "TE",
       "gsis_id": null,
       "sleeper_id": null,
@@ -10887,7 +10881,7 @@
       "sources": "CBS"
     },
     {
-      "name": "17605",
+      "name": "Will Kacmarek",
       "position": "TE",
       "gsis_id": null,
       "sleeper_id": null,
@@ -10907,7 +10901,7 @@
       "sources": ["CBS", "ESPN"]
     },
     {
-      "name": "17607",
+      "name": "Eli Raridon",
       "position": "TE",
       "gsis_id": null,
       "sleeper_id": null,
@@ -10927,7 +10921,7 @@
       "sources": ["CBS", "ESPN"]
     },
     {
-      "name": "17627",
+      "name": "Matthew Hibner",
       "position": "TE",
       "gsis_id": null,
       "sleeper_id": null,
@@ -10947,7 +10941,7 @@
       "sources": "CBS"
     },
     {
-      "name": "17644",
+      "name": "Tanner Koziol",
       "position": "TE",
       "gsis_id": null,
       "sleeper_id": null,
@@ -10967,7 +10961,7 @@
       "sources": "CBS"
     },
     {
-      "name": "17651",
+      "name": "Josh Cuevas",
       "position": "TE",
       "gsis_id": null,
       "sleeper_id": null,
@@ -10987,7 +10981,7 @@
       "sources": "CBS"
     },
     {
-      "name": "17655",
+      "name": "Seydou Traore",
       "position": "TE",
       "gsis_id": null,
       "sleeper_id": null,
@@ -11007,7 +11001,7 @@
       "sources": "CBS"
     },
     {
-      "name": "17660",
+      "name": "Bauer Sharp",
       "position": "TE",
       "gsis_id": null,
       "sleeper_id": null,
@@ -11027,7 +11021,7 @@
       "sources": "CBS"
     },
     {
-      "name": "17699",
+      "name": "Dallen Bentley",
       "position": "TE",
       "gsis_id": null,
       "sleeper_id": null,
@@ -11047,7 +11041,7 @@
       "sources": "CBS"
     },
     {
-      "name": "0501",
+      "name": "Buffalo Bills",
       "position": "DST",
       "gsis_id": null,
       "sleeper_id": null,
@@ -11073,7 +11067,7 @@
       "sources": ["CBS", "ESPN", "FFToday"]
     },
     {
-      "name": "0502",
+      "name": "Indianapolis Colts",
       "position": "DST",
       "gsis_id": null,
       "sleeper_id": null,
@@ -11099,7 +11093,7 @@
       "sources": ["CBS", "ESPN", "FFToday"]
     },
     {
-      "name": "0503",
+      "name": "Miami Dolphins",
       "position": "DST",
       "gsis_id": null,
       "sleeper_id": null,
@@ -11125,7 +11119,7 @@
       "sources": ["CBS", "ESPN", "FFToday"]
     },
     {
-      "name": "0504",
+      "name": "New England Patriots",
       "position": "DST",
       "gsis_id": null,
       "sleeper_id": null,
@@ -11151,7 +11145,7 @@
       "sources": ["CBS", "ESPN", "FFToday"]
     },
     {
-      "name": "0505",
+      "name": "New York Jets",
       "position": "DST",
       "gsis_id": null,
       "sleeper_id": null,
@@ -11177,7 +11171,7 @@
       "sources": ["CBS", "ESPN", "FFToday"]
     },
     {
-      "name": "0506",
+      "name": "Cincinnati Bengals",
       "position": "DST",
       "gsis_id": null,
       "sleeper_id": null,
@@ -11203,7 +11197,7 @@
       "sources": ["CBS", "ESPN", "FFToday"]
     },
     {
-      "name": "0507",
+      "name": "Cleveland Browns",
       "position": "DST",
       "gsis_id": null,
       "sleeper_id": null,
@@ -11229,7 +11223,7 @@
       "sources": ["CBS", "ESPN", "FFToday"]
     },
     {
-      "name": "0508",
+      "name": "Tennessee Titans",
       "position": "DST",
       "gsis_id": null,
       "sleeper_id": null,
@@ -11255,7 +11249,7 @@
       "sources": ["CBS", "ESPN", "FFToday"]
     },
     {
-      "name": "0509",
+      "name": "Jacksonville Jaguars",
       "position": "DST",
       "gsis_id": null,
       "sleeper_id": null,
@@ -11281,7 +11275,7 @@
       "sources": ["CBS", "ESPN", "FFToday"]
     },
     {
-      "name": "0510",
+      "name": "Pittsburgh Steelers",
       "position": "DST",
       "gsis_id": null,
       "sleeper_id": null,
@@ -11307,7 +11301,7 @@
       "sources": ["CBS", "ESPN", "FFToday"]
     },
     {
-      "name": "0511",
+      "name": "Denver Broncos",
       "position": "DST",
       "gsis_id": null,
       "sleeper_id": null,
@@ -11333,7 +11327,7 @@
       "sources": ["CBS", "ESPN", "FFToday"]
     },
     {
-      "name": "0512",
+      "name": "Kansas City Chiefs",
       "position": "DST",
       "gsis_id": null,
       "sleeper_id": null,
@@ -11359,7 +11353,7 @@
       "sources": ["CBS", "ESPN", "FFToday"]
     },
     {
-      "name": "0513",
+      "name": "Las Vegas Raiders",
       "position": "DST",
       "gsis_id": null,
       "sleeper_id": null,
@@ -11385,7 +11379,7 @@
       "sources": ["CBS", "ESPN", "FFToday"]
     },
     {
-      "name": "0514",
+      "name": "Los Angeles Chargers",
       "position": "DST",
       "gsis_id": null,
       "sleeper_id": null,
@@ -11411,7 +11405,7 @@
       "sources": ["CBS", "ESPN", "FFToday"]
     },
     {
-      "name": "0515",
+      "name": "Seattle Seahawks",
       "position": "DST",
       "gsis_id": null,
       "sleeper_id": null,
@@ -11437,7 +11431,7 @@
       "sources": ["CBS", "ESPN", "FFToday"]
     },
     {
-      "name": "0516",
+      "name": "Dallas Cowboys",
       "position": "DST",
       "gsis_id": null,
       "sleeper_id": null,
@@ -11463,7 +11457,7 @@
       "sources": ["CBS", "ESPN", "FFToday"]
     },
     {
-      "name": "0517",
+      "name": "New York Giants",
       "position": "DST",
       "gsis_id": null,
       "sleeper_id": null,
@@ -11489,7 +11483,7 @@
       "sources": ["CBS", "ESPN", "FFToday"]
     },
     {
-      "name": "0518",
+      "name": "Philadelphia Eagles",
       "position": "DST",
       "gsis_id": null,
       "sleeper_id": null,
@@ -11515,7 +11509,7 @@
       "sources": ["CBS", "ESPN", "FFToday"]
     },
     {
-      "name": "0519",
+      "name": "Arizona Cardinals",
       "position": "DST",
       "gsis_id": null,
       "sleeper_id": null,
@@ -11541,7 +11535,7 @@
       "sources": ["CBS", "ESPN", "FFToday"]
     },
     {
-      "name": "0520",
+      "name": "Washington Commanders",
       "position": "DST",
       "gsis_id": null,
       "sleeper_id": null,
@@ -11567,7 +11561,7 @@
       "sources": ["CBS", "ESPN", "FFToday"]
     },
     {
-      "name": "0521",
+      "name": "Chicago Bears",
       "position": "DST",
       "gsis_id": null,
       "sleeper_id": null,
@@ -11593,7 +11587,7 @@
       "sources": ["CBS", "ESPN", "FFToday"]
     },
     {
-      "name": "0522",
+      "name": "Detroit Lions",
       "position": "DST",
       "gsis_id": null,
       "sleeper_id": null,
@@ -11619,7 +11613,7 @@
       "sources": ["CBS", "ESPN", "FFToday"]
     },
     {
-      "name": "0523",
+      "name": "Green Bay Packers",
       "position": "DST",
       "gsis_id": null,
       "sleeper_id": null,
@@ -11645,7 +11639,7 @@
       "sources": ["CBS", "ESPN", "FFToday"]
     },
     {
-      "name": "0524",
+      "name": "Minnesota Vikings",
       "position": "DST",
       "gsis_id": null,
       "sleeper_id": null,
@@ -11671,7 +11665,7 @@
       "sources": ["CBS", "ESPN", "FFToday"]
     },
     {
-      "name": "0525",
+      "name": "Tampa Bay Buccaneers",
       "position": "DST",
       "gsis_id": null,
       "sleeper_id": null,
@@ -11697,7 +11691,7 @@
       "sources": ["CBS", "ESPN", "FFToday"]
     },
     {
-      "name": "0526",
+      "name": "Atlanta Falcons",
       "position": "DST",
       "gsis_id": null,
       "sleeper_id": null,
@@ -11723,7 +11717,7 @@
       "sources": ["CBS", "ESPN", "FFToday"]
     },
     {
-      "name": "0527",
+      "name": "Carolina Panthers",
       "position": "DST",
       "gsis_id": null,
       "sleeper_id": null,
@@ -11749,7 +11743,7 @@
       "sources": ["CBS", "ESPN", "FFToday"]
     },
     {
-      "name": "0528",
+      "name": "Los Angeles Rams",
       "position": "DST",
       "gsis_id": null,
       "sleeper_id": null,
@@ -11775,7 +11769,7 @@
       "sources": ["CBS", "ESPN", "FFToday"]
     },
     {
-      "name": "0529",
+      "name": "New Orleans Saints",
       "position": "DST",
       "gsis_id": null,
       "sleeper_id": null,
@@ -11801,7 +11795,7 @@
       "sources": ["CBS", "ESPN", "FFToday"]
     },
     {
-      "name": "0530",
+      "name": "San Francisco 49ers",
       "position": "DST",
       "gsis_id": null,
       "sleeper_id": null,
@@ -11827,7 +11821,7 @@
       "sources": ["CBS", "ESPN", "FFToday"]
     },
     {
-      "name": "0531",
+      "name": "Baltimore Ravens",
       "position": "DST",
       "gsis_id": null,
       "sleeper_id": null,
@@ -11853,7 +11847,7 @@
       "sources": ["CBS", "ESPN", "FFToday"]
     },
     {
-      "name": "0532",
+      "name": "Houston Texans",
       "position": "DST",
       "gsis_id": null,
       "sleeper_id": null,
