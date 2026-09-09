@@ -1,7 +1,7 @@
 {
   "schema_version": "2.0",
   "season": 2026,
-  "generated_at": "2026-09-09 23:40:04 UTC",
+  "generated_at": "2026-09-09 23:52:33 UTC",
   "source": "ffanalytics",
   "projection_type": "season_projection_stats",
   "scoring_basis": "unscored source-stat consensus; score at request time with exact league rules",
@@ -5168,7 +5168,7 @@
         "pass_yds": 0,
         "rec": 8.116,
         "rec_tds": 0.2436,
-        "rec_yds": 56.394,
+        "rec_yds": 56.594,
         "rush_att": 61.1875,
         "rush_tds": 1.7884,
         "rush_yds": 276.366
@@ -5186,7 +5186,7 @@
         "rush_tds": 5,
         "rush_yds": 5
       },
-      "default_scoring_points": 45.468,
+      "default_scoring_points": 45.488,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -5600,7 +5600,7 @@
         "pass_yds": 0,
         "rec": 12.1075,
         "rec_tds": 0.2,
-        "rec_yds": 89.9875,
+        "rec_yds": 90.2375,
         "rush_att": 74.6925,
         "rush_tds": 2.61,
         "rush_yds": 285.91
@@ -5618,7 +5618,7 @@
         "rush_tds": 4,
         "rush_yds": 4
       },
-      "default_scoring_points": 49.9498,
+      "default_scoring_points": 49.9748,
       "source_count": 4,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday"]
     },
@@ -7770,7 +7770,7 @@
         "pass_yds": 0,
         "rec": 46.622,
         "rec_tds": 3.618,
-        "rec_yds": 582.136,
+        "rec_yds": 582.536,
         "rush_att": 0.3333,
         "rush_tds": 0,
         "rush_yds": 1
@@ -7788,7 +7788,7 @@
         "rush_tds": 3,
         "rush_yds": 3
       },
-      "default_scoring_points": 79.3816,
+      "default_scoring_points": 79.4216,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -10206,9 +10206,9 @@
         "pass_int": 0,
         "pass_tds": 0,
         "pass_yds": 0,
-        "rec": 47.71,
+        "rec": 47.91,
         "rec_tds": 3.796,
-        "rec_yds": 682.474,
+        "rec_yds": 683.074,
         "rush_att": 13.3975,
         "rush_tds": 0.4275,
         "rush_yds": 78.7875
@@ -10226,7 +10226,7 @@
         "rush_tds": 4,
         "rush_yds": 4
       },
-      "default_scoring_points": 98.7784,
+      "default_scoring_points": 98.8384,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -10280,7 +10280,7 @@
         "pass_yds": 0,
         "rec": 110.386,
         "rec_tds": 9.508,
-        "rec_yds": 1572.094,
+        "rec_yds": 1573.094,
         "rush_att": 6.6975,
         "rush_tds": 0.09,
         "rush_yds": 34.0825
@@ -10298,7 +10298,7 @@
         "rush_tds": 4,
         "rush_yds": 4
       },
-      "default_scoring_points": 216.816,
+      "default_scoring_points": 216.916,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -18186,7 +18186,7 @@
         "pass_yds": 0,
         "rec": 49.084,
         "rec_tds": 5.164,
-        "rec_yds": 472.478,
+        "rec_yds": 472.678,
         "rush_att": 4.5,
         "rush_tds": 0,
         "rush_yds": 9
@@ -18204,7 +18204,7 @@
         "rush_tds": 2,
         "rush_yds": 2
       },
-      "default_scoring_points": 78.5918,
+      "default_scoring_points": 78.6118,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
