@@ -1,5 +1,6 @@
-import ffaData from '../data/ffanalytics_projections.json' assert { type: 'json' };
+import { readFileSync } from 'node:fs';
 import { scoreConsensusStats } from './league-scoring.js';
+const ffaData=JSON.parse(readFileSync(new URL('../data/ffanalytics_projections.json',import.meta.url),'utf8'));
 
 const avg=a=>a.length?a.reduce((x,y)=>x+y,0)/a.length:0;
 const sum=a=>a.reduce((x,y)=>x+y,0);
