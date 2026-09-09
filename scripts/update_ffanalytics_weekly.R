@@ -13,7 +13,12 @@ state <- tryCatch(jsonlite::fromJSON("https://api.sleeper.app/v1/state/nfl"), er
 week <- if (!is.null(state) && !is.null(state$week)) as.integer(state$week) else NA_integer_
 if (is.na(week) || week < 1L || week > 18L) stop("Could not determine current NFL week; leaving existing weekly JSON untouched.")
 
-sources <- c("CBS", "ESPN", "FantasySharks", "FFToday", "FleaFlicker", "NumberFire", "Yahoo", "NFL", "RTSports", "Walterfootball")
+# IMPORTANT: only request publishers ffanalytics documents as WEEKLY sources.
+# Seasonal-only sources (RTSports, Walterfootball) are intentionally excluded here
+# because they can leak full-season numbers into a weekly consensus.
+# FantasyPros remains excluded by product policy. FantasyData/FFNerd are omitted
+# unless/until we verify a free, reliable scrape path in the current package.
+sources <- c("CBS", "ESPN", "FantasySharks", "FFToday", "FleaFlicker", "NumberFire", "Yahoo", "NFL")
 positions <- c("QB", "RB", "WR", "TE", "K", "DST")
 stat_whitelist <- c(
   "pass_att","pass_comp","pass_inc","pass_yds","pass_tds","pass_int","pass_40_yds","pass_300_yds","pass_350_yds","pass_400_yds","pass_2pt",
