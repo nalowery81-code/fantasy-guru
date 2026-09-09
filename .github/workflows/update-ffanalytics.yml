@@ -2,6 +2,11 @@ name: Update ffanalytics ROS projections
 
 on:
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/update-ffanalytics.yml'
+      - 'scripts/update_ffanalytics.R'
   schedule:
     - cron: '15 9 * * *'
 
