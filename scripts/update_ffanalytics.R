@@ -90,7 +90,7 @@ for (pos in names(scrapes)) {
   if (!length(keep)) next
   if (!("data_src" %in% names(df))) df$data_src <- "unknown"
   one <- df %>%
-    mutate(id = as.character(id), pos = if ("pos" %in% names(.)) as.character(pos) else pos) %>%
+    mutate(id = as.character(id)) %>%
     select(id, data_src, all_of(keep)) %>%
     pivot_longer(cols = all_of(keep), names_to = "stat", values_to = "value") %>%
     mutate(value = suppressWarnings(as.numeric(value))) %>%
@@ -100,8 +100,8 @@ for (pos in names(scrapes)) {
       value = mean(value, na.rm = TRUE),
       source_count = n_distinct(data_src),
       .groups = "drop"
-    ) %>%
-    mutate(pos = pos)
+    )
+  one$pos <- pos
   stat_rows[[pos]] <- one
 }
 stat_long <- bind_rows(stat_rows)
