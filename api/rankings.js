@@ -28,15 +28,33 @@ function rankMap(rows,key){const sorted=[...rows].filter(r=>present(r[key])).sor
 function qualityLevel(n){return n>=95?'HIGH':n>=85?'GOOD':n>=70?'PRELIMINARY':'INSUFFICIENT'}
 function scoringMode(context){const s=(context.league?.scoring_summary||[]).join(' ').toUpperCase();if(s.includes('HALF'))return'HALF';if(s.includes('PPR'))return'PPR';return'STD'}
 function fpPoints(p,scoring){const st=p?.stats||{};if(scoring==='PPR'&&present(st.points_ppr))return Number(st.points_ppr);if(scoring==='HALF'&&present(st.points_half))return Number(st.points_half);if(present(st.points))return Number(st.points);return null}
+function sleeperPoints(row,scoring){const st=row?.stats||row||{};if(scoring==='PPR'&&present(st.pts_ppr))return Number(st.pts_ppr);if(scoring==='HALF'&&present(st.pts_half_ppr))return Number(st.pts_half_ppr);if(present(st.pts_std))return Number(st.pts_std);return null}
 async function fpGet(path,params,key){
  const u=new URL(FP_BASE+path);Object.entries(params||{}).forEach(([k,v])=>{if(v!==undefined&&v!==null&&v!=='')u.searchParams.set(k,String(v))});
  const r=await fetch(u,{headers:{'x-api-key':key,'Accept':'application/json'}});const text=await r.text();let d;try{d=JSON.parse(text)}catch{throw new Error('FantasyPros returned non-JSON data')};if(!r.ok)throw new Error(d?.message||d?.error||('FantasyPros API error '+r.status));return d;
+}
+async function sleeperGetJson(url){const r=await fetch(url,{headers:{'Accept':'application/json','User-Agent':'FantasyGuru/1.0'}});if(!r.ok)throw new Error('Sleeper projection API error '+r.status);return r.json()}
+async function sleeperWeekly(season,week){
+ const urls=[
+  'https://api.sleeper.app/projections/nfl/'+season+'/'+week+'?season_type=regular',
+  'https://api.sleeper.app/v1/projections/nfl/regular/'+season+'/'+week
+ ];
+ let last=null;for(const u of urls){try{const d=await sleeperGetJson(u);if(d&&((Array.isArray(d)&&d.length)||(!Array.isArray(d)&&Object.keys(d).length)))return d}catch(e){last=e}}
+ if(last)throw last;return {};
+}
+async function sleeperPlayers(){try{return await sleeperGetJson('https://api.sleeper.app/v1/players/nfl')}catch{return {}}}
+function sleeperIndexes(raw={},players={},scoring='PPR'){
+ const byId=new Map(),byName=new Map();
+ const rows=Array.isArray(raw)?raw:Object.entries(raw||{}).map(([id,v])=>({player_id:id,...(v||{})}));
+ for(const row of rows){const id=String(row.player_id||row.player?.player_id||row.player?.id||'');const meta=players?.[id]||row.player||{};const name=meta.full_name||[meta.first_name,meta.last_name].filter(Boolean).join(' ')||row.player_name||row.name||'';const position=posNorm(meta.position||row.position||row.player_position);const points=sleeperPoints(row,scoring);const rec={id,name,position,points,raw:row};if(id)byId.set(id,rec);if(name)byName.set(norm(name)+'|'+position,rec)}
+ return{byId,byName};
 }
 function fpIndex(players=[],scoring='PPR'){
  const m=new Map();for(const p of players){const name=p.name||p.player_name||'',position=posNorm(p.position_id||p.player_position_id||p.position);const key=norm(name)+'|'+position;m.set(key,{name,position,points:fpPoints(p,scoring),raw:p})}return m;
 }
 function rankIndex(players=[]){const m=new Map();for(const p of players){const name=p.player_name||p.name||'',position=posNorm(p.player_position_id||p.position_id||p.position);const key=norm(name)+'|'+position;const rank=present(p.rank_ecr)?Number(p.rank_ecr):present(p.rank)?Number(p.rank):null;m.set(key,{rank,raw:p})}return m}
 function findFP(map,p){return map.get(norm(p.name)+'|'+posNorm(p.position))||map.get(norm(p.name)+'|')||null}
+function findSleeper(idx,p){const id=String(p.id||'');return(idx.byId.get(id)&&idx.byId.get(id).position===posNorm(p.position)?idx.byId.get(id):null)||idx.byName.get(norm(p.name)+'|'+posNorm(p.position))||null}
 
 export default async function handler(req,res){
  if(req.method!=='POST')return res.status(405).json({error:'POST only'});
@@ -45,27 +63,30 @@ export default async function handler(req,res){
   const key=process.env.FANTASYPROS_API_KEY;if(!key)return res.status(503).json({error:'FANTASYPROS_API_KEY is not configured.'});
   const season=String(context.league?.season||'2026'),week=Number(context.current_week||1),scoring=scoringMode(context),slots=context.league?.roster_positions||[],counts=slotCounts(slots);
 
-  const [fpWeekly,fpRos,fpWeeklyRanks,fpRosRanks]=await Promise.all([
+  const [fpWeekly,fpRos,fpWeeklyRanks,fpRosRanks,slWeeklyRaw,slPlayers]=await Promise.all([
    fpGet('/nfl/'+season+'/projections',{week,positions:'QB:RB:WR:TE:DST:K',scoring},key),
    fpGet('/nfl/'+season+'/projections',{type:'ros',positions:'QB:RB:WR:TE:DST:K',scoring},key).catch(()=>({players:[]})),
    fpGet('/nfl/'+season+'/consensus-rankings',{position:'ALL',week,scoring},key).catch(()=>({players:[]})),
-   fpGet('/nfl/'+season+'/consensus-rankings',{position:'ALL',type:'ROS',scoring},key).catch(()=>({players:[]}))
+   fpGet('/nfl/'+season+'/consensus-rankings',{position:'ALL',type:'ROS',scoring},key).catch(()=>({players:[]})),
+   sleeperWeekly(season,week).catch(()=>({})),
+   sleeperPlayers()
   ]);
-  const wMap=fpIndex(fpWeekly.players||[],scoring),rMap=fpIndex(fpRos.players||[],scoring),wrMap=rankIndex(fpWeeklyRanks.players||[]),rrMap=rankIndex(fpRosRanks.players||[]);
+  const wMap=fpIndex(fpWeekly.players||[],scoring),rMap=fpIndex(fpRos.players||[],scoring),wrMap=rankIndex(fpWeeklyRanks.players||[]),rrMap=rankIndex(fpRosRanks.players||[]),slIdx=sleeperIndexes(slWeeklyRaw,slPlayers,scoring);
 
   const researched=[];
   for(const t of context.league_teams){for(const p0 of t.players||[]){
    if(researched.some(x=>x.id===String(p0.id||'')&&x.name===p0.name))continue;
-   const p={...p0,position:posNorm(p0.position)},wk=findFP(wMap,p),ros=findFP(rMap,p),wkr=findFP(wrMap,p),rr=findFP(rrMap,p);
+   const p={...p0,position:posNorm(p0.position)},wk=findFP(wMap,p),ros=findFP(rMap,p),wkr=findFP(wrMap,p),rr=findFP(rrMap,p),sl=findSleeper(slIdx,p);
    const espnWeekly=present(p0.espn_weekly_points)?Number(p0.espn_weekly_points):null;
    const fpWeeklyPts=wk&&present(wk.points)?Number(wk.points):null;
+   const slWeeklyPts=sl&&present(sl.points)?Number(sl.points):null;
    const fpRosPts=ros&&present(ros.points)?Number(ros.points):null;
-   const weekly=meanAvailable(espnWeekly,fpWeeklyPts);
-   const weeklySources=[present(espnWeekly)?'ESPN':null,present(fpWeeklyPts)?'FantasyPros':null].filter(Boolean);
+   const weekly=meanAvailable(espnWeekly,fpWeeklyPts,slWeeklyPts);
+   const weeklySources=[present(espnWeekly)?'ESPN':null,present(fpWeeklyPts)?'FantasyPros':null,present(slWeeklyPts)?'Sleeper':null].filter(Boolean);
    const rosSources=[present(fpRosPts)?'FantasyPros':null].filter(Boolean);
    researched.push({
     id:String(p0.id||''),name:p0.name,position:p.position,injury_status:p0.injury_status||null,
-    espn_weekly_points:espnWeekly,fantasypros_weekly_points:fpWeeklyPts,weekly_points:weekly,weekly_source_count:weeklySources.length,weekly_sources:weeklySources,
+    espn_weekly_points:espnWeekly,fantasypros_weekly_points:fpWeeklyPts,sleeper_weekly_points:slWeeklyPts,weekly_points:weekly,weekly_source_count:weeklySources.length,weekly_sources:weeklySources,
     fantasypros_ros_points:fpRosPts,ros_points:fpRosPts,ros_source_count:rosSources.length,ros_sources:rosSources,
     fantasypros_weekly_rank:wkr&&present(wkr.rank)?Number(wkr.rank):null,fantasypros_ros_rank:rr&&present(rr.rank)?Number(rr.rank):null,
     weekly_pos_rank:wkr&&present(wkr.rank)?Number(wkr.rank):null,ros_pos_rank:rr&&present(rr.rank)?Number(rr.rank):null
@@ -74,7 +95,7 @@ export default async function handler(req,res){
   const byName=new Map(researched.map(x=>[norm(x.name)+'|'+x.position,x]));
   const getVal=p=>byName.get(norm(p.name)+'|'+posNorm(p.position))||null;
 
-  const totalPlayers=researched.length,weeklyAny=pct(researched.filter(p=>present(p.weekly_points)).length,totalPlayers),weeklyTwo=pct(researched.filter(p=>p.weekly_source_count>=2).length,totalPlayers),rosAny=pct(researched.filter(p=>present(p.ros_points)).length,totalPlayers);
+  const totalPlayers=researched.length,weeklyAny=pct(researched.filter(p=>present(p.weekly_points)).length,totalPlayers),weeklyTwo=pct(researched.filter(p=>p.weekly_source_count>=2).length,totalPlayers),weeklyThree=pct(researched.filter(p=>p.weekly_source_count>=3).length,totalPlayers),rosAny=pct(researched.filter(p=>present(p.ros_points)).length,totalPlayers);
   const teamRows=context.league_teams.map(t=>{
    const ps=(t.players||[]).map(p=>({...p,position:posNorm(p.position),...(getVal(p)||{weekly_points:null,ros_points:null})}));
    const wOpt=optimize(ps,slots,'weekly_points'),rOpt=optimize(ps,slots,'ros_points'),required=startSlots(slots).length;
@@ -89,7 +110,7 @@ export default async function handler(req,res){
     weekly_starters:weeklyStarterSum,ros_starters:rosStarterSum,weekly_depth:wBench.length?avg(wBench):null,ros_depth:rBench.length?avg(rBench):null,weekly_total:weeklyStarterSum,ros_total:rosStarterSum};
   });
   const weeklyStarterCoverage=pct(teamRows.reduce((n,r)=>n+r.weekly_slots_filled,0),teamRows.reduce((n,r)=>n+r.required_slots,0)),rosStarterCoverage=pct(teamRows.reduce((n,r)=>n+r.ros_slots_filled,0),teamRows.reduce((n,r)=>n+r.required_slots,0));
-  const data_quality={weekly:{overall:weeklyAny,level:qualityLevel(weeklyAny),trusted_value_coverage:weeklyAny,two_source_consensus:weeklyTwo,starter_coverage:weeklyStarterCoverage},ros:{overall:rosAny,level:qualityLevel(rosAny),trusted_value_coverage:rosAny,two_source_consensus:0,starter_coverage:rosStarterCoverage}};
+  const data_quality={weekly:{overall:weeklyAny,level:qualityLevel(weeklyAny),trusted_value_coverage:weeklyAny,two_source_consensus:weeklyTwo,three_source_consensus:weeklyThree,starter_coverage:weeklyStarterCoverage},ros:{overall:rosAny,level:qualityLevel(rosAny),trusted_value_coverage:rosAny,two_source_consensus:0,three_source_consensus:0,starter_coverage:rosStarterCoverage}};
 
   const build=layer=>{
    const pre=layer==='weekly'?'weekly':'ros',quality=data_quality[layer],blocked=quality.starter_coverage<100||teamRows.some(r=>!r[pre+'_complete']);
@@ -97,12 +118,12 @@ export default async function handler(req,res){
    const ranks={qb:rankMap(teamRows,pre+'_qb'),rb:rankMap(teamRows,pre+'_rb'),wr:rankMap(teamRows,pre+'_wr'),te:rankMap(teamRows,pre+'_te'),starters:rankMap(teamRows,pre+'_starters'),overall:rankMap(teamRows,pre+'_total')};
    const sorted=[...teamRows].sort((a,b)=>b[pre+'_total']-a[pre+'_total']),my=context.my_team.team,mine=teamRows.find(r=>r.team===my),n=teamRows.length,leagueStarterAvg=avg(teamRows.map(r=>r[pre+'_starters'])),bullets=[];
    bullets.push('Your optimal starters rank #'+ranks.starters[my]+' of '+n+' ('+mine[pre+'_starters'].toFixed(1)+' vs league average '+leagueStarterAvg.toFixed(1)+').');
-   bullets.push(layer==='weekly'?'Weekly player values are the straight average of available ESPN and FantasyPros published projections.':'ROS currently uses FantasyPros published rest-of-season projections directly; no AI-created player values are used.');
+   bullets.push(layer==='weekly'?'Weekly player values are the straight average of available ESPN, FantasyPros, and Sleeper published projections.':'ROS currently uses FantasyPros published rest-of-season projections directly; no AI-created player values are used.');
    return{blocked:false,data_quality:quality,my_ranks:{qb:ranks.qb[my],rb:ranks.rb[my],wr:ranks.wr[my],te:ranks.te[my],starters:ranks.starters[my],overall:ranks.overall[my]},my_explanation:{summary:(layer==='weekly'?'This week':'Rest of season')+', you rank #'+ranks.overall[my]+' of '+n+'.',bullets},power_rankings:sorted.map(r=>({team:r.team,score:Math.round(r[pre+'_total']*10)/10,data_quality:quality.overall,note:layer==='weekly'?'Optimal starter projection '+r.weekly_starters.toFixed(1)+(r.weekly_depth!==null?'; bench avg '+r.weekly_depth.toFixed(1):''):'ROS projected starter total '+r.ros_starters.toFixed(1)+(r.ros_depth!==null?'; bench avg '+r.ros_depth.toFixed(1):'')}))}
   };
 
   const myNames=new Set((context.my_team?.players||[]).map(p=>p.name));
-  const player_audit=researched.filter(p=>myNames.has(p.name)).map(p=>({name:p.name,position:p.position,weekly_points:p.weekly_points,ros_points:p.ros_points,ros_ppg:p.ros_points,weekly_rank:p.weekly_pos_rank,ros_rank:p.ros_pos_rank,espn_weekly_points:p.espn_weekly_points,fantasypros_weekly_points:p.fantasypros_weekly_points,fantasypros_ros_points:p.fantasypros_ros_points,fantasypros_ros_ppg:p.fantasypros_ros_points,espn_ros_ppg:null,weekly_source_count:p.weekly_source_count,ros_source_count:p.ros_source_count,weekly_sources:p.weekly_sources,ros_sources:p.ros_sources,platform_status:p.injury_status}));
-  return res.json({weekly:build('weekly'),ros:build('ros'),data_quality,player_audit,source_policy:{version:'2.0',valuation_sources:['ESPN published weekly projections when supplied by ESPN league data','FantasyPros API projections'],context_source:context.platform||'Platform',rule:'Fantasy Guru never invents a player projection. Weekly Guru value = arithmetic mean of available trusted published projections. One source is labeled single-source; zero sources stays NULL.'},method:'Direct-source SOP v2.0: no OpenAI projection research. FantasyPros is fetched through its API; ESPN weekly projections come directly from ESPN league data; code averages source numbers and ranks lineups deterministically.'});
+  const player_audit=researched.filter(p=>myNames.has(p.name)).map(p=>({name:p.name,position:p.position,weekly_points:p.weekly_points,ros_points:p.ros_points,ros_ppg:p.ros_points,weekly_rank:p.weekly_pos_rank,ros_rank:p.ros_pos_rank,espn_weekly_points:p.espn_weekly_points,fantasypros_weekly_points:p.fantasypros_weekly_points,sleeper_weekly_points:p.sleeper_weekly_points,fantasypros_ros_points:p.fantasypros_ros_points,fantasypros_ros_ppg:p.fantasypros_ros_points,espn_ros_ppg:null,sleeper_ros_ppg:null,weekly_source_count:p.weekly_source_count,ros_source_count:p.ros_source_count,weekly_sources:p.weekly_sources,ros_sources:p.ros_sources,platform_status:p.injury_status}));
+  return res.json({weekly:build('weekly'),ros:build('ros'),data_quality,player_audit,source_policy:{version:'2.1',valuation_sources:['ESPN published weekly projections when supplied by ESPN league data','FantasyPros API projections','Sleeper published weekly projections'],context_source:context.platform||'Platform',rule:'Fantasy Guru never invents a player projection. Weekly Guru value = arithmetic mean of all available trusted published projections. One source is labeled single-source; zero sources stays NULL.'},method:'Direct-source SOP v2.1: no OpenAI projection research. ESPN, FantasyPros, and Sleeper published weekly projections are averaged directly; FantasyPros supplies ROS values; code ranks lineups deterministically.'});
  }catch(e){res.status(500).json({error:e.message})}
 }
