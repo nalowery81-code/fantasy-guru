@@ -24,8 +24,8 @@
 const A='https://api.sleeper.app/v1',$=x=>document.getElementById(x);
 const LS=[{platform:'Sleeper',id:'1389377608638042112',name:'GridIron Throne',rid:10,team:'Tennesee Turf Trotters'},{platform:'Sleeper',id:'1389387047789162497',name:'SouthCentral War Room',rid:1,team:'Plumbers “Crack”n Boys'},{platform:'ESPN',id:'1673474732',name:'DGH Invitational 2026',rid:15,team:'CeeDees Nuts'}];
 let C=null,analysis=null,layer='weekly',cacheMeta=null;
-const CACHE_SCHEMA='v10-free-3.5';
-const REQUIRED_ANALYSIS_VERSION='3.5-ffa-ros';
+const CACHE_SCHEMA='v11-free-3.6';
+const REQUIRED_ANALYSIS_VERSION='3.6-universal';
 const get=async u=>{const r=await fetch(u),t=await r.text();let d;try{d=JSON.parse(t)}catch{d=t}if(!r.ok)throw Error(d?.error||t||r.status);return d};
 const tn=u=>u?.metadata?.team_name||u?.display_name||u?.username||'Unknown';const pn=(p,id)=>{let x=p[id]||{};return((x.first_name||'')+' '+(x.last_name||'')).trim()||x.full_name||id};
 const dayKey=()=>{const d=new Date();return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0')};
