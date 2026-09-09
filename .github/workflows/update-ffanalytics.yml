@@ -23,11 +23,11 @@ jobs:
 
       - name: Install dependencies
         run: |
-          install.packages(c('remotes','jsonlite','dplyr'))
+          install.packages(c('remotes','jsonlite','dplyr','tidyr'))
           remotes::install_github('FantasyFootballAnalytics/ffanalytics', upgrade = 'never')
         shell: Rscript {0}
 
-      - name: Build equal-average ROS dataset
+      - name: Build equal-average source-stat dataset
         run: Rscript scripts/update_ffanalytics.R
 
       - name: Validate generated JSON
@@ -36,10 +36,14 @@ jobs:
           const fs=require('fs');
           const p='data/ffanalytics_projections.json';
           const d=JSON.parse(fs.readFileSync(p,'utf8'));
+          if(d.schema_version!=='2.0') throw new Error('Unexpected ffanalytics schema: '+d.schema_version);
           if(!Array.isArray(d.players)||d.players.length<25) throw new Error('Too few projection rows; refusing to overwrite dataset');
-          const usable=d.players.filter(x=>Number.isFinite(Number(x.ros_points)));
-          if(usable.length<25) throw new Error('Too few usable ROS values; refusing to overwrite dataset');
-          console.log(`Validated ${usable.length} usable ROS players from ${(d.working_sources||[]).length} sources`);
+          const withStats=d.players.filter(x=>x.consensus_stats && Object.keys(x.consensus_stats).length>0);
+          if(withStats.length<25) throw new Error('Too few rescorable player stat rows; refusing to overwrite dataset');
+          const offensive=withStats.filter(x=>['QB','RB','WR','TE'].includes(String(x.position).toUpperCase()));
+          const core=offensive.filter(x=>['pass_yds','rush_yds','rec_yds','rec'].some(k=>Number.isFinite(Number(x.consensus_stats[k]))));
+          if(core.length<20) throw new Error('Core offensive projection stats are missing; refusing to overwrite dataset');
+          console.log(`Validated ${withStats.length} players with rescorable consensus stats from ${(d.working_sources||[]).length} sources`);
           NODE
 
       - name: Commit refreshed dataset
@@ -51,5 +55,5 @@ jobs:
           git config user.name 'fantasy-guru-bot'
           git config user.email 'fantasy-guru-bot@users.noreply.github.com'
           git add data/ffanalytics_projections.json
-          git commit -m 'Refresh ffanalytics ROS projections'
+          git commit -m 'Refresh ffanalytics source-stat consensus'
           git push
