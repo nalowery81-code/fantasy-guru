@@ -8,3 +8,5 @@ Adds:
 - Confidence scores
 - Exact league slot/scoring awareness
 - ESPN + Sleeper context compatibility
+
+Deployment trigger: Git-connected production build enabled.
