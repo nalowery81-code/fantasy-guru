@@ -29,8 +29,12 @@ jobs:
       - name: Install dependencies
         run: |
           install.packages(c('remotes','jsonlite','dplyr','tidyr'))
-          remotes::install_github('FantasyFootballAnalytics/ffanalytics', upgrade = 'never')
         shell: Rscript {0}
+
+      - name: Install ffanalytics
+        run: |
+          git clone --depth 1 --branch master https://github.com/FantasyFootballAnalytics/ffanalytics.git /tmp/ffanalytics
+          Rscript -e "remotes::install_local('/tmp/ffanalytics', dependencies=TRUE, upgrade='never')"
 
       - name: Build equal-average source-stat dataset
         run: Rscript scripts/update_ffanalytics.R
