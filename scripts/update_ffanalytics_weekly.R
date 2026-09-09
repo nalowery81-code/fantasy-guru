@@ -13,12 +13,24 @@ state <- tryCatch(jsonlite::fromJSON("https://api.sleeper.app/v1/state/nfl"), er
 week <- if (!is.null(state) && !is.null(state$week)) as.integer(state$week) else NA_integer_
 if (is.na(week) || week < 1L || week > 18L) stop("Could not determine current NFL week; leaving existing weekly JSON untouched.")
 
-# IMPORTANT: only request publishers ffanalytics documents as WEEKLY sources.
-# Seasonal-only sources (RTSports, Walterfootball) are intentionally excluded here
-# because they can leak full-season numbers into a weekly consensus.
-# FantasyPros remains excluded by product policy. FantasyData/FFNerd are omitted
-# unless/until we verify a free, reliable scrape path in the current package.
-sources <- c("CBS", "ESPN", "FantasySharks", "FFToday", "FleaFlicker", "NumberFire", "Yahoo", "NFL")
+# IMPORTANT: the ROS refresh runs immediately before this script in the same
+# GitHub Actions job. ffanalytics caches projected-stat scrapes for about an hour,
+# and some cache objects are source-based rather than safely separated by horizon.
+# Without clearing the cache here, a weekly request can reuse the just-created
+# season/ROS scrape (CBS/NFL were observed doing exactly that), which inflates
+# weekly player values by roughly a season's worth of stats.
+# Weekly and ROS must always be separate raw provider pulls.
+tryCatch(
+  ffanalytics::clear_ffanalytics_cache(),
+  error=function(e) message("Could not clear ffanalytics cache before weekly scrape: ", conditionMessage(e))
+)
+
+# Only request publishers intended to provide WEEKLY projections.
+# Seasonal-only sources (RTSports, Walterfootball) are intentionally excluded.
+# FantasyPros remains excluded by product policy. Yahoo is not a supported
+# ffanalytics src value in the current package, so it is omitted rather than
+# counted as a failed source.
+sources <- c("CBS", "ESPN", "FantasySharks", "FFToday", "FleaFlicker", "NumberFire", "NFL")
 positions <- c("QB", "RB", "WR", "TE", "K", "DST")
 stat_whitelist <- c(
   "pass_att","pass_comp","pass_inc","pass_yds","pass_tds","pass_int","pass_40_yds","pass_300_yds","pass_350_yds","pass_400_yds","pass_2pt",
