@@ -2,13 +2,13 @@
   "schema_version": "2.0",
   "season": 2026,
   "week": 1,
-  "generated_at": "2026-09-09 23:36:19 UTC",
+  "generated_at": "2026-09-09 23:40:42 UTC",
   "source": "ffanalytics",
   "projection_type": "weekly_projection_stats",
   "scoring_basis": "unscored source-stat consensus; score at request time with exact league rules",
   "averaging_rule": "equal_weight_by_stat",
-  "requested_sources": ["CBS", "ESPN", "FantasySharks", "FFToday", "FleaFlicker", "NumberFire", "Yahoo", "NFL", "RTSports", "Walterfootball"],
-  "working_sources": ["CBS", "ESPN", "FantasySharks", "FFToday", "FleaFlicker", "NumberFire", "NFL", "RTSports", "Walterfootball"],
+  "requested_sources": ["CBS", "ESPN", "FantasySharks", "FFToday", "FleaFlicker", "NumberFire", "Yahoo", "NFL"],
+  "working_sources": ["CBS", "ESPN", "FantasySharks", "FFToday", "FleaFlicker", "NumberFire", "NFL"],
   "failed_sources": "Yahoo",
   "players": [
     {
@@ -2026,7 +2026,7 @@
         "pass_comp": 7,
         "pass_int": 0,
         "pass_tds": 1,
-        "pass_yds": 89,
+        "pass_yds": 84,
         "rush_att": 5,
         "rush_tds": 0,
         "rush_yds": 14
@@ -2041,7 +2041,7 @@
         "rush_tds": 1,
         "rush_yds": 1
       },
-      "default_scoring_points": 8.96,
+      "default_scoring_points": 8.76,
       "source_count": 1,
       "sources": "CBS"
     },

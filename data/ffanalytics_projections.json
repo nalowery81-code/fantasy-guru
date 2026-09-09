@@ -1,7 +1,7 @@
 {
   "schema_version": "2.0",
   "season": 2026,
-  "generated_at": "2026-09-09 23:35:38 UTC",
+  "generated_at": "2026-09-09 23:40:04 UTC",
   "source": "ffanalytics",
   "projection_type": "season_projection_stats",
   "scoring_basis": "unscored source-stat consensus; score at request time with exact league rules",
@@ -2085,7 +2085,7 @@
         "pass_comp": 7,
         "pass_int": 0,
         "pass_tds": 1,
-        "pass_yds": 89,
+        "pass_yds": 84,
         "rush_att": 5,
         "rush_tds": 0,
         "rush_yds": 14
@@ -2100,7 +2100,7 @@
         "rush_tds": 1,
         "rush_yds": 1
       },
-      "default_scoring_points": 8.96,
+      "default_scoring_points": 8.76,
       "source_count": 1,
       "sources": "CBS"
     },
