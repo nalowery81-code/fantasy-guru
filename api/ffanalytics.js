@@ -1,4 +1,5 @@
-import projections from '../data/ffanalytics_projections.json' assert { type: 'json' };
+import { readFileSync } from 'node:fs';
+const projections=JSON.parse(readFileSync(new URL('../data/ffanalytics_projections.json',import.meta.url),'utf8'));
 
 const present=v=>v!==null&&v!==undefined&&v!==''&&Number.isFinite(Number(v));
 const norm=s=>String(s||'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]/g,'');
