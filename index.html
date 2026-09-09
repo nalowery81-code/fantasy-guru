@@ -47,6 +47,11 @@ textarea{width:100%;min-height:105px;background:#07101d;color:#fff;border:1px so
 .conf{font-size:11px;color:var(--m)}
 .compareGrid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 .compareTeam{background:#07101d;border:1px solid var(--l);border-radius:14px;padding:14px}
+.whyWrap{margin-top:14px}
+.whyBtn{background:#334155;color:#fff}
+.whyBox{margin-top:10px;background:#07101d;border:1px solid #40516b;border-radius:12px;padding:14px;line-height:1.55}
+.whyBox ul{margin:8px 0 0 20px;padding:0}
+.whyBox li{margin:5px 0}
 @media(max-width:760px){
   .power{grid-template-columns:repeat(3,1fr)}
   .stats,.players{grid-template-columns:1fr 1fr}
@@ -99,6 +104,10 @@ textarea{width:100%;min-height:105px;background:#07101d;color:#fff;border:1px so
 
     <div id="power" class="power" style="margin-top:15px"></div>
     <div id="ranklist" style="margin-top:14px"></div>
+    <div id="whyWrap" class="whyWrap hidden">
+      <button id="whyBtn" class="whyBtn" onclick="toggleWhy()">Why am I ranked here?</button>
+      <div id="whyBox" class="whyBox hidden"></div>
+    </div>
   </div>
 
   <div class="card">
@@ -207,6 +216,8 @@ window.openL=async i=>{
 function resetPower(){
   $('power').innerHTML=['QB','RB','WR','TE','STARTERS','OVERALL'].map(x=>'<div class="box"><span>'+x+' RANK</span><b>—</b></div>').join('');
   $('ranklist').innerHTML='<div class="muted">Run Refresh Analysis to calculate Weekly and Rest-of-Season rankings.</div>';
+  $('whyWrap').classList.add('hidden');
+  $('whyBox').classList.add('hidden');
 }
 
 function setProgress(msg,pct){
@@ -226,6 +237,21 @@ window.setLayer=l=>{
   renderAnalysis();
 };
 
+window.toggleWhy=()=>{
+  const b=$('whyBox');
+  b.classList.toggle('hidden');
+  $('whyBtn').textContent=b.classList.contains('hidden')?'Why am I ranked here?':'Hide ranking explanation';
+};
+
+function renderWhy(d){
+  const ex=d.my_explanation;
+  if(!ex){$('whyWrap').classList.add('hidden');return}
+  $('whyWrap').classList.remove('hidden');
+  $('whyBtn').textContent='Why am I ranked #'+d.my_ranks.overall+'?';
+  $('whyBox').innerHTML='<b>'+ex.summary+'</b><ul>'+ex.bullets.map(x=>'<li>'+x+'</li>').join('')+'</ul>';
+  $('whyBox').classList.add('hidden');
+}
+
 function renderAnalysis(){
   if(!analysis)return resetPower();
   const d=analysis[layer];
@@ -241,6 +267,7 @@ function renderAnalysis(){
       '<span class="score">'+x.score.toFixed(1)+'</span>'+ 
     '</div>'
   ).join('');
+  renderWhy(d);
 }
 
 $('refresh').onclick=async()=>{
