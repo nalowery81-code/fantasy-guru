@@ -1,4 +1,3 @@
-function cleanJson(s){return String(s||'').replace(/```json|```/g,'').trim()}
 const avg=a=>a.length?a.reduce((x,y)=>x+y,0)/a.length:0;
 const sum=a=>a.reduce((x,y)=>x+y,0);
 const nums=a=>a.map(Number).filter(Number.isFinite);
@@ -24,7 +23,22 @@ function positionScore(players,pos,field,count){
  return avg(starters)*0.9+avg(depth)*0.1
 }
 function rankMap(rows,key){const sorted=[...rows].sort((a,b)=>b[key]-a[key]),m={};sorted.forEach((r,i)=>m[r.team]=i+1);return m}
-function extractJson(text){const cleaned=cleanJson(text);try{return JSON.parse(cleaned)}catch{}const first=cleaned.indexOf('{'),last=cleaned.lastIndexOf('}');if(first>=0&&last>first){try{return JSON.parse(cleaned.slice(first,last+1))}catch{}}return null}
+
+const playerSchema={
+ type:'object',additionalProperties:false,
+ properties:{
+  players:{type:'array',items:{type:'object',additionalProperties:false,properties:{
+   name:{type:'string'},
+   espn_weekly_points:{type:['number','null']},fantasypros_weekly_points:{type:['number','null']},
+   espn_weekly_rank:{type:['number','null']},fantasypros_weekly_rank:{type:['number','null']},
+   espn_ros_ppg:{type:['number','null']},fantasypros_ros_ppg:{type:['number','null']},
+   espn_ros_rank:{type:['number','null']},fantasypros_ros_rank:{type:['number','null']},
+   consensus_weekly_points:{type:['number','null']},consensus_ros_ppg:{type:['number','null']},
+   weekly_confidence:{type:'number'},ros_confidence:{type:'number'},
+   espn_url:{type:['string','null']},fantasypros_url:{type:['string','null']},data_note:{type:'string'}
+  },required:['name','espn_weekly_points','fantasypros_weekly_points','espn_weekly_rank','fantasypros_weekly_rank','espn_ros_ppg','fantasypros_ros_ppg','espn_ros_rank','fantasypros_ros_rank','consensus_weekly_points','consensus_ros_ppg','weekly_confidence','ros_confidence','espn_url','fantasypros_url','data_note']}}
+ },required:['players']
+};
 
 export default async function handler(req,res){
  if(req.method!=='POST')return res.status(405).json({error:'POST only'});
@@ -41,37 +55,48 @@ export default async function handler(req,res){
    'Use ESPN for ESPN weekly projections/rankings and ESPN player outlook data when available.',
    'Use FantasyPros for weekly ECR/projections and rest-of-season ECR/projections when available.',
    'If a requested source value is not available, return null. Do not fabricate a source-specific number.',
-   'You may derive consensus_weekly_points or consensus_ros_ppg only from ESPN and FantasyPros information you found. Never use a third fantasy valuation source to fill a gap.',
-   'Accuracy and traceability matter more than producing a number for every field.',
-   'Return ONLY valid JSON. No markdown and no prose outside JSON.',
+   'You may derive consensus_weekly_points or consensus_ros_ppg only from ESPN and FantasyPros information you found.',
+   'Accuracy and traceability matter more than filling every field.',
    'All point values must reflect the supplied league scoring settings.',
    'Confidence must be 35-95 and should fall when ESPN and FantasyPros disagree or data is missing.',
-   'Schema exactly: {"players":[{"name":"exact input name","espn_weekly_points":number|null,"fantasypros_weekly_points":number|null,"espn_weekly_rank":number|null,"fantasypros_weekly_rank":number|null,"espn_ros_ppg":number|null,"fantasypros_ros_ppg":number|null,"espn_ros_rank":number|null,"fantasypros_ros_rank":number|null,"consensus_weekly_points":number|null,"consensus_ros_ppg":number|null,"weekly_confidence":number,"ros_confidence":number,"espn_url":string|null,"fantasypros_url":string|null,"data_note":string}]}.',
-   'Include every supplied player exactly once.'
+   'Include every supplied player exactly once and preserve each input player name exactly.'
   ].join('\n');
 
   async function researchBatch(batch,pos,batchNo,total){
-   const rr=await fetch('https://api.openai.com/v1/responses',{method:'POST',headers:{'Content-Type':'application/json','Authorization':'Bearer '+process.env.OPENAI_API_KEY},body:JSON.stringify({
-    model:'gpt-5.6-luna',reasoning:{effort:'low'},tools:[{type:'web_search',search_context_size:'medium'}],instructions,
-    input:'CURRENT WEEK: '+context.current_week+'\nPOSITION GROUP: '+pos+'\nBATCH: '+batchNo+' of '+total+'\nLEAGUE SETTINGS:\n'+JSON.stringify({roster_positions:context.league?.roster_positions,scoring_settings:context.league?.scoring_settings,scoring_summary:context.league?.scoring_summary})+'\nPLAYERS:\n'+JSON.stringify(batch)+'\nRemember: valuation research is restricted to ESPN and FantasyPros only.',
-    max_output_tokens:6000
-   })});
-   const d=await rr.json();if(!rr.ok)throw new Error(d?.error?.message||'OpenAI projection research failed');
-   let text=d.output_text||'';if(!text&&Array.isArray(d.output))text=d.output.flatMap(x=>x.content||[]).map(x=>x.text||'').filter(Boolean).join('\n');
-   const parsed=extractJson(text);if(!parsed?.players?.length)throw new Error('Projection batch '+batchNo+' returned invalid JSON');
-   return parsed.players.map(p=>{
-    const weekly=meanAvailable(p.espn_weekly_points,p.fantasypros_weekly_points) ?? Number(p.consensus_weekly_points||0);
-    const ros=meanAvailable(p.espn_ros_ppg,p.fantasypros_ros_ppg) ?? Number(p.consensus_ros_ppg||0);
-    const wrank=meanAvailable(p.espn_weekly_rank,p.fantasypros_weekly_rank) ?? 999;
-    const rrank=meanAvailable(p.espn_ros_rank,p.fantasypros_ros_rank) ?? 999;
-    return {...p,weekly_points:Number(weekly||0),ros_ppg:Number(ros||0),weekly_pos_rank:Number(wrank||999),ros_pos_rank:Number(rrank||999),weekly_confidence:Math.max(35,Math.min(95,Number(p.weekly_confidence||55))),ros_confidence:Math.max(35,Math.min(95,Number(p.ros_confidence||55)))}
-   })
+   let lastError='unknown error';
+   for(let attempt=1;attempt<=3;attempt++){
+    try{
+     const rr=await fetch('https://api.openai.com/v1/responses',{method:'POST',headers:{'Content-Type':'application/json','Authorization':'Bearer '+process.env.OPENAI_API_KEY},body:JSON.stringify({
+      model:'gpt-5.6-luna',reasoning:{effort:'low'},tools:[{type:'web_search',search_context_size:'medium'}],instructions,
+      text:{format:{type:'json_schema',name:'player_projection_batch',strict:true,schema:playerSchema}},
+      input:'CURRENT WEEK: '+context.current_week+'\nPOSITION GROUP: '+pos+'\nBATCH: '+batchNo+' of '+total+'\nLEAGUE SETTINGS:\n'+JSON.stringify({roster_positions:context.league?.roster_positions,scoring_settings:context.league?.scoring_settings,scoring_summary:context.league?.scoring_summary})+'\nPLAYERS:\n'+JSON.stringify(batch)+'\nValuation research is restricted to ESPN and FantasyPros only.',
+      max_output_tokens:7000
+     })});
+     const d=await rr.json();
+     if(!rr.ok)throw new Error(d?.error?.message||'OpenAI projection research failed');
+     let text=d.output_text||'';
+     if(!text&&Array.isArray(d.output))text=d.output.flatMap(x=>x.content||[]).map(x=>x.text||'').filter(Boolean).join('\n');
+     const parsed=JSON.parse(text);
+     if(!parsed?.players?.length)throw new Error('empty structured response');
+     const inputNames=new Set(batch.map(x=>x.name));
+     const returnedNames=new Set(parsed.players.map(x=>x.name));
+     if(parsed.players.length!==batch.length||[...inputNames].some(n=>!returnedNames.has(n)))throw new Error('player list mismatch');
+     return parsed.players.map(p=>{
+      const weekly=meanAvailable(p.espn_weekly_points,p.fantasypros_weekly_points) ?? Number(p.consensus_weekly_points||0);
+      const ros=meanAvailable(p.espn_ros_ppg,p.fantasypros_ros_ppg) ?? Number(p.consensus_ros_ppg||0);
+      const wrank=meanAvailable(p.espn_weekly_rank,p.fantasypros_weekly_rank) ?? 999;
+      const rrank=meanAvailable(p.espn_ros_rank,p.fantasypros_ros_rank) ?? 999;
+      return {...p,weekly_points:Number(weekly||0),ros_ppg:Number(ros||0),weekly_pos_rank:Number(wrank||999),ros_pos_rank:Number(rrank||999),weekly_confidence:Math.max(35,Math.min(95,Number(p.weekly_confidence||55))),ros_confidence:Math.max(35,Math.min(95,Number(p.ros_confidence||55)))}
+     });
+    }catch(e){lastError=e.message||String(e);if(attempt<3)await new Promise(r=>setTimeout(r,350*attempt))}
+   }
+   throw new Error('Projection batch '+batchNo+' failed after 3 attempts: '+lastError);
   }
 
   const groups={};for(const p of allPlayers){const k=p.position||'OTHER';(groups[k]||(groups[k]=[])).push(p)}
-  const batches=[];for(const [pos,arr] of Object.entries(groups)){for(let i=0;i<arr.length;i+=40)batches.push({pos,players:arr.slice(i,i+40)})}
+  const batches=[];for(const [pos,arr] of Object.entries(groups)){for(let i=0;i<arr.length;i+=24)batches.push({pos,players:arr.slice(i,i+24)})}
   const researched=[];
-  const concurrency=6;
+  const concurrency=4;
   for(let i=0;i<batches.length;i+=concurrency){const group=batches.slice(i,i+concurrency);const out=await Promise.all(group.map((b,j)=>researchBatch(b.players,b.pos,i+j+1,batches.length)));for(const arr of out)researched.push(...arr)}
   const byName=new Map(researched.map(x=>[x.name,x]));
 
@@ -101,6 +126,6 @@ export default async function handler(req,res){
   const myNames=new Set((context.my_team?.players||[]).map(p=>p.name));
   const player_audit=researched.filter(p=>myNames.has(p.name)).map(p=>({name:p.name,position:allPlayers.find(x=>x.name===p.name)?.position||'',weekly_points:p.weekly_points,ros_ppg:p.ros_ppg,weekly_rank:p.weekly_pos_rank,ros_rank:p.ros_pos_rank,espn_weekly_points:p.espn_weekly_points??null,fantasypros_weekly_points:p.fantasypros_weekly_points??null,espn_ros_ppg:p.espn_ros_ppg??null,fantasypros_ros_ppg:p.fantasypros_ros_ppg??null,espn_weekly_rank:p.espn_weekly_rank??null,fantasypros_weekly_rank:p.fantasypros_weekly_rank??null,espn_ros_rank:p.espn_ros_rank??null,fantasypros_ros_rank:p.fantasypros_ros_rank??null,weekly_confidence:p.weekly_confidence,ros_confidence:p.ros_confidence,espn_url:p.espn_url||null,fantasypros_url:p.fantasypros_url||null,data_note:p.data_note||'',platform_status:allPlayers.find(x=>x.name===p.name)?.injury_status||null}));
 
-  return res.json({weekly:build('weekly'),ros:build('ros'),player_audit,source_policy:{version:'1.0',core_sources:['ESPN','FantasyPros','Sleeper/platform data'],valuation_sources:['ESPN','FantasyPros'],context_source:context.platform||'Platform',rule:'No other fantasy site may set player value. Missing source data is exposed rather than silently replaced.'},method:'Three-source SOP: ESPN + FantasyPros valuation inputs, Sleeper/platform league context, deterministic roster math.'})
+  return res.json({weekly:build('weekly'),ros:build('ros'),player_audit,source_policy:{version:'1.1',core_sources:['ESPN','FantasyPros','Sleeper/platform data'],valuation_sources:['ESPN','FantasyPros'],context_source:context.platform||'Platform',rule:'No other fantasy site may set player value. Missing source data is exposed rather than silently replaced.'},method:'Three-source SOP: ESPN + FantasyPros valuation inputs, Sleeper/platform league context, deterministic roster math. Structured output prevents malformed projection JSON.'})
  }catch(e){res.status(500).json({error:e.message})}
 }
