@@ -51,9 +51,9 @@ export default async function handler(req,res){
 
   async function researchBatch(batch,pos,batchNo,total){
    const rr=await fetch('https://api.openai.com/v1/responses',{method:'POST',headers:{'Content-Type':'application/json','Authorization':'Bearer '+process.env.OPENAI_API_KEY},body:JSON.stringify({
-    model:'gpt-5.6-luna',reasoning:{effort:'medium'},tools:[{type:'web_search',search_context_size:'medium'}],instructions,
+    model:'gpt-5.6-luna',reasoning:{effort:'low'},tools:[{type:'web_search',search_context_size:'medium'}],instructions,
     input:'CURRENT WEEK: '+context.current_week+'\nPOSITION GROUP: '+pos+'\nBATCH: '+batchNo+' of '+total+'\nIMPORTANT: Every player in this batch is being evaluated on the same '+pos+' projection scale.\nLEAGUE SETTINGS:\n'+JSON.stringify({roster_positions:context.league?.roster_positions,scoring_settings:context.league?.scoring_settings,scoring_summary:context.league?.scoring_summary})+'\nPLAYERS:\n'+JSON.stringify(batch),
-    max_output_tokens:3600
+    max_output_tokens:4200
    })});
    const d=await rr.json();if(!rr.ok)throw new Error(d?.error?.message||'OpenAI projection research failed');
    let text=d.output_text||'';if(!text&&Array.isArray(d.output))text=d.output.flatMap(x=>x.content||[]).map(x=>x.text||'').filter(Boolean).join('\n');
@@ -62,9 +62,14 @@ export default async function handler(req,res){
   }
 
   const groups={};for(const p of allPlayers){const k=p.position||'OTHER';(groups[k]||(groups[k]=[])).push(p)}
-  const batches=[];for(const [pos,arr] of Object.entries(groups)){for(let i=0;i<arr.length;i+=26)batches.push({pos,players:arr.slice(i,i+26)})}
+  const batches=[];for(const [pos,arr] of Object.entries(groups)){for(let i=0;i<arr.length;i+=40)batches.push({pos,players:arr.slice(i,i+40)})}
   const researched=[];
-  for(let i=0;i<batches.length;i+=2){const g=batches.slice(i,i+2);const out=await Promise.all(g.map((b,j)=>researchBatch(b.players,b.pos,i+j+1,batches.length)));for(const arr of out)researched.push(...arr)}
+  const concurrency=6;
+  for(let i=0;i<batches.length;i+=concurrency){
+   const group=batches.slice(i,i+concurrency);
+   const out=await Promise.all(group.map((b,j)=>researchBatch(b.players,b.pos,i+j+1,batches.length)));
+   for(const arr of out)researched.push(...arr)
+  }
   const byName=new Map(researched.map(x=>[x.name,x]));
 
   const teamRows=context.league_teams.map(t=>{
