@@ -18,8 +18,6 @@ sources <- c(
 )
 positions <- c("QB", "RB", "WR", "TE", "K", "DST")
 
-# Stats Fantasy Guru can rescore later using each league's own scoring rules.
-# These names are ffanalytics' normalized stat names.
 stat_whitelist <- c(
   "pass_att","pass_comp","pass_inc","pass_yds","pass_tds","pass_int",
   "pass_40_yds","pass_300_yds","pass_350_yds","pass_400_yds","pass_2pt",
@@ -66,22 +64,14 @@ for (src in sources) {
   working_sources <- c(working_sources, src)
 }
 
-if (!length(working_sources)) {
-  stop("No ffanalytics sources returned usable data; leaving existing JSON untouched.")
-}
+if (!length(working_sources)) stop("No ffanalytics sources returned usable data; leaving existing JSON untouched.")
 attr(scrapes, "season") <- season
 attr(scrapes, "week") <- 0L
 
-# Keep source-level fantasy-point output only as a diagnostic/reference value.
-# Fantasy Guru will NOT use this generic score for league rankings because each
-# league can have different scoring.
 source_pts <- ffanalytics::source_points(scrapes, scoring_rules = ffanalytics::scoring) %>%
   filter(!is.na(id), !is.na(raw_points), is.finite(raw_points)) %>%
   mutate(id = as.character(id))
 
-# Build an equal-weight consensus for every projected stat category. We average
-# the publishers' underlying projections first, then Fantasy Guru scores those
-# stats later using the selected league's exact scoring settings.
 stat_rows <- list()
 for (pos in names(scrapes)) {
   df <- scrapes[[pos]]
@@ -96,38 +86,49 @@ for (pos in names(scrapes)) {
     mutate(value = suppressWarnings(as.numeric(value))) %>%
     filter(!is.na(id), id != "", !is.na(value), is.finite(value)) %>%
     group_by(id, stat) %>%
-    summarise(
-      value = mean(value, na.rm = TRUE),
-      source_count = n_distinct(data_src),
-      .groups = "drop"
-    )
+    summarise(value = mean(value, na.rm = TRUE), source_count = n_distinct(data_src), .groups = "drop")
   one$pos <- pos
   stat_rows[[pos]] <- one
 }
 stat_long <- bind_rows(stat_rows)
 if (!nrow(stat_long)) stop("No usable projected stat rows were produced; leaving existing JSON untouched.")
 
-# Pull ffanalytics player metadata where available.
+# ffanalytics' current player_table uses first_name + last_name rather than a
+# single name field. Preserve that human-readable identity so Fantasy Guru can
+# join through normalized name + position when GSIS/ESPN IDs are unavailable.
 player_table <- tryCatch(get("player_table", envir = asNamespace("ffanalytics")), error = function(e) NULL)
 if (is.null(player_table) || !nrow(player_table)) player_table <- tibble(id = unique(stat_long$id))
+
 pick_col <- function(df, candidates) {
   hit <- candidates[candidates %in% names(df)]
   if (length(hit)) hit[[1]] else NA_character_
 }
+
 id_col <- pick_col(player_table, c("id", "mfl_id", "player_id"))
-name_col <- pick_col(player_table, c("name", "full_name", "player_name"))
 pos_col <- pick_col(player_table, c("pos", "position"))
 gsis_col <- pick_col(player_table, c("gsis_id", "gsis"))
 espn_col <- pick_col(player_table, c("espn_id", "espn"))
+name_col <- pick_col(player_table, c("name", "full_name", "player_name"))
+first_col <- pick_col(player_table, c("first_name", "firstname"))
+last_col <- pick_col(player_table, c("last_name", "lastname"))
+
 meta <- tibble(id = as.character(player_table[[id_col]]))
-meta$name <- if (!is.na(name_col)) as.character(player_table[[name_col]]) else NA_character_
+if (!is.na(name_col)) {
+  meta$name <- as.character(player_table[[name_col]])
+} else if (!is.na(first_col) || !is.na(last_col)) {
+  first <- if (!is.na(first_col)) as.character(player_table[[first_col]]) else rep("", nrow(player_table))
+  last <- if (!is.na(last_col)) as.character(player_table[[last_col]]) else rep("", nrow(player_table))
+  meta$name <- trimws(paste(first, last))
+} else {
+  meta$name <- NA_character_
+}
 meta$position <- if (!is.na(pos_col)) as.character(player_table[[pos_col]]) else NA_character_
 meta$gsis_id <- if (!is.na(gsis_col)) as.character(player_table[[gsis_col]]) else NA_character_
 meta$espn_id <- if (!is.na(espn_col)) as.character(player_table[[espn_col]]) else NA_character_
 meta <- meta %>% distinct(id, .keep_all = TRUE)
 
-# Generic default-scoring diagnostic by player. This is exposed for auditing but
-# never treated as an exact league-specific projection.
+message("Player metadata rows: ", nrow(meta), "; named rows: ", sum(!is.na(meta$name) & meta$name != ""))
+
 default_pts <- source_pts %>%
   group_by(id, pos) %>%
   summarise(
