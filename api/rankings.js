@@ -116,14 +116,11 @@ export default async function handler(req,res){
    return parsed.players;
   }
 
-  // A full 12-team league can contain ~200 players. One giant JSON response
-  // can be truncated, so value players in smaller deterministic batches.
   const batchSize=36;
   const batches=[];
   for(let i=0;i<allPlayers.length;i+=batchSize)batches.push(allPlayers.slice(i,i+batchSize));
 
   const valuedPlayers=[];
-  // Run two batches at a time to control API cost/rate pressure while avoiding timeouts.
   for(let i=0;i<batches.length;i+=2){
    const group=batches.slice(i,i+2);
    const results=await Promise.all(group.map((b,j)=>valueBatch(b,i+j+1,batches.length)));
@@ -131,7 +128,6 @@ export default async function handler(req,res){
   }
 
   const byName=new Map(valuedPlayers.map(x=>[x.name,x]));
-
   const counts=slotCounts(slots);
   const teamRows=context.league_teams.map(t=>{
    const ps=(t.players||[]).map(p=>({...p,...(byName.get(p.name)||{weekly:0,ros:0,weekly_confidence:25,ros_confidence:25})}));
@@ -161,7 +157,6 @@ export default async function handler(req,res){
    r.weekly_total=r.weekly_starters*0.82+r.weekly_depth*0.18;
    r.ros_total=r.ros_starters*0.72+r.ros_depth*0.28;
   }
-  normalizeScores(teamRows,'weekly_total'); normalizeScores(teamRows,'ros_total');
 
   const build=layer=>{
    const pre=layer==='weekly'?'weekly':'ros';
@@ -171,11 +166,31 @@ export default async function handler(req,res){
    };
    const sorted=[...teamRows].sort((a,b)=>b[pre+'_total']-a[pre+'_total']);
    const my=context.my_team.team;
+   const mine=teamRows.find(r=>r.team===my);
+   const n=teamRows.length;
+   const leagueStarterAvg=avg(teamRows.map(r=>r[pre+'_starters']));
+   const leagueDepthAvg=avg(teamRows.map(r=>r[pre+'_depth']));
+   const bullets=[];
+   const posLabels={qb:'QB',rb:'RB',wr:'WR',te:'TE'};
+   for(const k of ['qb','rb','wr','te']){
+    const rk=ranks[k][my];
+    if(rk<=3)bullets.push(posLabels[k]+' is a major strength at #'+rk+' of '+n+'.');
+   }
+   for(const k of ['qb','rb','wr','te']){
+    const rk=ranks[k][my];
+    if(rk>=Math.max(4,n-3))bullets.push(posLabels[k]+' is the clearest weakness at #'+rk+' of '+n+'.');
+   }
+   const sr=ranks.starters[my];
+   bullets.push('Your optimal starters rank #'+sr+' of '+n+' ('+mine[pre+'_starters'].toFixed(1)+' vs league average '+leagueStarterAvg.toFixed(1)+').');
+   const depthDelta=mine[pre+'_depth']-leagueDepthAvg;
+   bullets.push('Depth is '+(Math.abs(depthDelta)<1?'about league average':depthDelta>0?'above league average by '+depthDelta.toFixed(1):'below league average by '+Math.abs(depthDelta).toFixed(1))+'.');
+   const summary=(layer==='weekly'?'This week':'Rest of season')+', you rank #'+ranks.overall[my]+' of '+n+'. The score is a weighted roster value, not a forced 0–100 normalization.';
    return{
     my_ranks:{qb:ranks.qb[my],rb:ranks.rb[my],wr:ranks.wr[my],te:ranks.te[my],starters:ranks.starters[my],overall:ranks.overall[my]},
+    my_explanation:{summary,bullets},
     power_rankings:sorted.map(r=>({
      team:r.team,
-     score:Math.round(r[pre+'_total_100']*10)/10,
+     score:Math.round(r[pre+'_total']*10)/10,
      confidence:Math.round(r[pre+'_conf']),
      note:(layer==='weekly'
       ?'Weekly starters '+r.weekly_starters.toFixed(1)+'; depth '+r.weekly_depth.toFixed(1)
