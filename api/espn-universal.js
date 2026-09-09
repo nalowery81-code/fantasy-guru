@@ -1,4 +1,5 @@
 import { scoreConsensusStats } from './league-scoring.js';
+import { getIdentityIndexes, identityMapStatus } from './player-identity.js';
 
 const POS={1:'QB',2:'RB',3:'WR',4:'TE',5:'K',16:'DEF'};
 const finite=v=>v!==null&&v!==undefined&&v!==''&&Number.isFinite(Number(v));
@@ -32,23 +33,11 @@ function scoreRow(context,row,position){
   const scored=scoreConsensusStats(context,normalizedEspnStats(row.stats||{}),position);
   return finite(scored?.points)?Number(scored.points):null;
 }
-async function sleeperPlayers(){
-  try{
-    const r=await fetch('https://api.sleeper.app/v1/players/nfl',{headers:{Accept:'application/json','User-Agent':'FantasyGuru/1.0'}});
-    return r.ok?await r.json():{};
-  }catch{return {}}
-}
-function sleeperIndexes(players={}){
-  const byEspn=new Map(),byNamePos=new Map();
-  for(const [sid,p] of Object.entries(players||{})){
-    const espn=p?.espn_id!=null?String(p.espn_id):null;
-    const name=p?.full_name||[p?.first_name,p?.last_name].filter(Boolean).join(' ');
-    const position=posNorm(p?.position);
-    const rec={sleeper_id:String(sid),gsis_id:p?.gsis_id?String(p.gsis_id):null};
-    if(espn)byEspn.set(espn,rec);
-    if(name)byNamePos.set(norm(name)+'|'+position,rec);
-  }
-  return{byEspn,byNamePos};
+function identityForEspnPlayer(espnId,name,position){
+  const idx=getIdentityIndexes();
+  const byId=espnId&&idx.byEspn.get(String(espnId));
+  if(byId)return byId;
+  return idx.byNamePos.get(norm(name)+'|'+posNorm(position))||null;
 }
 
 export async function getUniversalEspnProjections(context){
@@ -62,25 +51,25 @@ export async function getUniversalEspnProjections(context){
   const base='https://lm-api-reads.fantasy.espn.com/apis/v3/games/ffl/seasons/'+season+'/segments/0/leagues/'+sourceLeagueId;
   const filter=JSON.stringify({players:{limit:3000}});
   const headers={'Cookie':'espn_s2='+process.env.ESPN_S2+'; SWID='+process.env.ESPN_SWID,'Accept':'application/json','User-Agent':'Mozilla/5.0','x-fantasy-filter':filter};
-  const [er,slPlayers]=await Promise.all([fetch(base+'?view=kona_player_info&scoringPeriodId='+week,{headers}),sleeperPlayers()]);
+  const er=await fetch(base+'?view=kona_player_info&scoringPeriodId='+week,{headers});
   const txt=await er.text();let data;try{data=JSON.parse(txt)}catch{throw new Error('ESPN player-pool response was not JSON')}
   if(!er.ok)throw new Error(data?.messages?.[0]||'ESPN projection feed failed');
-  const slIdx=sleeperIndexes(slPlayers),players=[];
+  const players=[];
   for(const entry of data.players||[]){
     const p=entry?.playerPoolEntry?.player||entry?.player||{};
     const espnId=String(p.id||entry.id||'');
     const name=p.fullName||p.name||'';
     const position=POS[p.defaultPositionId]||posNorm(p.position||'');
     if(!espnId||!name||!position)continue;
-    const ids=slIdx.byEspn.get(espnId)||slIdx.byNamePos.get(norm(name)+'|'+position)||{};
+    const ids=identityForEspnPlayer(espnId,name,position)||{};
     const wk=findStat(p,{season,week,source:1,split:1});
     const proj=findStat(p,{season,week,source:1,split:0});
     const actual=findStat(p,{season,week,source:0,split:0});
     const weekly=scoreRow(context,wk,position),projectedSeason=scoreRow(context,proj,position),actualSeason=scoreRow(context,actual,position);
     const ros=finite(projectedSeason)&&finite(actualSeason)?Math.max(0,projectedSeason-actualSeason):null;
-    players.push({name,position,espn_id:espnId,sleeper_id:ids.sleeper_id||null,gsis_id:ids.gsis_id||null,espn_weekly_points:weekly,espn_projected_season_points:projectedSeason,espn_actual_season_points:actualSeason,espn_ros_points:ros});
+    players.push({name,position,canonical_player_id:ids.canonical_player_id||null,espn_id:espnId,sleeper_id:ids.sleeper_id||null,gsis_id:ids.gsis_id||null,id_match_method:ids?'canonical_identity_map':null,espn_weekly_points:weekly,espn_projected_season_points:projectedSeason,espn_actual_season_points:actualSeason,espn_ros_points:ros});
   }
-  return{source:'ESPN raw projected stats rescored to target league rules',season,week,player_count:players.length,players};
+  return{source:'ESPN raw projected stats rescored to target league rules',season,week,player_count:players.length,identity_map:identityMapStatus(),players};
 }
 
 export default async function handler(req,res){
