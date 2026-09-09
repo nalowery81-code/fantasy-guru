@@ -1,0 +1,8 @@
+{
+  "schema_version": "1.0",
+  "generated_at": null,
+  "source": "Sleeper master player endpoint",
+  "player_count": 0,
+  "canonical_id_rule": "GSIS when available, otherwise Sleeper ID, otherwise ESPN ID",
+  "players": []
+}
