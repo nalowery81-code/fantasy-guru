@@ -3,7 +3,26 @@ const SLOT={0:'QB',2:'RB',4:'WR',6:'TE',7:'SUPER_FLEX',16:'DEF',17:'K',20:'BN',2
 const starter=id=>![20,21].includes(Number(id));
 const teamName=t=>[t.location,t.nickname].filter(Boolean).join(' ').trim()||t.name||t.abbrev||('Team '+t.id);
 const record=t=>{const o=t.record?.overall||{};return{wins:o.wins||0,losses:o.losses||0,ties:o.ties||0}};
-function player(e){const p=e?.playerPoolEntry?.player||e?.player||{};return{id:String(p.id||e?.playerId||''),name:p.fullName||p.name||('Player '+(p.id||'')),position:POS[p.defaultPositionId]||String(p.defaultPositionId||''),starter:starter(e?.lineupSlotId),lineup_slot:SLOT[e?.lineupSlotId]||String(e?.lineupSlotId??''),injury_status:p.injuryStatus||null}}
+const finite=v=>v!==null&&v!==undefined&&v!==''&&Number.isFinite(Number(v));
+function projectedPoints(p,week){
+ const stats=Array.isArray(p?.stats)?p.stats:[];
+ const exact=stats.find(s=>Number(s?.statSourceId)===1&&Number(s?.scoringPeriodId)===Number(week)&&finite(s?.appliedTotal));
+ if(exact)return Number(exact.appliedTotal);
+ const fallback=stats.find(s=>Number(s?.statSourceId)===1&&finite(s?.appliedTotal));
+ return fallback?Number(fallback.appliedTotal):null;
+}
+function player(e,week){
+ const p=e?.playerPoolEntry?.player||e?.player||{};
+ return{
+  id:String(p.id||e?.playerId||''),
+  name:p.fullName||p.name||('Player '+(p.id||'')),
+  position:POS[p.defaultPositionId]||String(p.defaultPositionId||''),
+  starter:starter(e?.lineupSlotId),
+  lineup_slot:SLOT[e?.lineupSlotId]||String(e?.lineupSlotId??''),
+  injury_status:p.injuryStatus||null,
+  espn_weekly_points:projectedPoints(p,week)
+ };
+}
 function scoringSummary(settings){
  const out=[],items=settings?.scoringSettings?.scoringItems||[];
  const map=new Map(items.map(x=>[x.statId,x.points]));
@@ -26,11 +45,12 @@ export default async function handler(req,res){
   try{data=JSON.parse(mt)}catch{return res.status(mr.status||500).json({error:'ESPN response was not JSON'})}
   try{free=JSON.parse(ft)}catch{free={players:[]}}
   if(!mr.ok)return res.status(mr.status).json({error:data?.messages?.[0]||'ESPN authentication failed'});
-  const teams=(data.teams||[]).map(t=>({team:teamName(t),roster_id:t.id,record:record(t),waiver_position:t.waiverRank??null,players:(t.roster?.entries||[]).map(player)}));
+  const currentWeek=data.status?.currentScoringPeriod||1;
+  const teams=(data.teams||[]).map(t=>({team:teamName(t),roster_id:t.id,record:record(t),waiver_position:t.waiverRank??null,players:(t.roster?.entries||[]).map(e=>player(e,currentWeek))}));
   const me=teams.find(t=>Number(t.roster_id)===myTeamId);if(!me)return res.status(404).json({error:'ESPN team 15 not found'});
   const counts=data.settings?.rosterSettings?.lineupSlotCounts||{},positions=[];
   Object.entries(counts).forEach(([id,n])=>{for(let i=0;i<Number(n||0);i++)positions.push(SLOT[id]||('SLOT_'+id))});
-  const available=(free.players||[]).slice(0,75).map(x=>{const p=x.player||x.playerPoolEntry?.player||{};return{id:String(p.id||''),name:p.fullName||p.name||'',position:POS[p.defaultPositionId]||'',injury_status:p.injuryStatus||null,percent_owned:p.ownership?.percentOwned??null,status:x.status||x.playerPoolEntry?.status||null}});
-  res.json({platform:'ESPN',current_week:data.status?.currentScoringPeriod||1,league:{id:String(data.id||leagueId),name:data.settings?.name||'DGH Invitational 2026',season:String(data.seasonId||season),roster_positions:positions,scoring_settings:data.settings?.scoringSettings||{},scoring_summary:scoringSummary(data.settings),settings:data.settings||{}},my_team:{team:me.team,roster_id:me.roster_id,record:me.record,waiver_position:me.waiver_position,players:me.players},available_trending_players:available,league_teams:teams});
+  const available=(free.players||[]).slice(0,75).map(x=>{const p=x.player||x.playerPoolEntry?.player||{};return{id:String(p.id||''),name:p.fullName||p.name||'',position:POS[p.defaultPositionId]||'',injury_status:p.injuryStatus||null,percent_owned:p.ownership?.percentOwned??null,status:x.status||x.playerPoolEntry?.status||null,espn_weekly_points:projectedPoints(p,currentWeek)}});
+  res.json({platform:'ESPN',current_week:currentWeek,league:{id:String(data.id||leagueId),name:data.settings?.name||'DGH Invitational 2026',season:String(data.seasonId||season),roster_positions:positions,scoring_settings:data.settings?.scoringSettings||{},scoring_summary:scoringSummary(data.settings),settings:data.settings||{}},my_team:{team:me.team,roster_id:me.roster_id,record:me.record,waiver_position:me.waiver_position,players:me.players},available_trending_players:available,league_teams:teams});
  }catch(e){res.status(500).json({error:e.message})}
 }
