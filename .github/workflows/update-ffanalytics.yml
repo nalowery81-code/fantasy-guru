@@ -1,4 +1,4 @@
-name: Update ffanalytics ROS projections
+name: Update ffanalytics projections
 
 on:
   workflow_dispatch:
@@ -7,6 +7,7 @@ on:
     paths:
       - '.github/workflows/update-ffanalytics.yml'
       - 'scripts/update_ffanalytics.R'
+      - 'scripts/update_ffanalytics_weekly.R'
   schedule:
     - cron: '15 9 * * *'
 
@@ -16,7 +17,7 @@ permissions:
 jobs:
   update-projections:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 25
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -36,33 +37,38 @@ jobs:
           git clone --depth 1 --branch master https://github.com/FantasyFootballAnalytics/ffanalytics.git /tmp/ffanalytics
           Rscript -e "remotes::install_local('/tmp/ffanalytics', dependencies=TRUE, upgrade='never')"
 
-      - name: Build equal-average source-stat dataset
+      - name: Build ROS source-stat dataset
         run: Rscript scripts/update_ffanalytics.R
+
+      - name: Build weekly source-stat dataset
+        run: Rscript scripts/update_ffanalytics_weekly.R
 
       - name: Validate generated JSON
         run: |
           node - <<'NODE'
           const fs=require('fs');
-          const p='data/ffanalytics_projections.json';
-          const d=JSON.parse(fs.readFileSync(p,'utf8'));
-          if(d.schema_version!=='2.0') throw new Error('Unexpected ffanalytics schema: '+d.schema_version);
-          if(!Array.isArray(d.players)||d.players.length<25) throw new Error('Too few projection rows; refusing to overwrite dataset');
-          const withStats=d.players.filter(x=>x.consensus_stats && Object.keys(x.consensus_stats).length>0);
-          if(withStats.length<25) throw new Error('Too few rescorable player stat rows; refusing to overwrite dataset');
-          const offensive=withStats.filter(x=>['QB','RB','WR','TE'].includes(String(x.position).toUpperCase()));
-          const core=offensive.filter(x=>['pass_yds','rush_yds','rec_yds','rec'].some(k=>Number.isFinite(Number(x.consensus_stats[k]))));
-          if(core.length<20) throw new Error('Core offensive projection stats are missing; refusing to overwrite dataset');
-          console.log(`Validated ${withStats.length} players with rescorable consensus stats from ${(d.working_sources||[]).length} sources`);
+          for (const p of ['data/ffanalytics_projections.json','data/ffanalytics_weekly.json']) {
+            const d=JSON.parse(fs.readFileSync(p,'utf8'));
+            if(d.schema_version!=='2.0') throw new Error('Unexpected ffanalytics schema in '+p+': '+d.schema_version);
+            if(!Array.isArray(d.players)||d.players.length<25) throw new Error('Too few projection rows in '+p+'; refusing to overwrite dataset');
+            const withStats=d.players.filter(x=>x.consensus_stats && Object.keys(x.consensus_stats).length>0);
+            if(withStats.length<25) throw new Error('Too few rescorable player stat rows in '+p+'; refusing to overwrite dataset');
+            const offensive=withStats.filter(x=>['QB','RB','WR','TE'].includes(String(x.position).toUpperCase()));
+            const core=offensive.filter(x=>['pass_yds','rush_yds','rec_yds','rec'].some(k=>Number.isFinite(Number(x.consensus_stats[k]))));
+            if(core.length<20) throw new Error('Core offensive projection stats are missing in '+p+'; refusing to overwrite dataset');
+            if(p.includes('weekly') && (!Number.isFinite(Number(d.week)) || Number(d.week)<1)) throw new Error('Weekly dataset missing valid week');
+            console.log(`Validated ${p}: ${withStats.length} players from ${(d.working_sources||[]).length} sources`);
+          }
           NODE
 
-      - name: Commit refreshed dataset
+      - name: Commit refreshed datasets
         run: |
-          if git diff --quiet -- data/ffanalytics_projections.json; then
+          if git diff --quiet -- data/ffanalytics_projections.json data/ffanalytics_weekly.json; then
             echo 'No projection changes to commit.'
             exit 0
           fi
           git config user.name 'fantasy-guru-bot'
           git config user.email 'fantasy-guru-bot@users.noreply.github.com'
-          git add data/ffanalytics_projections.json
-          git commit -m 'Refresh ffanalytics source-stat consensus'
+          git add data/ffanalytics_projections.json data/ffanalytics_weekly.json
+          git commit -m 'Refresh ffanalytics weekly and ROS consensus'
           git push
