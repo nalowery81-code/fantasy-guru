@@ -64,36 +64,74 @@ export default async function handler(req,res){
   const instructions=[
    'You are a fantasy-football valuation researcher for the 2026 NFL season.',
    'Use live web search and current reputable sources.',
-   'Return ONLY valid minified JSON; no markdown or prose.',
-   'Value EVERY supplied player twice: WEEKLY for the current NFL week and ROS for rest of season.',
+   'Return ONLY valid JSON. No markdown. No prose outside JSON.',
+   'Value every supplied player twice: WEEKLY for the current NFL week and ROS for rest of season.',
    'Values are league-relative 0-100 player values, NOT team rankings.',
    'Base WEEKLY on current role, injury status, matchup, projected opportunity, expected fantasy points, and this exact league scoring.',
    'Base ROS on role security, talent, volume, team context, injury risk, schedule outlook, and rest-of-season expert consensus.',
    'Do not inflate values to match ESPN or the user. Accuracy over agreement.',
    'Use multiple sources when possible. If sources disagree or role is uncertain, lower confidence.',
    'QB value must reflect the exact number of QB/Superflex starting slots in the supplied league.',
-   'Return schema: {"players":[{"name":"exact input name","position":"...","weekly":number,"ros":number,"weekly_confidence":0-100,"ros_confidence":0-100,"note":"max 80 chars"}]}.',
+   'Use this compact schema exactly: {"players":[{"name":"exact input name","weekly":number,"ros":number,"weekly_confidence":number,"ros_confidence":number}]}.',
    'Include every supplied player exactly once.'
   ].join('\n');
 
-  const rr=await fetch('https://api.openai.com/v1/responses',{
-   method:'POST',
-   headers:{'Content-Type':'application/json','Authorization':'Bearer '+process.env.OPENAI_API_KEY},
-   body:JSON.stringify({
-    model:'gpt-5.6-luna',
-    reasoning:{effort:'medium'},
-    tools:[{type:'web_search',search_context_size:'high'}],
-    instructions,
-    input:'CURRENT WEEK: '+context.current_week+'\nLEAGUE SETTINGS:\n'+JSON.stringify(context.league)+'\nPLAYERS:\n'+JSON.stringify(allPlayers),
-    max_output_tokens:8000
-   })
-  });
-  const d=await rr.json();
-  if(!rr.ok)return res.status(rr.status).json({error:d?.error?.message||'OpenAI failed'});
-  let text=d.output_text||'';
-  if(!text&&Array.isArray(d.output))text=d.output.flatMap(x=>x.content||[]).map(x=>x.text||'').filter(Boolean).join('\n');
-  let values; try{values=JSON.parse(cleanJson(text))}catch{return res.status(502).json({error:'Valuation engine returned invalid JSON'})}
-  const byName=new Map((values.players||[]).map(x=>[x.name,x]));
+  function extractJson(text){
+   const cleaned=cleanJson(text);
+   try{return JSON.parse(cleaned)}catch{}
+   const first=cleaned.indexOf('{'),last=cleaned.lastIndexOf('}');
+   if(first>=0&&last>first){
+    try{return JSON.parse(cleaned.slice(first,last+1))}catch{}
+   }
+   return null;
+  }
+
+  async function valueBatch(batch,batchNo,totalBatches){
+   const rr=await fetch('https://api.openai.com/v1/responses',{
+    method:'POST',
+    headers:{'Content-Type':'application/json','Authorization':'Bearer '+process.env.OPENAI_API_KEY},
+    body:JSON.stringify({
+     model:'gpt-5.6-luna',
+     reasoning:{effort:'medium'},
+     tools:[{type:'web_search',search_context_size:'medium'}],
+     instructions,
+     input:
+      'CURRENT WEEK: '+context.current_week+
+      '\nBATCH: '+batchNo+' of '+totalBatches+
+      '\nLEAGUE SETTINGS:\n'+JSON.stringify({
+       roster_positions:context.league?.roster_positions,
+       scoring_settings:context.league?.scoring_settings,
+       scoring_summary:context.league?.scoring_summary
+      })+
+      '\nPLAYERS:\n'+JSON.stringify(batch),
+     max_output_tokens:3200
+    })
+   });
+   const d=await rr.json();
+   if(!rr.ok)throw new Error(d?.error?.message||'OpenAI valuation failed');
+   let text=d.output_text||'';
+   if(!text&&Array.isArray(d.output))text=d.output.flatMap(x=>x.content||[]).map(x=>x.text||'').filter(Boolean).join('\n');
+   const parsed=extractJson(text);
+   if(!parsed?.players?.length)throw new Error('Valuation batch '+batchNo+' returned invalid JSON');
+   return parsed.players;
+  }
+
+  // A full 12-team league can contain ~200 players. One giant JSON response
+  // can be truncated, so value players in smaller deterministic batches.
+  const batchSize=36;
+  const batches=[];
+  for(let i=0;i<allPlayers.length;i+=batchSize)batches.push(allPlayers.slice(i,i+batchSize));
+
+  const valuedPlayers=[];
+  // Run two batches at a time to control API cost/rate pressure while avoiding timeouts.
+  for(let i=0;i<batches.length;i+=2){
+   const group=batches.slice(i,i+2);
+   const results=await Promise.all(group.map((b,j)=>valueBatch(b,i+j+1,batches.length)));
+   for(const arr of results)valuedPlayers.push(...arr);
+  }
+
+  const byName=new Map(valuedPlayers.map(x=>[x.name,x]));
+
   const counts=slotCounts(slots);
   const teamRows=context.league_teams.map(t=>{
    const ps=(t.players||[]).map(p=>({...p,...(byName.get(p.name)||{weekly:0,ros:0,weekly_confidence:25,ros_confidence:25})}));
