@@ -64,6 +64,8 @@ export default async function handler(req,res){
   const instructions=[
    'You are a fantasy-football valuation researcher for the 2026 NFL season.',
    'Use live web search and current reputable sources.',
+   'When available, include FantasyPros among the sources you consider. Use its current weekly Expert Consensus Rankings as one input for WEEKLY value and its current rest-of-season consensus rankings as one input for ROS value.',
+   'Treat FantasyPros as one trusted consensus source, not the sole authority and not a target to match. Reconcile it with current injuries, roles, matchups, depth charts, usage, projections, and other reputable sources.',
    'Return ONLY valid JSON. No markdown. No prose outside JSON.',
    'Value every supplied player twice: WEEKLY for the current NFL week and ROS for rest of season.',
    'Values are league-relative 0-100 player values, NOT team rankings.',
