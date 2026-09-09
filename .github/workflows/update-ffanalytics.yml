@@ -8,6 +8,7 @@ on:
       - '.github/workflows/update-ffanalytics.yml'
       - 'scripts/update_ffanalytics.R'
       - 'scripts/update_ffanalytics_weekly.R'
+      - 'scripts/update_player_identity_map.mjs'
   schedule:
     - cron: '15 9 * * *'
 
@@ -21,6 +22,9 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
+      - name: Build canonical player identity map
+        run: node scripts/update_player_identity_map.mjs
 
       - name: Set up R
         uses: r-lib/actions/setup-r@v2
@@ -47,6 +51,15 @@ jobs:
         run: |
           node - <<'NODE'
           const fs=require('fs');
+          const identity=JSON.parse(fs.readFileSync('data/player_identity_map.json','utf8'));
+          if(identity.schema_version!=='1.0') throw new Error('Unexpected identity-map schema: '+identity.schema_version);
+          if(!Array.isArray(identity.players)||identity.players.length<500) throw new Error('Too few identity-map rows; refusing to overwrite dataset');
+          const sleeperIds=identity.players.filter(x=>x.sleeper_id).length;
+          const espnIds=identity.players.filter(x=>x.espn_id).length;
+          const gsisIds=identity.players.filter(x=>x.gsis_id).length;
+          if(sleeperIds<500||espnIds<100||gsisIds<100) throw new Error('Identity-map provider coverage is unexpectedly low');
+          console.log(`Validated data/player_identity_map.json: ${identity.players.length} players; Sleeper ${sleeperIds}, ESPN ${espnIds}, GSIS ${gsisIds}`);
+
           for (const p of ['data/ffanalytics_projections.json','data/ffanalytics_weekly.json']) {
             const d=JSON.parse(fs.readFileSync(p,'utf8'));
             if(d.schema_version!=='2.0') throw new Error('Unexpected ffanalytics schema in '+p+': '+d.schema_version);
@@ -63,12 +76,12 @@ jobs:
 
       - name: Commit refreshed datasets
         run: |
-          if git diff --quiet -- data/ffanalytics_projections.json data/ffanalytics_weekly.json; then
-            echo 'No projection changes to commit.'
+          if git diff --quiet -- data/player_identity_map.json data/ffanalytics_projections.json data/ffanalytics_weekly.json; then
+            echo 'No projection or identity changes to commit.'
             exit 0
           fi
           git config user.name 'fantasy-guru-bot'
           git config user.email 'fantasy-guru-bot@users.noreply.github.com'
-          git add data/ffanalytics_projections.json data/ffanalytics_weekly.json
-          git commit -m 'Refresh ffanalytics weekly and ROS consensus'
+          git add data/player_identity_map.json data/ffanalytics_projections.json data/ffanalytics_weekly.json
+          git commit -m 'Refresh player identity map and projection consensus'
           git push
