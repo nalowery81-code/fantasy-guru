@@ -45,278 +45,64 @@ textarea{width:100%;min-height:105px;background:#07101d;color:#fff;border:1px so
 .mine{color:#86efac;font-weight:800}
 .source{display:block;color:#7dd3fc;margin:6px 0}
 .conf{font-size:11px;color:var(--m)}
-.compareGrid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.compareTeam{background:#07101d;border:1px solid var(--l);border-radius:14px;padding:14px}
 .whyWrap{margin-top:14px}
 .whyBtn{background:#334155;color:#fff}
 .whyBox{margin-top:10px;background:#07101d;border:1px solid #40516b;border-radius:12px;padding:14px;line-height:1.55}
 .whyBox ul{margin:8px 0 0 20px;padding:0}
 .whyBox li{margin:5px 0}
-@media(max-width:760px){
-  .power{grid-template-columns:repeat(3,1fr)}
-  .stats,.players{grid-template-columns:1fr 1fr}
-  .ask{grid-template-columns:1fr}
-  .rank{grid-template-columns:30px 1fr 76px}
-  .rank .note{grid-column:2}
-}
-@media(max-width:440px){
-  .stats,.players{grid-template-columns:1fr}
-  .power{grid-template-columns:repeat(2,1fr)}
-}
+.cacheRow{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-top:10px}
+.cacheNote{font-size:12px;color:var(--m)}
+@media(max-width:760px){.power{grid-template-columns:repeat(3,1fr)}.stats,.players{grid-template-columns:1fr 1fr}.ask{grid-template-columns:1fr}.rank{grid-template-columns:30px 1fr 76px}.rank .note{grid-column:2}}
+@media(max-width:440px){.stats,.players{grid-template-columns:1fr}.power{grid-template-columns:repeat(2,1fr)}}
 </style>
 </head>
 <body>
 <main>
 <h1>🏈 Fantasy Guru</h1>
 <p class="muted">Your AI fantasy football co-manager</p>
-
-<div class="card">
-  <h2>My Leagues</h2>
-  <div id="leagues"></div>
-  <div id="status" class="muted">Choose a league.</div>
-</div>
-
+<div class="card"><h2>My Leagues</h2><div id="leagues"></div><div id="status" class="muted">Choose a league.</div></div>
 <div id="app" class="hidden">
-  <div class="card">
-    <h2 id="title"></h2>
-    <div id="stats" class="stats"></div>
-    <div id="settings" class="settings"></div>
-  </div>
-
-  <div class="card">
-    <div style="display:flex;justify-content:space-between;gap:10px;align-items:center;flex-wrap:wrap">
-      <div>
-        <h2 style="margin-bottom:4px">League Power Rankings</h2>
-        <div class="muted">Same roster data, two different questions: who is strongest this week, and who is strongest the rest of the season?</div>
-      </div>
-      <button id="refresh">Refresh Analysis</button>
-    </div>
-
-    <div class="layerTabs" style="margin-top:14px">
-      <button id="weeklyTab" class="active" onclick="setLayer('weekly')">THIS WEEK</button>
-      <button id="rosTab" onclick="setLayer('ros')">REST OF SEASON</button>
-    </div>
-
-    <div id="progress" class="progress hidden">
-      <b id="progressText">Starting analysis…</b>
-      <div class="progressBar"><div id="progressFill" class="progressFill"></div></div>
-    </div>
-
-    <div id="power" class="power" style="margin-top:15px"></div>
-    <div id="ranklist" style="margin-top:14px"></div>
-    <div id="whyWrap" class="whyWrap hidden">
-      <button id="whyBtn" class="whyBtn" onclick="toggleWhy()">Why am I ranked here?</button>
-      <div id="whyBox" class="whyBox hidden"></div>
-    </div>
-  </div>
-
-  <div class="card">
-    <h2>🧠 Ask Guru</h2>
-    <p class="muted">Live intel + Value Guard. No forced moves.</p>
-    <div class="chips">
-      <button onclick="preset('Optimize my Week '+C.current_week+' lineup. Only make changes current evidence supports.')">Optimize lineup</button>
-      <button onclick="preset('Audit the waiver wire. Only recommend a verified available player if he clearly improves my roster versus the exact drop. Account for handcuff and upside-stash value before recommending a drop.')">Waiver audit</button>
-      <button onclick="preset('Audit realistic trades using current rest-of-season values and actual league rosters. Do not force a trade.')">Trade audit</button>
-    </div>
-    <div class="ask">
-      <textarea id="question" placeholder="Ask anything…"></textarea>
-      <button id="ask">Ask Guru</button>
-    </div>
-    <div id="answer" class="answer hidden"></div>
-    <div id="sources"></div>
-  </div>
-
-  <div class="card">
-    <h2>Roster</h2>
-    <div id="players" class="players"></div>
-  </div>
+<div class="card"><h2 id="title"></h2><div id="stats" class="stats"></div><div id="settings" class="settings"></div></div>
+<div class="card">
+<div style="display:flex;justify-content:space-between;gap:10px;align-items:center;flex-wrap:wrap"><div><h2 style="margin-bottom:4px">League Power Rankings</h2><div class="muted">Same roster data, two different questions: who is strongest this week, and who is strongest the rest of the season?</div></div><button id="refresh">Refresh Analysis</button></div>
+<div class="layerTabs" style="margin-top:14px"><button id="weeklyTab" class="active" onclick="setLayer('weekly')">THIS WEEK</button><button id="rosTab" onclick="setLayer('ros')">REST OF SEASON</button></div>
+<div class="cacheRow"><button id="forceRefresh" class="secondary">Force Fresh Research</button><span id="cacheNote" class="cacheNote">No cached analysis yet.</span></div>
+<div id="progress" class="progress hidden"><b id="progressText">Starting analysis…</b><div class="progressBar"><div id="progressFill" class="progressFill"></div></div></div>
+<div id="power" class="power" style="margin-top:15px"></div><div id="ranklist" style="margin-top:14px"></div>
+<div id="whyWrap" class="whyWrap hidden"><button id="whyBtn" class="whyBtn" onclick="toggleWhy()">Why am I ranked here?</button><div id="whyBox" class="whyBox hidden"></div></div>
 </div>
-
+<div class="card"><h2>🧠 Ask Guru</h2><p class="muted">Live intel + Value Guard. No forced moves.</p><div class="chips"><button onclick="preset('Optimize my Week '+C.current_week+' lineup. Only make changes current evidence supports.')">Optimize lineup</button><button onclick="preset('Audit the waiver wire. Only recommend a verified available player if he clearly improves my roster versus the exact drop. Account for handcuff and upside-stash value before recommending a drop.')">Waiver audit</button><button onclick="preset('Audit realistic trades using current rest-of-season values and actual league rosters. Do not force a trade.')">Trade audit</button></div><div class="ask"><textarea id="question" placeholder="Ask anything…"></textarea><button id="ask">Ask Guru</button></div><div id="answer" class="answer hidden"></div><div id="sources"></div></div>
+<div class="card"><h2>Roster</h2><div id="players" class="players"></div></div>
+</div>
 <script>
 const A='https://api.sleeper.app/v1',$=x=>document.getElementById(x);
-const LS=[
-  {platform:'Sleeper',id:'1389377608638042112',name:'GridIron Throne',rid:10,team:'Tennesee Turf Trotters'},
-  {platform:'Sleeper',id:'1389387047789162497',name:'SouthCentral War Room',rid:1,team:'Plumbers “Crack”n Boys'},
-  {platform:'ESPN',id:'1673474732',name:'DGH Invitational 2026',rid:15,team:'CeeDees Nuts'}
-];
-let C=null;
-let analysis=null;
-let layer='weekly';
-
-const get=async u=>{
-  const r=await fetch(u);
-  const t=await r.text();
-  let d;try{d=JSON.parse(t)}catch{d=t}
-  if(!r.ok)throw Error(d?.error||t||r.status);
-  return d
-};
+const LS=[{platform:'Sleeper',id:'1389377608638042112',name:'GridIron Throne',rid:10,team:'Tennesee Turf Trotters'},{platform:'Sleeper',id:'1389387047789162497',name:'SouthCentral War Room',rid:1,team:'Plumbers “Crack”n Boys'},{platform:'ESPN',id:'1673474732',name:'DGH Invitational 2026',rid:15,team:'CeeDees Nuts'}];
+const CACHE_TTL=8*60*60*1000;
+let C=null,analysis=null,layer='weekly',cacheMeta=null;
+const get=async u=>{const r=await fetch(u),t=await r.text();let d;try{d=JSON.parse(t)}catch{d=t}if(!r.ok)throw Error(d?.error||t||r.status);return d};
 const tn=u=>u?.metadata?.team_name||u?.display_name||u?.username||'Unknown';
 const pn=(p,id)=>{let x=p[id]||{};return((x.first_name||'')+' '+(x.last_name||'')).trim()||x.full_name||id};
-
-$('leagues').innerHTML=LS.map((x,i)=>
-  '<div class="league"><div><b>'+x.name+'</b><span class="platform">'+x.platform+'</span><div class="muted">'+x.team+'</div></div><button onclick="openL('+i+')">Open</button></div>'
-).join('');
-
-async function loadSleeper(c){
-  const st=await get(A+'/state/nfl'),w=+st.week||1;
-  const [l,u,r,p,tr]=await Promise.all([
-    get(A+'/league/'+c.id),
-    get(A+'/league/'+c.id+'/users'),
-    get(A+'/league/'+c.id+'/rosters'),
-    get(A+'/players/nfl'),
-    get(A+'/players/nfl/trending/add?lookback_hours=168&limit=100').catch(()=>[])
-  ]);
-  const me=r.find(x=>x.roster_id===c.rid),ss=new Set(me.starters||[]);
-  const rows=(me.players||[]).map(id=>{let q=p[id]||{};return{id,name:pn(p,id),position:q.position||'',starter:ss.has(id),team:q.team||null,injury_status:q.injury_status||null}});
-  const owned=new Set();r.forEach(x=>(x.players||[]).forEach(id=>owned.add(String(id))));
-  const teams=u.map(us=>{let rr=r.find(z=>String(z.owner_id)===String(us.user_id));return rr?{team:tn(us),roster_id:rr.roster_id,players:(rr.players||[]).map(id=>{let q=p[id]||{};return{id:String(id),name:pn(p,id),position:q.position||'',team:q.team||null,injury_status:q.injury_status||null}})}:null}).filter(Boolean);
-  return{
-    platform:'Sleeper',
-    current_week:w,
-    league:{id:l.league_id,name:l.name,season:l.season,roster_positions:l.roster_positions,scoring_settings:l.scoring_settings,settings:l.settings},
-    my_team:{team:c.team,roster_id:me.roster_id,record:{wins:me.settings?.wins||0,losses:me.settings?.losses||0},waiver_position:me.settings?.waiver_position,players:rows},
-    available_trending_players:(tr||[]).filter(x=>!owned.has(String(x.player_id))).slice(0,40).map(x=>({id:String(x.player_id),name:pn(p,x.player_id),position:p[x.player_id]?.position||'',trending_adds:x.count})),
-    league_teams:teams
-  }
-}
-
-function settingsHtml(){
-  const pos=C.league?.roster_positions||[],counts={};pos.forEach(x=>counts[x]=(counts[x]||0)+1);
-  const order=['QB','RB','WR','TE','FLEX','SUPER_FLEX','DEF','K','BN','IR'];
-  const slots=order.filter(k=>counts[k]).map(k=>k+' ×'+counts[k]).join(' | ');
-  const sc=C.league?.scoring_summary||[];
-  return '<b>League Settings Audit</b><br><span class="muted">Imported slots:</span> '+(slots||'Not returned')+
-    '<br><span class="muted">Key scoring:</span> '+(sc.length?sc.join(' | '):'Using imported scoring settings')+
-    '<br><span class="muted">Ranking rule:</span> same exact league settings are applied to Weekly and ROS layers.';
-}
-
-window.openL=async i=>{
-  try{
-    const c=LS[i];
-    $('status').textContent='Loading '+c.platform+'…';
-    C=c.platform==='ESPN'?await get('/api/espn'):await loadSleeper(c);
-    analysis=null;layer='weekly';
-    $('weeklyTab').classList.add('active');$('rosTab').classList.remove('active');
-    $('title').textContent=C.league.name+' — '+C.my_team.team+' ['+C.platform+']';
-    $('stats').innerHTML=
-      '<div class="box"><span>RECORD</span><b>'+C.my_team.record.wins+'-'+C.my_team.record.losses+'</b></div>'+ 
-      '<div class="box"><span>WAIVER</span><b>'+(C.my_team.waiver_position!=null?'#'+C.my_team.waiver_position:'—')+'</b></div>'+ 
-      '<div class="box"><span>WEEK</span><b>'+C.current_week+'</b></div>'+ 
-      '<div class="box"><span>TEAMS</span><b>'+C.league_teams.length+'</b></div>';
-    $('settings').innerHTML=settingsHtml();
-    $('players').innerHTML=C.my_team.players.slice().sort((a,b)=>Number(b.starter)-Number(a.starter)).map(x=>
-      '<div class="p"><b>'+x.name+'</b> '+x.position+' <span class="muted">— '+(x.starter?'STARTER':'BENCH')+'</span></div>'
-    ).join('');
-    resetPower();
-    $('app').classList.remove('hidden');
-    $('status').textContent='Ready.';
-  }catch(e){$('status').textContent='Error: '+e.message}
-};
-
-function resetPower(){
-  $('power').innerHTML=['QB','RB','WR','TE','STARTERS','OVERALL'].map(x=>'<div class="box"><span>'+x+' RANK</span><b>—</b></div>').join('');
-  $('ranklist').innerHTML='<div class="muted">Run Refresh Analysis to calculate Weekly and Rest-of-Season rankings.</div>';
-  $('whyWrap').classList.add('hidden');
-  $('whyBox').classList.add('hidden');
-}
-
-function setProgress(msg,pct){
-  $('progress').classList.remove('hidden');
-  $('progressText').textContent=msg;
-  $('progressFill').style.width=pct+'%';
-}
-function clearProgress(){
-  $('progress').classList.add('hidden');
-  $('progressFill').style.width='0%';
-}
-
-window.setLayer=l=>{
-  layer=l;
-  $('weeklyTab').classList.toggle('active',l==='weekly');
-  $('rosTab').classList.toggle('active',l==='ros');
-  renderAnalysis();
-};
-
-window.toggleWhy=()=>{
-  const b=$('whyBox');
-  b.classList.toggle('hidden');
-  $('whyBtn').textContent=b.classList.contains('hidden')?'Why am I ranked here?':'Hide ranking explanation';
-};
-
-function renderWhy(d){
-  const ex=d.my_explanation;
-  if(!ex){$('whyWrap').classList.add('hidden');return}
-  $('whyWrap').classList.remove('hidden');
-  $('whyBtn').textContent='Why am I ranked #'+d.my_ranks.overall+'?';
-  $('whyBox').innerHTML='<b>'+ex.summary+'</b><ul>'+ex.bullets.map(x=>'<li>'+x+'</li>').join('')+'</ul>';
-  $('whyBox').classList.add('hidden');
-}
-
-function renderAnalysis(){
-  if(!analysis)return resetPower();
-  const d=analysis[layer];
-  const keys=['qb','rb','wr','te','starters','overall'];
-  $('power').innerHTML=keys.map(k=>
-    '<div class="box"><span>'+k.toUpperCase()+' RANK</span><b>#'+d.my_ranks[k]+' / '+C.league_teams.length+'</b></div>'
-  ).join('');
-  $('ranklist').innerHTML=d.power_rankings.map((x,i)=>
-    '<div class="rank '+(x.team===C.my_team.team?'mine':'')+'">'+
-      '<b>'+(i+1)+'</b>'+ 
-      '<span>'+x.team+(x.team===C.my_team.team?' ← YOU':'')+'<div class="conf">Confidence '+x.confidence+'%</div></span>'+ 
-      '<span class="note muted">'+x.note+'</span>'+ 
-      '<span class="score">'+x.score.toFixed(1)+'</span>'+ 
-    '</div>'
-  ).join('');
-  renderWhy(d);
-}
-
-$('refresh').onclick=async()=>{
-  if(!C)return;
-  const btn=$('refresh');
-  btn.disabled=true;btn.textContent='Analyzing…';
-  try{
-    setProgress('Checking league settings and roster construction…',10);
-    await new Promise(r=>setTimeout(r,250));
-    setProgress('Researching current Week '+C.current_week+' player value, injuries and roles…',30);
-    const p=fetch('/api/rankings',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({context:C})});
-    await new Promise(r=>setTimeout(r,450));
-    setProgress('Building weekly starter values and replacement levels…',55);
-    await new Promise(r=>setTimeout(r,450));
-    setProgress('Building rest-of-season values and depth scores…',72);
-    await new Promise(r=>setTimeout(r,450));
-    setProgress('Comparing every roster with the same scoring model…',88);
-    const r=await p;
-    const d=await r.json();
-    if(!r.ok)throw Error(d.error||'Ranking analysis failed');
-    analysis=d;
-    setProgress('Finished. Rendering Weekly and ROS rankings…',100);
-    renderAnalysis();
-    setTimeout(clearProgress,700);
-  }catch(e){
-    $('ranklist').textContent='Analysis error: '+e.message;
-    clearProgress();
-  }finally{
-    btn.disabled=false;btn.textContent='Refresh Analysis';
-  }
-};
-
-async function call(q){
-  const r=await fetch('/api/guru',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({question:q,context:C,analysis})});
-  const d=await r.json();if(!r.ok)throw Error(d.error||'Request failed');return d
-}
-window.preset=q=>{$('question').value=q;ask()};
-$('ask').onclick=ask;
-async function ask(){
-  if(!C)return;
-  const q=$('question').value.trim();if(!q)return;
-  const b=$('answer'),btn=$('ask');
-  b.classList.remove('hidden');b.textContent='Guru is researching…';btn.disabled=true;btn.textContent='Researching…';
-  try{
-    const d=await call(q);b.textContent=d.answer;
-    $('sources').innerHTML=d.sources?.length?'<div class="muted" style="margin-top:12px"><b>Research sources</b></div>'+d.sources.map(x=>'<a class="source" target="_blank" rel="noopener" href="'+x.url+'">'+x.title+'</a>').join(''):'';
-  }catch(e){b.textContent='Ask Guru error: '+e.message}
-  finally{btn.disabled=false;btn.textContent='Ask Guru'}
-}
+const cacheKey=()=>C?'fg-analysis-v3:'+C.platform+':'+C.league.id+':week'+C.current_week:null;
+const rosterFingerprint=()=>C?C.league_teams.map(t=>t.team+':'+(t.players||[]).map(p=>p.id||p.name).sort().join(',')).sort().join('|'):'';
+function readCache(){try{const raw=localStorage.getItem(cacheKey());if(!raw)return null;const c=JSON.parse(raw);if(!c?.data||!c?.ts)return null;if(c.fingerprint!==rosterFingerprint())return null;if(Date.now()-c.ts>CACHE_TTL)return null;return c}catch{return null}}
+function saveCache(data){try{const c={ts:Date.now(),fingerprint:rosterFingerprint(),data};localStorage.setItem(cacheKey(),JSON.stringify(c));return c}catch{return null}}
+function ageText(ts){const m=Math.max(0,Math.round((Date.now()-ts)/60000));if(m<1)return'just now';if(m<60)return m+' min ago';return (m/60).toFixed(1)+' hr ago'}
+function updateCacheNote(){if(cacheMeta)$('cacheNote').textContent='Using cached research from '+ageText(cacheMeta.ts)+'. Cache lasts 8 hours.';else $('cacheNote').textContent='No fresh cache. The next research run may take a while.'}
+$('leagues').innerHTML=LS.map((x,i)=>'<div class="league"><div><b>'+x.name+'</b><span class="platform">'+x.platform+'</span><div class="muted">'+x.team+'</div></div><button onclick="openL('+i+')">Open</button></div>').join('');
+async function loadSleeper(c){const st=await get(A+'/state/nfl'),w=+st.week||1,[l,u,r,p,tr]=await Promise.all([get(A+'/league/'+c.id),get(A+'/league/'+c.id+'/users'),get(A+'/league/'+c.id+'/rosters'),get(A+'/players/nfl'),get(A+'/players/nfl/trending/add?lookback_hours=168&limit=100').catch(()=>[])]),me=r.find(x=>x.roster_id===c.rid),ss=new Set(me.starters||[]),rows=(me.players||[]).map(id=>{let q=p[id]||{};return{id,name:pn(p,id),position:q.position||'',starter:ss.has(id),team:q.team||null,injury_status:q.injury_status||null}}),owned=new Set();r.forEach(x=>(x.players||[]).forEach(id=>owned.add(String(id))));const teams=u.map(us=>{let rr=r.find(z=>String(z.owner_id)===String(us.user_id));return rr?{team:tn(us),roster_id:rr.roster_id,players:(rr.players||[]).map(id=>{let q=p[id]||{};return{id:String(id),name:pn(p,id),position:q.position||'',team:q.team||null,injury_status:q.injury_status||null}})}:null}).filter(Boolean);return{platform:'Sleeper',current_week:w,league:{id:l.league_id,name:l.name,season:l.season,roster_positions:l.roster_positions,scoring_settings:l.scoring_settings,settings:l.settings},my_team:{team:c.team,roster_id:me.roster_id,record:{wins:me.settings?.wins||0,losses:me.settings?.losses||0},waiver_position:me.settings?.waiver_position,players:rows},available_trending_players:(tr||[]).filter(x=>!owned.has(String(x.player_id))).slice(0,40).map(x=>({id:String(x.player_id),name:pn(p,x.player_id),position:p[x.player_id]?.position||'',trending_adds:x.count})),league_teams:teams}}
+function settingsHtml(){const pos=C.league?.roster_positions||[],counts={};pos.forEach(x=>counts[x]=(counts[x]||0)+1);const order=['QB','RB','WR','TE','FLEX','SUPER_FLEX','DEF','K','BN','IR'],slots=order.filter(k=>counts[k]).map(k=>k+' ×'+counts[k]).join(' | '),sc=C.league?.scoring_summary||[];return '<b>League Settings Audit</b><br><span class="muted">Imported slots:</span> '+(slots||'Not returned')+'<br><span class="muted">Key scoring:</span> '+(sc.length?sc.join(' | '):'Using imported scoring settings')+'<br><span class="muted">Ranking rule:</span> same exact league settings are applied to Weekly and ROS layers.'}
+window.openL=async i=>{try{const c=LS[i];$('status').textContent='Loading '+c.platform+'…';C=c.platform==='ESPN'?await get('/api/espn'):await loadSleeper(c);analysis=null;cacheMeta=null;layer='weekly';$('weeklyTab').classList.add('active');$('rosTab').classList.remove('active');$('title').textContent=C.league.name+' — '+C.my_team.team+' ['+C.platform+']';$('stats').innerHTML='<div class="box"><span>RECORD</span><b>'+C.my_team.record.wins+'-'+C.my_team.record.losses+'</b></div><div class="box"><span>WAIVER</span><b>'+(C.my_team.waiver_position!=null?'#'+C.my_team.waiver_position:'—')+'</b></div><div class="box"><span>WEEK</span><b>'+C.current_week+'</b></div><div class="box"><span>TEAMS</span><b>'+C.league_teams.length+'</b></div>';$('settings').innerHTML=settingsHtml();$('players').innerHTML=C.my_team.players.slice().sort((a,b)=>Number(b.starter)-Number(a.starter)).map(x=>'<div class="p"><b>'+x.name+'</b> '+x.position+' <span class="muted">— '+(x.starter?'STARTER':'BENCH')+'</span></div>').join('');resetPower();$('app').classList.remove('hidden');const cached=readCache();if(cached){analysis=cached.data;cacheMeta=cached;renderAnalysis();$('status').textContent='Ready — cached analysis loaded instantly.'}else $('status').textContent='Ready.';updateCacheNote()}catch(e){$('status').textContent='Error: '+e.message}};
+function resetPower(){$('power').innerHTML=['QB','RB','WR','TE','STARTERS','OVERALL'].map(x=>'<div class="box"><span>'+x+' RANK</span><b>—</b></div>').join('');$('ranklist').innerHTML='<div class="muted">Run Refresh Analysis to calculate Weekly and Rest-of-Season rankings.</div>';$('whyWrap').classList.add('hidden');$('whyBox').classList.add('hidden')}
+function setProgress(msg,pct){$('progress').classList.remove('hidden');$('progressText').textContent=msg;$('progressFill').style.width=pct+'%'}
+function clearProgress(){$('progress').classList.add('hidden');$('progressFill').style.width='0%'}
+window.setLayer=l=>{layer=l;$('weeklyTab').classList.toggle('active',l==='weekly');$('rosTab').classList.toggle('active',l==='ros');renderAnalysis()};
+window.toggleWhy=()=>{const b=$('whyBox');b.classList.toggle('hidden');$('whyBtn').textContent=b.classList.contains('hidden')?'Why am I ranked here?':'Hide ranking explanation'};
+function renderWhy(d){const ex=d.my_explanation;if(!ex){$('whyWrap').classList.add('hidden');return}$('whyWrap').classList.remove('hidden');$('whyBtn').textContent='Why am I ranked #'+d.my_ranks.overall+'?';$('whyBox').innerHTML='<b>'+ex.summary+'</b><ul>'+ex.bullets.map(x=>'<li>'+x+'</li>').join('')+'</ul>';$('whyBox').classList.add('hidden')}
+function renderAnalysis(){if(!analysis)return resetPower();const d=analysis[layer],keys=['qb','rb','wr','te','starters','overall'];$('power').innerHTML=keys.map(k=>'<div class="box"><span>'+k.toUpperCase()+' RANK</span><b>#'+d.my_ranks[k]+' / '+C.league_teams.length+'</b></div>').join('');$('ranklist').innerHTML=d.power_rankings.map((x,i)=>'<div class="rank '+(x.team===C.my_team.team?'mine':'')+'"><b>'+(i+1)+'</b><span>'+x.team+(x.team===C.my_team.team?' ← YOU':'')+'<div class="conf">Confidence '+x.confidence+'%</div></span><span class="note muted">'+x.note+'</span><span class="score">'+x.score.toFixed(1)+'</span></div>').join('');renderWhy(d);updateCacheNote()}
+async function runAnalysis(force=false){if(!C)return;const cached=!force&&readCache();if(cached){analysis=cached.data;cacheMeta=cached;renderAnalysis();$('status').textContent='Loaded cached analysis instantly. Use Force Fresh Research only when you need new data.';return}const btn=$('refresh'),forceBtn=$('forceRefresh');btn.disabled=true;forceBtn.disabled=true;btn.textContent='Analyzing…';try{setProgress('No usable cache — researching current player data…',15);const p=fetch('/api/rankings',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({context:C})});await new Promise(r=>setTimeout(r,350));setProgress('Building weekly and rest-of-season values…',55);await new Promise(r=>setTimeout(r,350));setProgress('Comparing every roster…',85);const r=await p,d=await r.json();if(!r.ok)throw Error(d.error||'Ranking analysis failed');analysis=d;cacheMeta=saveCache(d);setProgress('Finished — saved for fast reuse.',100);renderAnalysis();setTimeout(clearProgress,700);$('status').textContent='Ready. Analysis cached for 8 hours.'}catch(e){$('ranklist').textContent='Analysis error: '+e.message;clearProgress()}finally{btn.disabled=false;forceBtn.disabled=false;btn.textContent='Refresh Analysis'}}
+$('refresh').onclick=()=>runAnalysis(false);$('forceRefresh').onclick=()=>runAnalysis(true);
+async function call(q){const r=await fetch('/api/guru',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({question:q,context:C,analysis})}),d=await r.json();if(!r.ok)throw Error(d.error||'Request failed');return d}
+window.preset=q=>{$('question').value=q;ask()};$('ask').onclick=ask;async function ask(){if(!C)return;const q=$('question').value.trim();if(!q)return;const b=$('answer'),btn=$('ask');b.classList.remove('hidden');b.textContent='Guru is researching…';btn.disabled=true;btn.textContent='Researching…';try{const d=await call(q);b.textContent=d.answer;$('sources').innerHTML=d.sources?.length?'<div class="muted" style="margin-top:12px"><b>Research sources</b></div>'+d.sources.map(x=>'<a class="source" target="_blank" rel="noopener" href="'+x.url+'">'+x.title+'</a>').join(''):''}catch(e){b.textContent='Ask Guru error: '+e.message}finally{btn.disabled=false;btn.textContent='Ask Guru'}}
 </script>
 </body>
 </html>
