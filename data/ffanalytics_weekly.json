@@ -2,7 +2,7 @@
   "schema_version": "2.0",
   "season": 2026,
   "week": 1,
-  "generated_at": "2026-09-10 00:08:57 UTC",
+  "generated_at": "2026-09-10 00:15:22 UTC",
   "source": "ffanalytics",
   "projection_type": "weekly_projection_stats",
   "scoring_basis": "unscored source-stat consensus; score at request time with exact league rules",
@@ -7557,12 +7557,12 @@
         "pass_int": 0,
         "pass_tds": 0,
         "pass_yds": 0,
-        "rec": 1.5,
-        "rec_tds": 0.0525,
-        "rec_yds": 21.1075,
+        "rec": 1.4,
+        "rec_tds": 0.0367,
+        "rec_yds": 19.8433,
         "rush_att": 0,
         "rush_tds": 0,
-        "rush_yds": 0.0333
+        "rush_yds": 0
       },
       "stat_source_counts": {
         "pass_att": 1,
@@ -7570,16 +7570,16 @@
         "pass_int": 1,
         "pass_tds": 1,
         "pass_yds": 1,
-        "rec": 4,
-        "rec_tds": 4,
-        "rec_yds": 4,
-        "rush_att": 3,
-        "rush_tds": 3,
-        "rush_yds": 3
+        "rec": 3,
+        "rec_tds": 3,
+        "rec_yds": 3,
+        "rush_att": 2,
+        "rush_tds": 2,
+        "rush_yds": 2
       },
-      "default_scoring_points": 2.4283,
-      "source_count": 4,
-      "sources": ["CBS", "ESPN", "FanDuel", "FFToday"]
+      "default_scoring_points": 2.2043,
+      "source_count": 3,
+      "sources": ["ESPN", "FanDuel", "FFToday"]
     },
     {
       "name": "Calvin Ridley",
@@ -8457,12 +8457,12 @@
         "pass_int": 0,
         "pass_tds": 0,
         "pass_yds": 0,
-        "rec": 1.7,
-        "rec_tds": 0.0533,
-        "rec_yds": 23.7033,
+        "rec": 1.725,
+        "rec_tds": 0.065,
+        "rec_yds": 24.5525,
         "rush_att": 0,
         "rush_tds": 0,
-        "rush_yds": 0.3333
+        "rush_yds": 0.25
       },
       "stat_source_counts": {
         "pass_att": 1,
@@ -8470,16 +8470,16 @@
         "pass_int": 1,
         "pass_tds": 1,
         "pass_yds": 1,
-        "rec": 3,
-        "rec_tds": 3,
-        "rec_yds": 3,
-        "rush_att": 3,
-        "rush_tds": 3,
-        "rush_yds": 3
+        "rec": 4,
+        "rec_tds": 4,
+        "rec_yds": 4,
+        "rush_att": 4,
+        "rush_tds": 4,
+        "rush_yds": 4
       },
-      "default_scoring_points": 2.7237,
-      "source_count": 3,
-      "sources": ["ESPN", "FanDuel", "FFToday"]
+      "default_scoring_points": 2.8703,
+      "source_count": 4,
+      "sources": ["CBS", "ESPN", "FanDuel", "FFToday"]
     },
     {
       "name": "Ja'Marr Chase",
@@ -12175,12 +12175,12 @@
         "pass_int": 0,
         "pass_tds": 0,
         "pass_yds": 0,
-        "rec": 0.99,
-        "rec_tds": 0.025,
-        "rec_yds": 10.37,
-        "rush_att": 0,
+        "rec": 1.1933,
+        "rec_tds": 0.05,
+        "rec_yds": 15.98,
+        "rush_att": 0.1,
         "rush_tds": 0,
-        "rush_yds": 0.5
+        "rush_yds": 0.9667
       },
       "stat_source_counts": {
         "pass_att": 1,
@@ -12188,16 +12188,16 @@
         "pass_int": 1,
         "pass_tds": 1,
         "pass_yds": 1,
-        "rec": 2,
-        "rec_tds": 2,
-        "rec_yds": 2,
-        "rush_att": 2,
-        "rush_tds": 2,
-        "rush_yds": 2
+        "rec": 3,
+        "rec_tds": 3,
+        "rec_yds": 3,
+        "rush_att": 3,
+        "rush_tds": 3,
+        "rush_yds": 3
       },
-      "default_scoring_points": 1.237,
-      "source_count": 2,
-      "sources": ["ESPN", "FanDuel"]
+      "default_scoring_points": 1.9947,
+      "source_count": 3,
+      "sources": ["CBS", "ESPN", "FanDuel"]
     },
     {
       "name": "Xavier Restrepo",
@@ -12247,9 +12247,9 @@
         "pass_int": 0,
         "pass_tds": 0,
         "pass_yds": 0,
-        "rec": 2.105,
-        "rec_tds": 0.0925,
-        "rec_yds": 26.605,
+        "rec": 2.14,
+        "rec_tds": 0.09,
+        "rec_yds": 28.4733,
         "rush_att": 0,
         "rush_tds": 0,
         "rush_yds": 0
@@ -12260,16 +12260,16 @@
         "pass_int": 1,
         "pass_tds": 1,
         "pass_yds": 1,
-        "rec": 4,
-        "rec_tds": 4,
-        "rec_yds": 4,
-        "rush_att": 3,
-        "rush_tds": 3,
-        "rush_yds": 3
+        "rec": 3,
+        "rec_tds": 3,
+        "rec_yds": 3,
+        "rush_att": 2,
+        "rush_tds": 2,
+        "rush_yds": 2
       },
-      "default_scoring_points": 3.2155,
-      "source_count": 4,
-      "sources": ["CBS", "ESPN", "FanDuel", "FFToday"]
+      "default_scoring_points": 3.3873,
+      "source_count": 3,
+      "sources": ["ESPN", "FanDuel", "FFToday"]
     },
     {
       "name": "Tez Johnson",
