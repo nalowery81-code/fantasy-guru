@@ -2,6 +2,7 @@ const MASTER_URL='https://api.sleeper.app/v1/players/nfl';
 const OUT='data/player_identity_map.json';
 const POSITIONS=new Set(['QB','RB','WR','TE','K','DEF','DST']);
 
+const cleanId=v=>{const s=String(v??'').trim();return s||null};
 const norm=s=>String(s||'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]/g,'');
 const posNorm=p=>String(p||'').toUpperCase()==='DST'?'DEF':String(p||'').toUpperCase();
 
@@ -15,9 +16,9 @@ for(const [sid,p] of Object.entries(raw||{})){
   if(!POSITIONS.has(position))continue;
   const name=p?.full_name||[p?.first_name,p?.last_name].filter(Boolean).join(' ').trim();
   if(!name)continue;
-  const sleeperId=String(p?.player_id||sid||'')||null;
-  const espnId=p?.espn_id!=null&&String(p.espn_id)!==''?String(p.espn_id):null;
-  const gsisId=p?.gsis_id?String(p.gsis_id):null;
+  const sleeperId=cleanId(p?.player_id||sid);
+  const espnId=cleanId(p?.espn_id);
+  const gsisId=cleanId(p?.gsis_id);
   const canonical=gsisId||(sleeperId?`sleeper:${sleeperId}`:null)||(espnId?`espn:${espnId}`:null);
   if(!canonical)continue;
   players.push({
