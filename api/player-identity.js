@@ -1,5 +1,6 @@
 import identityData from '../data/player_identity_map.json';
 
+const cleanId=v=>{const s=String(v??'').trim();return s||null};
 const norm=s=>String(s||'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]/g,'');
 const posNorm=p=>String(p||'').toUpperCase()==='DST'?'DEF':String(p||'').toUpperCase();
 
@@ -9,11 +10,13 @@ export function getIdentityIndexes(){
   if(cached)return cached;
   const byCanonical=new Map(),bySleeper=new Map(),byEspn=new Map(),byGsis=new Map(),byNamePos=new Map();
   for(const row of Array.isArray(identityData?.players)?identityData.players:[]){
-    const rec={...row,position:posNorm(row.position)};
-    if(rec.canonical_player_id)byCanonical.set(String(rec.canonical_player_id),rec);
-    if(rec.sleeper_id)bySleeper.set(String(rec.sleeper_id),rec);
-    if(rec.espn_id)byEspn.set(String(rec.espn_id),rec);
-    if(rec.gsis_id)byGsis.set(String(rec.gsis_id),rec);
+    const sleeperId=cleanId(row.sleeper_id),espnId=cleanId(row.espn_id),gsisId=cleanId(row.gsis_id);
+    const canonical=gsisId||(sleeperId?`sleeper:${sleeperId}`:null)||(espnId?`espn:${espnId}`:null)||cleanId(row.canonical_player_id);
+    const rec={...row,canonical_player_id:canonical,sleeper_id:sleeperId,espn_id:espnId,gsis_id:gsisId,position:posNorm(row.position)};
+    if(rec.canonical_player_id)byCanonical.set(rec.canonical_player_id,rec);
+    if(rec.sleeper_id)bySleeper.set(rec.sleeper_id,rec);
+    if(rec.espn_id)byEspn.set(rec.espn_id,rec);
+    if(rec.gsis_id)byGsis.set(rec.gsis_id,rec);
     if(rec.name)byNamePos.set(norm(rec.name)+'|'+rec.position,rec);
   }
   cached={byCanonical,bySleeper,byEspn,byGsis,byNamePos,player_count:Array.isArray(identityData?.players)?identityData.players.length:0,generated_at:identityData?.generated_at||null};
@@ -24,10 +27,10 @@ export function resolveIdentity(player={}){
   const idx=getIdentityIndexes();
   const position=posNorm(player.position||player.pos||'');
   const name=player.name||player.full_name||player.fullName||'';
-  const sleeperId=player.sleeper_id!=null?String(player.sleeper_id):null;
-  const espnId=player.espn_id!=null?String(player.espn_id):null;
-  const gsisId=player.gsis_id!=null?String(player.gsis_id):null;
-  const rawId=player.id!=null?String(player.id):null;
+  const sleeperId=cleanId(player.sleeper_id);
+  const espnId=cleanId(player.espn_id);
+  const gsisId=cleanId(player.gsis_id);
+  const rawId=cleanId(player.id);
   let hit=null,method='unmapped';
   if(gsisId&&idx.byGsis.has(gsisId)){hit=idx.byGsis.get(gsisId);method='gsis_id'}
   else if(sleeperId&&idx.bySleeper.has(sleeperId)){hit=idx.bySleeper.get(sleeperId);method='sleeper_id'}
