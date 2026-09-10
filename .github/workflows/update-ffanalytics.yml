@@ -84,4 +84,6 @@ jobs:
           git config user.email 'fantasy-guru-bot@users.noreply.github.com'
           git add data/player_identity_map.json data/ffanalytics_projections.json data/ffanalytics_weekly.json
           git commit -m 'Refresh player identity map and projection consensus'
+          git fetch origin main
+          git rebase origin/main
           git push
