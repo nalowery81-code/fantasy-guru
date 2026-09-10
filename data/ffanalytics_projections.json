@@ -1,7 +1,7 @@
 {
   "schema_version": "2.0",
   "season": 2026,
-  "generated_at": "2026-09-10 00:14:06 UTC",
+  "generated_at": "2026-09-10 13:37:06 UTC",
   "source": "ffanalytics",
   "projection_type": "season_projection_stats",
   "scoring_basis": "unscored source-stat consensus; score at request time with exact league rules",
@@ -93,7 +93,7 @@
         "pass_comp": 99.0025,
         "pass_int": 5.87,
         "pass_tds": 8.988,
-        "pass_yds": 1540.914,
+        "pass_yds": 1540.714,
         "rec": 0,
         "rec_tds": 0,
         "rec_yds": 0,
@@ -114,7 +114,7 @@
         "rush_tds": 5,
         "rush_yds": 5
       },
-      "default_scoring_points": 80.8592,
+      "default_scoring_points": 80.8512,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -133,9 +133,9 @@
         "rec": 0,
         "rec_tds": 0,
         "rec_yds": 0,
-        "rush_att": 59.6975,
+        "rush_att": 59.9475,
         "rush_tds": 1.014,
-        "rush_yds": 205.368
+        "rush_yds": 204.168
       },
       "stat_source_counts": {
         "pass_att": 4,
@@ -150,7 +150,7 @@
         "rush_tds": 5,
         "rush_yds": 5
       },
-      "default_scoring_points": 196.8666,
+      "default_scoring_points": 196.7466,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -263,6 +263,36 @@
       "sources": ["CBS", "FanDuel"]
     },
     {
+      "name": "Carson Wentz",
+      "position": "QB",
+      "gsis_id": null,
+      "sleeper_id": null,
+      "espn_id": null,
+      "consensus_stats": {
+        "pass_att": 19,
+        "pass_comp": 12,
+        "pass_int": 1,
+        "pass_tds": 1,
+        "pass_yds": 137,
+        "rush_att": 4,
+        "rush_tds": 0,
+        "rush_yds": 19
+      },
+      "stat_source_counts": {
+        "pass_att": 1,
+        "pass_comp": 1,
+        "pass_int": 1,
+        "pass_tds": 1,
+        "pass_yds": 1,
+        "rush_att": 1,
+        "rush_tds": 1,
+        "rush_yds": 1
+      },
+      "default_scoring_points": 8.38,
+      "source_count": 1,
+      "sources": "CBS"
+    },
+    {
       "name": "Jared Goff",
       "position": "QB",
       "gsis_id": null,
@@ -273,13 +303,13 @@
         "pass_comp": 379.225,
         "pass_int": 10.318,
         "pass_tds": 32.28,
-        "pass_yds": 4405.852,
+        "pass_yds": 4405.652,
         "rec": 0,
         "rec_tds": 0,
         "rec_yds": 0,
         "rush_att": 24.85,
         "rush_tds": 0.608,
-        "rush_yds": 53.104
+        "rush_yds": 53.304
       },
       "stat_source_counts": {
         "pass_att": 4,
@@ -294,7 +324,7 @@
         "rush_tds": 5,
         "rush_yds": 5
       },
-      "default_scoring_points": 280.9585,
+      "default_scoring_points": 280.9705,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -309,7 +339,7 @@
         "pass_comp": 358.5975,
         "pass_int": 10.006,
         "pass_tds": 20.296,
-        "pass_yds": 3672.094,
+        "pass_yds": 3671.094,
         "rec": 0,
         "rec_tds": 0,
         "rec_yds": 0,
@@ -330,7 +360,7 @@
         "rush_tds": 5,
         "rush_yds": 5
       },
-      "default_scoring_points": 222.8096,
+      "default_scoring_points": 222.7696,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -341,17 +371,17 @@
       "sleeper_id": null,
       "espn_id": null,
       "consensus_stats": {
-        "pass_att": 586.7725,
+        "pass_att": 587.0225,
         "pass_comp": 387.2475,
         "pass_int": 11.378,
         "pass_tds": 30.854,
-        "pass_yds": 4382.008,
+        "pass_yds": 4380.808,
         "rec": 0,
         "rec_tds": 0,
         "rec_yds": 0,
         "rush_att": 54.3075,
         "rush_tds": 2.26,
-        "rush_yds": 198.322
+        "rush_yds": 199.322
       },
       "stat_source_counts": {
         "pass_att": 4,
@@ -366,7 +396,7 @@
         "rush_tds": 5,
         "rush_yds": 5
       },
-      "default_scoring_points": 296.7545,
+      "default_scoring_points": 296.8065,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -449,17 +479,17 @@
       "sleeper_id": null,
       "espn_id": null,
       "consensus_stats": {
-        "pass_att": 560.2075,
+        "pass_att": 560.4575,
         "pass_comp": 356.6975,
         "pass_int": 11.838,
         "pass_tds": 27.848,
-        "pass_yds": 3963.434,
+        "pass_yds": 3962.634,
         "rec": 0,
         "rec_tds": 0,
         "rec_yds": 0,
-        "rush_att": 63.8975,
+        "rush_att": 63.6475,
         "rush_tds": 3.05,
-        "rush_yds": 341.728
+        "rush_yds": 338.528
       },
       "stat_source_counts": {
         "pass_att": 4,
@@ -474,7 +504,7 @@
         "rush_tds": 5,
         "rush_yds": 5
       },
-      "default_scoring_points": 286.2882,
+      "default_scoring_points": 285.9362,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -519,13 +549,13 @@
         "pass_comp": 341.7125,
         "pass_int": 11.398,
         "pass_tds": 26.404,
-        "pass_yds": 3831.352,
+        "pass_yds": 3830.752,
         "rec": 0,
         "rec_tds": 0,
         "rec_yds": 0,
         "rush_att": 115.37,
         "rush_tds": 11.348,
-        "rush_yds": 578.16
+        "rush_yds": 577.76
       },
       "stat_source_counts": {
         "pass_att": 4,
@@ -540,7 +570,7 @@
         "rush_tds": 5,
         "rush_yds": 5
       },
-      "default_scoring_points": 348.1801,
+      "default_scoring_points": 348.1161,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -555,13 +585,13 @@
         "pass_comp": 351.5875,
         "pass_int": 13.012,
         "pass_tds": 27.556,
-        "pass_yds": 3863.36,
+        "pass_yds": 3863.16,
         "rec": 0,
         "rec_tds": 0,
         "rec_yds": 0,
-        "rush_att": 61.625,
+        "rush_att": 61.125,
         "rush_tds": 1.686,
-        "rush_yds": 352.426
+        "rush_yds": 350.426
       },
       "stat_source_counts": {
         "pass_att": 4,
@@ -576,7 +606,7 @@
         "rush_tds": 5,
         "rush_yds": 5
       },
-      "default_scoring_points": 269.281,
+      "default_scoring_points": 269.073,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -587,17 +617,17 @@
       "sleeper_id": null,
       "espn_id": null,
       "consensus_stats": {
-        "pass_att": 516.505,
-        "pass_comp": 343.6025,
-        "pass_int": 13.508,
-        "pass_tds": 27.732,
-        "pass_yds": 4142.07,
+        "pass_att": 499.505,
+        "pass_comp": 332.1025,
+        "pass_int": 12.908,
+        "pass_tds": 26.732,
+        "pass_yds": 4028.67,
         "rec": 0,
         "rec_tds": 0,
         "rec_yds": 0,
-        "rush_att": 45.245,
+        "rush_att": 42.995,
         "rush_tds": 1.224,
-        "rush_yds": 136.53
+        "rush_yds": 130.53
       },
       "stat_source_counts": {
         "pass_att": 4,
@@ -612,7 +642,7 @@
         "rush_tds": 5,
         "rush_yds": 5
       },
-      "default_scoring_points": 253.4838,
+      "default_scoring_points": 247.3478,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -633,7 +663,7 @@
         "rec_yds": 0,
         "rush_att": 119.1325,
         "rush_tds": 3.434,
-        "rush_yds": 690.016
+        "rush_yds": 687.816
       },
       "stat_source_counts": {
         "pass_att": 4,
@@ -648,7 +678,7 @@
         "rush_tds": 5,
         "rush_yds": 5
       },
-      "default_scoring_points": 320.9408,
+      "default_scoring_points": 320.1208,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -739,7 +769,7 @@
         "rec": 0,
         "rec_tds": 0,
         "rec_yds": 0,
-        "rush_att": 88.86,
+        "rush_att": 88.36,
         "rush_tds": 3.818,
         "rush_yds": 499.724
       },
@@ -767,17 +797,17 @@
       "sleeper_id": null,
       "espn_id": null,
       "consensus_stats": {
-        "pass_att": 15.565,
-        "pass_comp": 9.985,
+        "pass_att": 27.565,
+        "pass_comp": 17.985,
         "pass_int": 0.67,
-        "pass_tds": 0.7,
-        "pass_yds": 117.415,
+        "pass_tds": 1.7,
+        "pass_yds": 209.415,
         "rec": 0,
         "rec_tds": 0,
         "rec_yds": 0,
-        "rush_att": 2.5,
+        "rush_att": 3.5,
         "rush_tds": 0,
-        "rush_yds": 10.5
+        "rush_yds": 15
       },
       "stat_source_counts": {
         "pass_att": 2,
@@ -792,7 +822,7 @@
         "rush_tds": 2,
         "rush_yds": 2
       },
-      "default_scoring_points": 6.5366,
+      "default_scoring_points": 14.6666,
       "source_count": 2,
       "sources": ["CBS", "FanDuel"]
     },
@@ -811,7 +841,7 @@
         "rec": 0,
         "rec_tds": 0,
         "rec_yds": 0,
-        "rush_att": 63.7175,
+        "rush_att": 63.2175,
         "rush_tds": 3.884,
         "rush_yds": 238.694
       },
@@ -843,7 +873,7 @@
         "pass_comp": 11.205,
         "pass_int": 0.17,
         "pass_tds": 0.705,
-        "pass_yds": 112.64,
+        "pass_yds": 112.14,
         "rec": 0,
         "rec_tds": 0,
         "rec_yds": 0,
@@ -864,7 +894,7 @@
         "rush_tds": 2,
         "rush_yds": 2
       },
-      "default_scoring_points": 7.7656,
+      "default_scoring_points": 7.7456,
       "source_count": 2,
       "sources": ["CBS", "FanDuel"]
     },
@@ -921,7 +951,7 @@
         "rec_yds": 0,
         "rush_att": 47.33,
         "rush_tds": 1.57,
-        "rush_yds": 175.99
+        "rush_yds": 176.19
       },
       "stat_source_counts": {
         "pass_att": 4,
@@ -936,7 +966,7 @@
         "rush_tds": 5,
         "rush_yds": 5
       },
-      "default_scoring_points": 299.7888,
+      "default_scoring_points": 299.8088,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -955,9 +985,9 @@
         "rec": 0,
         "rec_tds": 0,
         "rec_yds": 0,
-        "rush_att": 22.425,
+        "rush_att": 22.175,
         "rush_tds": 0.275,
-        "rush_yds": 64.395
+        "rush_yds": 63.645
       },
       "stat_source_counts": {
         "pass_att": 4,
@@ -972,7 +1002,7 @@
         "rush_tds": 4,
         "rush_yds": 4
       },
-      "default_scoring_points": 167.9139,
+      "default_scoring_points": 168.5889,
       "source_count": 4,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday"]
     },
@@ -983,17 +1013,17 @@
       "sleeper_id": null,
       "espn_id": null,
       "consensus_stats": {
-        "pass_att": 536.74,
+        "pass_att": 536.49,
         "pass_comp": 354.075,
         "pass_int": 10.258,
         "pass_tds": 26.14,
-        "pass_yds": 3927.298,
+        "pass_yds": 3925.898,
         "rec": 0,
         "rec_tds": 0,
         "rec_yds": 0,
-        "rush_att": 83.095,
+        "rush_att": 82.845,
         "rush_tds": 2.626,
-        "rush_yds": 437.452
+        "rush_yds": 436.452
       },
       "stat_source_counts": {
         "pass_att": 4,
@@ -1008,7 +1038,7 @@
         "rush_tds": 5,
         "rush_yds": 5
       },
-      "default_scoring_points": 289.1791,
+      "default_scoring_points": 289.0231,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -1027,9 +1057,9 @@
         "rec": 0,
         "rec_tds": 0,
         "rec_yds": 0,
-        "rush_att": 48.52,
+        "rush_att": 48.27,
         "rush_tds": 1.514,
-        "rush_yds": 214.268
+        "rush_yds": 214.668
       },
       "stat_source_counts": {
         "pass_att": 4,
@@ -1044,7 +1074,7 @@
         "rush_tds": 5,
         "rush_yds": 5
       },
-      "default_scoring_points": 267.4168,
+      "default_scoring_points": 267.4568,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -1055,7 +1085,7 @@
       "sleeper_id": null,
       "espn_id": null,
       "consensus_stats": {
-        "pass_att": 500.695,
+        "pass_att": 500.445,
         "pass_comp": 325.2275,
         "pass_int": 7.63,
         "pass_tds": 22.934,
@@ -1063,9 +1093,9 @@
         "rec": 0,
         "rec_tds": 0,
         "rec_yds": 0,
-        "rush_att": 109.865,
+        "rush_att": 109.115,
         "rush_tds": 9.034,
-        "rush_yds": 476.84
+        "rush_yds": 474.44
       },
       "stat_source_counts": {
         "pass_att": 4,
@@ -1080,7 +1110,7 @@
         "rush_tds": 5,
         "rush_yds": 5
       },
-      "default_scoring_points": 309.6695,
+      "default_scoring_points": 309.4295,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -1135,9 +1165,9 @@
         "rec": 0,
         "rec_tds": 0,
         "rec_yds": 0,
-        "rush_att": 80.89,
+        "rush_att": 81.14,
         "rush_tds": 4.874,
-        "rush_yds": 350.784
+        "rush_yds": 353.184
       },
       "stat_source_counts": {
         "pass_att": 4,
@@ -1152,7 +1182,7 @@
         "rush_tds": 5,
         "rush_yds": 5
       },
-      "default_scoring_points": 291.5722,
+      "default_scoring_points": 291.8122,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -1203,7 +1233,7 @@
         "pass_comp": 10.42,
         "pass_int": 0.67,
         "pass_tds": 0.71,
-        "pass_yds": 112.375,
+        "pass_yds": 111.875,
         "rec": 0,
         "rec_tds": 0,
         "rec_yds": 0,
@@ -1224,7 +1254,7 @@
         "rush_tds": 2,
         "rush_yds": 2
       },
-      "default_scoring_points": 6.275,
+      "default_scoring_points": 6.255,
       "source_count": 2,
       "sources": ["CBS", "FanDuel"]
     },
@@ -1239,7 +1269,7 @@
         "pass_comp": 13.24,
         "pass_int": 0.585,
         "pass_tds": 0.845,
-        "pass_yds": 140.935,
+        "pass_yds": 140.685,
         "rec": 0,
         "rec_tds": 0,
         "rec_yds": 0,
@@ -1260,7 +1290,7 @@
         "rush_tds": 4,
         "rush_yds": 4
       },
-      "default_scoring_points": 7.8874,
+      "default_scoring_points": 7.8774,
       "source_count": 4,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday"]
     },
@@ -1419,13 +1449,13 @@
         "pass_comp": 374.95,
         "pass_int": 14.016,
         "pass_tds": 28.292,
-        "pass_yds": 4155.446,
+        "pass_yds": 4152.246,
         "rec": 0,
         "rec_tds": 0,
         "rec_yds": 0,
         "rush_att": 70.725,
         "rush_tds": 3.646,
-        "rush_yds": 293.24
+        "rush_yds": 293.64
       },
       "stat_source_counts": {
         "pass_att": 4,
@@ -1440,7 +1470,7 @@
         "rush_tds": 5,
         "rush_yds": 5
       },
-      "default_scoring_points": 285.5378,
+      "default_scoring_points": 285.4498,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -1483,15 +1513,15 @@
       "consensus_stats": {
         "pass_att": 526.245,
         "pass_comp": 334.7675,
-        "pass_int": 11.642,
+        "pass_int": 11.842,
         "pass_tds": 21.948,
-        "pass_yds": 3425.864,
+        "pass_yds": 3425.064,
         "rec": 0,
         "rec_tds": 0,
         "rec_yds": 0,
         "rush_att": 59.3325,
         "rush_tds": 2.986,
-        "rush_yds": 258.096
+        "rush_yds": 255.096
       },
       "stat_source_counts": {
         "pass_att": 4,
@@ -1506,7 +1536,7 @@
         "rush_tds": 5,
         "rush_yds": 5
       },
-      "default_scoring_points": 232.4262,
+      "default_scoring_points": 231.4942,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -1525,9 +1555,9 @@
         "rec": 0,
         "rec_tds": 0,
         "rec_yds": 0,
-        "rush_att": 51.5,
+        "rush_att": 51.25,
         "rush_tds": 1.328,
-        "rush_yds": 224.766
+        "rush_yds": 223.166
       },
       "stat_source_counts": {
         "pass_att": 4,
@@ -1542,7 +1572,7 @@
         "rush_tds": 5,
         "rush_yds": 5
       },
-      "default_scoring_points": 240.0323,
+      "default_scoring_points": 239.8723,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -1593,7 +1623,7 @@
         "pass_comp": 11,
         "pass_int": 0,
         "pass_tds": 1,
-        "pass_yds": 135,
+        "pass_yds": 134,
         "rush_att": 2,
         "rush_tds": 0,
         "rush_yds": 10
@@ -1608,7 +1638,7 @@
         "rush_tds": 1,
         "rush_yds": 1
       },
-      "default_scoring_points": 10.4,
+      "default_scoring_points": 10.36,
       "source_count": 1,
       "sources": "CBS"
     },
@@ -1655,17 +1685,17 @@
       "sleeper_id": null,
       "espn_id": null,
       "consensus_stats": {
-        "pass_att": 14.99,
+        "pass_att": 14.49,
         "pass_comp": 10.06,
         "pass_int": 0.17,
         "pass_tds": 0.69,
-        "pass_yds": 114.105,
+        "pass_yds": 110.105,
         "rec": 0,
         "rec_tds": 0,
         "rec_yds": 0,
-        "rush_att": 2.5,
+        "rush_att": 2,
         "rush_tds": 0,
-        "rush_yds": 10.5
+        "rush_yds": 10
       },
       "stat_source_counts": {
         "pass_att": 2,
@@ -1680,7 +1710,7 @@
         "rush_tds": 2,
         "rush_yds": 2
       },
-      "default_scoring_points": 7.8642,
+      "default_scoring_points": 7.6542,
       "source_count": 2,
       "sources": ["CBS", "FanDuel"]
     },
@@ -1695,13 +1725,13 @@
         "pass_comp": 334.825,
         "pass_int": 8.92,
         "pass_tds": 27.154,
-        "pass_yds": 3918.806,
+        "pass_yds": 3917.806,
         "rec": 0,
         "rec_tds": 0,
         "rec_yds": 0,
-        "rush_att": 77.88,
+        "rush_att": 77.63,
         "rush_tds": 2.468,
-        "rush_yds": 382.79
+        "rush_yds": 379.39
       },
       "stat_source_counts": {
         "pass_att": 4,
@@ -1716,7 +1746,7 @@
         "rush_tds": 5,
         "rush_yds": 5
       },
-      "default_scoring_points": 290.4952,
+      "default_scoring_points": 290.1152,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -1727,17 +1757,17 @@
       "sleeper_id": null,
       "espn_id": null,
       "consensus_stats": {
-        "pass_att": 511.525,
-        "pass_comp": 352.02,
-        "pass_int": 10.356,
-        "pass_tds": 28.472,
-        "pass_yds": 4182.238,
+        "pass_att": 504.525,
+        "pass_comp": 347.27,
+        "pass_int": 10.156,
+        "pass_tds": 28.272,
+        "pass_yds": 4141.638,
         "rec": 0,
         "rec_tds": 0,
         "rec_yds": 0,
-        "rush_att": 98.485,
+        "rush_att": 96.735,
         "rush_tds": 3.792,
-        "rush_yds": 470.39
+        "rush_yds": 469.99
       },
       "stat_source_counts": {
         "pass_att": 4,
@@ -1752,7 +1782,7 @@
         "rush_tds": 5,
         "rush_yds": 5
       },
-      "default_scoring_points": 316.3005,
+      "default_scoring_points": 315.0365,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -1767,13 +1797,13 @@
         "pass_comp": 320.6375,
         "pass_int": 10.86,
         "pass_tds": 22.92,
-        "pass_yds": 3545.678,
+        "pass_yds": 3545.078,
         "rec": 0,
         "rec_tds": 0,
         "rec_yds": 0,
-        "rush_att": 127.9025,
+        "rush_att": 127.4025,
         "rush_tds": 4.716,
-        "rush_yds": 673.91
+        "rush_yds": 674.31
       },
       "stat_source_counts": {
         "pass_att": 4,
@@ -1788,7 +1818,7 @@
         "rush_tds": 5,
         "rush_yds": 5
       },
-      "default_scoring_points": 295.4141,
+      "default_scoring_points": 294.8301,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -1803,13 +1833,13 @@
         "pass_comp": 361.3975,
         "pass_int": 11.192,
         "pass_tds": 26.206,
-        "pass_yds": 3813.936,
+        "pass_yds": 3812.736,
         "rec": 0,
         "rec_tds": 0,
         "rec_yds": 0,
-        "rush_att": 74.2725,
-        "rush_tds": 3.63,
-        "rush_yds": 339.114
+        "rush_att": 74.0225,
+        "rush_tds": 3.83,
+        "rush_yds": 339.914
       },
       "stat_source_counts": {
         "pass_att": 4,
@@ -1824,7 +1854,7 @@
         "rush_tds": 5,
         "rush_yds": 5
       },
-      "default_scoring_points": 278.8968,
+      "default_scoring_points": 280.1288,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -1845,7 +1875,7 @@
         "rec_yds": 0,
         "rush_att": 9.75,
         "rush_tds": 0.6,
-        "rush_yds": 55.4
+        "rush_yds": 55
       },
       "stat_source_counts": {
         "pass_att": 4,
@@ -1860,7 +1890,7 @@
         "rush_tds": 5,
         "rush_yds": 5
       },
-      "default_scoring_points": 90.6778,
+      "default_scoring_points": 90.6378,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -1871,34 +1901,34 @@
       "sleeper_id": null,
       "espn_id": null,
       "consensus_stats": {
-        "pass_att": 23.5475,
-        "pass_comp": 14.445,
-        "pass_int": 2.068,
-        "pass_tds": 2.3,
-        "pass_yds": 412.838,
+        "pass_att": 25.0633,
+        "pass_comp": 15.26,
+        "pass_int": 2.335,
+        "pass_tds": 2.625,
+        "pass_yds": 481.7975,
         "rec": 0,
         "rec_tds": 0,
         "rec_yds": 0,
-        "rush_att": 2.25,
-        "rush_tds": 0.6,
-        "rush_yds": 36.6
+        "rush_att": 1.6667,
+        "rush_tds": 0.75,
+        "rush_yds": 41
       },
       "stat_source_counts": {
-        "pass_att": 4,
-        "pass_comp": 4,
-        "pass_int": 5,
-        "pass_tds": 5,
-        "pass_yds": 5,
+        "pass_att": 3,
+        "pass_comp": 3,
+        "pass_int": 4,
+        "pass_tds": 4,
+        "pass_yds": 4,
         "rec": 1,
         "rec_tds": 1,
         "rec_yds": 1,
-        "rush_att": 4,
-        "rush_tds": 5,
-        "rush_yds": 5
+        "rush_att": 3,
+        "rush_tds": 4,
+        "rush_yds": 4
       },
-      "default_scoring_points": 26.7695,
-      "source_count": 5,
-      "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
+      "default_scoring_points": 31.3669,
+      "source_count": 4,
+      "sources": ["ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
     {
       "name": "Joe Milton",
@@ -1981,9 +2011,9 @@
         "rec": 0,
         "rec_tds": 0,
         "rec_yds": 0,
-        "rush_att": 43.82,
+        "rush_att": 44.07,
         "rush_tds": 2.004,
-        "rush_yds": 192.012
+        "rush_yds": 192.812
       },
       "stat_source_counts": {
         "pass_att": 4,
@@ -1998,7 +2028,7 @@
         "rush_tds": 5,
         "rush_yds": 5
       },
-      "default_scoring_points": 219.3717,
+      "default_scoring_points": 219.4517,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -2046,10 +2076,10 @@
       "espn_id": null,
       "consensus_stats": {
         "pass_att": 505.445,
-        "pass_comp": 322.1125,
+        "pass_comp": 321.8625,
         "pass_int": 10.656,
         "pass_tds": 21.13,
-        "pass_yds": 3423.202,
+        "pass_yds": 3420.802,
         "rec": 0,
         "rec_tds": 0,
         "rec_yds": 0,
@@ -2070,39 +2100,9 @@
         "rush_tds": 5,
         "rush_yds": 5
       },
-      "default_scoring_points": 280.2411,
+      "default_scoring_points": 280.1451,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
-    },
-    {
-      "name": "Jalen Milroe",
-      "position": "QB",
-      "gsis_id": null,
-      "sleeper_id": null,
-      "espn_id": null,
-      "consensus_stats": {
-        "pass_att": 11,
-        "pass_comp": 7,
-        "pass_int": 0,
-        "pass_tds": 1,
-        "pass_yds": 84,
-        "rush_att": 5,
-        "rush_tds": 0,
-        "rush_yds": 14
-      },
-      "stat_source_counts": {
-        "pass_att": 1,
-        "pass_comp": 1,
-        "pass_int": 1,
-        "pass_tds": 1,
-        "pass_yds": 1,
-        "rush_att": 1,
-        "rush_tds": 1,
-        "rush_yds": 1
-      },
-      "default_scoring_points": 8.76,
-      "source_count": 1,
-      "sources": "CBS"
     },
     {
       "name": "Quinn Ewers",
@@ -2247,7 +2247,7 @@
         "rec_yds": 0,
         "rush_att": 68.535,
         "rush_tds": 3.742,
-        "rush_yds": 299.058
+        "rush_yds": 299.258
       },
       "stat_source_counts": {
         "pass_att": 4,
@@ -2262,7 +2262,7 @@
         "rush_tds": 5,
         "rush_yds": 5
       },
-      "default_scoring_points": 266.6175,
+      "default_scoring_points": 266.6375,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -2307,7 +2307,7 @@
         "pass_comp": 250.3625,
         "pass_int": 10.432,
         "pass_tds": 13.472,
-        "pass_yds": 2486.294,
+        "pass_yds": 2485.894,
         "rec": 0,
         "rec_tds": 0,
         "rec_yds": 0,
@@ -2328,7 +2328,7 @@
         "rush_tds": 5,
         "rush_yds": 5
       },
-      "default_scoring_points": 147.7028,
+      "default_scoring_points": 147.6868,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -2343,7 +2343,7 @@
         "pass_comp": 17.74,
         "pass_int": 0.868,
         "pass_tds": 1.696,
-        "pass_yds": 227.86,
+        "pass_yds": 227.66,
         "rec": 0,
         "rec_tds": 0,
         "rec_yds": 0,
@@ -2364,7 +2364,7 @@
         "rush_tds": 5,
         "rush_yds": 5
       },
-      "default_scoring_points": 16.7344,
+      "default_scoring_points": 16.7264,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -2511,7 +2511,7 @@
         "rec_yds": 0,
         "rush_att": 24.0025,
         "rush_tds": 0.744,
-        "rush_yds": 76.492
+        "rush_yds": 76.892
       },
       "stat_source_counts": {
         "pass_att": 4,
@@ -2526,7 +2526,7 @@
         "rush_tds": 5,
         "rush_yds": 5
       },
-      "default_scoring_points": 216.0642,
+      "default_scoring_points": 216.1042,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -2575,13 +2575,13 @@
       "consensus_stats": {
         "pass_att": 564.46,
         "pass_comp": 364.6,
-        "pass_int": 9.35,
-        "pass_tds": 34.384,
-        "pass_yds": 4319.856,
+        "pass_int": 9.55,
+        "pass_tds": 34.184,
+        "pass_yds": 4318.056,
         "rec": 0,
         "rec_tds": 0,
         "rec_yds": 0,
-        "rush_att": 22.235,
+        "rush_att": 21.985,
         "rush_tds": 0.332,
         "rush_yds": 34.65
       },
@@ -2598,7 +2598,7 @@
         "rush_tds": 5,
         "rush_yds": 5
       },
-      "default_scoring_points": 286.5372,
+      "default_scoring_points": 285.0652,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -2616,7 +2616,7 @@
         "pass_yds": 0,
         "rec": 17.8167,
         "rec_tds": 1.0633,
-        "rec_yds": 156.0233,
+        "rec_yds": 153.3567,
         "rush_att": 10.3033,
         "rush_tds": 0.16,
         "rush_yds": 30.8767
@@ -2714,10 +2714,10 @@
         "pass_yds": 0,
         "rec": 20.194,
         "rec_tds": 0.9766,
-        "rec_yds": 192.652,
+        "rec_yds": 192.252,
         "rush_att": 319.5275,
         "rush_tds": 12.6694,
-        "rush_yds": 1505.248
+        "rush_yds": 1502.448
       },
       "stat_source_counts": {
         "pass_att": 1,
@@ -2732,7 +2732,7 @@
         "rush_tds": 5,
         "rush_yds": 5
       },
-      "default_scoring_points": 250.466,
+      "default_scoring_points": 250.146,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -2748,12 +2748,12 @@
         "pass_int": 0,
         "pass_tds": 0,
         "pass_yds": 0,
-        "rec": 76.328,
+        "rec": 76.128,
         "rec_tds": 4.6114,
-        "rec_yds": 663.798,
+        "rec_yds": 661.998,
         "rush_att": 261.3425,
         "rush_tds": 8.1666,
-        "rush_yds": 1046.154
+        "rush_yds": 1046.554
       },
       "stat_source_counts": {
         "pass_att": 1,
@@ -2768,7 +2768,7 @@
         "rush_tds": 5,
         "rush_yds": 5
       },
-      "default_scoring_points": 247.0632,
+      "default_scoring_points": 246.9232,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -2784,12 +2784,12 @@
         "pass_int": 0,
         "pass_tds": 0,
         "pass_yds": 0,
-        "rec": 33.268,
+        "rec": 33.468,
         "rec_tds": 1.093,
-        "rec_yds": 229.788,
+        "rec_yds": 230.588,
         "rush_att": 111.315,
-        "rush_tds": 2.495,
-        "rush_yds": 419.746
+        "rush_tds": 2.295,
+        "rush_yds": 420.346
       },
       "stat_source_counts": {
         "pass_att": 1,
@@ -2804,7 +2804,7 @@
         "rush_tds": 5,
         "rush_yds": 5
       },
-      "default_scoring_points": 85.8814,
+      "default_scoring_points": 84.8214,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -2822,10 +2822,10 @@
         "pass_yds": 0,
         "rec": 17.112,
         "rec_tds": 0.8081,
-        "rec_yds": 121.326,
+        "rec_yds": 121.126,
         "rush_att": 83.865,
         "rush_tds": 2.6599,
-        "rush_yds": 335.088
+        "rush_yds": 333.688
       },
       "stat_source_counts": {
         "pass_att": 1,
@@ -2840,7 +2840,7 @@
         "rush_tds": 5,
         "rush_yds": 5
       },
-      "default_scoring_points": 64.6494,
+      "default_scoring_points": 64.4894,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -2929,11 +2929,11 @@
         "pass_tds": 0,
         "pass_yds": 0,
         "rec": 40.76,
-        "rec_tds": 1.7574,
-        "rec_yds": 298.974,
-        "rush_att": 154.3925,
+        "rec_tds": 1.5574,
+        "rec_yds": 295.574,
+        "rush_att": 154.8925,
         "rush_tds": 3.0826,
-        "rush_yds": 643.86
+        "rush_yds": 647.26
       },
       "stat_source_counts": {
         "pass_att": 1,
@@ -2948,7 +2948,7 @@
         "rush_tds": 5,
         "rush_yds": 5
       },
-      "default_scoring_points": 122.7234,
+      "default_scoring_points": 120.9234,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -3000,12 +3000,12 @@
         "pass_int": 0,
         "pass_tds": 0,
         "pass_yds": 0,
-        "rec": 41.964,
+        "rec": 41.764,
         "rec_tds": 2.2097,
-        "rec_yds": 335.092,
-        "rush_att": 295.64,
+        "rec_yds": 334.092,
+        "rush_att": 296.39,
         "rush_tds": 9.4083,
-        "rush_yds": 1354.916
+        "rush_yds": 1355.916
       },
       "stat_source_counts": {
         "pass_att": 1,
@@ -3036,12 +3036,12 @@
         "pass_int": 0,
         "pass_tds": 0,
         "pass_yds": 0,
-        "rec": 28.292,
+        "rec": 28.092,
         "rec_tds": 0.9414,
-        "rec_yds": 211.774,
-        "rush_att": 237.8975,
+        "rec_yds": 211.174,
+        "rush_att": 237.1475,
         "rush_tds": 8.9306,
-        "rush_yds": 1026.29
+        "rush_yds": 1025.09
       },
       "stat_source_counts": {
         "pass_att": 1,
@@ -3056,7 +3056,7 @@
         "rush_tds": 5,
         "rush_yds": 5
       },
-      "default_scoring_points": 181.8384,
+      "default_scoring_points": 181.6584,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -3072,12 +3072,12 @@
         "pass_int": 0,
         "pass_tds": 0,
         "pass_yds": 0,
-        "rec": 19.952,
+        "rec": 20.152,
         "rec_tds": 0.9938,
-        "rec_yds": 150.008,
-        "rush_att": 157.6975,
+        "rec_yds": 150.608,
+        "rush_att": 157.4475,
         "rush_tds": 5.6822,
-        "rush_yds": 601.23
+        "rush_yds": 600.03
       },
       "stat_source_counts": {
         "pass_att": 1,
@@ -3092,7 +3092,7 @@
         "rush_tds": 5,
         "rush_yds": 5
       },
-      "default_scoring_points": 114.5798,
+      "default_scoring_points": 114.5198,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -3113,7 +3113,7 @@
         "rec_yds": 91.525,
         "rush_att": 37.94,
         "rush_tds": 1.125,
-        "rush_yds": 150.745
+        "rush_yds": 150.245
       },
       "stat_source_counts": {
         "pass_att": 1,
@@ -3128,7 +3128,7 @@
         "rush_tds": 2,
         "rush_yds": 2
       },
-      "default_scoring_points": 33.827,
+      "default_scoring_points": 33.777,
       "source_count": 2,
       "sources": ["CBS", "FanDuel"]
     },
@@ -3182,10 +3182,10 @@
         "pass_yds": 0,
         "rec": 29.966,
         "rec_tds": 0.5851,
-        "rec_yds": 184.1,
-        "rush_att": 229.265,
+        "rec_yds": 182.1,
+        "rush_att": 228.765,
         "rush_tds": 4.4269,
-        "rush_yds": 966.396
+        "rush_yds": 965.196
       },
       "stat_source_counts": {
         "pass_att": 1,
@@ -3200,7 +3200,7 @@
         "rush_tds": 5,
         "rush_yds": 5
       },
-      "default_scoring_points": 143.3216,
+      "default_scoring_points": 143.6016,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -3218,10 +3218,10 @@
         "pass_yds": 0,
         "rec": 27.558,
         "rec_tds": 1.3949,
-        "rec_yds": 224.078,
+        "rec_yds": 225.678,
         "rush_att": 50.045,
         "rush_tds": 1.8731,
-        "rush_yds": 245.85
+        "rush_yds": 253.25
       },
       "stat_source_counts": {
         "pass_att": 1,
@@ -3236,7 +3236,7 @@
         "rush_tds": 5,
         "rush_yds": 5
       },
-      "default_scoring_points": 66.6008,
+      "default_scoring_points": 67.5008,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -3252,12 +3252,12 @@
         "pass_int": 0,
         "pass_tds": 0,
         "pass_yds": 0,
-        "rec": 19.4475,
+        "rec": 19.9475,
         "rec_tds": 1.3625,
-        "rec_yds": 199.0925,
-        "rush_att": 48.46,
+        "rec_yds": 202.8425,
+        "rush_att": 48.71,
         "rush_tds": 1.5325,
-        "rush_yds": 206.265
+        "rush_yds": 203.765
       },
       "stat_source_counts": {
         "pass_att": 1,
@@ -3272,7 +3272,7 @@
         "rush_tds": 4,
         "rush_yds": 4
       },
-      "default_scoring_points": 57.9058,
+      "default_scoring_points": 58.0308,
       "source_count": 4,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday"]
     },
@@ -3398,10 +3398,10 @@
         "pass_yds": 0,
         "rec": 36.466,
         "rec_tds": 1.4295,
-        "rec_yds": 307.692,
-        "rush_att": 231.85,
+        "rec_yds": 308.092,
+        "rush_att": 231.35,
         "rush_tds": 7.5125,
-        "rush_yds": 1025.976
+        "rush_yds": 1026.776
       },
       "stat_source_counts": {
         "pass_att": 1,
@@ -3416,7 +3416,7 @@
         "rush_tds": 5,
         "rush_yds": 5
       },
-      "default_scoring_points": 186.4188,
+      "default_scoring_points": 186.5388,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -3432,12 +3432,12 @@
         "pass_int": 0,
         "pass_tds": 0,
         "pass_yds": 0,
-        "rec": 19.104,
+        "rec": 18.904,
         "rec_tds": 0.7662,
         "rec_yds": 108.83,
         "rush_att": 215.585,
-        "rush_tds": 6.5718,
-        "rush_yds": 953.408
+        "rush_tds": 6.3718,
+        "rush_yds": 957.408
       },
       "stat_source_counts": {
         "pass_att": 1,
@@ -3452,7 +3452,7 @@
         "rush_tds": 5,
         "rush_yds": 5
       },
-      "default_scoring_points": 149.6518,
+      "default_scoring_points": 148.8518,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -3470,10 +3470,10 @@
         "pass_yds": 0,
         "rec": 43.678,
         "rec_tds": 1.7212,
-        "rec_yds": 341.012,
-        "rush_att": 317.515,
-        "rush_tds": 12.6988,
-        "rush_yds": 1431.776
+        "rec_yds": 340.412,
+        "rush_att": 317.765,
+        "rush_tds": 12.8988,
+        "rush_yds": 1444.776
       },
       "stat_source_counts": {
         "pass_att": 1,
@@ -3488,7 +3488,7 @@
         "rush_tds": 5,
         "rush_yds": 5
       },
-      "default_scoring_points": 262.5988,
+      "default_scoring_points": 265.0388,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -3501,10 +3501,10 @@
       "consensus_stats": {
         "rec": 3,
         "rec_tds": 0,
-        "rec_yds": 24,
+        "rec_yds": 25,
         "rush_att": 30,
         "rush_tds": 1,
-        "rush_yds": 139
+        "rush_yds": 145
       },
       "stat_source_counts": {
         "rec": 1,
@@ -3514,7 +3514,7 @@
         "rush_tds": 1,
         "rush_yds": 1
       },
-      "default_scoring_points": 22.3,
+      "default_scoring_points": 23,
       "source_count": 1,
       "sources": "CBS"
     },
@@ -3532,10 +3532,10 @@
         "pass_yds": 0,
         "rec": 27.62,
         "rec_tds": 1.0278,
-        "rec_yds": 198.362,
-        "rush_att": 201.5475,
+        "rec_yds": 199.562,
+        "rush_att": 202.5475,
         "rush_tds": 5.4582,
-        "rush_yds": 856.932
+        "rush_yds": 860.932
       },
       "stat_source_counts": {
         "pass_att": 1,
@@ -3550,7 +3550,7 @@
         "rush_tds": 5,
         "rush_yds": 5
       },
-      "default_scoring_points": 143.8454,
+      "default_scoring_points": 144.3654,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -3604,10 +3604,10 @@
         "pass_yds": 0,
         "rec": 40.518,
         "rec_tds": 2.5178,
-        "rec_yds": 311.69,
+        "rec_yds": 311.89,
         "rush_att": 258.9875,
         "rush_tds": 6.3102,
-        "rush_yds": 1057.484
+        "rush_yds": 1054.084
       },
       "stat_source_counts": {
         "pass_att": 1,
@@ -3622,7 +3622,7 @@
         "rush_tds": 5,
         "rush_yds": 5
       },
-      "default_scoring_points": 189.2854,
+      "default_scoring_points": 188.9654,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -3635,10 +3635,10 @@
       "consensus_stats": {
         "rec": 12.25,
         "rec_tds": 0.1373,
-        "rec_yds": 91.5,
-        "rush_att": 94,
+        "rec_yds": 93.25,
+        "rush_att": 95.3333,
         "rush_tds": 2.1127,
-        "rush_yds": 383.5
+        "rush_yds": 388
       },
       "stat_source_counts": {
         "rec": 4,
@@ -3648,7 +3648,7 @@
         "rush_tds": 4,
         "rush_yds": 4
       },
-      "default_scoring_points": 61,
+      "default_scoring_points": 61.625,
       "source_count": 4,
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
@@ -3665,11 +3665,11 @@
         "pass_tds": 0,
         "pass_yds": 0,
         "rec": 44.528,
-        "rec_tds": 1.969,
-        "rec_yds": 317.48,
+        "rec_tds": 2.169,
+        "rec_yds": 319.88,
         "rush_att": 105.835,
         "rush_tds": 3.419,
-        "rush_yds": 418.448
+        "rush_yds": 419.048
       },
       "stat_source_counts": {
         "pass_att": 1,
@@ -3684,7 +3684,7 @@
         "rush_tds": 5,
         "rush_yds": 5
       },
-      "default_scoring_points": 105.3208,
+      "default_scoring_points": 106.8208,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -3703,9 +3703,9 @@
         "rec": 32.708,
         "rec_tds": 1.5338,
         "rec_yds": 190.378,
-        "rush_att": 264.2025,
+        "rush_att": 263.7025,
         "rush_tds": 10.5402,
-        "rush_yds": 1194.002
+        "rush_yds": 1194.802
       },
       "stat_source_counts": {
         "pass_att": 1,
@@ -3720,7 +3720,7 @@
         "rush_tds": 5,
         "rush_yds": 5
       },
-      "default_scoring_points": 209.682,
+      "default_scoring_points": 209.762,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -3736,12 +3736,12 @@
         "pass_int": 0,
         "pass_tds": 0,
         "pass_yds": 0,
-        "rec": 39.902,
+        "rec": 40.102,
         "rec_tds": 1.9186,
-        "rec_yds": 329.886,
-        "rush_att": 184.33,
-        "rush_tds": 6.7394,
-        "rush_yds": 780.706
+        "rec_yds": 335.286,
+        "rush_att": 182.58,
+        "rush_tds": 6.5394,
+        "rush_yds": 773.906
       },
       "stat_source_counts": {
         "pass_att": 1,
@@ -3756,7 +3756,7 @@
         "rush_tds": 5,
         "rush_yds": 5
       },
-      "default_scoring_points": 161.2072,
+      "default_scoring_points": 160.4672,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -3773,11 +3773,11 @@
         "pass_tds": 0,
         "pass_yds": 0,
         "rec": 32.482,
-        "rec_tds": 1.453,
-        "rec_yds": 221.47,
-        "rush_att": 194.8,
-        "rush_tds": 5.273,
-        "rush_yds": 772.186
+        "rec_tds": 1.253,
+        "rec_yds": 219.27,
+        "rush_att": 194.05,
+        "rush_tds": 5.073,
+        "rush_yds": 771.386
       },
       "stat_source_counts": {
         "pass_att": 1,
@@ -3792,7 +3792,7 @@
         "rush_tds": 5,
         "rush_yds": 5
       },
-      "default_scoring_points": 138.5216,
+      "default_scoring_points": 135.8216,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -3882,10 +3882,10 @@
         "pass_yds": 0,
         "rec": 49.238,
         "rec_tds": 2.2983,
-        "rec_yds": 424.656,
-        "rush_att": 258.66,
-        "rush_tds": 6.0397,
-        "rush_yds": 1140.286
+        "rec_yds": 423.456,
+        "rush_att": 258.91,
+        "rush_tds": 6.2397,
+        "rush_yds": 1137.086
       },
       "stat_source_counts": {
         "pass_att": 1,
@@ -3900,7 +3900,7 @@
         "rush_tds": 5,
         "rush_yds": 5
       },
-      "default_scoring_points": 205.3222,
+      "default_scoring_points": 206.0822,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -3918,10 +3918,10 @@
         "pass_yds": 0,
         "rec": 30.548,
         "rec_tds": 2.0817,
-        "rec_yds": 214.146,
-        "rush_att": 232.605,
+        "rec_yds": 214.946,
+        "rush_att": 232.355,
         "rush_tds": 9.5222,
-        "rush_yds": 1078.002
+        "rush_yds": 1076.002
       },
       "stat_source_counts": {
         "pass_att": 1,
@@ -3936,7 +3936,7 @@
         "rush_tds": 5,
         "rush_yds": 5
       },
-      "default_scoring_points": 197.6388,
+      "default_scoring_points": 197.5188,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -3954,10 +3954,10 @@
         "pass_yds": 0,
         "rec": 45.008,
         "rec_tds": 1.8409,
-        "rec_yds": 347.736,
-        "rush_att": 264.84,
+        "rec_yds": 348.536,
+        "rush_att": 265.34,
         "rush_tds": 9.0191,
-        "rush_yds": 1199.866
+        "rush_yds": 1203.666
       },
       "stat_source_counts": {
         "pass_att": 1,
@@ -3972,7 +3972,7 @@
         "rush_tds": 5,
         "rush_yds": 5
       },
-      "default_scoring_points": 219.3202,
+      "default_scoring_points": 219.7802,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -3988,12 +3988,12 @@
         "pass_int": 0,
         "pass_tds": 0,
         "pass_yds": 0,
-        "rec": 20.304,
+        "rec": 20.504,
         "rec_tds": 0.5134,
-        "rec_yds": 150.808,
+        "rec_yds": 151.608,
         "rush_att": 102.3725,
         "rush_tds": 3.7606,
-        "rush_yds": 414.422
+        "rush_yds": 414.022
       },
       "stat_source_counts": {
         "pass_att": 1,
@@ -4008,7 +4008,7 @@
         "rush_tds": 5,
         "rush_yds": 5
       },
-      "default_scoring_points": 81.567,
+      "default_scoring_points": 81.607,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -4060,12 +4060,12 @@
         "pass_int": 0,
         "pass_tds": 0,
         "pass_yds": 0,
-        "rec": 30.954,
+        "rec": 30.754,
         "rec_tds": 1.929,
-        "rec_yds": 264.894,
-        "rush_att": 297.63,
+        "rec_yds": 262.294,
+        "rush_att": 299.88,
         "rush_tds": 11.143,
-        "rush_yds": 1472.802
+        "rush_yds": 1474.402
       },
       "stat_source_counts": {
         "pass_att": 1,
@@ -4080,7 +4080,7 @@
         "rush_tds": 5,
         "rush_yds": 5
       },
-      "default_scoring_points": 250.4016,
+      "default_scoring_points": 250.3016,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -4098,10 +4098,10 @@
         "pass_yds": 0,
         "rec": 8.562,
         "rec_tds": 0.126,
-        "rec_yds": 53.306,
+        "rec_yds": 53.506,
         "rush_att": 120.1475,
         "rush_tds": 3.34,
-        "rush_yds": 493.914
+        "rush_yds": 493.714
       },
       "stat_source_counts": {
         "pass_att": 1,
@@ -4170,10 +4170,10 @@
         "pass_yds": 0,
         "rec": 35.428,
         "rec_tds": 1.6686,
-        "rec_yds": 256.432,
-        "rush_att": 140.4525,
+        "rec_yds": 256.832,
+        "rush_att": 140.9525,
         "rush_tds": 4.2454,
-        "rush_yds": 547.412
+        "rush_yds": 549.212
       },
       "stat_source_counts": {
         "pass_att": 1,
@@ -4188,7 +4188,7 @@
         "rush_tds": 5,
         "rush_yds": 5
       },
-      "default_scoring_points": 115.2684,
+      "default_scoring_points": 115.4884,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -4313,11 +4313,11 @@
         "pass_tds": 0,
         "pass_yds": 0,
         "rec": 43.104,
-        "rec_tds": 1.6849,
-        "rec_yds": 322.134,
+        "rec_tds": 1.4849,
+        "rec_yds": 322.734,
         "rush_att": 197.04,
         "rush_tds": 4.5351,
-        "rush_yds": 802.004
+        "rush_yds": 801.004
       },
       "stat_source_counts": {
         "pass_att": 1,
@@ -4332,7 +4332,7 @@
         "rush_tds": 5,
         "rush_yds": 5
       },
-      "default_scoring_points": 149.1338,
+      "default_scoring_points": 147.8938,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -4350,10 +4350,10 @@
         "pass_yds": 0,
         "rec": 11.928,
         "rec_tds": 0.4024,
-        "rec_yds": 74.892,
-        "rush_att": 110.47,
+        "rec_yds": 75.692,
+        "rush_att": 110.72,
         "rush_tds": 2.1356,
-        "rush_yds": 394.278
+        "rush_yds": 395.078
       },
       "stat_source_counts": {
         "pass_att": 1,
@@ -4368,7 +4368,7 @@
         "rush_tds": 5,
         "rush_yds": 5
       },
-      "default_scoring_points": 61.545,
+      "default_scoring_points": 61.705,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -4494,10 +4494,10 @@
         "pass_yds": 0,
         "rec": 16.192,
         "rec_tds": 0.2903,
-        "rec_yds": 89.33,
-        "rush_att": 172.9675,
+        "rec_yds": 88.93,
+        "rush_att": 172.4675,
         "rush_tds": 5.7097,
-        "rush_yds": 789.744
+        "rush_yds": 788.144
       },
       "stat_source_counts": {
         "pass_att": 1,
@@ -4512,7 +4512,7 @@
         "rush_tds": 5,
         "rush_yds": 5
       },
-      "default_scoring_points": 123.3074,
+      "default_scoring_points": 123.1074,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -4529,11 +4529,11 @@
         "pass_tds": 0,
         "pass_yds": 0,
         "rec": 73.886,
-        "rec_tds": 3.5933,
-        "rec_yds": 660.86,
-        "rush_att": 295.07,
-        "rush_tds": 9.5187,
-        "rush_yds": 1466.672
+        "rec_tds": 3.3933,
+        "rec_yds": 656.46,
+        "rush_att": 295.57,
+        "rush_tds": 9.7187,
+        "rush_yds": 1468.872
       },
       "stat_source_counts": {
         "pass_att": 1,
@@ -4548,7 +4548,7 @@
         "rush_tds": 5,
         "rush_yds": 5
       },
-      "default_scoring_points": 290.2252,
+      "default_scoring_points": 290.0052,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -4564,12 +4564,12 @@
         "pass_int": 0,
         "pass_tds": 0,
         "pass_yds": 0,
-        "rec": 70.934,
+        "rec": 70.334,
         "rec_tds": 4.4067,
-        "rec_yds": 583.094,
-        "rush_att": 268.4225,
+        "rec_yds": 582.894,
+        "rush_att": 268.9225,
         "rush_tds": 13.2573,
-        "rush_yds": 1431.332
+        "rush_yds": 1431.932
       },
       "stat_source_counts": {
         "pass_att": 1,
@@ -4584,7 +4584,7 @@
         "rush_tds": 5,
         "rush_yds": 5
       },
-      "default_scoring_points": 306.8266,
+      "default_scoring_points": 306.8666,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -4602,10 +4602,10 @@
         "pass_yds": 0,
         "rec": 6.002,
         "rec_tds": 0.1439,
-        "rec_yds": 42.92,
+        "rec_yds": 43.12,
         "rush_att": 94.935,
         "rush_tds": 3.2661,
-        "rush_yds": 428.596
+        "rush_yds": 431.796
       },
       "stat_source_counts": {
         "pass_att": 1,
@@ -4620,7 +4620,7 @@
         "rush_tds": 5,
         "rush_yds": 5
       },
-      "default_scoring_points": 67.0116,
+      "default_scoring_points": 67.3516,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -4677,7 +4677,7 @@
         "rec_yds": 25.7575,
         "rush_att": 53.015,
         "rush_tds": 2.38,
-        "rush_yds": 216.74
+        "rush_yds": 216.99
       },
       "stat_source_counts": {
         "pass_att": 1,
@@ -4692,7 +4692,7 @@
         "rush_tds": 4,
         "rush_yds": 4
       },
-      "default_scoring_points": 38.7848,
+      "default_scoring_points": 38.8098,
       "source_count": 4,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday"]
     },
@@ -4713,7 +4713,7 @@
         "rec_yds": 523.302,
         "rush_att": 237.1975,
         "rush_tds": 6.4487,
-        "rush_yds": 1190.094
+        "rush_yds": 1189.694
       },
       "stat_source_counts": {
         "pass_att": 1,
@@ -4728,7 +4728,7 @@
         "rush_tds": 5,
         "rush_yds": 5
       },
-      "default_scoring_points": 231.6756,
+      "default_scoring_points": 231.6356,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -4780,12 +4780,12 @@
         "pass_int": 0,
         "pass_tds": 0,
         "pass_yds": 0,
-        "rec": 13.8,
+        "rec": 14,
         "rec_tds": 0.3786,
-        "rec_yds": 101.8,
-        "rush_att": 94.5,
+        "rec_yds": 102.2,
+        "rush_att": 94,
         "rush_tds": 4.0214,
-        "rush_yds": 400.2
+        "rush_yds": 398
       },
       "stat_source_counts": {
         "pass_att": 1,
@@ -4800,7 +4800,7 @@
         "rush_tds": 5,
         "rush_yds": 5
       },
-      "default_scoring_points": 76,
+      "default_scoring_points": 75.82,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -4820,8 +4820,8 @@
         "rec_tds": 0.0425,
         "rec_yds": 24.6725,
         "rush_att": 28.395,
-        "rush_tds": 0.615,
-        "rush_yds": 113.445
+        "rush_tds": 0.865,
+        "rush_yds": 113.695
       },
       "stat_source_counts": {
         "pass_att": 1,
@@ -4836,7 +4836,7 @@
         "rush_tds": 4,
         "rush_yds": 4
       },
-      "default_scoring_points": 17.7568,
+      "default_scoring_points": 19.2818,
       "source_count": 4,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday"]
     },
@@ -4963,9 +4963,9 @@
         "rec": 14.568,
         "rec_tds": 0.5837,
         "rec_yds": 107.592,
-        "rush_att": 77.9725,
+        "rush_att": 78.2225,
         "rush_tds": 1.9243,
-        "rush_yds": 346.056
+        "rush_yds": 346.456
       },
       "stat_source_counts": {
         "pass_att": 1,
@@ -4980,7 +4980,7 @@
         "rush_tds": 5,
         "rush_yds": 5
       },
-      "default_scoring_points": 59.8128,
+      "default_scoring_points": 59.8528,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -4998,10 +4998,10 @@
         "pass_yds": 0,
         "rec": 65.516,
         "rec_tds": 3.9463,
-        "rec_yds": 453.424,
-        "rush_att": 249.9,
-        "rush_tds": 7.7097,
-        "rush_yds": 1086.814
+        "rec_yds": 453.624,
+        "rush_att": 249.15,
+        "rush_tds": 7.5097,
+        "rush_yds": 1085.414
       },
       "stat_source_counts": {
         "pass_att": 1,
@@ -5016,7 +5016,7 @@
         "rush_tds": 5,
         "rush_yds": 5
       },
-      "default_scoring_points": 223.3598,
+      "default_scoring_points": 222.0398,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -5029,10 +5029,10 @@
       "consensus_stats": {
         "rec": 4.6667,
         "rec_tds": 0,
-        "rec_yds": 34,
+        "rec_yds": 33.6667,
         "rush_att": 28,
         "rush_tds": 0.6667,
-        "rush_yds": 148.3333
+        "rush_yds": 148.6667
       },
       "stat_source_counts": {
         "rec": 3,
@@ -5060,10 +5060,10 @@
         "pass_yds": 0,
         "rec": 18.136,
         "rec_tds": 0.5615,
-        "rec_yds": 118.79,
+        "rec_yds": 118.99,
         "rush_att": 78.5875,
         "rush_tds": 2.1065,
-        "rush_yds": 365.092
+        "rush_yds": 365.692
       },
       "stat_source_counts": {
         "pass_att": 1,
@@ -5078,7 +5078,7 @@
         "rush_tds": 5,
         "rush_yds": 5
       },
-      "default_scoring_points": 63.7962,
+      "default_scoring_points": 63.8762,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -5166,12 +5166,12 @@
         "pass_int": 0,
         "pass_tds": 0,
         "pass_yds": 0,
-        "rec": 8.116,
+        "rec": 7.716,
         "rec_tds": 0.2436,
-        "rec_yds": 56.594,
-        "rush_att": 61.1875,
+        "rec_yds": 54.194,
+        "rush_att": 59.1875,
         "rush_tds": 1.7884,
-        "rush_yds": 276.366
+        "rush_yds": 268.366
       },
       "stat_source_counts": {
         "pass_att": 1,
@@ -5186,7 +5186,7 @@
         "rush_tds": 5,
         "rush_yds": 5
       },
-      "default_scoring_points": 45.488,
+      "default_scoring_points": 44.448,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -5240,10 +5240,10 @@
         "pass_yds": 0,
         "rec": 11.062,
         "rec_tds": 0.4109,
-        "rec_yds": 73.942,
-        "rush_att": 167.1475,
+        "rec_yds": 73.342,
+        "rush_att": 168.1475,
         "rush_tds": 6.4991,
-        "rush_yds": 803.006
+        "rush_yds": 805.406
       },
       "stat_source_counts": {
         "pass_att": 1,
@@ -5258,7 +5258,7 @@
         "rush_tds": 5,
         "rush_yds": 5
       },
-      "default_scoring_points": 128.5548,
+      "default_scoring_points": 128.7348,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -5346,12 +5346,12 @@
         "pass_int": 0,
         "pass_tds": 0,
         "pass_yds": 0,
-        "rec": 13.266,
+        "rec": 13.466,
         "rec_tds": 0.434,
-        "rec_yds": 94.764,
+        "rec_yds": 96.364,
         "rush_att": 104.835,
-        "rush_tds": 3.512,
-        "rush_yds": 443.294
+        "rush_tds": 3.312,
+        "rush_yds": 447.494
       },
       "stat_source_counts": {
         "pass_att": 1,
@@ -5366,7 +5366,7 @@
         "rush_tds": 5,
         "rush_yds": 5
       },
-      "default_scoring_points": 75.6818,
+      "default_scoring_points": 75.0618,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -5387,7 +5387,7 @@
         "rec_yds": 198.888,
         "rush_att": 164.36,
         "rush_tds": 4.3813,
-        "rush_yds": 683.936
+        "rush_yds": 683.736
       },
       "stat_source_counts": {
         "pass_att": 1,
@@ -5402,7 +5402,7 @@
         "rush_tds": 5,
         "rush_yds": 5
       },
-      "default_scoring_points": 119.1104,
+      "default_scoring_points": 119.0904,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -5418,12 +5418,12 @@
         "pass_int": 0,
         "pass_tds": 0,
         "pass_yds": 0,
-        "rec": 37.608,
+        "rec": 37.408,
         "rec_tds": 2.1196,
-        "rec_yds": 312.252,
-        "rush_att": 247.2425,
+        "rec_yds": 313.652,
+        "rush_att": 246.9925,
         "rush_tds": 5.8244,
-        "rush_yds": 1008.332
+        "rush_yds": 1009.932
       },
       "stat_source_counts": {
         "pass_att": 1,
@@ -5438,7 +5438,7 @@
         "rush_tds": 5,
         "rush_yds": 5
       },
-      "default_scoring_points": 179.1224,
+      "default_scoring_points": 179.4224,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -5490,12 +5490,12 @@
         "pass_int": 0,
         "pass_tds": 0,
         "pass_yds": 0,
-        "rec": 7.696,
-        "rec_tds": 0.3713,
-        "rec_yds": 58.11,
-        "rush_att": 36.0525,
-        "rush_tds": 1.1027,
-        "rush_yds": 183.118
+        "rec": 9.12,
+        "rec_tds": 0.4642,
+        "rec_yds": 68.1375,
+        "rush_att": 35.7367,
+        "rush_tds": 1.3783,
+        "rush_yds": 188.1475
       },
       "stat_source_counts": {
         "pass_att": 1,
@@ -5503,16 +5503,16 @@
         "pass_int": 1,
         "pass_tds": 1,
         "pass_yds": 1,
-        "rec": 5,
-        "rec_tds": 5,
-        "rec_yds": 5,
-        "rush_att": 4,
-        "rush_tds": 5,
-        "rush_yds": 5
+        "rec": 4,
+        "rec_tds": 4,
+        "rec_yds": 4,
+        "rush_att": 3,
+        "rush_tds": 4,
+        "rush_yds": 4
       },
-      "default_scoring_points": 32.9668,
-      "source_count": 5,
-      "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
+      "default_scoring_points": 36.6835,
+      "source_count": 4,
+      "sources": ["ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
     {
       "name": "MarShawn Lloyd",
@@ -5528,7 +5528,7 @@
         "pass_yds": 0,
         "rec": 15.2,
         "rec_tds": 0.728,
-        "rec_yds": 111.2,
+        "rec_yds": 111,
         "rush_att": 167.9975,
         "rush_tds": 5.912,
         "rush_yds": 750.976
@@ -5546,7 +5546,7 @@
         "rush_tds": 5,
         "rush_yds": 5
       },
-      "default_scoring_points": 124.2576,
+      "default_scoring_points": 124.2376,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -5598,12 +5598,12 @@
         "pass_int": 0,
         "pass_tds": 0,
         "pass_yds": 0,
-        "rec": 12.1075,
+        "rec": 11.1075,
         "rec_tds": 0.2,
-        "rec_yds": 90.2375,
-        "rush_att": 74.6925,
-        "rush_tds": 2.61,
-        "rush_yds": 285.91
+        "rec_yds": 81.2375,
+        "rush_att": 71.9425,
+        "rush_tds": 2.11,
+        "rush_yds": 273.41
       },
       "stat_source_counts": {
         "pass_att": 1,
@@ -5618,7 +5618,7 @@
         "rush_tds": 4,
         "rush_yds": 4
       },
-      "default_scoring_points": 49.9748,
+      "default_scoring_points": 46.3248,
       "source_count": 4,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday"]
     },
@@ -5780,10 +5780,10 @@
         "pass_yds": 0,
         "rec": 7.35,
         "rec_tds": 0.4075,
-        "rec_yds": 54.135,
+        "rec_yds": 55.135,
         "rush_att": 17.2475,
         "rush_tds": 0.1025,
-        "rush_yds": 68.645
+        "rush_yds": 68.395
       },
       "stat_source_counts": {
         "pass_att": 1,
@@ -5798,7 +5798,7 @@
         "rush_tds": 4,
         "rush_yds": 4
       },
-      "default_scoring_points": 15.338,
+      "default_scoring_points": 15.413,
       "source_count": 4,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday"]
     },
@@ -5816,10 +5816,10 @@
         "pass_yds": 0,
         "rec": 14.555,
         "rec_tds": 0.645,
-        "rec_yds": 110.62,
+        "rec_yds": 110.87,
         "rush_att": 79.045,
         "rush_tds": 1.9175,
-        "rush_yds": 338.415
+        "rush_yds": 338.665
       },
       "stat_source_counts": {
         "pass_att": 1,
@@ -5834,7 +5834,7 @@
         "rush_tds": 4,
         "rush_yds": 4
       },
-      "default_scoring_points": 59.5285,
+      "default_scoring_points": 59.5785,
       "source_count": 4,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday"]
     },
@@ -5852,10 +5852,10 @@
         "pass_yds": 0,
         "rec": 11.3325,
         "rec_tds": 0.0925,
-        "rec_yds": 86.945,
+        "rec_yds": 87.195,
         "rush_att": 32.925,
         "rush_tds": 0.925,
-        "rush_yds": 151.625
+        "rush_yds": 151.125
       },
       "stat_source_counts": {
         "pass_att": 1,
@@ -5870,7 +5870,7 @@
         "rush_tds": 4,
         "rush_yds": 4
       },
-      "default_scoring_points": 29.962,
+      "default_scoring_points": 29.937,
       "source_count": 4,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday"]
     },
@@ -5891,7 +5891,7 @@
         "rec_yds": 82.115,
         "rush_att": 55.095,
         "rush_tds": 1.5025,
-        "rush_yds": 222.9025
+        "rush_yds": 223.1525
       },
       "stat_source_counts": {
         "pass_att": 1,
@@ -5906,7 +5906,7 @@
         "rush_tds": 4,
         "rush_yds": 4
       },
-      "default_scoring_points": 41.3167,
+      "default_scoring_points": 41.3418,
       "source_count": 4,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday"]
     },
@@ -6030,12 +6030,12 @@
         "pass_int": 0,
         "pass_tds": 0,
         "pass_yds": 0,
-        "rec": 53.016,
+        "rec": 53.216,
         "rec_tds": 2.6567,
-        "rec_yds": 378.09,
-        "rush_att": 265.7675,
+        "rec_yds": 382.49,
+        "rush_att": 265.5175,
         "rush_tds": 6.9813,
-        "rush_yds": 1067.908
+        "rush_yds": 1068.308
       },
       "stat_source_counts": {
         "pass_att": 1,
@@ -6050,7 +6050,7 @@
         "rush_tds": 5,
         "rush_yds": 5
       },
-      "default_scoring_points": 201.8278,
+      "default_scoring_points": 202.3078,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -6066,12 +6066,12 @@
         "pass_int": 0,
         "pass_tds": 0,
         "pass_yds": 0,
-        "rec": 31.79,
+        "rec": 31.59,
         "rec_tds": 1.177,
-        "rec_yds": 228.026,
-        "rush_att": 164.725,
+        "rec_yds": 227.426,
+        "rush_att": 164.975,
         "rush_tds": 5.741,
-        "rush_yds": 782.276
+        "rush_yds": 781.676
       },
       "stat_source_counts": {
         "pass_att": 1,
@@ -6086,7 +6086,7 @@
         "rush_tds": 5,
         "rush_yds": 5
       },
-      "default_scoring_points": 141.9382,
+      "default_scoring_points": 141.8182,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -6102,12 +6102,12 @@
         "pass_int": 0,
         "pass_tds": 0,
         "pass_yds": 0,
-        "rec": 51.062,
+        "rec": 51.462,
         "rec_tds": 2.255,
-        "rec_yds": 350.034,
-        "rush_att": 249.7,
+        "rec_yds": 352.434,
+        "rush_att": 249.45,
         "rush_tds": 8.923,
-        "rush_yds": 1088.516
+        "rush_yds": 1087.916
       },
       "stat_source_counts": {
         "pass_att": 1,
@@ -6122,7 +6122,7 @@
         "rush_tds": 5,
         "rush_yds": 5
       },
-      "default_scoring_points": 210.323,
+      "default_scoring_points": 210.503,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -6140,10 +6140,10 @@
         "pass_yds": 0,
         "rec": 46.828,
         "rec_tds": 2.3099,
-        "rec_yds": 368.95,
-        "rush_att": 243.9225,
+        "rec_yds": 370.15,
+        "rush_att": 245.6725,
         "rush_tds": 7.6041,
-        "rush_yds": 1013.56
+        "rush_yds": 1020.96
       },
       "stat_source_counts": {
         "pass_att": 1,
@@ -6158,7 +6158,7 @@
         "rush_tds": 5,
         "rush_yds": 5
       },
-      "default_scoring_points": 196.535,
+      "default_scoring_points": 197.395,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -6210,12 +6210,12 @@
         "pass_int": 0,
         "pass_tds": 0,
         "pass_yds": 0,
-        "rec": 37.776,
+        "rec": 36.976,
         "rec_tds": 1.7882,
-        "rec_yds": 287.416,
+        "rec_yds": 280.816,
         "rush_att": 72.0925,
         "rush_tds": 1.3338,
-        "rush_yds": 252.464
+        "rush_yds": 252.064
       },
       "stat_source_counts": {
         "pass_att": 1,
@@ -6230,7 +6230,7 @@
         "rush_tds": 5,
         "rush_yds": 5
       },
-      "default_scoring_points": 71.52,
+      "default_scoring_points": 70.22,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -6320,7 +6320,7 @@
         "pass_yds": 0,
         "rec": 30.602,
         "rec_tds": 0.9191,
-        "rec_yds": 211.812,
+        "rec_yds": 212.012,
         "rush_att": 287.545,
         "rush_tds": 7.5629,
         "rush_yds": 1118.238
@@ -6338,7 +6338,7 @@
         "rush_tds": 5,
         "rush_yds": 5
       },
-      "default_scoring_points": 183.297,
+      "default_scoring_points": 183.317,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -6354,12 +6354,12 @@
         "pass_int": 0,
         "pass_tds": 0,
         "pass_yds": 0,
-        "rec": 25.292,
+        "rec": 25.492,
         "rec_tds": 1.5144,
-        "rec_yds": 190.066,
+        "rec_yds": 190.866,
         "rush_att": 224.675,
         "rush_tds": 7.5556,
-        "rush_yds": 948.276
+        "rush_yds": 953.076
       },
       "stat_source_counts": {
         "pass_att": 1,
@@ -6374,7 +6374,7 @@
         "rush_tds": 5,
         "rush_yds": 5
       },
-      "default_scoring_points": 166.4542,
+      "default_scoring_points": 167.0142,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -6392,10 +6392,10 @@
         "pass_yds": 0,
         "rec": 24.906,
         "rec_tds": 1.4601,
-        "rec_yds": 198.46,
-        "rush_att": 151.985,
+        "rec_yds": 199.46,
+        "rush_att": 153.235,
         "rush_tds": 3.0259,
-        "rush_yds": 591.04
+        "rush_yds": 595.04
       },
       "stat_source_counts": {
         "pass_att": 1,
@@ -6410,7 +6410,7 @@
         "rush_tds": 5,
         "rush_yds": 5
       },
-      "default_scoring_points": 105.266,
+      "default_scoring_points": 105.766,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -6539,7 +6539,7 @@
         "rec_yds": 37.992,
         "rush_att": 38.725,
         "rush_tds": 1.4509,
-        "rush_yds": 160.868
+        "rush_yds": 161.068
       },
       "stat_source_counts": {
         "pass_att": 1,
@@ -6554,7 +6554,7 @@
         "rush_tds": 5,
         "rush_yds": 5
       },
-      "default_scoring_points": 29.678,
+      "default_scoring_points": 29.698,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -6572,10 +6572,10 @@
         "pass_yds": 0,
         "rec": 7.756,
         "rec_tds": 0.2473,
-        "rec_yds": 52.564,
+        "rec_yds": 52.764,
         "rush_att": 30.7175,
         "rush_tds": 0.9287,
-        "rush_yds": 135.042
+        "rush_yds": 135.442
       },
       "stat_source_counts": {
         "pass_att": 1,
@@ -6590,7 +6590,7 @@
         "rush_tds": 5,
         "rush_yds": 5
       },
-      "default_scoring_points": 25.8166,
+      "default_scoring_points": 25.8766,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -6606,12 +6606,12 @@
         "pass_int": 0,
         "pass_tds": 0,
         "pass_yds": 0,
-        "rec": 14.345,
+        "rec": 14.095,
         "rec_tds": 0.585,
         "rec_yds": 95.0825,
         "rush_att": 28.2,
         "rush_tds": 0.3975,
-        "rush_yds": 111.075
+        "rush_yds": 111.325
       },
       "stat_source_counts": {
         "pass_att": 1,
@@ -6626,7 +6626,7 @@
         "rush_tds": 4,
         "rush_yds": 4
       },
-      "default_scoring_points": 26.5108,
+      "default_scoring_points": 26.5358,
       "source_count": 4,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday"]
     },
@@ -6644,10 +6644,10 @@
         "pass_yds": 0,
         "rec": 3.3333,
         "rec_tds": 0.0567,
-        "rec_yds": 22.75,
+        "rec_yds": 23.0833,
         "rush_att": 28.7767,
         "rush_tds": 0.7967,
-        "rush_yds": 111.0467
+        "rush_yds": 110.38
       },
       "stat_source_counts": {
         "pass_att": 1,
@@ -6662,7 +6662,7 @@
         "rush_tds": 3,
         "rush_yds": 3
       },
-      "default_scoring_points": 18.4997,
+      "default_scoring_points": 18.4663,
       "source_count": 3,
       "sources": ["CBS", "FanDuel", "FFToday"]
     },
@@ -6717,9 +6717,9 @@
         "rec": 24.4,
         "rec_tds": 0.6125,
         "rec_yds": 198.2,
-        "rush_att": 179.5175,
+        "rush_att": 181.0175,
         "rush_tds": 5.1475,
-        "rush_yds": 768.6475
+        "rush_yds": 775.1475
       },
       "stat_source_counts": {
         "pass_att": 1,
@@ -6734,7 +6734,7 @@
         "rush_tds": 4,
         "rush_yds": 4
       },
-      "default_scoring_points": 130.4948,
+      "default_scoring_points": 131.1448,
       "source_count": 4,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday"]
     },
@@ -6750,12 +6750,12 @@
         "pass_int": 0,
         "pass_tds": 0,
         "pass_yds": 0,
-        "rec": 45.952,
-        "rec_tds": 2.9843,
-        "rec_yds": 338.478,
-        "rush_att": 111.945,
+        "rec": 46.152,
+        "rec_tds": 3.1843,
+        "rec_yds": 340.278,
+        "rush_att": 112.445,
         "rush_tds": 3.8297,
-        "rush_yds": 446.956
+        "rush_yds": 443.356
       },
       "stat_source_counts": {
         "pass_att": 1,
@@ -6770,7 +6770,7 @@
         "rush_tds": 5,
         "rush_yds": 5
       },
-      "default_scoring_points": 118.8274,
+      "default_scoring_points": 119.8474,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -6822,12 +6822,12 @@
         "pass_int": 0,
         "pass_tds": 0,
         "pass_yds": 0,
-        "rec": 12.092,
+        "rec": 12.292,
         "rec_tds": 0.4031,
-        "rec_yds": 88.954,
-        "rush_att": 187.51,
+        "rec_yds": 89.554,
+        "rush_att": 188.01,
         "rush_tds": 6.6009,
-        "rush_yds": 828.902
+        "rush_yds": 828.102
       },
       "stat_source_counts": {
         "pass_att": 1,
@@ -6842,9 +6842,35 @@
         "rush_tds": 5,
         "rush_yds": 5
       },
-      "default_scoring_points": 132.6096,
+      "default_scoring_points": 132.5896,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
+    },
+    {
+      "name": "Lan Larison",
+      "position": "RB",
+      "gsis_id": null,
+      "sleeper_id": null,
+      "espn_id": null,
+      "consensus_stats": {
+        "rec": 3,
+        "rec_tds": 0,
+        "rec_yds": 29,
+        "rush_att": 31,
+        "rush_tds": 1,
+        "rush_yds": 137
+      },
+      "stat_source_counts": {
+        "rec": 1,
+        "rec_tds": 1,
+        "rec_yds": 1,
+        "rush_att": 1,
+        "rush_tds": 1,
+        "rush_yds": 1
+      },
+      "default_scoring_points": 22.6,
+      "source_count": 1,
+      "sources": "CBS"
     },
     {
       "name": "Amar Johnson",
@@ -6894,12 +6920,12 @@
         "pass_int": 0,
         "pass_tds": 0,
         "pass_yds": 0,
-        "rec": 3.77,
+        "rec": 2.77,
         "rec_tds": 0.085,
-        "rec_yds": 28.705,
-        "rush_att": 24.275,
+        "rec_yds": 23.205,
+        "rush_att": 21.775,
         "rush_tds": 0.635,
-        "rush_yds": 104.285
+        "rush_yds": 86.285
       },
       "stat_source_counts": {
         "pass_att": 1,
@@ -6914,7 +6940,7 @@
         "rush_tds": 2,
         "rush_yds": 2
       },
-      "default_scoring_points": 17.619,
+      "default_scoring_points": 15.269,
       "source_count": 2,
       "sources": ["CBS", "FanDuel"]
     },
@@ -6971,7 +6997,7 @@
         "rec_yds": 359.4,
         "rush_att": 223.1725,
         "rush_tds": 6.3124,
-        "rush_yds": 1009.636
+        "rush_yds": 1009.836
       },
       "stat_source_counts": {
         "pass_att": 1,
@@ -6986,7 +7012,7 @@
         "rush_tds": 5,
         "rush_yds": 5
       },
-      "default_scoring_points": 183.4396,
+      "default_scoring_points": 183.4596,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -7002,12 +7028,12 @@
         "pass_int": 0,
         "pass_tds": 0,
         "pass_yds": 0,
-        "rec": 19.6,
-        "rec_tds": 0.7765,
-        "rec_yds": 162,
-        "rush_att": 200.9325,
-        "rush_tds": 6.9015,
-        "rush_yds": 881.886
+        "rec": 20.8,
+        "rec_tds": 0.9765,
+        "rec_yds": 169.8,
+        "rush_att": 197.1825,
+        "rush_tds": 6.7015,
+        "rush_yds": 873.886
       },
       "stat_source_counts": {
         "pass_att": 1,
@@ -7022,7 +7048,7 @@
         "rush_tds": 5,
         "rush_yds": 5
       },
-      "default_scoring_points": 148.6566,
+      "default_scoring_points": 148.6366,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -7038,12 +7064,12 @@
         "pass_int": 0,
         "pass_tds": 0,
         "pass_yds": 0,
-        "rec": 7.644,
+        "rec": 7.844,
         "rec_tds": 0.122,
         "rec_yds": 55.708,
         "rush_att": 42.83,
         "rush_tds": 1.56,
-        "rush_yds": 197.686
+        "rush_yds": 197.886
       },
       "stat_source_counts": {
         "pass_att": 1,
@@ -7058,7 +7084,7 @@
         "rush_tds": 5,
         "rush_yds": 5
       },
-      "default_scoring_points": 35.4314,
+      "default_scoring_points": 35.4514,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -7246,7 +7272,7 @@
         "pass_yds": 0,
         "rec": 15.592,
         "rec_tds": 0.5267,
-        "rec_yds": 118.04,
+        "rec_yds": 117.84,
         "rush_att": 101.6175,
         "rush_tds": 2.6893,
         "rush_yds": 419.09
@@ -7264,7 +7290,7 @@
         "rush_tds": 5,
         "rush_yds": 5
       },
-      "default_scoring_points": 71.809,
+      "default_scoring_points": 71.789,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -7285,7 +7311,7 @@
         "rec_yds": 53,
         "rush_att": 72,
         "rush_tds": 2.5483,
-        "rush_yds": 340.8
+        "rush_yds": 340.6
       },
       "stat_source_counts": {
         "pass_att": 1,
@@ -7300,7 +7326,7 @@
         "rush_tds": 5,
         "rush_yds": 5
       },
-      "default_scoring_points": 54.98,
+      "default_scoring_points": 54.96,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -7385,7 +7411,7 @@
       "consensus_stats": {
         "rec": 59,
         "rec_tds": 3.75,
-        "rec_yds": 592,
+        "rec_yds": 591.5,
         "rush_att": 0,
         "rush_tds": 0,
         "rush_yds": 0
@@ -7398,7 +7424,7 @@
         "rush_tds": 2,
         "rush_yds": 2
       },
-      "default_scoring_points": 81.7,
+      "default_scoring_points": 81.65,
       "source_count": 4,
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
@@ -7414,9 +7440,9 @@
         "pass_int": 0,
         "pass_tds": 0,
         "pass_yds": 0,
-        "rec": 66.11,
-        "rec_tds": 7.32,
-        "rec_yds": 923.338,
+        "rec": 65.91,
+        "rec_tds": 7.52,
+        "rec_yds": 920.538,
         "rush_att": 0,
         "rush_tds": 0,
         "rush_yds": 0
@@ -7434,7 +7460,7 @@
         "rush_tds": 3,
         "rush_yds": 3
       },
-      "default_scoring_points": 136.2538,
+      "default_scoring_points": 137.1738,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -7488,7 +7514,7 @@
         "pass_yds": 0,
         "rec": 69.904,
         "rec_tds": 10.386,
-        "rec_yds": 942.946,
+        "rec_yds": 943.146,
         "rush_att": 0,
         "rush_tds": 0,
         "rush_yds": 0
@@ -7506,7 +7532,7 @@
         "rush_tds": 3,
         "rush_yds": 3
       },
-      "default_scoring_points": 156.6106,
+      "default_scoring_points": 156.6306,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -7550,7 +7576,7 @@
         "pass_yds": 0,
         "rec": 66.622,
         "rec_tds": 4.386,
-        "rec_yds": 760.468,
+        "rec_yds": 759.668,
         "rush_att": 0.3333,
         "rush_tds": 0,
         "rush_yds": 0.6667
@@ -7568,7 +7594,7 @@
         "rush_tds": 3,
         "rush_yds": 3
       },
-      "default_scoring_points": 102.4028,
+      "default_scoring_points": 102.3228,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -7606,7 +7632,7 @@
         "pass_yds": 0,
         "rec": 13.6233,
         "rec_tds": 1.39,
-        "rec_yds": 190.4367,
+        "rec_yds": 190.1033,
         "rush_att": 0.5,
         "rush_tds": 0,
         "rush_yds": 2.5
@@ -7624,7 +7650,7 @@
         "rush_tds": 2,
         "rush_yds": 2
       },
-      "default_scoring_points": 27.5503,
+      "default_scoring_points": 27.517,
       "source_count": 3,
       "sources": ["CBS", "ESPN", "FanDuel"]
     },
@@ -7768,10 +7794,10 @@
         "pass_int": 0,
         "pass_tds": 0,
         "pass_yds": 0,
-        "rec": 46.622,
+        "rec": 45.622,
         "rec_tds": 3.618,
-        "rec_yds": 582.536,
-        "rush_att": 0.3333,
+        "rec_yds": 572.336,
+        "rush_att": 0,
         "rush_tds": 0,
         "rush_yds": 1
       },
@@ -7788,7 +7814,7 @@
         "rush_tds": 3,
         "rush_yds": 3
       },
-      "default_scoring_points": 79.4216,
+      "default_scoring_points": 78.4016,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -7804,12 +7830,12 @@
         "pass_int": 0,
         "pass_tds": 0,
         "pass_yds": 0,
-        "rec": 23.0233,
-        "rec_tds": 1.93,
-        "rec_yds": 287.2367,
-        "rush_att": 0,
+        "rec": 29.0175,
+        "rec_tds": 2.1975,
+        "rec_yds": 375.6775,
+        "rush_att": 0.3333,
         "rush_tds": 0,
-        "rush_yds": 0
+        "rush_yds": 1
       },
       "stat_source_counts": {
         "pass_att": 1,
@@ -7817,16 +7843,16 @@
         "pass_int": 1,
         "pass_tds": 1,
         "pass_yds": 1,
-        "rec": 3,
-        "rec_tds": 3,
-        "rec_yds": 3,
-        "rush_att": 2,
-        "rush_tds": 2,
-        "rush_yds": 2
+        "rec": 4,
+        "rec_tds": 4,
+        "rec_yds": 4,
+        "rush_att": 3,
+        "rush_tds": 3,
+        "rush_yds": 3
       },
-      "default_scoring_points": 40.3037,
-      "source_count": 3,
-      "sources": ["ESPN", "FanDuel", "FFToday"]
+      "default_scoring_points": 50.8278,
+      "source_count": 4,
+      "sources": ["CBS", "ESPN", "FanDuel", "FFToday"]
     },
     {
       "name": "David Moore",
@@ -7948,12 +7974,12 @@
         "pass_int": 0,
         "pass_tds": 0,
         "pass_yds": 0,
-        "rec": 42.678,
+        "rec": 42.278,
         "rec_tds": 3.08,
-        "rec_yds": 660.19,
+        "rec_yds": 660.39,
         "rush_att": 2.25,
         "rush_tds": 0.25,
-        "rush_yds": 13.75
+        "rush_yds": 14
       },
       "stat_source_counts": {
         "pass_att": 1,
@@ -7968,7 +7994,7 @@
         "rush_tds": 4,
         "rush_yds": 4
       },
-      "default_scoring_points": 86.799,
+      "default_scoring_points": 86.839,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -7984,9 +8010,9 @@
         "pass_int": 0,
         "pass_tds": 0,
         "pass_yds": 0,
-        "rec": 64.788,
+        "rec": 64.588,
         "rec_tds": 6.848,
-        "rec_yds": 851.64,
+        "rec_yds": 850.04,
         "rush_att": 0,
         "rush_tds": 0,
         "rush_yds": 0
@@ -8004,7 +8030,7 @@
         "rush_tds": 3,
         "rush_yds": 3
       },
-      "default_scoring_points": 126.252,
+      "default_scoring_points": 126.092,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -8022,7 +8048,7 @@
         "pass_yds": 0,
         "rec": 43.025,
         "rec_tds": 3.03,
-        "rec_yds": 519.43,
+        "rec_yds": 518.43,
         "rush_att": 0,
         "rush_tds": 0,
         "rush_yds": 0
@@ -8040,7 +8066,7 @@
         "rush_tds": 2,
         "rush_yds": 2
       },
-      "default_scoring_points": 70.123,
+      "default_scoring_points": 70.023,
       "source_count": 2,
       "sources": ["CBS", "FanDuel"]
     },
@@ -8056,12 +8082,12 @@
         "pass_int": 0,
         "pass_tds": 0,
         "pass_yds": 0,
-        "rec": 71.786,
-        "rec_tds": 6.89,
-        "rec_yds": 933.398,
-        "rush_att": 10.3025,
+        "rec": 71.986,
+        "rec_tds": 7.09,
+        "rec_yds": 930.798,
+        "rush_att": 10.0525,
         "rush_tds": 0.3375,
-        "rush_yds": 52.895
+        "rush_yds": 52.395
       },
       "stat_source_counts": {
         "pass_att": 1,
@@ -8076,7 +8102,7 @@
         "rush_tds": 4,
         "rush_yds": 4
       },
-      "default_scoring_points": 139.9314,
+      "default_scoring_points": 140.8314,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -8129,8 +8155,8 @@
         "pass_tds": 0,
         "pass_yds": 0,
         "rec": 65.104,
-        "rec_tds": 6.024,
-        "rec_yds": 918.878,
+        "rec_tds": 6.224,
+        "rec_yds": 918.278,
         "rush_att": 0.6667,
         "rush_tds": 0.3333,
         "rush_yds": 3.3333
@@ -8148,7 +8174,7 @@
         "rush_tds": 3,
         "rush_yds": 3
       },
-      "default_scoring_points": 129.4318,
+      "default_scoring_points": 129.9718,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -8164,9 +8190,9 @@
         "pass_int": 0,
         "pass_tds": 0,
         "pass_yds": 0,
-        "rec": 91.454,
-        "rec_tds": 9.528,
-        "rec_yds": 1307.636,
+        "rec": 88.854,
+        "rec_tds": 9.328,
+        "rec_yds": 1271.436,
         "rush_att": 0,
         "rush_tds": 0,
         "rush_yds": 0
@@ -8184,7 +8210,7 @@
         "rush_tds": 3,
         "rush_yds": 3
       },
-      "default_scoring_points": 187.9316,
+      "default_scoring_points": 183.1116,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -8200,9 +8226,9 @@
         "pass_int": 0,
         "pass_tds": 0,
         "pass_yds": 0,
-        "rec": 23.4525,
+        "rec": 22.7025,
         "rec_tds": 2.175,
-        "rec_yds": 285.13,
+        "rec_yds": 276.63,
         "rush_att": 0,
         "rush_tds": 0,
         "rush_yds": 0
@@ -8220,7 +8246,7 @@
         "rush_tds": 3,
         "rush_yds": 3
       },
-      "default_scoring_points": 41.563,
+      "default_scoring_points": 40.713,
       "source_count": 4,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday"]
     },
@@ -8236,9 +8262,9 @@
         "pass_int": 0,
         "pass_tds": 0,
         "pass_yds": 0,
-        "rec": 69.126,
+        "rec": 69.526,
         "rec_tds": 7.338,
-        "rec_yds": 982.128,
+        "rec_yds": 985.928,
         "rush_att": 0.3333,
         "rush_tds": 0,
         "rush_yds": 0.3333
@@ -8256,7 +8282,7 @@
         "rush_tds": 3,
         "rush_yds": 3
       },
-      "default_scoring_points": 142.2608,
+      "default_scoring_points": 142.6408,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -8380,10 +8406,10 @@
         "pass_int": 0,
         "pass_tds": 0,
         "pass_yds": 0,
-        "rec": 70.666,
+        "rec": 70.466,
         "rec_tds": 4.87,
-        "rec_yds": 821.248,
-        "rush_att": 4.41,
+        "rec_yds": 819.848,
+        "rush_att": 4.66,
         "rush_tds": 0.045,
         "rush_yds": 22.3725
       },
@@ -8400,7 +8426,7 @@
         "rush_tds": 4,
         "rush_yds": 4
       },
-      "default_scoring_points": 112.7506,
+      "default_scoring_points": 112.6106,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -8411,12 +8437,12 @@
       "sleeper_id": null,
       "espn_id": null,
       "consensus_stats": {
-        "rec": 55,
+        "rec": 54.75,
         "rec_tds": 4.25,
-        "rec_yds": 659.5,
+        "rec_yds": 656,
         "rush_att": 24,
         "rush_tds": 1,
-        "rush_yds": 97.3333
+        "rush_yds": 95
       },
       "stat_source_counts": {
         "rec": 4,
@@ -8426,7 +8452,7 @@
         "rush_tds": 3,
         "rush_yds": 3
       },
-      "default_scoring_points": 102.5,
+      "default_scoring_points": 101.975,
       "source_count": 4,
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
@@ -8444,10 +8470,10 @@
         "pass_yds": 0,
         "rec": 15.2667,
         "rec_tds": 1.2,
-        "rec_yds": 270.9233,
-        "rush_att": 4.8533,
+        "rec_yds": 271.59,
+        "rush_att": 4.52,
         "rush_tds": 0.06,
-        "rush_yds": 37.8
+        "rush_yds": 35.8
       },
       "stat_source_counts": {
         "pass_att": 1,
@@ -8462,7 +8488,7 @@
         "rush_tds": 3,
         "rush_yds": 3
       },
-      "default_scoring_points": 38.4323,
+      "default_scoring_points": 38.299,
       "source_count": 3,
       "sources": ["CBS", "ESPN", "FanDuel"]
     },
@@ -8550,10 +8576,10 @@
         "pass_int": 0,
         "pass_tds": 0,
         "pass_yds": 0,
-        "rec": 103.614,
+        "rec": 103.414,
         "rec_tds": 8.412,
-        "rec_yds": 1363.986,
-        "rush_att": 4.0825,
+        "rec_yds": 1358.586,
+        "rush_att": 4.3325,
         "rush_tds": 0.1,
         "rush_yds": 20.685
       },
@@ -8570,7 +8596,7 @@
         "rush_tds": 4,
         "rush_yds": 4
       },
-      "default_scoring_points": 189.0054,
+      "default_scoring_points": 188.4654,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -8586,9 +8612,9 @@
         "pass_int": 0,
         "pass_tds": 0,
         "pass_yds": 0,
-        "rec": 57.724,
+        "rec": 57.924,
         "rec_tds": 3.336,
-        "rec_yds": 732.864,
+        "rec_yds": 733.664,
         "rush_att": 0.3333,
         "rush_tds": 0,
         "rush_yds": 1.3333
@@ -8606,7 +8632,7 @@
         "rush_tds": 3,
         "rush_yds": 3
       },
-      "default_scoring_points": 92.7824,
+      "default_scoring_points": 92.8624,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -8623,8 +8649,8 @@
         "pass_tds": 0,
         "pass_yds": 0,
         "rec": 73.1,
-        "rec_tds": 8.716,
-        "rec_yds": 1019.092,
+        "rec_tds": 8.916,
+        "rec_yds": 1018.292,
         "rush_att": 0,
         "rush_tds": 0,
         "rush_yds": 0
@@ -8642,7 +8668,7 @@
         "rush_tds": 3,
         "rush_yds": 3
       },
-      "default_scoring_points": 154.2052,
+      "default_scoring_points": 155.3252,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -8660,10 +8686,10 @@
         "pass_yds": 0,
         "rec": 103.444,
         "rec_tds": 7.668,
-        "rec_yds": 1335.634,
-        "rush_att": 1,
+        "rec_yds": 1336.034,
+        "rush_att": 0.75,
         "rush_tds": 0,
-        "rush_yds": 4.25
+        "rush_yds": 3.75
       },
       "stat_source_counts": {
         "pass_att": 1,
@@ -8714,9 +8740,9 @@
         "pass_int": 0,
         "pass_tds": 0,
         "pass_yds": 0,
-        "rec": 79.7,
+        "rec": 79.5,
         "rec_tds": 5.03,
-        "rec_yds": 809.198,
+        "rec_yds": 807.998,
         "rush_att": 0,
         "rush_tds": 0,
         "rush_yds": 0
@@ -8734,7 +8760,7 @@
         "rush_tds": 3,
         "rush_yds": 3
       },
-      "default_scoring_points": 111.0998,
+      "default_scoring_points": 110.9798,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -8786,9 +8812,9 @@
         "pass_int": 0,
         "pass_tds": 0,
         "pass_yds": 0,
-        "rec": 43.592,
+        "rec": 43.792,
         "rec_tds": 3.946,
-        "rec_yds": 506.9,
+        "rec_yds": 509.9,
         "rush_att": 0,
         "rush_tds": 0,
         "rush_yds": 0
@@ -8806,7 +8832,7 @@
         "rush_tds": 3,
         "rush_yds": 3
       },
-      "default_scoring_points": 73.766,
+      "default_scoring_points": 74.066,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -8894,12 +8920,12 @@
         "pass_int": 0,
         "pass_tds": 0,
         "pass_yds": 0,
-        "rec": 122.802,
+        "rec": 123.202,
         "rec_tds": 11.824,
-        "rec_yds": 1534.526,
+        "rec_yds": 1535.726,
         "rush_att": 2.25,
         "rush_tds": 0,
-        "rush_yds": 12.75
+        "rush_yds": 13
       },
       "stat_source_counts": {
         "pass_att": 1,
@@ -8914,7 +8940,7 @@
         "rush_tds": 4,
         "rush_yds": 4
       },
-      "default_scoring_points": 224.8166,
+      "default_scoring_points": 224.9566,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -8930,9 +8956,9 @@
         "pass_int": 0,
         "pass_tds": 0,
         "pass_yds": 0,
-        "rec": 86.89,
+        "rec": 87.09,
         "rec_tds": 6.554,
-        "rec_yds": 1143.142,
+        "rec_yds": 1146.942,
         "rush_att": 0,
         "rush_tds": 0,
         "rush_yds": 0
@@ -8950,7 +8976,7 @@
         "rush_tds": 3,
         "rush_yds": 3
       },
-      "default_scoring_points": 153.6382,
+      "default_scoring_points": 154.0182,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -8966,9 +8992,9 @@
         "pass_int": 0,
         "pass_tds": 0,
         "pass_yds": 0,
-        "rec": 75.514,
-        "rec_tds": 5.84,
-        "rec_yds": 988.114,
+        "rec": 75.314,
+        "rec_tds": 6.04,
+        "rec_yds": 988.514,
         "rush_att": 1.25,
         "rush_tds": 0,
         "rush_yds": 9.25
@@ -8986,7 +9012,7 @@
         "rush_tds": 4,
         "rush_yds": 4
       },
-      "default_scoring_points": 134.5914,
+      "default_scoring_points": 135.8314,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -9038,9 +9064,9 @@
         "pass_int": 0,
         "pass_tds": 0,
         "pass_yds": 0,
-        "rec": 122.286,
-        "rec_tds": 10.652,
-        "rec_yds": 1445.23,
+        "rec": 122.886,
+        "rec_tds": 10.852,
+        "rec_yds": 1447.43,
         "rush_att": 4.53,
         "rush_tds": 0.0875,
         "rush_yds": 19.5075
@@ -9058,7 +9084,7 @@
         "rush_tds": 4,
         "rush_yds": 4
       },
-      "default_scoring_points": 210.4156,
+      "default_scoring_points": 211.8356,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -9112,7 +9138,7 @@
         "pass_yds": 0,
         "rec": 85.86,
         "rec_tds": 7.928,
-        "rec_yds": 1250.168,
+        "rec_yds": 1253.968,
         "rush_att": 1,
         "rush_tds": 0.25,
         "rush_yds": 6.25
@@ -9130,7 +9156,7 @@
         "rush_tds": 4,
         "rush_yds": 4
       },
-      "default_scoring_points": 173.6848,
+      "default_scoring_points": 174.0648,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -9182,9 +9208,9 @@
         "pass_int": 0,
         "pass_tds": 0,
         "pass_yds": 0,
-        "rec": 38.965,
+        "rec": 38.715,
         "rec_tds": 4.785,
-        "rec_yds": 567.6475,
+        "rec_yds": 571.1475,
         "rush_att": 0,
         "rush_tds": 0,
         "rush_yds": 0
@@ -9202,7 +9228,7 @@
         "rush_tds": 3,
         "rush_yds": 3
       },
-      "default_scoring_points": 85.4748,
+      "default_scoring_points": 85.8247,
       "source_count": 4,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday"]
     },
@@ -9290,9 +9316,9 @@
         "pass_int": 0,
         "pass_tds": 0,
         "pass_yds": 0,
-        "rec": 22.18,
+        "rec": 21.93,
         "rec_tds": 1.2925,
-        "rec_yds": 296.1325,
+        "rec_yds": 294.3825,
         "rush_att": 0,
         "rush_tds": 0,
         "rush_yds": 0
@@ -9310,7 +9336,7 @@
         "rush_tds": 3,
         "rush_yds": 3
       },
-      "default_scoring_points": 37.3683,
+      "default_scoring_points": 37.1932,
       "source_count": 4,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday"]
     },
@@ -9400,7 +9426,7 @@
         "pass_yds": 0,
         "rec": 97.328,
         "rec_tds": 8.502,
-        "rec_yds": 1278.614,
+        "rec_yds": 1284.614,
         "rush_att": 0,
         "rush_tds": 0,
         "rush_yds": 0
@@ -9418,7 +9444,7 @@
         "rush_tds": 3,
         "rush_yds": 3
       },
-      "default_scoring_points": 178.2734,
+      "default_scoring_points": 178.8734,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -9470,9 +9496,9 @@
         "pass_int": 0,
         "pass_tds": 0,
         "pass_yds": 0,
-        "rec": 91.708,
+        "rec": 91.308,
         "rec_tds": 6.51,
-        "rec_yds": 1105.632,
+        "rec_yds": 1100.832,
         "rush_att": 2.03,
         "rush_tds": 0.0425,
         "rush_yds": 9.425
@@ -9490,7 +9516,7 @@
         "rush_tds": 4,
         "rush_yds": 4
       },
-      "default_scoring_points": 149.9812,
+      "default_scoring_points": 149.5012,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -9506,9 +9532,9 @@
         "pass_int": 0,
         "pass_tds": 0,
         "pass_yds": 0,
-        "rec": 93.69,
+        "rec": 93.89,
         "rec_tds": 7.866,
-        "rec_yds": 1170.644,
+        "rec_yds": 1171.844,
         "rush_att": 1.93,
         "rush_tds": 0.06,
         "rush_yds": 7.48
@@ -9526,7 +9552,7 @@
         "rush_tds": 3,
         "rush_yds": 3
       },
-      "default_scoring_points": 164.9252,
+      "default_scoring_points": 165.0452,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -9580,10 +9606,10 @@
         "pass_yds": 0,
         "rec": 66.458,
         "rec_tds": 7.082,
-        "rec_yds": 1086.618,
-        "rush_att": 5.75,
+        "rec_yds": 1089.818,
+        "rush_att": 5.5,
         "rush_tds": 0.5,
-        "rush_yds": 31.75
+        "rush_yds": 31.5
       },
       "stat_source_counts": {
         "pass_att": 1,
@@ -9598,7 +9624,7 @@
         "rush_tds": 4,
         "rush_yds": 4
       },
-      "default_scoring_points": 156.0938,
+      "default_scoring_points": 156.3938,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -9614,9 +9640,9 @@
         "pass_int": 0,
         "pass_tds": 0,
         "pass_yds": 0,
-        "rec": 78.908,
+        "rec": 78.708,
         "rec_tds": 3.35,
-        "rec_yds": 813.948,
+        "rec_yds": 813.148,
         "rush_att": 2.6675,
         "rush_tds": 0.0275,
         "rush_yds": 12.3525
@@ -9634,7 +9660,7 @@
         "rush_tds": 4,
         "rush_yds": 4
       },
-      "default_scoring_points": 102.615,
+      "default_scoring_points": 102.535,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -9688,7 +9714,7 @@
         "pass_yds": 0,
         "rec": 71.272,
         "rec_tds": 4.354,
-        "rec_yds": 758.486,
+        "rec_yds": 759.886,
         "rush_att": 0.75,
         "rush_tds": 0,
         "rush_yds": 4.25
@@ -9706,7 +9732,7 @@
         "rush_tds": 4,
         "rush_yds": 4
       },
-      "default_scoring_points": 101.7126,
+      "default_scoring_points": 101.8526,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -9722,9 +9748,9 @@
         "pass_int": 0,
         "pass_tds": 0,
         "pass_yds": 0,
-        "rec": 81.878,
+        "rec": 82.278,
         "rec_tds": 8.512,
-        "rec_yds": 1215.136,
+        "rec_yds": 1219.136,
         "rush_att": 0.3333,
         "rush_tds": 0,
         "rush_yds": -0.3333
@@ -9742,7 +9768,7 @@
         "rush_tds": 3,
         "rush_yds": 3
       },
-      "default_scoring_points": 172.5656,
+      "default_scoring_points": 172.9656,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -9830,9 +9856,9 @@
         "pass_int": 0,
         "pass_tds": 0,
         "pass_yds": 0,
-        "rec": 58.764,
+        "rec": 58.964,
         "rec_tds": 6.01,
-        "rec_yds": 1009.714,
+        "rec_yds": 1014.114,
         "rush_att": 0,
         "rush_tds": 0,
         "rush_yds": 0
@@ -9850,7 +9876,7 @@
         "rush_tds": 3,
         "rush_yds": 3
       },
-      "default_scoring_points": 137.0314,
+      "default_scoring_points": 137.4714,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -9928,9 +9954,9 @@
         "pass_int": 0,
         "pass_tds": 0,
         "pass_yds": 0,
-        "rec": 62.512,
-        "rec_tds": 5.336,
-        "rec_yds": 802.536,
+        "rec": 58.512,
+        "rec_tds": 5.136,
+        "rec_yds": 752.936,
         "rush_att": 0,
         "rush_tds": 0,
         "rush_yds": 0
@@ -9948,7 +9974,7 @@
         "rush_tds": 3,
         "rush_yds": 3
       },
-      "default_scoring_points": 112.2696,
+      "default_scoring_points": 106.1096,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -9990,9 +10016,9 @@
         "pass_int": 0,
         "pass_tds": 0,
         "pass_yds": 0,
-        "rec": 44.476,
+        "rec": 44.676,
         "rec_tds": 3.264,
-        "rec_yds": 595.218,
+        "rec_yds": 593.818,
         "rush_att": 1,
         "rush_tds": 0,
         "rush_yds": 4.5
@@ -10010,7 +10036,7 @@
         "rush_tds": 4,
         "rush_yds": 4
       },
-      "default_scoring_points": 79.4658,
+      "default_scoring_points": 79.3258,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -10028,7 +10054,7 @@
         "pass_yds": 0,
         "rec": 23.705,
         "rec_tds": 3.0075,
-        "rec_yds": 399.855,
+        "rec_yds": 399.605,
         "rush_att": 0,
         "rush_tds": 0,
         "rush_yds": 0
@@ -10046,7 +10072,7 @@
         "rush_tds": 3,
         "rush_yds": 3
       },
-      "default_scoring_points": 58.0305,
+      "default_scoring_points": 58.0055,
       "source_count": 4,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday"]
     },
@@ -10100,7 +10126,7 @@
         "pass_yds": 0,
         "rec": 61.244,
         "rec_tds": 7.738,
-        "rec_yds": 972.306,
+        "rec_yds": 972.106,
         "rush_att": 3.6925,
         "rush_tds": 0.09,
         "rush_yds": 18.035
@@ -10118,7 +10144,7 @@
         "rush_tds": 4,
         "rush_yds": 4
       },
-      "default_scoring_points": 145.5334,
+      "default_scoring_points": 145.5134,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -10206,12 +10232,12 @@
         "pass_int": 0,
         "pass_tds": 0,
         "pass_yds": 0,
-        "rec": 47.91,
-        "rec_tds": 3.796,
-        "rec_yds": 683.074,
-        "rush_att": 13.3975,
+        "rec": 45.51,
+        "rec_tds": 3.596,
+        "rec_yds": 646.074,
+        "rush_att": 13.1475,
         "rush_tds": 0.4275,
-        "rush_yds": 78.7875
+        "rush_yds": 76.0375
       },
       "stat_source_counts": {
         "pass_att": 1,
@@ -10226,7 +10252,7 @@
         "rush_tds": 4,
         "rush_yds": 4
       },
-      "default_scoring_points": 98.8384,
+      "default_scoring_points": 93.7184,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -10244,10 +10270,10 @@
         "pass_yds": 0,
         "rec": 64.856,
         "rec_tds": 4.986,
-        "rec_yds": 785.816,
-        "rush_att": 11.9425,
-        "rush_tds": 0.09,
-        "rush_yds": 82.34
+        "rec_yds": 784.016,
+        "rush_att": 12.1925,
+        "rush_tds": 0.34,
+        "rush_yds": 83.59
       },
       "stat_source_counts": {
         "pass_att": 1,
@@ -10262,7 +10288,7 @@
         "rush_tds": 4,
         "rush_yds": 4
       },
-      "default_scoring_points": 115.5168,
+      "default_scoring_points": 116.6368,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -10278,12 +10304,12 @@
         "pass_int": 0,
         "pass_tds": 0,
         "pass_yds": 0,
-        "rec": 110.386,
+        "rec": 109.386,
         "rec_tds": 9.508,
-        "rec_yds": 1573.094,
-        "rush_att": 6.6975,
+        "rec_yds": 1555.694,
+        "rush_att": 6.4475,
         "rush_tds": 0.09,
-        "rush_yds": 34.0825
+        "rush_yds": 33.0825
       },
       "stat_source_counts": {
         "pass_att": 1,
@@ -10298,7 +10324,7 @@
         "rush_tds": 4,
         "rush_yds": 4
       },
-      "default_scoring_points": 216.916,
+      "default_scoring_points": 215.696,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -10350,9 +10376,9 @@
         "pass_int": 0,
         "pass_tds": 0,
         "pass_yds": 0,
-        "rec": 69.46,
+        "rec": 69.66,
         "rec_tds": 4.438,
-        "rec_yds": 715.764,
+        "rec_yds": 719.764,
         "rush_att": 1,
         "rush_tds": 0,
         "rush_yds": 3.25
@@ -10370,7 +10396,7 @@
         "rush_tds": 4,
         "rush_yds": 4
       },
-      "default_scoring_points": 97.8644,
+      "default_scoring_points": 98.2644,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -10388,10 +10414,10 @@
         "pass_yds": 0,
         "rec": 57.788,
         "rec_tds": 6.782,
-        "rec_yds": 800.454,
+        "rec_yds": 799.254,
         "rush_att": 1.25,
         "rush_tds": 0,
-        "rush_yds": 4.5
+        "rush_yds": 4.75
       },
       "stat_source_counts": {
         "pass_att": 1,
@@ -10406,7 +10432,7 @@
         "rush_tds": 4,
         "rush_yds": 4
       },
-      "default_scoring_points": 120.4974,
+      "default_scoring_points": 120.3974,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -10458,12 +10484,12 @@
         "pass_int": 0,
         "pass_tds": 0,
         "pass_yds": 0,
-        "rec": 83.878,
-        "rec_tds": 6.506,
-        "rec_yds": 1215.954,
-        "rush_att": 12.7475,
+        "rec": 83.678,
+        "rec_tds": 6.306,
+        "rec_yds": 1208.754,
+        "rush_att": 12.4975,
         "rush_tds": 0.435,
-        "rush_yds": 68.21
+        "rush_yds": 67.96
       },
       "stat_source_counts": {
         "pass_att": 1,
@@ -10478,7 +10504,7 @@
         "rush_tds": 4,
         "rush_yds": 4
       },
-      "default_scoring_points": 166.9762,
+      "default_scoring_points": 165.0362,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -10530,9 +10556,9 @@
         "pass_int": 0,
         "pass_tds": 0,
         "pass_yds": 0,
-        "rec": 45.86,
+        "rec": 45.46,
         "rec_tds": 4.254,
-        "rec_yds": 651.024,
+        "rec_yds": 646.224,
         "rush_att": 0,
         "rush_tds": 0,
         "rush_yds": 0
@@ -10550,7 +10576,7 @@
         "rush_tds": 3,
         "rush_yds": 3
       },
-      "default_scoring_points": 90.6264,
+      "default_scoring_points": 90.1464,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -10602,12 +10628,12 @@
         "pass_int": 0,
         "pass_tds": 0,
         "pass_yds": 0,
-        "rec": 34.534,
-        "rec_tds": 2.688,
-        "rec_yds": 433.992,
+        "rec": 34.734,
+        "rec_tds": 2.888,
+        "rec_yds": 433.192,
         "rush_att": 0.3333,
         "rush_tds": 0,
-        "rush_yds": 1.6667
+        "rush_yds": 2
       },
       "stat_source_counts": {
         "pass_att": 1,
@@ -10622,7 +10648,7 @@
         "rush_tds": 3,
         "rush_yds": 3
       },
-      "default_scoring_points": 59.6272,
+      "default_scoring_points": 60.7672,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -10712,10 +10738,10 @@
         "pass_yds": 0,
         "rec": 36.19,
         "rec_tds": 2.6275,
-        "rec_yds": 433.7025,
+        "rec_yds": 431.9525,
         "rush_att": 1,
         "rush_tds": 0,
-        "rush_yds": 7
+        "rush_yds": 6.5
       },
       "stat_source_counts": {
         "pass_att": 1,
@@ -10730,7 +10756,7 @@
         "rush_tds": 4,
         "rush_yds": 4
       },
-      "default_scoring_points": 59.8353,
+      "default_scoring_points": 59.6103,
       "source_count": 4,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday"]
     },
@@ -10782,9 +10808,9 @@
         "pass_int": 0,
         "pass_tds": 0,
         "pass_yds": 0,
-        "rec": 69.426,
+        "rec": 69.826,
         "rec_tds": 4.77,
-        "rec_yds": 875.306,
+        "rec_yds": 877.706,
         "rush_att": 0,
         "rush_tds": 0,
         "rush_yds": 0.6667
@@ -10802,7 +10828,7 @@
         "rush_tds": 3,
         "rush_yds": 3
       },
-      "default_scoring_points": 116.1906,
+      "default_scoring_points": 116.4306,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -10854,12 +10880,12 @@
         "pass_int": 0,
         "pass_tds": 0,
         "pass_yds": 0,
-        "rec": 121.416,
+        "rec": 121.016,
         "rec_tds": 9.56,
-        "rec_yds": 1589.962,
+        "rec_yds": 1585.362,
         "rush_att": 13.12,
         "rush_tds": 1.1325,
-        "rush_yds": 83.68
+        "rush_yds": 83.93
       },
       "stat_source_counts": {
         "pass_att": 1,
@@ -10874,7 +10900,7 @@
         "rush_tds": 4,
         "rush_yds": 4
       },
-      "default_scoring_points": 227.8866,
+      "default_scoring_points": 227.4466,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -10890,12 +10916,12 @@
         "pass_int": 0,
         "pass_tds": 0,
         "pass_yds": 0,
-        "rec": 52.136,
-        "rec_tds": 3.632,
-        "rec_yds": 644.976,
+        "rec": 52.336,
+        "rec_tds": 3.432,
+        "rec_yds": 646.176,
         "rush_att": 7.735,
         "rush_tds": 0.0675,
-        "rush_yds": 37.42
+        "rush_yds": 37.67
       },
       "stat_source_counts": {
         "pass_att": 1,
@@ -10910,7 +10936,7 @@
         "rush_tds": 4,
         "rush_yds": 4
       },
-      "default_scoring_points": 89.6072,
+      "default_scoring_points": 88.5472,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -11286,9 +11312,9 @@
         "pass_int": 0,
         "pass_tds": 0,
         "pass_yds": 0,
-        "rec": 64.382,
+        "rec": 64.182,
         "rec_tds": 5.644,
-        "rec_yds": 926.122,
+        "rec_yds": 920.722,
         "rush_att": 0,
         "rush_tds": 0,
         "rush_yds": 0
@@ -11306,7 +11332,7 @@
         "rush_tds": 3,
         "rush_yds": 3
       },
-      "default_scoring_points": 126.4762,
+      "default_scoring_points": 125.9362,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -11322,9 +11348,9 @@
         "pass_int": 0,
         "pass_tds": 0,
         "pass_yds": 0,
-        "rec": 74.392,
+        "rec": 74.192,
         "rec_tds": 7.404,
-        "rec_yds": 998.278,
+        "rec_yds": 994.678,
         "rush_att": 2,
         "rush_tds": 0,
         "rush_yds": 6.25
@@ -11342,7 +11368,7 @@
         "rush_tds": 4,
         "rush_yds": 4
       },
-      "default_scoring_points": 144.7518,
+      "default_scoring_points": 144.3918,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -11358,9 +11384,9 @@
         "pass_int": 0,
         "pass_tds": 0,
         "pass_yds": 0,
-        "rec": 61.7,
+        "rec": 61.5,
         "rec_tds": 7.228,
-        "rec_yds": 915.274,
+        "rec_yds": 916.074,
         "rush_att": 0.3333,
         "rush_tds": 0,
         "rush_yds": 1.3333
@@ -11378,7 +11404,7 @@
         "rush_tds": 3,
         "rush_yds": 3
       },
-      "default_scoring_points": 134.9754,
+      "default_scoring_points": 135.0554,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -11430,12 +11456,12 @@
         "pass_int": 0,
         "pass_tds": 0,
         "pass_yds": 0,
-        "rec": 57.954,
+        "rec": 58.154,
         "rec_tds": 5.602,
-        "rec_yds": 864.276,
+        "rec_yds": 867.676,
         "rush_att": 2,
-        "rush_tds": 0.25,
-        "rush_yds": 13.25
+        "rush_tds": 0,
+        "rush_yds": 12.25
       },
       "stat_source_counts": {
         "pass_att": 1,
@@ -11450,7 +11476,7 @@
         "rush_tds": 4,
         "rush_yds": 4
       },
-      "default_scoring_points": 122.2996,
+      "default_scoring_points": 121.3596,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -11467,8 +11493,8 @@
         "pass_tds": 0,
         "pass_yds": 0,
         "rec": 29.6,
-        "rec_tds": 2.6,
-        "rec_yds": 350.4,
+        "rec_tds": 2.8,
+        "rec_yds": 348.6,
         "rush_att": 1.5,
         "rush_tds": 0,
         "rush_yds": 5.5
@@ -11486,7 +11512,7 @@
         "rush_tds": 4,
         "rush_yds": 4
       },
-      "default_scoring_points": 50.48,
+      "default_scoring_points": 51.5,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -11502,12 +11528,12 @@
         "pass_int": 0,
         "pass_tds": 0,
         "pass_yds": 0,
-        "rec": 56.388,
+        "rec": 56.788,
         "rec_tds": 4.582,
-        "rec_yds": 729.926,
+        "rec_yds": 734.726,
         "rush_att": 11.75,
         "rush_tds": 0.75,
-        "rush_yds": 76.5
+        "rush_yds": 77.75
       },
       "stat_source_counts": {
         "pass_att": 1,
@@ -11522,7 +11548,7 @@
         "rush_tds": 4,
         "rush_yds": 4
       },
-      "default_scoring_points": 110.2046,
+      "default_scoring_points": 110.7846,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -11538,12 +11564,12 @@
         "pass_int": 0,
         "pass_tds": 0,
         "pass_yds": 0,
-        "rec": 16.42,
-        "rec_tds": 1.6825,
-        "rec_yds": 262.325,
+        "rec": 14.56,
+        "rec_tds": 1.2433,
+        "rec_yds": 216.4333,
         "rush_att": 0,
         "rush_tds": 0,
-        "rush_yds": 1
+        "rush_yds": 0
       },
       "stat_source_counts": {
         "pass_att": 1,
@@ -11551,16 +11577,16 @@
         "pass_int": 1,
         "pass_tds": 1,
         "pass_yds": 1,
-        "rec": 4,
-        "rec_tds": 4,
-        "rec_yds": 4,
-        "rush_att": 3,
-        "rush_tds": 3,
-        "rush_yds": 3
+        "rec": 3,
+        "rec_tds": 3,
+        "rec_yds": 3,
+        "rush_att": 2,
+        "rush_tds": 2,
+        "rush_yds": 2
       },
-      "default_scoring_points": 36.4025,
-      "source_count": 4,
-      "sources": ["CBS", "ESPN", "FanDuel", "FFToday"]
+      "default_scoring_points": 29.1033,
+      "source_count": 3,
+      "sources": ["ESPN", "FanDuel", "FFToday"]
     },
     {
       "name": "Ricky Pearsall",
@@ -11648,7 +11674,7 @@
         "pass_yds": 0,
         "rec": 38.464,
         "rec_tds": 3.262,
-        "rec_yds": 523.708,
+        "rec_yds": 524.908,
         "rush_att": 1,
         "rush_tds": 0,
         "rush_yds": 2.5
@@ -11666,7 +11692,7 @@
         "rush_tds": 4,
         "rush_yds": 4
       },
-      "default_scoring_points": 71.5428,
+      "default_scoring_points": 71.6628,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -11900,7 +11926,7 @@
         "pass_yds": 0,
         "rec": 14.9267,
         "rec_tds": 1.7,
-        "rec_yds": 207.2567,
+        "rec_yds": 206.59,
         "rush_att": 0,
         "rush_tds": 0,
         "rush_yds": 0
@@ -11918,7 +11944,7 @@
         "rush_tds": 2,
         "rush_yds": 2
       },
-      "default_scoring_points": 30.9257,
+      "default_scoring_points": 30.859,
       "source_count": 3,
       "sources": ["CBS", "ESPN", "FanDuel"]
     },
@@ -12044,10 +12070,10 @@
         "pass_yds": 0,
         "rec": 45.545,
         "rec_tds": 2.6475,
-        "rec_yds": 445.295,
+        "rec_yds": 445.795,
         "rush_att": 8.7967,
         "rush_tds": 0.3933,
-        "rush_yds": 49.8967
+        "rush_yds": 49.23
       },
       "stat_source_counts": {
         "pass_att": 1,
@@ -12222,9 +12248,9 @@
         "pass_int": 0,
         "pass_tds": 0,
         "pass_yds": 0,
-        "rec": 42.806,
+        "rec": 43.206,
         "rec_tds": 3.058,
-        "rec_yds": 503.834,
+        "rec_yds": 507.034,
         "rush_att": 0,
         "rush_tds": 0,
         "rush_yds": 0
@@ -12242,7 +12268,7 @@
         "rush_tds": 3,
         "rush_yds": 3
       },
-      "default_scoring_points": 68.7314,
+      "default_scoring_points": 69.0514,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -12296,7 +12322,7 @@
         "pass_yds": 0,
         "rec": 57.904,
         "rec_tds": 4.168,
-        "rec_yds": 688.78,
+        "rec_yds": 688.58,
         "rush_att": 0,
         "rush_tds": 0,
         "rush_yds": 0
@@ -12314,7 +12340,7 @@
         "rush_tds": 3,
         "rush_yds": 3
       },
-      "default_scoring_points": 93.286,
+      "default_scoring_points": 93.266,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -12510,12 +12536,12 @@
         "pass_int": 0,
         "pass_tds": 0,
         "pass_yds": 0,
-        "rec": 75.648,
-        "rec_tds": 5.862,
-        "rec_yds": 1011.404,
+        "rec": 76.048,
+        "rec_tds": 6.062,
+        "rec_yds": 1019.404,
         "rush_att": 6.9775,
         "rush_tds": 0.0475,
-        "rush_yds": 34.1625
+        "rush_yds": 34.4125
       },
       "stat_source_counts": {
         "pass_att": 1,
@@ -12530,7 +12556,7 @@
         "rush_tds": 4,
         "rush_yds": 4
       },
-      "default_scoring_points": 139.2734,
+      "default_scoring_points": 141.2934,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -12546,9 +12572,9 @@
         "pass_int": 0,
         "pass_tds": 0,
         "pass_yds": 0,
-        "rec": 77.29,
+        "rec": 77.09,
         "rec_tds": 6.32,
-        "rec_yds": 1087.4,
+        "rec_yds": 1084,
         "rush_att": 0,
         "rush_tds": 0,
         "rush_yds": 0
@@ -12566,7 +12592,7 @@
         "rush_tds": 3,
         "rush_yds": 3
       },
-      "default_scoring_points": 146.06,
+      "default_scoring_points": 145.72,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -12620,7 +12646,7 @@
         "pass_yds": 0,
         "rec": 27.015,
         "rec_tds": 2.865,
-        "rec_yds": 334.0375,
+        "rec_yds": 335.2875,
         "rush_att": 0,
         "rush_tds": 0,
         "rush_yds": 0
@@ -12638,7 +12664,7 @@
         "rush_tds": 3,
         "rush_yds": 3
       },
-      "default_scoring_points": 50.5938,
+      "default_scoring_points": 50.7188,
       "source_count": 4,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday"]
     },
@@ -12686,10 +12712,10 @@
         "pass_yds": 0,
         "rec": 58.618,
         "rec_tds": 4.752,
-        "rec_yds": 761.46,
+        "rec_yds": 762.86,
         "rush_att": 6.9425,
         "rush_tds": 0.0875,
-        "rush_yds": 34.18
+        "rush_yds": 34.68
       },
       "stat_source_counts": {
         "pass_att": 1,
@@ -12704,7 +12730,7 @@
         "rush_tds": 4,
         "rush_yds": 4
       },
-      "default_scoring_points": 107.8124,
+      "default_scoring_points": 107.9924,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -12864,12 +12890,12 @@
         "pass_int": 0,
         "pass_tds": 0,
         "pass_yds": 0,
-        "rec": 47.03,
+        "rec": 47.23,
         "rec_tds": 3.322,
-        "rec_yds": 531.856,
-        "rush_att": 2.5,
+        "rec_yds": 533.656,
+        "rush_att": 2.75,
         "rush_tds": 0,
-        "rush_yds": 8.75
+        "rush_yds": 9
       },
       "stat_source_counts": {
         "pass_att": 1,
@@ -12884,7 +12910,7 @@
         "rush_tds": 4,
         "rush_yds": 4
       },
-      "default_scoring_points": 73.8176,
+      "default_scoring_points": 74.0176,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -12900,12 +12926,12 @@
         "pass_int": 0,
         "pass_tds": 0,
         "pass_yds": 0,
-        "rec": 71.826,
-        "rec_tds": 7.636,
-        "rec_yds": 1077.412,
-        "rush_att": 2.2,
+        "rec": 71.626,
+        "rec_tds": 7.236,
+        "rec_yds": 1073.412,
+        "rush_att": 1.95,
         "rush_tds": 0.045,
-        "rush_yds": 11.0875
+        "rush_yds": 9.5875
       },
       "stat_source_counts": {
         "pass_att": 1,
@@ -12920,7 +12946,7 @@
         "rush_tds": 4,
         "rush_yds": 4
       },
-      "default_scoring_points": 154.6602,
+      "default_scoring_points": 151.7402,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -13282,7 +13308,7 @@
         "pass_yds": 0,
         "rec": 31.742,
         "rec_tds": 4.028,
-        "rec_yds": 401.132,
+        "rec_yds": 399.532,
         "rush_att": 0,
         "rush_tds": 0,
         "rush_yds": 0
@@ -13300,7 +13326,7 @@
         "rush_tds": 3,
         "rush_yds": 3
       },
-      "default_scoring_points": 64.2812,
+      "default_scoring_points": 64.1212,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -13316,12 +13342,12 @@
         "pass_int": 0,
         "pass_tds": 0,
         "pass_yds": 0,
-        "rec": 24.935,
+        "rec": 25.185,
         "rec_tds": 2.5575,
-        "rec_yds": 239.895,
+        "rec_yds": 242.395,
         "rush_att": 7.3375,
         "rush_tds": 0.295,
-        "rush_yds": 27.3075
+        "rush_yds": 26.0575
       },
       "stat_source_counts": {
         "pass_att": 1,
@@ -13336,7 +13362,7 @@
         "rush_tds": 4,
         "rush_yds": 4
       },
-      "default_scoring_points": 43.0853,
+      "default_scoring_points": 43.2103,
       "source_count": 4,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday"]
     },
@@ -14074,7 +14100,7 @@
         "pass_yds": 0,
         "rec": 54.02,
         "rec_tds": 4.302,
-        "rec_yds": 716.984,
+        "rec_yds": 717.384,
         "rush_att": 2.3333,
         "rush_tds": 0,
         "rush_yds": 10.6667
@@ -14092,7 +14118,7 @@
         "rush_tds": 3,
         "rush_yds": 3
       },
-      "default_scoring_points": 96.9504,
+      "default_scoring_points": 96.9904,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -14110,7 +14136,7 @@
         "pass_yds": 0,
         "rec": 53.156,
         "rec_tds": 3.438,
-        "rec_yds": 669.498,
+        "rec_yds": 670.098,
         "rush_att": 0.6667,
         "rush_tds": 0,
         "rush_yds": 3.3333
@@ -14128,7 +14154,7 @@
         "rush_tds": 3,
         "rush_yds": 3
       },
-      "default_scoring_points": 86.5778,
+      "default_scoring_points": 86.6378,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -14146,7 +14172,7 @@
         "pass_yds": 0,
         "rec": 60.936,
         "rec_tds": 3.548,
-        "rec_yds": 761.628,
+        "rec_yds": 762.428,
         "rush_att": 3.25,
         "rush_tds": 0,
         "rush_yds": 17.25
@@ -14164,7 +14190,7 @@
         "rush_tds": 4,
         "rush_yds": 4
       },
-      "default_scoring_points": 97.0308,
+      "default_scoring_points": 97.1108,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -14218,7 +14244,7 @@
         "pass_yds": 0,
         "rec": 35.42,
         "rec_tds": 2.428,
-        "rec_yds": 437.232,
+        "rec_yds": 437.832,
         "rush_att": 2,
         "rush_tds": 0,
         "rush_yds": 10.25
@@ -14236,7 +14262,7 @@
         "rush_tds": 4,
         "rush_yds": 4
       },
-      "default_scoring_points": 58.5112,
+      "default_scoring_points": 58.5712,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -14434,7 +14460,7 @@
         "pass_yds": 0,
         "rec": 36.42,
         "rec_tds": 3.168,
-        "rec_yds": 474.332,
+        "rec_yds": 473.932,
         "rush_att": 0.6667,
         "rush_tds": 0,
         "rush_yds": 4.3333
@@ -14452,7 +14478,7 @@
         "rush_tds": 3,
         "rush_yds": 3
       },
-      "default_scoring_points": 66.1012,
+      "default_scoring_points": 66.0612,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -14470,7 +14496,7 @@
         "pass_yds": 0,
         "rec": 30.644,
         "rec_tds": 2.624,
-        "rec_yds": 426.91,
+        "rec_yds": 425.91,
         "rush_att": 1.75,
         "rush_tds": 0,
         "rush_yds": 9.25
@@ -14488,7 +14514,7 @@
         "rush_tds": 4,
         "rush_yds": 4
       },
-      "default_scoring_points": 58.575,
+      "default_scoring_points": 58.475,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -14506,7 +14532,7 @@
         "pass_yds": 0,
         "rec": 58.246,
         "rec_tds": 4.806,
-        "rec_yds": 773.066,
+        "rec_yds": 772.466,
         "rush_att": 1,
         "rush_tds": 0,
         "rush_yds": 4.3333
@@ -14524,7 +14550,7 @@
         "rush_tds": 3,
         "rush_yds": 3
       },
-      "default_scoring_points": 105.2026,
+      "default_scoring_points": 105.1426,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -14542,7 +14568,7 @@
         "pass_yds": 0,
         "rec": 35.462,
         "rec_tds": 4.134,
-        "rec_yds": 483.698,
+        "rec_yds": 483.898,
         "rush_att": 1,
         "rush_tds": 0,
         "rush_yds": 5.6667
@@ -14560,7 +14586,7 @@
         "rush_tds": 3,
         "rush_yds": 3
       },
-      "default_scoring_points": 72.9138,
+      "default_scoring_points": 72.9338,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -14922,7 +14948,7 @@
         "pass_yds": 0,
         "rec": 24.9125,
         "rec_tds": 1.3775,
-        "rec_yds": 298.52,
+        "rec_yds": 298.27,
         "rush_att": 0.6667,
         "rush_tds": 0,
         "rush_yds": 2.6667
@@ -14940,7 +14966,7 @@
         "rush_tds": 3,
         "rush_yds": 3
       },
-      "default_scoring_points": 36.817,
+      "default_scoring_points": 36.792,
       "source_count": 4,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday"]
     },
@@ -14976,9 +15002,9 @@
         "pass_int": 0,
         "pass_tds": 0,
         "pass_yds": 0,
-        "rec": 72.56,
-        "rec_tds": 5.048,
-        "rec_yds": 759.676,
+        "rec": 72.76,
+        "rec_tds": 4.848,
+        "rec_yds": 760.476,
         "rush_att": 0,
         "rush_tds": 0,
         "rush_yds": 0
@@ -14996,7 +15022,7 @@
         "rush_tds": 1,
         "rush_yds": 1
       },
-      "default_scoring_points": 106.2556,
+      "default_scoring_points": 105.1356,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -15009,14 +15035,14 @@
       "consensus_stats": {
         "rec": 46,
         "rec_tds": 4.75,
-        "rec_yds": 493.75
+        "rec_yds": 493.5
       },
       "stat_source_counts": {
         "rec": 4,
         "rec_tds": 4,
         "rec_yds": 4
       },
-      "default_scoring_points": 77.875,
+      "default_scoring_points": 77.85,
       "source_count": 4,
       "sources": ["CBS", "ESPN", "FFToday", "WalterFootball"]
     },
@@ -15032,9 +15058,9 @@
         "pass_int": 0,
         "pass_tds": 0,
         "pass_yds": 0,
-        "rec": 58.96,
-        "rec_tds": 5.846,
-        "rec_yds": 697.238,
+        "rec": 58.16,
+        "rec_tds": 5.646,
+        "rec_yds": 688.638,
         "rush_att": 0,
         "rush_tds": 0,
         "rush_yds": 0
@@ -15052,7 +15078,7 @@
         "rush_tds": 1,
         "rush_yds": 1
       },
-      "default_scoring_points": 104.7998,
+      "default_scoring_points": 102.7398,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -15070,7 +15096,7 @@
         "pass_yds": 0,
         "rec": 23.53,
         "rec_tds": 1.47,
-        "rec_yds": 238.2875,
+        "rec_yds": 239.7875,
         "rush_att": 0,
         "rush_tds": 0,
         "rush_yds": 0
@@ -15088,7 +15114,7 @@
         "rush_tds": 1,
         "rush_yds": 1
       },
-      "default_scoring_points": 32.6487,
+      "default_scoring_points": 32.7987,
       "source_count": 4,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday"]
     },
@@ -15106,7 +15132,7 @@
         "pass_yds": 0,
         "rec": 23.945,
         "rec_tds": 2.175,
-        "rec_yds": 274.8725,
+        "rec_yds": 274.6225,
         "rush_att": 0,
         "rush_tds": 0,
         "rush_yds": 0
@@ -15124,7 +15150,7 @@
         "rush_tds": 1,
         "rush_yds": 1
       },
-      "default_scoring_points": 40.5373,
+      "default_scoring_points": 40.5123,
       "source_count": 4,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday"]
     },
@@ -15140,9 +15166,9 @@
         "pass_int": 0,
         "pass_tds": 0,
         "pass_yds": 0,
-        "rec": 8.44,
+        "rec": 7.94,
         "rec_tds": 0.765,
-        "rec_yds": 81.205,
+        "rec_yds": 80.705,
         "rush_att": 0,
         "rush_tds": 0,
         "rush_yds": 0
@@ -15160,7 +15186,7 @@
         "rush_tds": 1,
         "rush_yds": 1
       },
-      "default_scoring_points": 12.7105,
+      "default_scoring_points": 12.6605,
       "source_count": 2,
       "sources": ["CBS", "FanDuel"]
     },
@@ -15212,9 +15238,9 @@
         "pass_int": 0,
         "pass_tds": 0,
         "pass_yds": 0,
-        "rec": 43.828,
+        "rec": 44.028,
         "rec_tds": 4.322,
-        "rec_yds": 420.028,
+        "rec_yds": 420.828,
         "rush_att": 0,
         "rush_tds": 0,
         "rush_yds": 0
@@ -15232,7 +15258,7 @@
         "rush_tds": 1,
         "rush_yds": 1
       },
-      "default_scoring_points": 67.9348,
+      "default_scoring_points": 68.0148,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -15250,7 +15276,7 @@
         "pass_yds": 0,
         "rec": 27.9125,
         "rec_tds": 2.145,
-        "rec_yds": 261.39,
+        "rec_yds": 262.39,
         "rush_att": 1,
         "rush_tds": 0,
         "rush_yds": 5
@@ -15268,7 +15294,7 @@
         "rush_tds": 2,
         "rush_yds": 2
       },
-      "default_scoring_points": 39.259,
+      "default_scoring_points": 39.359,
       "source_count": 4,
       "sources": ["CBS", "ESPN", "FanDuel", "WalterFootball"]
     },
@@ -15320,9 +15346,9 @@
         "pass_int": 0,
         "pass_tds": 0,
         "pass_yds": 0,
-        "rec": 68.398,
+        "rec": 68.798,
         "rec_tds": 6.072,
-        "rec_yds": 784.836,
+        "rec_yds": 790.036,
         "rush_att": 0,
         "rush_tds": 0,
         "rush_yds": 0
@@ -15340,7 +15366,7 @@
         "rush_tds": 1,
         "rush_yds": 1
       },
-      "default_scoring_points": 114.9156,
+      "default_scoring_points": 115.4356,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -15392,9 +15418,9 @@
         "pass_int": 0,
         "pass_tds": 0,
         "pass_yds": 0,
-        "rec": 60.924,
+        "rec": 61.124,
         "rec_tds": 7.864,
-        "rec_yds": 635.402,
+        "rec_yds": 638.602,
         "rush_att": 7.63,
         "rush_tds": 0.6,
         "rush_yds": 28.32
@@ -15412,7 +15438,7 @@
         "rush_tds": 2,
         "rush_yds": 2
       },
-      "default_scoring_points": 113.297,
+      "default_scoring_points": 113.617,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -15464,9 +15490,9 @@
         "pass_int": 0,
         "pass_tds": 0,
         "pass_yds": 0,
-        "rec": 69.924,
+        "rec": 69.724,
         "rec_tds": 7.578,
-        "rec_yds": 744.538,
+        "rec_yds": 743.538,
         "rush_att": 0,
         "rush_tds": 0,
         "rush_yds": 0
@@ -15484,7 +15510,7 @@
         "rush_tds": 1,
         "rush_yds": 1
       },
-      "default_scoring_points": 119.9218,
+      "default_scoring_points": 119.8218,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -15572,9 +15598,9 @@
         "pass_int": 0,
         "pass_tds": 0,
         "pass_yds": 0,
-        "rec": 63.552,
+        "rec": 63.752,
         "rec_tds": 3.836,
-        "rec_yds": 615.618,
+        "rec_yds": 616.218,
         "rush_att": 0,
         "rush_tds": 0,
         "rush_yds": 0
@@ -15592,7 +15618,7 @@
         "rush_tds": 1,
         "rush_yds": 1
       },
-      "default_scoring_points": 84.5778,
+      "default_scoring_points": 84.6378,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -15680,9 +15706,9 @@
         "pass_int": 0,
         "pass_tds": 0,
         "pass_yds": 0,
-        "rec": 26.8,
+        "rec": 26.55,
         "rec_tds": 1.495,
-        "rec_yds": 252.8875,
+        "rec_yds": 250.6375,
         "rush_att": 0,
         "rush_tds": 0,
         "rush_yds": 0
@@ -15700,7 +15726,7 @@
         "rush_tds": 1,
         "rush_yds": 1
       },
-      "default_scoring_points": 32.0087,
+      "default_scoring_points": 31.7838,
       "source_count": 4,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday"]
     },
@@ -15718,7 +15744,7 @@
         "pass_yds": 0,
         "rec": 64.552,
         "rec_tds": 4.132,
-        "rec_yds": 605.404,
+        "rec_yds": 606.404,
         "rush_att": 0,
         "rush_tds": 0,
         "rush_yds": 0
@@ -15736,7 +15762,7 @@
         "rush_tds": 1,
         "rush_yds": 1
       },
-      "default_scoring_points": 85.3324,
+      "default_scoring_points": 85.4324,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -15752,9 +15778,9 @@
         "pass_int": 0,
         "pass_tds": 0,
         "pass_yds": 0,
-        "rec": 34.56,
+        "rec": 34.76,
         "rec_tds": 3.656,
-        "rec_yds": 389.516,
+        "rec_yds": 391.516,
         "rush_att": 0,
         "rush_tds": 0,
         "rush_yds": 0
@@ -15772,7 +15798,7 @@
         "rush_tds": 1,
         "rush_yds": 1
       },
-      "default_scoring_points": 60.8876,
+      "default_scoring_points": 61.0876,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -15826,7 +15852,7 @@
         "pass_yds": 0,
         "rec": 19.9175,
         "rec_tds": 2.18,
-        "rec_yds": 201.1425,
+        "rec_yds": 202.1425,
         "rush_att": 0,
         "rush_tds": 0,
         "rush_yds": 0
@@ -15844,7 +15870,7 @@
         "rush_tds": 1,
         "rush_yds": 1
       },
-      "default_scoring_points": 33.1943,
+      "default_scoring_points": 33.2942,
       "source_count": 4,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday"]
     },
@@ -15932,9 +15958,9 @@
         "pass_int": 0,
         "pass_tds": 0,
         "pass_yds": 0,
-        "rec": 65.108,
+        "rec": 64.708,
         "rec_tds": 3.816,
-        "rec_yds": 739.316,
+        "rec_yds": 735.916,
         "rush_att": 0,
         "rush_tds": 0,
         "rush_yds": 0
@@ -15952,7 +15978,7 @@
         "rush_tds": 1,
         "rush_yds": 1
       },
-      "default_scoring_points": 95.6276,
+      "default_scoring_points": 95.2876,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -15970,7 +15996,7 @@
         "pass_yds": 0,
         "rec": 29.074,
         "rec_tds": 2.28,
-        "rec_yds": 304.52,
+        "rec_yds": 303.92,
         "rush_att": 0,
         "rush_tds": 0,
         "rush_yds": 0
@@ -15988,7 +16014,7 @@
         "rush_tds": 1,
         "rush_yds": 1
       },
-      "default_scoring_points": 44.132,
+      "default_scoring_points": 44.072,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -16042,7 +16068,7 @@
         "pass_yds": 0,
         "rec": 37.878,
         "rec_tds": 4.194,
-        "rec_yds": 384.922,
+        "rec_yds": 387.522,
         "rush_att": 0,
         "rush_tds": 0,
         "rush_yds": 0
@@ -16060,7 +16086,7 @@
         "rush_tds": 1,
         "rush_yds": 1
       },
-      "default_scoring_points": 63.0562,
+      "default_scoring_points": 63.9162,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -16150,7 +16176,7 @@
         "pass_yds": 0,
         "rec": 75.552,
         "rec_tds": 4.488,
-        "rec_yds": 807.378,
+        "rec_yds": 808.178,
         "rush_att": 0,
         "rush_tds": 0,
         "rush_yds": 0
@@ -16168,7 +16194,7 @@
         "rush_tds": 1,
         "rush_yds": 1
       },
-      "default_scoring_points": 107.6658,
+      "default_scoring_points": 107.7458,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -16186,7 +16212,7 @@
         "pass_yds": 0,
         "rec": 55.054,
         "rec_tds": 4.684,
-        "rec_yds": 577.518,
+        "rec_yds": 579.318,
         "rush_att": 0,
         "rush_tds": 0,
         "rush_yds": 0
@@ -16204,7 +16230,7 @@
         "rush_tds": 1,
         "rush_yds": 1
       },
-      "default_scoring_points": 85.8558,
+      "default_scoring_points": 86.0358,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -16222,7 +16248,7 @@
         "pass_yds": 0,
         "rec": 23.055,
         "rec_tds": 1.7275,
-        "rec_yds": 215.33,
+        "rec_yds": 216.58,
         "rush_att": 0,
         "rush_tds": 0,
         "rush_yds": 0
@@ -16240,7 +16266,7 @@
         "rush_tds": 1,
         "rush_yds": 1
       },
-      "default_scoring_points": 31.898,
+      "default_scoring_points": 32.023,
       "source_count": 4,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday"]
     },
@@ -16328,9 +16354,9 @@
         "pass_int": 0,
         "pass_tds": 0,
         "pass_yds": 0,
-        "rec": 19.8,
+        "rec": 20.05,
         "rec_tds": 1.32,
-        "rec_yds": 201.7575,
+        "rec_yds": 203.0075,
         "rush_att": 0,
         "rush_tds": 0,
         "rush_yds": 0
@@ -16348,7 +16374,7 @@
         "rush_tds": 1,
         "rush_yds": 1
       },
-      "default_scoring_points": 28.0958,
+      "default_scoring_points": 28.2208,
       "source_count": 4,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday"]
     },
@@ -16402,7 +16428,7 @@
         "pass_yds": 0,
         "rec": 16.985,
         "rec_tds": 1.45,
-        "rec_yds": 165.7,
+        "rec_yds": 165.2,
         "rush_att": 0,
         "rush_tds": 0,
         "rush_yds": 0
@@ -16420,7 +16446,7 @@
         "rush_tds": 1,
         "rush_yds": 1
       },
-      "default_scoring_points": 23.77,
+      "default_scoring_points": 23.72,
       "source_count": 2,
       "sources": ["CBS", "FanDuel"]
     },
@@ -16438,7 +16464,7 @@
         "pass_yds": 0,
         "rec": 6.975,
         "rec_tds": 0.625,
-        "rec_yds": 59.8,
+        "rec_yds": 61.3,
         "rush_att": 0,
         "rush_tds": 0,
         "rush_yds": 0
@@ -16456,7 +16482,7 @@
         "rush_tds": 1,
         "rush_yds": 1
       },
-      "default_scoring_points": 9.73,
+      "default_scoring_points": 9.88,
       "source_count": 2,
       "sources": ["CBS", "FanDuel"]
     },
@@ -16546,7 +16572,7 @@
         "pass_yds": 0,
         "rec": 110.56,
         "rec_tds": 6.796,
-        "rec_yds": 1098.184,
+        "rec_yds": 1096.584,
         "rush_att": 0,
         "rush_tds": 0,
         "rush_yds": 0
@@ -16564,7 +16590,7 @@
         "rush_tds": 1,
         "rush_yds": 1
       },
-      "default_scoring_points": 150.5944,
+      "default_scoring_points": 150.4344,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -16582,7 +16608,7 @@
         "pass_yds": 0,
         "rec": 28.414,
         "rec_tds": 2.578,
-        "rec_yds": 311.718,
+        "rec_yds": 311.518,
         "rush_att": 0,
         "rush_tds": 0,
         "rush_yds": 0
@@ -16600,7 +16626,7 @@
         "rush_tds": 1,
         "rush_yds": 1
       },
-      "default_scoring_points": 46.6398,
+      "default_scoring_points": 46.6198,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -16618,7 +16644,7 @@
         "pass_yds": 0,
         "rec": 18.75,
         "rec_tds": 1.265,
-        "rec_yds": 143.415,
+        "rec_yds": 142.915,
         "rush_att": 0,
         "rush_tds": 0,
         "rush_yds": 0
@@ -16636,7 +16662,7 @@
         "rush_tds": 1,
         "rush_yds": 1
       },
-      "default_scoring_points": 21.9315,
+      "default_scoring_points": 21.8815,
       "source_count": 2,
       "sources": ["CBS", "FanDuel"]
     },
@@ -16690,7 +16716,7 @@
         "pass_yds": 0,
         "rec": 62.28,
         "rec_tds": 5.048,
-        "rec_yds": 727.69,
+        "rec_yds": 727.09,
         "rush_att": 0,
         "rush_tds": 0,
         "rush_yds": 0
@@ -16708,7 +16734,7 @@
         "rush_tds": 1,
         "rush_yds": 1
       },
-      "default_scoring_points": 101.857,
+      "default_scoring_points": 101.797,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -16726,7 +16752,7 @@
         "pass_yds": 0,
         "rec": 70.588,
         "rec_tds": 6.012,
-        "rec_yds": 601.46,
+        "rec_yds": 601.06,
         "rush_att": 0,
         "rush_tds": 0,
         "rush_yds": 0
@@ -16744,7 +16770,7 @@
         "rush_tds": 1,
         "rush_yds": 1
       },
-      "default_scoring_points": 95.018,
+      "default_scoring_points": 94.978,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -16796,9 +16822,9 @@
         "pass_int": 0,
         "pass_tds": 0,
         "pass_yds": 0,
-        "rec": 54.97,
+        "rec": 55.37,
         "rec_tds": 3.554,
-        "rec_yds": 554.648,
+        "rec_yds": 558.048,
         "rush_att": 0,
         "rush_tds": 0,
         "rush_yds": 0
@@ -16816,7 +16842,7 @@
         "rush_tds": 1,
         "rush_yds": 1
       },
-      "default_scoring_points": 76.7888,
+      "default_scoring_points": 77.1288,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -16870,7 +16896,7 @@
         "pass_yds": 0,
         "rec": 15.12,
         "rec_tds": 1.645,
-        "rec_yds": 185.39,
+        "rec_yds": 186.39,
         "rush_att": 0,
         "rush_tds": 0,
         "rush_yds": 0
@@ -16888,7 +16914,7 @@
         "rush_tds": 1,
         "rush_yds": 1
       },
-      "default_scoring_points": 28.409,
+      "default_scoring_points": 28.509,
       "source_count": 2,
       "sources": ["CBS", "FanDuel"]
     },
@@ -16904,9 +16930,9 @@
         "pass_int": 0,
         "pass_tds": 0,
         "pass_yds": 0,
-        "rec": 50.0425,
+        "rec": 49.7925,
         "rec_tds": 2.6675,
-        "rec_yds": 526.51,
+        "rec_yds": 525.26,
         "rush_att": 0,
         "rush_tds": 0,
         "rush_yds": 0
@@ -16924,7 +16950,7 @@
         "rush_tds": 1,
         "rush_yds": 1
       },
-      "default_scoring_points": 68.656,
+      "default_scoring_points": 68.531,
       "source_count": 4,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday"]
     },
@@ -16976,9 +17002,9 @@
         "pass_int": 0,
         "pass_tds": 0,
         "pass_yds": 0,
-        "rec": 14.215,
-        "rec_tds": 1.09,
-        "rec_yds": 138.82,
+        "rec": 14.715,
+        "rec_tds": 1.59,
+        "rec_yds": 140.82,
         "rush_att": 0,
         "rush_tds": 0,
         "rush_yds": 0
@@ -16996,7 +17022,7 @@
         "rush_tds": 1,
         "rush_yds": 1
       },
-      "default_scoring_points": 20.422,
+      "default_scoring_points": 23.622,
       "source_count": 2,
       "sources": ["CBS", "FanDuel"]
     },
@@ -17142,7 +17168,7 @@
         "pass_yds": 0,
         "rec": 15.555,
         "rec_tds": 1.835,
-        "rec_yds": 141.1775,
+        "rec_yds": 141.4275,
         "rush_att": 0,
         "rush_tds": 0,
         "rush_yds": 0
@@ -17160,7 +17186,7 @@
         "rush_tds": 1,
         "rush_yds": 1
       },
-      "default_scoring_points": 25.1278,
+      "default_scoring_points": 25.1528,
       "source_count": 4,
       "sources": ["CBS", "ESPN", "FanDuel", "WalterFootball"]
     },
@@ -17248,7 +17274,7 @@
         "pass_int": 0,
         "pass_tds": 0,
         "pass_yds": 0,
-        "rec": 40.52,
+        "rec": 40.32,
         "rec_tds": 2.134,
         "rec_yds": 383.804,
         "rush_att": 0,
@@ -17284,9 +17310,9 @@
         "pass_int": 0,
         "pass_tds": 0,
         "pass_yds": 0,
-        "rec": 58.226,
+        "rec": 58.426,
         "rec_tds": 5.37,
-        "rec_yds": 707.442,
+        "rec_yds": 710.642,
         "rush_att": 0,
         "rush_tds": 0,
         "rush_yds": 0
@@ -17304,7 +17330,7 @@
         "rush_tds": 1,
         "rush_yds": 1
       },
-      "default_scoring_points": 102.9642,
+      "default_scoring_points": 103.2842,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -17322,7 +17348,7 @@
         "pass_yds": 0,
         "rec": 73.062,
         "rec_tds": 5.842,
-        "rec_yds": 843.696,
+        "rec_yds": 837.896,
         "rush_att": 0,
         "rush_tds": 0,
         "rush_yds": 0
@@ -17340,7 +17366,7 @@
         "rush_tds": 1,
         "rush_yds": 1
       },
-      "default_scoring_points": 119.4216,
+      "default_scoring_points": 118.8416,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -17358,7 +17384,7 @@
         "pass_yds": 0,
         "rec": 22.8633,
         "rec_tds": 1.33,
-        "rec_yds": 214.6067,
+        "rec_yds": 215.94,
         "rush_att": 0,
         "rush_tds": 0,
         "rush_yds": 0
@@ -17376,7 +17402,7 @@
         "rush_tds": 1,
         "rush_yds": 1
       },
-      "default_scoring_points": 29.4407,
+      "default_scoring_points": 29.574,
       "source_count": 3,
       "sources": ["CBS", "FanDuel", "FFToday"]
     },
@@ -17394,7 +17420,7 @@
         "pass_yds": 0,
         "rec": 32.9675,
         "rec_tds": 2.1375,
-        "rec_yds": 343.9425,
+        "rec_yds": 344.4425,
         "rush_att": 8.99,
         "rush_tds": 0.37,
         "rush_yds": 37.2
@@ -17412,7 +17438,7 @@
         "rush_tds": 1,
         "rush_yds": 1
       },
-      "default_scoring_points": 47.9543,
+      "default_scoring_points": 48.0042,
       "source_count": 4,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday"]
     },
@@ -17464,9 +17490,9 @@
         "pass_int": 0,
         "pass_tds": 0,
         "pass_yds": 0,
-        "rec": 11.83,
+        "rec": 12.33,
         "rec_tds": 1.155,
-        "rec_yds": 120.885,
+        "rec_yds": 123.385,
         "rush_att": 0,
         "rush_tds": 0,
         "rush_yds": 0
@@ -17484,7 +17510,7 @@
         "rush_tds": 1,
         "rush_yds": 1
       },
-      "default_scoring_points": 19.0185,
+      "default_scoring_points": 19.2685,
       "source_count": 2,
       "sources": ["CBS", "FanDuel"]
     },
@@ -17501,7 +17527,7 @@
         "pass_tds": 0,
         "pass_yds": 0,
         "rec": 15.155,
-        "rec_tds": 1.675,
+        "rec_tds": 1.175,
         "rec_yds": 140.315,
         "rush_att": 0,
         "rush_tds": 0,
@@ -17520,7 +17546,7 @@
         "rush_tds": 1,
         "rush_yds": 1
       },
-      "default_scoring_points": 24.0815,
+      "default_scoring_points": 21.0815,
       "source_count": 2,
       "sources": ["CBS", "FanDuel"]
     },
@@ -17608,9 +17634,9 @@
         "pass_int": 0,
         "pass_tds": 0,
         "pass_yds": 0,
-        "rec": 60.678,
+        "rec": 60.878,
         "rec_tds": 6.246,
-        "rec_yds": 803.852,
+        "rec_yds": 807.252,
         "rush_att": 1,
         "rush_tds": 0,
         "rush_yds": 4
@@ -17628,7 +17654,7 @@
         "rush_tds": 2,
         "rush_yds": 2
       },
-      "default_scoring_points": 118.0212,
+      "default_scoring_points": 118.3612,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -17646,7 +17672,7 @@
         "pass_yds": 0,
         "rec": 62.954,
         "rec_tds": 4.896,
-        "rec_yds": 680.794,
+        "rec_yds": 675.794,
         "rush_att": 0,
         "rush_tds": 0,
         "rush_yds": 0
@@ -17664,7 +17690,7 @@
         "rush_tds": 1,
         "rush_yds": 1
       },
-      "default_scoring_points": 97.4554,
+      "default_scoring_points": 96.9554,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -17718,7 +17744,7 @@
         "pass_yds": 0,
         "rec": 19.0167,
         "rec_tds": 0.9033,
-        "rec_yds": 178.2733,
+        "rec_yds": 179.2733,
         "rush_att": 0,
         "rush_tds": 0,
         "rush_yds": 0
@@ -17736,7 +17762,7 @@
         "rush_tds": 1,
         "rush_yds": 1
       },
-      "default_scoring_points": 22.2473,
+      "default_scoring_points": 22.3473,
       "source_count": 3,
       "sources": ["CBS", "ESPN", "FanDuel"]
     },
@@ -17860,9 +17886,9 @@
         "pass_int": 0,
         "pass_tds": 0,
         "pass_yds": 0,
-        "rec": 91.822,
+        "rec": 92.022,
         "rec_tds": 6.736,
-        "rec_yds": 962.502,
+        "rec_yds": 962.102,
         "rush_att": 6.47,
         "rush_tds": 0.185,
         "rush_yds": 24.9
@@ -17880,7 +17906,7 @@
         "rush_tds": 2,
         "rush_yds": 2
       },
-      "default_scoring_points": 138.1062,
+      "default_scoring_points": 138.0662,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -17896,9 +17922,9 @@
         "pass_int": 0,
         "pass_tds": 0,
         "pass_yds": 0,
-        "rec": 13.01,
+        "rec": 12.6767,
         "rec_tds": 0.83,
-        "rec_yds": 109.3133,
+        "rec_yds": 105.98,
         "rush_att": 4.385,
         "rush_tds": 0.15,
         "rush_yds": 14.58
@@ -17916,7 +17942,7 @@
         "rush_tds": 2,
         "rush_yds": 2
       },
-      "default_scoring_points": 17.4833,
+      "default_scoring_points": 17.15,
       "source_count": 3,
       "sources": ["CBS", "ESPN", "FanDuel"]
     },
@@ -17934,7 +17960,7 @@
         "pass_yds": 0,
         "rec": 22.3267,
         "rec_tds": 1.0833,
-        "rec_yds": 187.21,
+        "rec_yds": 186.5433,
         "rush_att": 0,
         "rush_tds": 0,
         "rush_yds": 0
@@ -17952,7 +17978,7 @@
         "rush_tds": 1,
         "rush_yds": 1
       },
-      "default_scoring_points": 25.221,
+      "default_scoring_points": 25.1543,
       "source_count": 3,
       "sources": ["CBS", "ESPN", "FanDuel"]
     },
@@ -17970,7 +17996,7 @@
         "pass_yds": 0,
         "rec": 14.405,
         "rec_tds": 1.59,
-        "rec_yds": 142.35,
+        "rec_yds": 141.85,
         "rush_att": 0,
         "rush_tds": 0,
         "rush_yds": 0
@@ -17988,7 +18014,7 @@
         "rush_tds": 1,
         "rush_yds": 1
       },
-      "default_scoring_points": 23.775,
+      "default_scoring_points": 23.725,
       "source_count": 2,
       "sources": ["CBS", "FanDuel"]
     },
@@ -18042,7 +18068,7 @@
         "pass_yds": 0,
         "rec": 7.74,
         "rec_tds": 0.685,
-        "rec_yds": 73.97,
+        "rec_yds": 74.97,
         "rush_att": 0,
         "rush_tds": 0,
         "rush_yds": 0
@@ -18060,7 +18086,7 @@
         "rush_tds": 1,
         "rush_yds": 1
       },
-      "default_scoring_points": 11.507,
+      "default_scoring_points": 11.607,
       "source_count": 2,
       "sources": ["CBS", "FanDuel"]
     },
@@ -18113,8 +18139,8 @@
         "pass_tds": 0,
         "pass_yds": 0,
         "rec": 27.764,
-        "rec_tds": 2.668,
-        "rec_yds": 319.014,
+        "rec_tds": 2.468,
+        "rec_yds": 320.614,
         "rush_att": 0,
         "rush_tds": 0,
         "rush_yds": 0
@@ -18132,7 +18158,7 @@
         "rush_tds": 1,
         "rush_yds": 1
       },
-      "default_scoring_points": 47.9094,
+      "default_scoring_points": 46.8694,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -18184,9 +18210,9 @@
         "pass_int": 0,
         "pass_tds": 0,
         "pass_yds": 0,
-        "rec": 49.084,
-        "rec_tds": 5.164,
-        "rec_yds": 472.678,
+        "rec": 48.284,
+        "rec_tds": 4.964,
+        "rec_yds": 464.078,
         "rush_att": 4.5,
         "rush_tds": 0,
         "rush_yds": 9
@@ -18204,7 +18230,7 @@
         "rush_tds": 2,
         "rush_yds": 2
       },
-      "default_scoring_points": 78.6118,
+      "default_scoring_points": 76.5518,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -18366,7 +18392,7 @@
         "pass_yds": 0,
         "rec": 37.996,
         "rec_tds": 3.122,
-        "rec_yds": 455.916,
+        "rec_yds": 455.716,
         "rush_att": 0,
         "rush_tds": 0,
         "rush_yds": 0
@@ -18384,7 +18410,7 @@
         "rush_tds": 1,
         "rush_yds": 1
       },
-      "default_scoring_points": 63.7236,
+      "default_scoring_points": 63.7036,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -18400,9 +18426,9 @@
         "pass_int": 0,
         "pass_tds": 0,
         "pass_yds": 0,
-        "rec": 80.77,
+        "rec": 80.37,
         "rec_tds": 5.45,
-        "rec_yds": 874.768,
+        "rec_yds": 871.368,
         "rush_att": 7.565,
         "rush_tds": 0.335,
         "rush_yds": 25.525
@@ -18420,7 +18446,7 @@
         "rush_tds": 2,
         "rush_yds": 2
       },
-      "default_scoring_points": 122.0018,
+      "default_scoring_points": 121.6618,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -18438,7 +18464,7 @@
         "pass_yds": 0,
         "rec": 79.662,
         "rec_tds": 5.526,
-        "rec_yds": 808.796,
+        "rec_yds": 810.596,
         "rush_att": 13.845,
         "rush_tds": 0.225,
         "rush_yds": 47.95
@@ -18456,7 +18482,7 @@
         "rush_tds": 2,
         "rush_yds": 2
       },
-      "default_scoring_points": 115.8936,
+      "default_scoring_points": 116.0736,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -18472,9 +18498,9 @@
         "pass_int": 0,
         "pass_tds": 0,
         "pass_yds": 0,
-        "rec": 82.064,
+        "rec": 82.464,
         "rec_tds": 7.198,
-        "rec_yds": 955.904,
+        "rec_yds": 960.304,
         "rush_att": 0,
         "rush_tds": 0,
         "rush_yds": 0
@@ -18492,7 +18518,7 @@
         "rush_tds": 1,
         "rush_yds": 1
       },
-      "default_scoring_points": 138.7784,
+      "default_scoring_points": 139.2184,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -18508,9 +18534,9 @@
         "pass_int": 0,
         "pass_tds": 0,
         "pass_yds": 0,
-        "rec": 46.152,
+        "rec": 46.352,
         "rec_tds": 3.216,
-        "rec_yds": 423.614,
+        "rec_yds": 423.214,
         "rush_att": 0,
         "rush_tds": 0,
         "rush_yds": 0
@@ -18528,7 +18554,7 @@
         "rush_tds": 1,
         "rush_yds": 1
       },
-      "default_scoring_points": 61.6574,
+      "default_scoring_points": 61.6174,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -18544,9 +18570,9 @@
         "pass_int": 0,
         "pass_tds": 0,
         "pass_yds": 0,
-        "rec": 41.542,
+        "rec": 41.942,
         "rec_tds": 2.49,
-        "rec_yds": 373.052,
+        "rec_yds": 376.052,
         "rush_att": 0,
         "rush_tds": 0,
         "rush_yds": 0
@@ -18564,7 +18590,7 @@
         "rush_tds": 1,
         "rush_yds": 1
       },
-      "default_scoring_points": 52.2452,
+      "default_scoring_points": 52.5452,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -18582,7 +18608,7 @@
         "pass_yds": 0,
         "rec": 42.948,
         "rec_tds": 4.784,
-        "rec_yds": 536.84,
+        "rec_yds": 536.64,
         "rush_att": 4.5,
         "rush_tds": 0.31,
         "rush_yds": 17.37
@@ -18600,7 +18626,7 @@
         "rush_tds": 1,
         "rush_yds": 1
       },
-      "default_scoring_points": 83.1074,
+      "default_scoring_points": 83.0874,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -18618,7 +18644,7 @@
         "pass_yds": 0,
         "rec": 19.682,
         "rec_tds": 1.596,
-        "rec_yds": 212.55,
+        "rec_yds": 210.95,
         "rush_att": 0,
         "rush_tds": 0,
         "rush_yds": 0
@@ -18636,7 +18662,7 @@
         "rush_tds": 1,
         "rush_yds": 1
       },
-      "default_scoring_points": 30.831,
+      "default_scoring_points": 30.671,
       "source_count": 5,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday", "WalterFootball"]
     },
@@ -18690,7 +18716,7 @@
         "pass_yds": 0,
         "rec": 9.335,
         "rec_tds": 1.305,
-        "rec_yds": 103.155,
+        "rec_yds": 99.655,
         "rush_att": 0,
         "rush_tds": 0,
         "rush_yds": 0
@@ -18708,7 +18734,7 @@
         "rush_tds": 1,
         "rush_yds": 1
       },
-      "default_scoring_points": 18.1455,
+      "default_scoring_points": 17.7955,
       "source_count": 2,
       "sources": ["CBS", "FanDuel"]
     },
@@ -19050,7 +19076,7 @@
         "pass_yds": 0,
         "rec": 20.25,
         "rec_tds": 1.75,
-        "rec_yds": 228,
+        "rec_yds": 228.25,
         "rush_att": 2.5,
         "rush_tds": 0,
         "rush_yds": 10
@@ -19068,7 +19094,7 @@
         "rush_tds": 2,
         "rush_yds": 2
       },
-      "default_scoring_points": 33.05,
+      "default_scoring_points": 33.075,
       "source_count": 4,
       "sources": ["CBS", "ESPN", "FanDuel", "WalterFootball"]
     },
@@ -19106,7 +19132,7 @@
         "pass_yds": 0,
         "rec": 10.7567,
         "rec_tds": 0.8,
-        "rec_yds": 111.6533,
+        "rec_yds": 111.32,
         "rush_att": 0,
         "rush_tds": 0,
         "rush_yds": 0
@@ -19124,7 +19150,7 @@
         "rush_tds": 1,
         "rush_yds": 1
       },
-      "default_scoring_points": 15.9653,
+      "default_scoring_points": 15.932,
       "source_count": 3,
       "sources": ["CBS", "ESPN", "FanDuel"]
     },
@@ -19324,9 +19350,9 @@
         "pass_int": 0,
         "pass_tds": 0,
         "pass_yds": 0,
-        "rec": 15.0667,
-        "rec_tds": 1.1033,
-        "rec_yds": 157.7767,
+        "rec": 16.7333,
+        "rec_tds": 1.77,
+        "rec_yds": 176.7767,
         "rush_att": 0,
         "rush_tds": 0,
         "rush_yds": 0
@@ -19344,7 +19370,7 @@
         "rush_tds": 1,
         "rush_yds": 1
       },
-      "default_scoring_points": 21.3977,
+      "default_scoring_points": 27.2977,
       "source_count": 3,
       "sources": ["CBS", "ESPN", "FanDuel"]
     },
@@ -19621,12 +19647,12 @@
       "sleeper_id": null,
       "espn_id": null,
       "consensus_stats": {
-        "dst_fum_rec": 9,
-        "dst_int": 12.0175,
-        "dst_pts_allowed": 354.75,
+        "dst_fum_rec": 8.6667,
+        "dst_int": 11.7675,
+        "dst_pts_allowed": 347.75,
         "dst_safety": 0.5,
-        "dst_td": 2.8725,
-        "dst_yds_allowed": 5510.5333
+        "dst_td": 2.8225,
+        "dst_yds_allowed": 5400.8667
       },
       "stat_source_counts": {
         "dst_fum_rec": 3,
@@ -19636,7 +19662,7 @@
         "dst_td": 4,
         "dst_yds_allowed": 3
       },
-      "default_scoring_points": 92.2825,
+      "default_scoring_points": 90.4575,
       "source_count": 4,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday"]
     },
@@ -19805,10 +19831,10 @@
       "consensus_stats": {
         "dst_fum_rec": 8.3333,
         "dst_int": 12.9575,
-        "dst_pts_allowed": 329.3,
+        "dst_pts_allowed": 329.05,
         "dst_safety": 0.5,
         "dst_td": 2.745,
-        "dst_yds_allowed": 5140.1333
+        "dst_yds_allowed": 5140.4667
       },
       "stat_source_counts": {
         "dst_fum_rec": 3,
@@ -19818,7 +19844,7 @@
         "dst_td": 4,
         "dst_yds_allowed": 3
       },
-      "default_scoring_points": 105.3325,
+      "default_scoring_points": 105.3575,
       "source_count": 4,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday"]
     },
@@ -19830,11 +19856,11 @@
       "espn_id": null,
       "consensus_stats": {
         "dst_fum_rec": 8,
-        "dst_int": 12.06,
-        "dst_pts_allowed": 343.1,
+        "dst_int": 11.81,
+        "dst_pts_allowed": 342.85,
         "dst_safety": 0,
         "dst_td": 2.3875,
-        "dst_yds_allowed": 5558.8
+        "dst_yds_allowed": 5552.8
       },
       "stat_source_counts": {
         "dst_fum_rec": 3,
@@ -19844,7 +19870,7 @@
         "dst_td": 4,
         "dst_yds_allowed": 3
       },
-      "default_scoring_points": 87.715,
+      "default_scoring_points": 87.215,
       "source_count": 4,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday"]
     },
@@ -19860,7 +19886,7 @@
         "dst_pts_allowed": 409.425,
         "dst_safety": 0.5,
         "dst_td": 2.535,
-        "dst_yds_allowed": 5805.4667
+        "dst_yds_allowed": 5805.8
       },
       "stat_source_counts": {
         "dst_fum_rec": 3,
@@ -19883,10 +19909,10 @@
       "consensus_stats": {
         "dst_fum_rec": 8.6667,
         "dst_int": 14.5725,
-        "dst_pts_allowed": 353.95,
+        "dst_pts_allowed": 353.7,
         "dst_safety": 0,
         "dst_td": 2.7175,
-        "dst_yds_allowed": 5614.5667
+        "dst_yds_allowed": 5611.9
       },
       "stat_source_counts": {
         "dst_fum_rec": 3,
@@ -19907,12 +19933,12 @@
       "sleeper_id": null,
       "espn_id": null,
       "consensus_stats": {
-        "dst_fum_rec": 8.3333,
-        "dst_int": 13.285,
-        "dst_pts_allowed": 325.15,
+        "dst_fum_rec": 8,
+        "dst_int": 13.035,
+        "dst_pts_allowed": 318.65,
         "dst_safety": 0.5,
-        "dst_td": 3.24,
-        "dst_yds_allowed": 5340.5
+        "dst_td": 3.14,
+        "dst_yds_allowed": 5220.5
       },
       "stat_source_counts": {
         "dst_fum_rec": 3,
@@ -19922,7 +19948,7 @@
         "dst_td": 4,
         "dst_yds_allowed": 3
       },
-      "default_scoring_points": 99.535,
+      "default_scoring_points": 97.26,
       "source_count": 4,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday"]
     },
@@ -19935,10 +19961,10 @@
       "consensus_stats": {
         "dst_fum_rec": 8.3333,
         "dst_int": 11.0775,
-        "dst_pts_allowed": 416.1,
+        "dst_pts_allowed": 415.85,
         "dst_safety": 0,
         "dst_td": 2.53,
-        "dst_yds_allowed": 6115.7
+        "dst_yds_allowed": 6114.7
       },
       "stat_source_counts": {
         "dst_fum_rec": 3,
@@ -19948,7 +19974,7 @@
         "dst_td": 4,
         "dst_yds_allowed": 3
       },
-      "default_scoring_points": 87.19,
+      "default_scoring_points": 87.165,
       "source_count": 4,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday"]
     },
@@ -19987,10 +20013,10 @@
       "consensus_stats": {
         "dst_fum_rec": 10,
         "dst_int": 12.84,
-        "dst_pts_allowed": 332.35,
+        "dst_pts_allowed": 332.1,
         "dst_safety": 0,
         "dst_td": 2.7375,
-        "dst_yds_allowed": 5450.7
+        "dst_yds_allowed": 5448.3667
       },
       "stat_source_counts": {
         "dst_fum_rec": 3,
@@ -20000,7 +20026,7 @@
         "dst_td": 4,
         "dst_yds_allowed": 3
       },
-      "default_scoring_points": 94.5425,
+      "default_scoring_points": 94.5675,
       "source_count": 4,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday"]
     },
@@ -20013,10 +20039,10 @@
       "consensus_stats": {
         "dst_fum_rec": 9.3333,
         "dst_int": 11.56,
-        "dst_pts_allowed": 440.375,
+        "dst_pts_allowed": 438.375,
         "dst_safety": 0.5,
         "dst_td": 2.6925,
-        "dst_yds_allowed": 6152.7333
+        "dst_yds_allowed": 6138.7333
       },
       "stat_source_counts": {
         "dst_fum_rec": 3,
@@ -20039,10 +20065,10 @@
       "consensus_stats": {
         "dst_fum_rec": 8.6667,
         "dst_int": 10.365,
-        "dst_pts_allowed": 405.725,
+        "dst_pts_allowed": 405.475,
         "dst_safety": 0.5,
         "dst_td": 2.8775,
-        "dst_yds_allowed": 6189.5667
+        "dst_yds_allowed": 6188.9
       },
       "stat_source_counts": {
         "dst_fum_rec": 3,
@@ -20067,8 +20093,8 @@
         "dst_int": 13.6025,
         "dst_pts_allowed": 385.55,
         "dst_safety": 0,
-        "dst_td": 2.7375,
-        "dst_yds_allowed": 6081.1667
+        "dst_td": 2.7125,
+        "dst_yds_allowed": 6078.8333
       },
       "stat_source_counts": {
         "dst_fum_rec": 3,
@@ -20078,7 +20104,7 @@
         "dst_td": 4,
         "dst_yds_allowed": 3
       },
-      "default_scoring_points": 94.8725,
+      "default_scoring_points": 94.7475,
       "source_count": 4,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday"]
     },
@@ -20221,9 +20247,9 @@
       "consensus_stats": {
         "dst_fum_rec": 7,
         "dst_int": 11.6575,
-        "dst_pts_allowed": 386.9,
+        "dst_pts_allowed": 386.65,
         "dst_safety": 0,
-        "dst_td": 2.5275,
+        "dst_td": 2.5025,
         "dst_yds_allowed": 5830.4667
       },
       "stat_source_counts": {
@@ -20234,7 +20260,7 @@
         "dst_td": 4,
         "dst_yds_allowed": 3
       },
-      "default_scoring_points": 83.27,
+      "default_scoring_points": 83.145,
       "source_count": 4,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday"]
     },
@@ -20247,10 +20273,10 @@
       "consensus_stats": {
         "dst_fum_rec": 9.3333,
         "dst_int": 13.1275,
-        "dst_pts_allowed": 341.9,
+        "dst_pts_allowed": 341.65,
         "dst_safety": 0.5,
         "dst_td": 2.7575,
-        "dst_yds_allowed": 5425.8
+        "dst_yds_allowed": 5424.8
       },
       "stat_source_counts": {
         "dst_fum_rec": 3,
@@ -20299,10 +20325,10 @@
       "consensus_stats": {
         "dst_fum_rec": 9,
         "dst_int": 11.3825,
-        "dst_pts_allowed": 378.55,
+        "dst_pts_allowed": 378.3,
         "dst_safety": 0,
-        "dst_td": 2.615,
-        "dst_yds_allowed": 5746.3333
+        "dst_td": 2.59,
+        "dst_yds_allowed": 5743.6667
       },
       "stat_source_counts": {
         "dst_fum_rec": 3,
@@ -20312,7 +20338,7 @@
         "dst_td": 4,
         "dst_yds_allowed": 3
       },
-      "default_scoring_points": 84.8725,
+      "default_scoring_points": 84.7475,
       "source_count": 4,
       "sources": ["CBS", "ESPN", "FanDuel", "FFToday"]
     },

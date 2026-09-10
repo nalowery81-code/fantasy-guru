@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-09-10T00:11:05.903Z",
+  "generated_at": "2026-09-10T13:33:59.564Z",
   "source": "Sleeper master player endpoint",
   "player_count": 4264,
   "canonical_id_rule": "GSIS when available, otherwise Sleeper ID, otherwise ESPN ID",
