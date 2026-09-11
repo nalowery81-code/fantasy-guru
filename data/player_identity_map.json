@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-09-10T13:33:59.564Z",
+  "generated_at": "2026-09-11T13:31:51.343Z",
   "source": "Sleeper master player endpoint",
   "player_count": 4264,
   "canonical_id_rule": "GSIS when available, otherwise Sleeper ID, otherwise ESPN ID",
@@ -6118,7 +6118,7 @@
       "name": "Bryson Nesbit",
       "normalized_name": "brysonnesbit",
       "position": "TE",
-      "team": "MIN",
+      "team": null,
       "sleeper_id": "12941",
       "espn_id": null,
       "gsis_id": null,
@@ -7210,7 +7210,7 @@
       "name": "Carlos Washington",
       "normalized_name": "carloswashington",
       "position": "RB",
-      "team": null,
+      "team": "MIA",
       "sleeper_id": "11186",
       "espn_id": null,
       "gsis_id": null,
@@ -7394,7 +7394,7 @@
       "sleeper_id": "13122",
       "espn_id": null,
       "gsis_id": null,
-      "status": "Active",
+      "status": "Inactive",
       "active": true
     },
     {
@@ -10786,7 +10786,7 @@
       "name": "Dalevon Campbell",
       "normalized_name": "dalevoncampbell",
       "position": "WR",
-      "team": "LAC",
+      "team": null,
       "sleeper_id": "13202",
       "espn_id": null,
       "gsis_id": null,
@@ -13414,7 +13414,7 @@
       "name": "Dennis Houston",
       "normalized_name": "dennishouston",
       "position": "WR",
-      "team": "TB",
+      "team": null,
       "sleeper_id": "8801",
       "espn_id": null,
       "gsis_id": null,
@@ -15166,7 +15166,7 @@
       "name": "Dontae Fleming",
       "normalized_name": "dontaefleming",
       "position": "WR",
-      "team": null,
+      "team": "MIN",
       "sleeper_id": "12946",
       "espn_id": null,
       "gsis_id": null,
@@ -18166,7 +18166,7 @@
       "name": "Gary Jennings",
       "normalized_name": "garyjennings",
       "position": "WR",
-      "team": null,
+      "team": "LAC",
       "sleeper_id": "6045",
       "espn_id": "3916071",
       "gsis_id": "00-0035589",
@@ -21874,7 +21874,7 @@
       "name": "Jalen Reagor",
       "normalized_name": "jalenreagor",
       "position": "WR",
-      "team": null,
+      "team": "MIA",
       "sleeper_id": "6798",
       "espn_id": "4241802",
       "gsis_id": null,
@@ -22954,7 +22954,7 @@
       "name": "Jarquez Hunter",
       "normalized_name": "jarquezhunter",
       "position": "RB",
-      "team": null,
+      "team": "MIA",
       "sleeper_id": "11569",
       "espn_id": null,
       "gsis_id": null,
@@ -24406,7 +24406,7 @@
       "name": "Jerome Ford",
       "normalized_name": "jeromeford",
       "position": "RB",
-      "team": "WAS",
+      "team": null,
       "sleeper_id": "8143",
       "espn_id": null,
       "gsis_id": null,
@@ -37062,6 +37062,18 @@
       "active": true
     },
     {
+      "canonical_player_id": "sleeper:12897",
+      "name": "Nate Carter",
+      "normalized_name": "natecarter",
+      "position": "RB",
+      "team": "KC",
+      "sleeper_id": "12897",
+      "espn_id": null,
+      "gsis_id": null,
+      "status": "Active",
+      "active": true
+    },
+    {
       "canonical_player_id": "sleeper:4803",
       "name": "Nate Iese",
       "normalized_name": "nateiese",
@@ -37155,18 +37167,6 @@
       "espn_id": "3894852",
       "gsis_id": null,
       "status": "Inactive",
-      "active": true
-    },
-    {
-      "canonical_player_id": "sleeper:12897",
-      "name": "Nathan Carter",
-      "normalized_name": "nathancarter",
-      "position": "RB",
-      "team": null,
-      "sleeper_id": "12897",
-      "espn_id": null,
-      "gsis_id": null,
-      "status": "Active",
       "active": true
     },
     {
@@ -42183,7 +42183,7 @@
       "espn_id": null,
       "gsis_id": null,
       "status": "Active",
-      "active": false
+      "active": true
     },
     {
       "canonical_player_id": "sleeper:10221",
@@ -50246,7 +50246,7 @@
       "sleeper_id": "10220",
       "espn_id": null,
       "gsis_id": null,
-      "status": "Active",
+      "status": "Inactive",
       "active": true
     },
     {
