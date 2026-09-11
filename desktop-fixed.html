@@ -1,4 +1,4 @@
-<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Fantasy Guru</title><style>html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#07101d}iframe{width:100%;height:100%;border:0;display:block}</style></head><body><iframe id="base" src="/desktop.html?patched=1"></iframe><script>
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Fantasy Guru</title><style>html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#07101d}iframe{width:100%;height:100%;border:0;display:block}</style></head><body><iframe id="base" src="/desktop.html?patched=2"></iframe><script>
 const base=document.getElementById('base');
 function install(){
  const bd=base.contentDocument;if(!bd)return;
@@ -7,22 +7,32 @@ function install(){
   const d=guru.contentDocument,w=guru.contentWindow;if(!d||!w)return;
   const oldLeague=[...d.querySelectorAll('.card')].find(x=>x.querySelector('h2')?.textContent.trim()==='My Leagues');
   if(oldLeague)oldLeague.style.display='none';
-  const main=d.querySelector('main'),shell=d.querySelector('.desktopShell'),content=d.querySelector('.desktopMain');
-  if(main){const h1=content?.querySelector(':scope > h1');const p=h1?.nextElementSibling;if(h1)h1.style.display='none';if(p?.classList.contains('muted'))p.style.display='none'}
-  const box=d.getElementById('dashBox');
+  const main=d.querySelector('main'),side=d.querySelector('.desktopSide'),shell=d.querySelector('.desktopShell'),content=d.querySelector('.desktopMain');
+  if(main){main.style.maxWidth='none';main.style.margin='0';main.style.padding='0';}
+  if(shell){shell.style.gridTemplateColumns='220px minmax(0,1fr)';shell.style.gap='0';shell.style.height='100vh';}
+  if(side){side.style.borderRadius='0';side.style.borderTop='0';side.style.borderLeft='0';side.style.borderBottom='0';side.style.height='100vh';}
+  if(content){content.style.padding='12px 16px 14px';const h1=content.querySelector(':scope > h1');const p=h1?.nextElementSibling;if(h1)h1.style.display='none';if(p?.classList.contains('muted'))p.style.display='none'}
+  const dash=d.getElementById('dashboardPanel'),box=d.getElementById('dashBox');
+  if(dash){const h2=dash.querySelector('h2');const sub=dash.querySelector('p');if(h2)h2.textContent='🧠 Ask Guru';if(sub)sub.textContent='Ask about your lineup, waivers, trades, matchup, or anything else in this league.';}
   const render=()=>{
    if(!box)return;
-   let C,a,m,wa,tr;try{C=w.eval('C');a=w.eval('analysis');m=w.eval('matchupData');wa=w.eval('waiverData');tr=w.eval('tradeData')}catch{return}
-   if(!C||!a)return;
-   const wk=a.weekly?.my_ranks?.overall??'—',ros=a.ros?.my_ranks?.overall??'—';
-   let match='<span class="muted">Live matchup loading…</span>';
-   if(m?.available)match='<div class="dashScore"><div><div class="team">'+m.you.team+'</div><div class="actual">'+Number(m.you.actual||0).toFixed(1)+'</div><div class="muted">Proj '+Number(m.you.projection||0).toFixed(1)+'</div></div><b>vs</b><div><div class="team">'+m.them.team+'</div><div class="actual">'+Number(m.them.actual||0).toFixed(1)+'</div><div class="muted">Proj '+Number(m.them.projection||0).toFixed(1)+'</div></div></div>';
-   const wr=(wa?.recommendations||[])[0],tt=(tr?.recommendations||[])[0];
-   box.innerHTML='<div class="dashCard dashHero"><div class="dashTitle">'+C.league.name+'</div><div class="dashMetric"><span>'+C.my_team.team+'</span><b>'+C.my_team.record.wins+'-'+C.my_team.record.losses+' · Week '+C.current_week+'</b></div></div><div class="dashCard dashMatch"><div class="dashTitle">This Week’s Matchup</div>'+match+'</div><div class="dashCard dashRoster"><div class="dashTitle">Championship Outlook</div><div class="dashMetric"><span>Weekly rank</span><b>#'+wk+' / '+C.league_teams.length+'</b></div><div class="dashMetric"><span>ROS rank</span><b>#'+ros+' / '+C.league_teams.length+'</b></div></div><div class="dashCard dashWaiver"><div class="dashTitle">Best Waiver Move</div>'+(wr?'<b class="dashGood">ADD '+wr.add.name+'</b><div class="muted">Drop '+wr.drop.name+'</div>':'<b>HOLD</b><div class="muted">No verified upgrade.</div>')+'</div><div class="dashCard dashTrade"><div class="dashTitle">Best Trade Opportunity</div>'+(tt?'<b class="dashGood">GET '+tt.you_receive.map(p=>p.name).join(' + ')+'</b><div class="muted">Send '+tt.you_send.map(p=>p.name).join(' + ')+'</div>':'<b>HOLD</b><div class="muted">No realistic edge found.</div>')+'</div><div class="dashCard dashPower"><div class="dashTitle">ROS Power</div><div style="font-size:25px;font-weight:950">#'+ros+'</div><div class="muted">League rank</div></div>';
+   let C=null;try{C=w.eval('C')}catch{}
+   box.style.display='block';
+   box.innerHTML='<div style="max-width:820px;margin:26px auto 0;background:#07101d;border:1px solid #26364f;border-radius:14px;padding:18px"><div style="font-size:24px;font-weight:900;margin-bottom:6px">Ask Guru</div><div class="muted" style="margin-bottom:14px">'+(C?'League: '+C.league.name+' · '+C.my_team.team:'Choose a league from the sidebar first.')+'</div><textarea id="dashQuestion" placeholder="What do you want to know?" style="width:100%;min-height:120px;background:#0b1525;color:#fff;border:1px solid #40516b;border-radius:11px;padding:12px;font:inherit;resize:vertical"></textarea><div style="display:flex;justify-content:flex-end;margin-top:10px"><button id="dashAsk" style="background:#22c55e;color:#052e16;border:0;border-radius:10px;padding:10px 16px;font-weight:900;cursor:pointer">Ask Guru</button></div><div id="dashAnswer" style="display:none;white-space:pre-wrap;line-height:1.6;margin-top:14px;background:#0b1525;border:1px solid #26364f;border-radius:11px;padding:14px"></div></div>';
+   const q=box.querySelector('#dashQuestion'),btn=box.querySelector('#dashAsk'),ans=box.querySelector('#dashAnswer');
+   btn.onclick=()=>{
+    if(!C){ans.style.display='block';ans.textContent='Choose a league from the sidebar first.';return}
+    const text=q.value.trim();if(!text)return;
+    const originalQ=d.getElementById('question'),originalAsk=d.getElementById('ask'),originalAns=d.getElementById('answer');
+    if(!originalQ||!originalAsk){ans.style.display='block';ans.textContent='Ask Guru is unavailable right now.';return}
+    originalQ.value=text;ans.style.display='block';ans.textContent='Guru is researching…';btn.disabled=true;originalAsk.click();
+    const sync=()=>{if(originalAns&&!originalAns.classList.contains('hidden')){ans.textContent=originalAns.textContent||'';if(!btn.disabled)return;const t=originalAns.textContent||'';if(!t.includes('researching'))btn.disabled=false}};
+    sync();const obs=new w.MutationObserver(sync);if(originalAns)obs.observe(originalAns,{childList:true,subtree:true,characterData:true,attributes:true});setTimeout(()=>{sync();obs.disconnect();btn.disabled=false},30000);
+   };
   };
   render();
-  const app=d.getElementById('app');if(app&&!app.dataset.dashPatch){app.dataset.dashPatch='1';new w.MutationObserver(render).observe(app,{childList:true,subtree:true,characterData:true})}
-  const sel=d.getElementById('desktopLeague');if(sel){try{const C=w.eval('C');if(C){const opts=[...sel.options];const i=opts.findIndex(o=>o.textContent.includes(C.league?.name||''));if(i>=0)sel.selectedIndex=i}}catch{}}
+  const sel=d.getElementById('desktopLeague');if(sel&&!sel.dataset.askPatch){sel.dataset.askPatch='1';sel.addEventListener('change',()=>setTimeout(render,120));}
+  const app=d.getElementById('app');if(app&&!app.dataset.askPatch){app.dataset.askPatch='1';new w.MutationObserver(()=>{try{const C=w.eval('C');if(C&&box&&!box.querySelector('#dashQuestion'))render()}catch{}}).observe(app,{childList:true,subtree:true});}
  };
  if(guru.contentDocument?.readyState==='complete')patch();guru.addEventListener('load',patch);setTimeout(patch,150);setTimeout(patch,600);
 }
