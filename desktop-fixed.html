@@ -1,4 +1,4 @@
-<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Fantasy Guru</title><style>html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#07101d}iframe{width:100%;height:100%;border:0;display:block}</style></head><body><iframe id="base" src="/desktop.html?patched=2"></iframe><script>
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Fantasy Guru</title><style>html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#07101d}iframe{width:100%;height:100%;border:0;display:block}</style></head><body><iframe id="base" src="/desktop.html?patched=3"></iframe><script>
 const base=document.getElementById('base');
 function install(){
  const bd=base.contentDocument;if(!bd)return;
@@ -7,32 +7,35 @@ function install(){
   const d=guru.contentDocument,w=guru.contentWindow;if(!d||!w)return;
   const oldLeague=[...d.querySelectorAll('.card')].find(x=>x.querySelector('h2')?.textContent.trim()==='My Leagues');
   if(oldLeague)oldLeague.style.display='none';
-  const main=d.querySelector('main'),side=d.querySelector('.desktopSide'),shell=d.querySelector('.desktopShell'),content=d.querySelector('.desktopMain');
+  const main=d.querySelector('main'),side=d.querySelector('.desktopSide'),shell=d.querySelector('.desktopShell'),content=d.querySelector('.desktopMain'),status=d.getElementById('status');
   if(main){main.style.maxWidth='none';main.style.margin='0';main.style.padding='0';}
   if(shell){shell.style.gridTemplateColumns='220px minmax(0,1fr)';shell.style.gap='0';shell.style.height='100vh';}
   if(side){side.style.borderRadius='0';side.style.borderTop='0';side.style.borderLeft='0';side.style.borderBottom='0';side.style.height='100vh';}
   if(content){content.style.padding='12px 16px 14px';const h1=content.querySelector(':scope > h1');const p=h1?.nextElementSibling;if(h1)h1.style.display='none';if(p?.classList.contains('muted'))p.style.display='none'}
-  const dash=d.getElementById('dashboardPanel'),box=d.getElementById('dashBox');
-  if(dash){const h2=dash.querySelector('h2');const sub=dash.querySelector('p');if(h2)h2.textContent='🧠 Ask Guru';if(sub)sub.textContent='Ask about your lineup, waivers, trades, matchup, or anything else in this league.';}
+  if(status&&status.textContent.trim()==='Choose a league.')status.style.display='none';
+  const app=d.getElementById('app'),dash=d.getElementById('dashboardPanel'),box=d.getElementById('dashBox');
+  if(dash&&app&&dash.parentElement===app&&content){content.insertBefore(dash,app);dash.style.height='calc(100vh - 26px)';}
+  if(dash){const h2=dash.querySelector('h2');const sub=dash.querySelector('p');if(h2)h2.textContent='🧠 Ask Guru';if(sub)sub.textContent='Ask about your lineup, waivers, trades, matchup, or anything else.';}
   const render=()=>{
    if(!box)return;
    let C=null;try{C=w.eval('C')}catch{}
    box.style.display='block';
-   box.innerHTML='<div style="max-width:820px;margin:26px auto 0;background:#07101d;border:1px solid #26364f;border-radius:14px;padding:18px"><div style="font-size:24px;font-weight:900;margin-bottom:6px">Ask Guru</div><div class="muted" style="margin-bottom:14px">'+(C?'League: '+C.league.name+' · '+C.my_team.team:'Choose a league from the sidebar first.')+'</div><textarea id="dashQuestion" placeholder="What do you want to know?" style="width:100%;min-height:120px;background:#0b1525;color:#fff;border:1px solid #40516b;border-radius:11px;padding:12px;font:inherit;resize:vertical"></textarea><div style="display:flex;justify-content:flex-end;margin-top:10px"><button id="dashAsk" style="background:#22c55e;color:#052e16;border:0;border-radius:10px;padding:10px 16px;font-weight:900;cursor:pointer">Ask Guru</button></div><div id="dashAnswer" style="display:none;white-space:pre-wrap;line-height:1.6;margin-top:14px;background:#0b1525;border:1px solid #26364f;border-radius:11px;padding:14px"></div></div>';
+   box.innerHTML='<div style="max-width:820px;margin:48px auto 0;background:#07101d;border:1px solid #26364f;border-radius:14px;padding:22px"><div style="font-size:28px;font-weight:900;margin-bottom:7px">Ask Guru</div><div class="muted" style="margin-bottom:16px">'+(C?'League: '+C.league.name+' · '+C.my_team.team:'Ask a general fantasy question, or choose a league from the sidebar for league-specific advice.')+'</div><textarea id="dashQuestion" placeholder="What do you want to know?" style="width:100%;min-height:130px;background:#0b1525;color:#fff;border:1px solid #40516b;border-radius:11px;padding:12px;font:inherit;resize:vertical"></textarea><div style="display:flex;justify-content:flex-end;margin-top:10px"><button id="dashAsk" style="background:#22c55e;color:#052e16;border:0;border-radius:10px;padding:10px 18px;font-weight:900;cursor:pointer">Ask Guru</button></div><div id="dashAnswer" style="display:none;white-space:pre-wrap;line-height:1.6;margin-top:14px;background:#0b1525;border:1px solid #26364f;border-radius:11px;padding:14px"></div></div>';
    const q=box.querySelector('#dashQuestion'),btn=box.querySelector('#dashAsk'),ans=box.querySelector('#dashAnswer');
-   btn.onclick=()=>{
-    if(!C){ans.style.display='block';ans.textContent='Choose a league from the sidebar first.';return}
+   btn.onclick=async()=>{
     const text=q.value.trim();if(!text)return;
+    ans.style.display='block';btn.disabled=true;ans.textContent='Guru is researching…';
+    if(!C){ans.textContent='Choose a league from the sidebar for league-specific Guru advice. You can still use the Ask Guru section after selecting a league.';btn.disabled=false;return}
     const originalQ=d.getElementById('question'),originalAsk=d.getElementById('ask'),originalAns=d.getElementById('answer');
-    if(!originalQ||!originalAsk){ans.style.display='block';ans.textContent='Ask Guru is unavailable right now.';return}
-    originalQ.value=text;ans.style.display='block';ans.textContent='Guru is researching…';btn.disabled=true;originalAsk.click();
-    const sync=()=>{if(originalAns&&!originalAns.classList.contains('hidden')){ans.textContent=originalAns.textContent||'';if(!btn.disabled)return;const t=originalAns.textContent||'';if(!t.includes('researching'))btn.disabled=false}};
+    if(!originalQ||!originalAsk){ans.textContent='Ask Guru is unavailable right now.';btn.disabled=false;return}
+    originalQ.value=text;originalAsk.click();
+    const sync=()=>{if(originalAns&&!originalAns.classList.contains('hidden')){const t=originalAns.textContent||'';ans.textContent=t;if(!t.includes('researching'))btn.disabled=false}};
     sync();const obs=new w.MutationObserver(sync);if(originalAns)obs.observe(originalAns,{childList:true,subtree:true,characterData:true,attributes:true});setTimeout(()=>{sync();obs.disconnect();btn.disabled=false},30000);
    };
   };
   render();
-  const sel=d.getElementById('desktopLeague');if(sel&&!sel.dataset.askPatch){sel.dataset.askPatch='1';sel.addEventListener('change',()=>setTimeout(render,120));}
-  const app=d.getElementById('app');if(app&&!app.dataset.askPatch){app.dataset.askPatch='1';new w.MutationObserver(()=>{try{const C=w.eval('C');if(C&&box&&!box.querySelector('#dashQuestion'))render()}catch{}}).observe(app,{childList:true,subtree:true});}
+  const sel=d.getElementById('desktopLeague');if(sel&&!sel.dataset.askPatch){sel.dataset.askPatch='1';sel.addEventListener('change',()=>{if(status)status.style.display='';setTimeout(render,160)});}
+  if(app&&!app.dataset.askPatch){app.dataset.askPatch='1';new w.MutationObserver(()=>{try{const C=w.eval('C');if(C)render()}catch{}}).observe(app,{childList:true,subtree:true});}
  };
  if(guru.contentDocument?.readyState==='complete')patch();guru.addEventListener('load',patch);setTimeout(patch,150);setTimeout(patch,600);
 }
