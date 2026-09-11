@@ -1,0 +1,30 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Fantasy Guru</title><style>html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#07101d}iframe{width:100%;height:100%;border:0;display:block}</style></head><body><iframe id="base" src="/desktop.html?patched=1"></iframe><script>
+const base=document.getElementById('base');
+function install(){
+ const bd=base.contentDocument;if(!bd)return;
+ const guru=bd.getElementById('guru');if(!guru){setTimeout(install,80);return}
+ const patch=()=>{
+  const d=guru.contentDocument,w=guru.contentWindow;if(!d||!w)return;
+  const oldLeague=[...d.querySelectorAll('.card')].find(x=>x.querySelector('h2')?.textContent.trim()==='My Leagues');
+  if(oldLeague)oldLeague.style.display='none';
+  const main=d.querySelector('main'),shell=d.querySelector('.desktopShell'),content=d.querySelector('.desktopMain');
+  if(main){const h1=content?.querySelector(':scope > h1');const p=h1?.nextElementSibling;if(h1)h1.style.display='none';if(p?.classList.contains('muted'))p.style.display='none'}
+  const box=d.getElementById('dashBox');
+  const render=()=>{
+   if(!box)return;
+   let C,a,m,wa,tr;try{C=w.eval('C');a=w.eval('analysis');m=w.eval('matchupData');wa=w.eval('waiverData');tr=w.eval('tradeData')}catch{return}
+   if(!C||!a)return;
+   const wk=a.weekly?.my_ranks?.overall??'—',ros=a.ros?.my_ranks?.overall??'—';
+   let match='<span class="muted">Live matchup loading…</span>';
+   if(m?.available)match='<div class="dashScore"><div><div class="team">'+m.you.team+'</div><div class="actual">'+Number(m.you.actual||0).toFixed(1)+'</div><div class="muted">Proj '+Number(m.you.projection||0).toFixed(1)+'</div></div><b>vs</b><div><div class="team">'+m.them.team+'</div><div class="actual">'+Number(m.them.actual||0).toFixed(1)+'</div><div class="muted">Proj '+Number(m.them.projection||0).toFixed(1)+'</div></div></div>';
+   const wr=(wa?.recommendations||[])[0],tt=(tr?.recommendations||[])[0];
+   box.innerHTML='<div class="dashCard dashHero"><div class="dashTitle">'+C.league.name+'</div><div class="dashMetric"><span>'+C.my_team.team+'</span><b>'+C.my_team.record.wins+'-'+C.my_team.record.losses+' · Week '+C.current_week+'</b></div></div><div class="dashCard dashMatch"><div class="dashTitle">This Week’s Matchup</div>'+match+'</div><div class="dashCard dashRoster"><div class="dashTitle">Championship Outlook</div><div class="dashMetric"><span>Weekly rank</span><b>#'+wk+' / '+C.league_teams.length+'</b></div><div class="dashMetric"><span>ROS rank</span><b>#'+ros+' / '+C.league_teams.length+'</b></div></div><div class="dashCard dashWaiver"><div class="dashTitle">Best Waiver Move</div>'+(wr?'<b class="dashGood">ADD '+wr.add.name+'</b><div class="muted">Drop '+wr.drop.name+'</div>':'<b>HOLD</b><div class="muted">No verified upgrade.</div>')+'</div><div class="dashCard dashTrade"><div class="dashTitle">Best Trade Opportunity</div>'+(tt?'<b class="dashGood">GET '+tt.you_receive.map(p=>p.name).join(' + ')+'</b><div class="muted">Send '+tt.you_send.map(p=>p.name).join(' + ')+'</div>':'<b>HOLD</b><div class="muted">No realistic edge found.</div>')+'</div><div class="dashCard dashPower"><div class="dashTitle">ROS Power</div><div style="font-size:25px;font-weight:950">#'+ros+'</div><div class="muted">League rank</div></div>';
+  };
+  render();
+  const app=d.getElementById('app');if(app&&!app.dataset.dashPatch){app.dataset.dashPatch='1';new w.MutationObserver(render).observe(app,{childList:true,subtree:true,characterData:true})}
+  const sel=d.getElementById('desktopLeague');if(sel){try{const C=w.eval('C');if(C){const opts=[...sel.options];const i=opts.findIndex(o=>o.textContent.includes(C.league?.name||''));if(i>=0)sel.selectedIndex=i}}catch{}}
+ };
+ if(guru.contentDocument?.readyState==='complete')patch();guru.addEventListener('load',patch);setTimeout(patch,150);setTimeout(patch,600);
+}
+base.addEventListener('load',install);if(base.contentDocument?.readyState==='complete')install();
+</script></body></html>
