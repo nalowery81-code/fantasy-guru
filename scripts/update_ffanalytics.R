@@ -161,7 +161,7 @@ for (i in seq_len(nrow(keys))) {
 }
 
 out <- list(
-  schema_version = "2.1-independent",
+  schema_version = "2.0",
   season = season,
   generated_at = format(Sys.time(), tz = "UTC", usetz = TRUE),
   source = "ffanalytics independent crowd consensus",
