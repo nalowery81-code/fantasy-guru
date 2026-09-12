@@ -1,11 +1,27 @@
-/* Matchup readability polish: fold status into player column, reclaim width, actionable insight cards, visible IR. */
+/* Matchup readability polish: player-first rows, full-width intel, actionable insight cards, visible IR. */
 function fg12PolishMatchup(){
-  document.querySelectorAll('.fg10ColHead').forEach(h=>{const c=[...h.children];if(c[2]?.textContent?.trim()==='STATUS')c[2].remove()});
-  document.querySelectorAll('.fg10PlayerMain').forEach(r=>{
-    const c=[...r.children],id=r.querySelector('.fg10Identity');
-    if(c.length>=8&&id&&c[2]?.querySelector('.fg10Status')){const badge=c[2].querySelector('.fg10Status');const name=id.querySelector('b');if(name&&!id.querySelector('.fg12StatusWrap')){const w=document.createElement('span');w.className='fg12StatusWrap';w.appendChild(badge);name.insertAdjacentElement('afterend',w)}c[2].remove()}
+  document.querySelectorAll('.fg10ColHead').forEach(h=>{
+    [...h.children].forEach(c=>{const t=String(c.textContent||'').trim().toUpperCase();if(t==='STATUS'||t==='INTEL')c.remove()});
   });
-  document.querySelectorAll('.fg10Slot').forEach(s=>{const v=String(s.textContent||'').trim().toUpperCase();if(v==='SUPER_FLEX'||v==='SUPER FLEX'){s.innerHTML='SUPER<br>FLEX';s.classList.add('fg12SuperFlex')}});
+  document.querySelectorAll('.fg10PlayerMain').forEach(r=>{
+    const player=r.closest('.fg10Player'),id=r.querySelector('.fg10Identity');
+    if(!player||!id)return;
+    const status=r.querySelector('.fg10Status');
+    if(status&&!id.querySelector('.fg12StatusWrap')){
+      const w=document.createElement('span');w.className='fg12StatusWrap';w.appendChild(status);const name=id.querySelector('b');if(name)name.insertAdjacentElement('afterend',w);
+    }
+    const oldStatusCell=[...r.children].find(c=>c!==id&&c.querySelector?.('.fg10Status'));if(oldStatusCell)oldStatusCell.remove();
+    const intel=r.querySelector('.fg10Intel');
+    if(intel&&!player.querySelector('.fg12IntelBar')){
+      const full=player.querySelector('.fg10Detail>div:first-child span')?.textContent?.trim()||intel.querySelector('b')?.textContent?.trim()||'No reliable current context found.';
+      const meta=intel.querySelector('small')?.textContent?.trim()||'';
+      const bar=document.createElement('div');bar.className='fg12IntelBar';bar.title='Click for projection context';
+      const text=document.createElement('span');text.className='fg12IntelText';text.textContent=full;
+      const info=document.createElement('span');info.className='fg12IntelMeta';info.textContent=meta;
+      bar.append(text,info);bar.onclick=()=>player.classList.toggle('open');r.insertAdjacentElement('afterend',bar);intel.remove();
+    }
+    const slot=r.querySelector('.fg10Slot'),v=String(slot?.textContent||'').trim().toUpperCase();if(slot&&(v==='SUPER_FLEX'||v==='SUPER FLEX')){slot.innerHTML='SUPER<br>FLEX';slot.classList.add('fg12SuperFlex')}
+  });
 }
 function fg12TeamCard(title,teamData,team,intel){
   const maps=fg10Maps(team,intel),starters=teamData?.lineup||[],allBench=teamData?.bench||[],bench=[],ir=[];
@@ -15,8 +31,7 @@ function fg12TeamCard(title,teamData,team,intel){
 function fg12ProjectionDetail(){
   const d=matchupData;if(!d?.available)return;
   const alerts=document.querySelector('.fg10Alerts');if(!alerts)return;
-  let box=document.querySelector('.fg12InsightDetail');
-  if(box){box.remove();return}
+  let box=document.querySelector('.fg12InsightDetail');if(box){box.remove();return}
   const edge=Number(d.you?.projection||0)-Number(d.them?.projection||0),live=Number(d.you?.actual||0)-Number(d.them?.actual||0);
   box=document.createElement('div');box.className='fg12InsightDetail';box.innerHTML=`<div><b>Projected matchup</b><span>${esc(d.you.team)} ${Number(d.you.projection||0).toFixed(1)} · ${esc(d.them.team)} ${Number(d.them.projection||0).toFixed(1)}</span></div><div><b>Projected edge</b><span>${edge>=0?esc(d.you.team):esc(d.them.team)} by ${Math.abs(edge).toFixed(1)} points</span></div><div><b>Live scoring edge</b><span>${live===0?'Tied right now':`${live>0?esc(d.you.team):esc(d.them.team)} by ${Math.abs(live).toFixed(1)} points`}</span></div>`;alerts.insertAdjacentElement('afterend',box)
 }
@@ -32,13 +47,17 @@ function fg12WireAlerts(){
 (function(){
   fg10TeamCard=fg12TeamCard;
   const s=document.createElement('style');s.textContent=`
-    .fg10ColHead,.fg10PlayerMain{grid-template-columns:42px minmax(190px,1.45fr) 42px 48px 54px minmax(220px,1.9fr) 18px!important}
-    .fg12StatusWrap{display:inline-flex;margin-left:7px;vertical-align:middle}.fg10Identity>b{display:inline!important}.fg10Identity{min-width:0}.fg10Identity small{display:block!important}.fg10Intel{min-width:0;padding-left:12px!important}.fg10ColHead>span:nth-child(6){padding-left:12px!important}
+    .fg10ColHead,.fg10PlayerMain{grid-template-columns:42px minmax(200px,1fr) 46px 52px 60px 18px!important;gap:7px!important}
+    .fg10ColHead{align-items:center}.fg10PlayerMain{align-items:center;padding-bottom:5px!important}
+    .fg12StatusWrap{display:inline-flex;margin-left:7px;vertical-align:middle}.fg10Identity>b{display:inline!important}.fg10Identity{min-width:0}.fg10Identity small{display:block!important}.fg10Status{vertical-align:1px}
+    .fg12IntelBar{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin:0 8px 7px 58px;padding:6px 9px;border-radius:7px;background:#0a2034;border:1px solid #173651;color:#c8d7e7;cursor:pointer;line-height:1.35}
+    .fg12IntelBar:hover{border-color:#2d5e86;background:#0c263d}.fg12IntelText{font-size:10px;white-space:normal;overflow:visible;min-width:0;flex:1}.fg12IntelMeta{font-size:8.5px;color:#79bfe6;white-space:nowrap;flex:0 0 auto;padding-top:1px}
     .fg12SuperFlex{line-height:1.02!important;text-align:left}.fg12IRLabel{background:#241737!important;color:#e9d5ff!important}
-    body.fg11Focus .fg10ColHead,body.fg11Focus .fg10PlayerMain{grid-template-columns:52px minmax(235px,1.5fr) 46px 52px 58px minmax(330px,2.15fr) 22px!important;gap:7px!important}
-    body.fg11Focus .fg12StatusWrap{margin-left:8px}.fg10Status{vertical-align:1px}.fg12Clickable{cursor:pointer!important;transition:border-color .15s ease,background .15s ease}.fg12Clickable:hover{border-color:#3d82b5!important;background:#0c1d30!important}.fg12Clickable:focus-visible{outline:2px solid #38bdf8;outline-offset:2px}.fg12InsightDetail{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:-1px 0 8px;padding:8px 10px;border:1px solid #2e4a67;border-radius:8px;background:#091827}.fg12InsightDetail>div{display:grid;gap:2px}.fg12InsightDetail b{font-size:10px;color:#7dd3fc}.fg12InsightDetail span{font-size:10px;color:#c4d3e4}.fg12Flagged{box-shadow:inset 0 0 0 2px #fbbf24!important;background:#2b2210!important}
-    @media(max-width:1450px){body.fg11Focus .fg10ColHead,body.fg11Focus .fg10PlayerMain{grid-template-columns:46px minmax(190px,1.35fr) 44px 50px 56px minmax(235px,1.7fr) 18px!important;gap:6px!important}.fg10Intel{padding-left:10px!important}.fg10ColHead>span:nth-child(6){padding-left:10px!important}}
-    @media(max-width:1180px){.fg10ColHead,.fg10PlayerMain{grid-template-columns:40px minmax(165px,1.25fr) 42px 48px 52px minmax(170px,1.5fr) 16px!important}.fg12InsightDetail{grid-template-columns:1fr}}
+    body.fg11Focus .fg10ColHead,body.fg11Focus .fg10PlayerMain{grid-template-columns:52px minmax(260px,1fr) 52px 60px 70px 22px!important;gap:8px!important}
+    body.fg11Focus .fg12StatusWrap{margin-left:8px}body.fg11Focus .fg12IntelBar{margin-left:68px;margin-right:10px;padding:7px 10px;gap:16px}body.fg11Focus .fg12IntelText{font-size:11.5px;line-height:1.4}body.fg11Focus .fg12IntelMeta{font-size:9.5px}
+    .fg12Clickable{cursor:pointer!important;transition:border-color .15s ease,background .15s ease}.fg12Clickable:hover{border-color:#3d82b5!important;background:#0c1d30!important}.fg12Clickable:focus-visible{outline:2px solid #38bdf8;outline-offset:2px}.fg12InsightDetail{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:-1px 0 8px;padding:8px 10px;border:1px solid #2e4a67;border-radius:8px;background:#091827}.fg12InsightDetail>div{display:grid;gap:2px}.fg12InsightDetail b{font-size:10px;color:#7dd3fc}.fg12InsightDetail span{font-size:10px;color:#c4d3e4}.fg12Flagged{box-shadow:inset 0 0 0 2px #fbbf24!important;background:#2b2210!important}
+    @media(max-width:1450px){body.fg11Focus .fg10ColHead,body.fg11Focus .fg10PlayerMain{grid-template-columns:46px minmax(205px,1fr) 46px 54px 62px 18px!important;gap:6px!important}body.fg11Focus .fg12IntelBar{margin-left:58px}.fg12IntelMeta{white-space:normal;text-align:right}}
+    @media(max-width:1180px){.fg10Teams{grid-template-columns:1fr!important}.fg10ColHead,.fg10PlayerMain{grid-template-columns:40px minmax(190px,1fr) 44px 50px 56px 16px!important}.fg12IntelBar{margin-left:54px}.fg12InsightDetail{grid-template-columns:1fr}}
   `;document.head.appendChild(s);
   const base=renderMatchup;renderMatchup=async function(){const out=await base();fg12PolishMatchup();fg12WireAlerts();return out};
   if(currentView==='matchup')setTimeout(()=>{fg12PolishMatchup();fg12WireAlerts()},0);
