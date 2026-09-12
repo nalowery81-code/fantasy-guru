@@ -8,7 +8,8 @@
     body:not(.fg11NavHidden) .sidebar{transition:left .18s ease!important}
     #fg11NavShow,#fg11GuruShow{position:fixed;z-index:120;border:1px solid #3974a3;background:#0a1a2a;color:#d9f2ff;border-radius:9px;font-weight:900;box-shadow:0 5px 18px rgba(0,0,0,.28)}
     #fg11NavShow{left:9px;top:9px;padding:8px 10px;font-size:12px}
-    #fg11GuruShow{right:10px;top:74px;padding:8px 11px;font-size:12px}
+    #fg11GuruShow{right:12px;top:74px;padding:10px 14px;font-size:13px;background:#102a43;border-color:#38bdf8;color:#f0f9ff;letter-spacing:.1px}
+    #fg11GuruShow:hover{background:#153a59;border-color:#67e8f9;transform:translateY(-1px)}
     body:not(.fg11NavHidden) #fg11NavShow,body:not(.fg11GuruHidden) #fg11GuruShow{display:none!important}
     #fg11NavHide{margin:0 0 8px;width:100%;border:1px solid #334b68;background:#101d30;color:#d6e7f8;border-radius:8px;padding:7px;font-weight:850;font-size:11px}
     #fg11GuruHide{border:1px solid #315b7f;background:#0b1b2c;color:#d6efff;border-radius:7px;padding:5px 8px;font-size:9px;font-weight:900}
@@ -50,7 +51,8 @@
   function boolSave(k,v){try{localStorage.setItem(k,v?'1':'0')}catch{}}
   function ensureButtons(){
     if(!$('fg11NavShow')){const b=document.createElement('button');b.id='fg11NavShow';b.textContent='☰ Menu';b.onclick=()=>setNav(false,true);document.body.appendChild(b)}
-    if(!$('fg11GuruShow')){const b=document.createElement('button');b.id='fg11GuruShow';b.textContent='🧠 Guru';b.onclick=()=>setGuru(false,true);document.body.appendChild(b)}
+    if(!$('fg11GuruShow')){const b=document.createElement('button');b.id='fg11GuruShow';b.textContent='🧠 Ask Guru';b.setAttribute('aria-label','Open Ask Guru');b.onclick=()=>setGuru(false,true);document.body.appendChild(b)}
+    else $('fg11GuruShow').textContent='🧠 Ask Guru';
     const side=document.querySelector('.sidebar');if(side&&!$('fg11NavHide')){const b=document.createElement('button');b.id='fg11NavHide';b.textContent='← Hide menu';b.onclick=()=>setNav(true,true);side.insertBefore(b,side.firstChild)}
     const head=document.querySelector('.fg7GuruHead');if(head&&!$('fg11GuruHide')){const b=document.createElement('button');b.id='fg11GuruHide';b.textContent='Hide';b.onclick=()=>setGuru(true,true);head.appendChild(b)}
   }
@@ -59,7 +61,7 @@
   function applyView(v){
     ensureButtons();const focus=v==='matchup';document.body.classList.toggle('fg11Focus',focus);
     if(focus){setNav(boolRead(LS_NAV,true));setGuru(boolRead(LS_GURU,true))}
-    else{setNav(boolRead(LS_NAV,false));setGuru(boolRead(LS_GURU,false))}
+    else{setNav(false);setGuru(false)}
   }
   const baseShow=showView;showView=function(v){const out=baseShow(v);applyView(v);return out};
   const baseShell=renderShell;renderShell=function(idx){const out=baseShell(idx);setTimeout(()=>applyView(currentView||'dashboard'),0);return out};
