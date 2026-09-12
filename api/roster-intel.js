@@ -16,6 +16,7 @@ export default async function handler(req,res){
       'Do not pretend old information is recent news. CURRENT OUTLOOK may use broader current-season context when necessary.',
       'Do not invent injuries, roles, rumors, usage, or quotes. If reliable context truly cannot be established, use intel_type CURRENT OUTLOOK and say Reliable current role context was not found.',
       'Keep each intel field concise but useful, maximum 34 words.',
+      'IMPORTANT: intel must contain plain prose only. Do not put URLs, markdown links, citations, source domains, parentheses containing links, or utm parameters inside intel.',
       'Return this exact shape: {"players":[{"name":"...","position":"...","injury_status":"ACTIVE or supplied designation","intel_type":"RECENT NEWS or CURRENT OUTLOOK","intel":"..."}],"generated_at":"ISO timestamp"}.',
       'Include every supplied roster player exactly once and preserve the supplied player names.'
     ].join('\n');
@@ -37,8 +38,16 @@ export default async function handler(req,res){
     if(!text&&Array.isArray(d.output))text=d.output.flatMap(x=>x.content||[]).map(x=>x.text||'').filter(Boolean).join('\n');
     text=text.trim().replace(/^```(?:json)?\s*/i,'').replace(/\s*```$/,'');
     let parsed;try{parsed=JSON.parse(text)}catch{return res.status(502).json({error:'Roster intel returned invalid JSON'})}
+    const cleanIntel=s=>String(s||'')
+      .replace(/\[([^\]]+)\]\(https?:\/\/[^)]+\)/gi,'$1')
+      .replace(/\(\[?[^\])]{1,80}\]?\]\(https?:\/\/[^)]+\)\)/gi,'')
+      .replace(/\(https?:\/\/[^)]+\)/gi,'')
+      .replace(/https?:\/\/\S+/gi,'')
+      .replace(/\(\s*\)/g,'')
+      .replace(/\s{2,}/g,' ')
+      .trim();
     const byName=new Map((parsed.players||[]).map(x=>[String(x.name||'').toLowerCase(),x]));
-    const players=roster.map(p=>{const hit=byName.get(String(p.name||'').toLowerCase())||{};return{name:p.name,position:p.position||hit.position||'',injury_status:p.injury_status||hit.injury_status||'ACTIVE',intel_type:hit.intel_type==='RECENT NEWS'?'RECENT NEWS':'CURRENT OUTLOOK',intel:hit.intel||hit.news||'Reliable current role context was not found.'}});
+    const players=roster.map(p=>{const hit=byName.get(String(p.name||'').toLowerCase())||{},intel=cleanIntel(hit.intel||hit.news||'Reliable current role context was not found.');return{name:p.name,position:p.position||hit.position||'',injury_status:p.injury_status||hit.injury_status||'ACTIVE',intel_type:hit.intel_type==='RECENT NEWS'?'RECENT NEWS':'CURRENT OUTLOOK',intel:intel||'Reliable current role context was not found.'}});
     return res.json({players,generated_at:new Date().toISOString()});
   }catch(e){return res.status(500).json({error:e.message})}
 }
