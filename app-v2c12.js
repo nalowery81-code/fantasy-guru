@@ -33,11 +33,11 @@ function fg12WireAlerts(){
   fg10TeamCard=fg12TeamCard;
   const s=document.createElement('style');s.textContent=`
     .fg10ColHead,.fg10PlayerMain{grid-template-columns:42px minmax(190px,1.45fr) 42px 48px 54px minmax(220px,1.9fr) 18px!important}
-    .fg12StatusWrap{display:inline-flex;margin-left:7px;vertical-align:middle}.fg10Identity>b{display:inline!important}.fg10Identity{min-width:0}.fg10Identity small{display:block!important}.fg10Intel{min-width:0}
+    .fg12StatusWrap{display:inline-flex;margin-left:7px;vertical-align:middle}.fg10Identity>b{display:inline!important}.fg10Identity{min-width:0}.fg10Identity small{display:block!important}.fg10Intel{min-width:0;padding-left:12px!important}.fg10ColHead>span:nth-child(6){padding-left:12px!important}
     .fg12SuperFlex{line-height:1.02!important;text-align:left}.fg12IRLabel{background:#241737!important;color:#e9d5ff!important}
     body.fg11Focus .fg10ColHead,body.fg11Focus .fg10PlayerMain{grid-template-columns:52px minmax(235px,1.5fr) 46px 52px 58px minmax(330px,2.15fr) 22px!important;gap:7px!important}
     body.fg11Focus .fg12StatusWrap{margin-left:8px}.fg10Status{vertical-align:1px}.fg12Clickable{cursor:pointer!important;transition:border-color .15s ease,background .15s ease}.fg12Clickable:hover{border-color:#3d82b5!important;background:#0c1d30!important}.fg12Clickable:focus-visible{outline:2px solid #38bdf8;outline-offset:2px}.fg12InsightDetail{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:-1px 0 8px;padding:8px 10px;border:1px solid #2e4a67;border-radius:8px;background:#091827}.fg12InsightDetail>div{display:grid;gap:2px}.fg12InsightDetail b{font-size:10px;color:#7dd3fc}.fg12InsightDetail span{font-size:10px;color:#c4d3e4}.fg12Flagged{box-shadow:inset 0 0 0 2px #fbbf24!important;background:#2b2210!important}
-    @media(max-width:1450px){body.fg11Focus .fg10ColHead,body.fg11Focus .fg10PlayerMain{grid-template-columns:46px minmax(190px,1.35fr) 44px 50px 56px minmax(235px,1.7fr) 18px!important;gap:6px!important}}
+    @media(max-width:1450px){body.fg11Focus .fg10ColHead,body.fg11Focus .fg10PlayerMain{grid-template-columns:46px minmax(190px,1.35fr) 44px 50px 56px minmax(235px,1.7fr) 18px!important;gap:6px!important}.fg10Intel{padding-left:10px!important}.fg10ColHead>span:nth-child(6){padding-left:10px!important}}
     @media(max-width:1180px){.fg10ColHead,.fg10PlayerMain{grid-template-columns:40px minmax(165px,1.25fr) 42px 48px 52px minmax(170px,1.5fr) 16px!important}.fg12InsightDetail{grid-template-columns:1fr}}
   `;document.head.appendChild(s);
   const base=renderMatchup;renderMatchup=async function(){const out=await base();fg12PolishMatchup();fg12WireAlerts();return out};
