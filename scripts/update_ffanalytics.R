@@ -10,10 +10,11 @@ suppressPackageStartupMessages({
 season <- as.integer(format(Sys.Date(), "%Y"))
 if (season < 2026) season <- 2026L
 
-# FantasyPros stays excluded. Each publisher is attempted independently so one
-# broken scraper cannot wipe out the daily dataset.
+# FantasyPros stays excluded. ESPN is also intentionally excluded here because
+# Fantasy Guru already consumes ESPN directly as its own independent projection
+# pillar. Keeping ESPN out prevents double-counting ESPN inside the crowd source.
 sources <- c(
-  "CBS", "ESPN", "FantasySharks", "FFToday", "FleaFlicker",
+  "CBS", "FantasySharks", "FFToday", "FleaFlicker",
   "NumberFire", "Yahoo", "NFL", "RTSports", "Walterfootball"
 )
 positions <- c("QB", "RB", "WR", "TE", "K", "DST")
@@ -32,7 +33,7 @@ stat_whitelist <- c(
 )
 
 message("Fantasy Guru ffanalytics refresh for season ", season)
-message("Sources: ", paste(sources, collapse = ", "))
+message("Independent crowd sources (ESPN excluded): ", paste(sources, collapse = ", "))
 
 scrapes <- list()
 working_sources <- character()
@@ -93,9 +94,6 @@ for (pos in names(scrapes)) {
 stat_long <- bind_rows(stat_rows)
 if (!nrow(stat_long)) stop("No usable projected stat rows were produced; leaving existing JSON untouched.")
 
-# ffanalytics' current player_table uses first_name + last_name rather than a
-# single name field. Preserve that human-readable identity so Fantasy Guru can
-# join through normalized name + position when GSIS/ESPN IDs are unavailable.
 player_table <- tryCatch(get("player_table", envir = asNamespace("ffanalytics")), error = function(e) NULL)
 if (is.null(player_table) || !nrow(player_table)) player_table <- tibble(id = unique(stat_long$id))
 
@@ -126,8 +124,6 @@ meta$position <- if (!is.na(pos_col)) as.character(player_table[[pos_col]]) else
 meta$gsis_id <- if (!is.na(gsis_col)) as.character(player_table[[gsis_col]]) else NA_character_
 meta$espn_id <- if (!is.na(espn_col)) as.character(player_table[[espn_col]]) else NA_character_
 meta <- meta %>% distinct(id, .keep_all = TRUE)
-
-message("Player metadata rows: ", nrow(meta), "; named rows: ", sum(!is.na(meta$name) & meta$name != ""))
 
 default_pts <- source_pts %>%
   group_by(id, pos) %>%
@@ -165,19 +161,20 @@ for (i in seq_len(nrow(keys))) {
 }
 
 out <- list(
-  schema_version = "2.0",
+  schema_version = "2.1-independent",
   season = season,
   generated_at = format(Sys.time(), tz = "UTC", usetz = TRUE),
-  source = "ffanalytics",
+  source = "ffanalytics independent crowd consensus",
   projection_type = "season_projection_stats",
   scoring_basis = "unscored source-stat consensus; score at request time with exact league rules",
   averaging_rule = "equal_weight_by_stat",
   requested_sources = sources,
   working_sources = unique(working_sources),
   failed_sources = unique(failed_sources),
+  excluded_sources = c("ESPN", "FantasyPros"),
   players = players
 )
 
 dir.create("data", recursive = TRUE, showWarnings = FALSE)
 jsonlite::write_json(out, "data/ffanalytics_projections.json", pretty = TRUE, auto_unbox = TRUE, null = "null", na = "null")
-message("Wrote ", length(players), " players with rescorable consensus stats from ", length(unique(working_sources)), " working sources.")
+message("Wrote ", length(players), " players with independent rescorable consensus stats from ", length(unique(working_sources)), " working sources.")
