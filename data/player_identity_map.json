@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-09-11T13:31:51.343Z",
+  "generated_at": "2026-09-12T12:49:57.272Z",
   "source": "Sleeper master player endpoint",
   "player_count": 4264,
   "canonical_id_rule": "GSIS when available, otherwise Sleeper ID, otherwise ESPN ID",
@@ -14,7 +14,7 @@
       "sleeper_id": "5859",
       "espn_id": "4047646",
       "gsis_id": "00-0035676",
-      "status": "Active",
+      "status": "Inactive",
       "active": true
     },
     {
@@ -3622,7 +3622,7 @@
       "name": "Ben Sims",
       "normalized_name": "bensims",
       "position": "TE",
-      "team": "MIA",
+      "team": null,
       "sleeper_id": "11082",
       "espn_id": null,
       "gsis_id": null,
@@ -43558,7 +43558,7 @@
       "name": "Sean McKeon",
       "normalized_name": "seanmckeon",
       "position": "TE",
-      "team": "IND",
+      "team": null,
       "sleeper_id": "6964",
       "espn_id": "4036275",
       "gsis_id": null,
@@ -50434,7 +50434,7 @@
       "name": "Xavier Gipson",
       "normalized_name": "xaviergipson",
       "position": "WR",
-      "team": null,
+      "team": "PHI",
       "sleeper_id": "11306",
       "espn_id": null,
       "gsis_id": null,
