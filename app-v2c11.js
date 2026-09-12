@@ -2,7 +2,8 @@
 (function(){
   const LS_NAV='fg-ui-nav-hidden-v1',LS_GURU='fg-ui-guru-hidden-v1';
   const style=document.createElement('style');style.textContent=`
-    body.fg11NavHidden #shell{grid-template-columns:0 minmax(0,1fr)!important}
+    body.fg11NavHidden #shell{display:block!important;min-height:100vh!important}
+    body.fg11NavHidden .main{width:100%!important;max-width:none!important;margin:0!important}
     body.fg11NavHidden .sidebar{position:fixed!important;left:-230px!important;top:0!important;width:205px!important;z-index:90!important;transition:left .18s ease!important;box-shadow:8px 0 25px rgba(0,0,0,.35)}
     body:not(.fg11NavHidden) .sidebar{transition:left .18s ease!important}
     #fg11NavShow,#fg11GuruShow{position:fixed;z-index:120;border:1px solid #3974a3;background:#0a1a2a;color:#d9f2ff;border-radius:9px;font-weight:900;box-shadow:0 5px 18px rgba(0,0,0,.28)}
