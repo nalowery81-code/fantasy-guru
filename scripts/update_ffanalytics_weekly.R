@@ -13,24 +13,14 @@ state <- tryCatch(jsonlite::fromJSON("https://api.sleeper.app/v1/state/nfl"), er
 week <- if (!is.null(state) && !is.null(state$week)) as.integer(state$week) else NA_integer_
 if (is.na(week) || week < 1L || week > 18L) stop("Could not determine current NFL week; leaving existing weekly JSON untouched.")
 
-# IMPORTANT: the ROS refresh runs immediately before this script in the same
-# GitHub Actions job. ffanalytics caches projected-stat scrapes for about an hour,
-# and some cache objects are source-based rather than safely separated by horizon.
-# Without clearing the cache here, a weekly request can reuse the just-created
-# season/ROS scrape (CBS/NFL were observed doing exactly that), which inflates
-# weekly player values by roughly a season's worth of stats.
-# Weekly and ROS must always be separate raw provider pulls.
 tryCatch(
   ffanalytics::clear_ffanalytics_cache(),
   error=function(e) message("Could not clear ffanalytics cache before weekly scrape: ", conditionMessage(e))
 )
 
-# Only request publishers intended to provide WEEKLY projections.
-# Seasonal-only sources (RTSports, Walterfootball) are intentionally excluded.
-# FantasyPros remains excluded by product policy. Yahoo is not a supported
-# ffanalytics src value in the current package, so it is omitted rather than
-# counted as a failed source.
-sources <- c("CBS", "ESPN", "FantasySharks", "FFToday", "FleaFlicker", "NumberFire", "NFL")
+# ESPN is intentionally excluded here because Fantasy Guru consumes ESPN directly
+# as a separate projection pillar. FantasyPros remains excluded by product policy.
+sources <- c("CBS", "FantasySharks", "FFToday", "FleaFlicker", "NumberFire", "NFL")
 positions <- c("QB", "RB", "WR", "TE", "K", "DST")
 stat_whitelist <- c(
   "pass_att","pass_comp","pass_inc","pass_yds","pass_tds","pass_int","pass_40_yds","pass_300_yds","pass_350_yds","pass_400_yds","pass_2pt",
@@ -41,6 +31,7 @@ stat_whitelist <- c(
 )
 
 message("Fantasy Guru ffanalytics weekly refresh for season ", season, " week ", week)
+message("Independent weekly crowd sources (ESPN excluded): ", paste(sources, collapse=", "))
 scrapes <- list(); working_sources <- character(); failed_sources <- character()
 for (src in sources) {
   message("Scraping weekly ", src, "...")
@@ -97,7 +88,7 @@ for(i in seq_len(nrow(keys))){
   players[[i]] <- list(name=nm,position=ppos,gsis_id=if(nrow(m)&&!is.na(m$gsis_id[[1]])&&m$gsis_id[[1]]!="")m$gsis_id[[1]] else NULL,sleeper_id=NULL,espn_id=if(nrow(m)&&!is.na(m$espn_id[[1]])&&m$espn_id[[1]]!="")m$espn_id[[1]] else NULL,consensus_stats=as.list(setNames(s$value,s$stat)),stat_source_counts=as.list(setNames(s$source_count,s$stat)),default_scoring_points=if(nrow(d)&&is.finite(d$default_scoring_points[[1]]))d$default_scoring_points[[1]] else NULL,source_count=if(nrow(d))d$source_count[[1]] else max(s$source_count,na.rm=TRUE),sources=if(nrow(d))d$sources[[1]] else character())
 }
 
-out <- list(schema_version="2.0",season=season,week=week,generated_at=format(Sys.time(),tz="UTC",usetz=TRUE),source="ffanalytics",projection_type="weekly_projection_stats",scoring_basis="unscored source-stat consensus; score at request time with exact league rules",averaging_rule="equal_weight_by_stat",requested_sources=sources,working_sources=unique(working_sources),failed_sources=unique(failed_sources),players=players)
+out <- list(schema_version="2.0",season=season,week=week,generated_at=format(Sys.time(),tz="UTC",usetz=TRUE),source="ffanalytics independent crowd consensus",projection_type="weekly_projection_stats",scoring_basis="unscored source-stat consensus; score at request time with exact league rules",averaging_rule="equal_weight_by_stat",requested_sources=sources,working_sources=unique(working_sources),failed_sources=unique(failed_sources),excluded_sources=c("ESPN","FantasyPros"),players=players)
 dir.create("data",recursive=TRUE,showWarnings=FALSE)
 jsonlite::write_json(out,"data/ffanalytics_weekly.json",pretty=TRUE,auto_unbox=TRUE,null="null",na="null")
-message("Wrote ",length(players)," weekly players from ",length(unique(working_sources))," working sources.")
+message("Wrote ",length(players)," weekly players from ",length(unique(working_sources))," independent working sources.")
