@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-09-12T12:49:57.272Z",
+  "generated_at": "2026-09-13T13:47:10.501Z",
   "source": "Sleeper master player endpoint",
   "player_count": 4264,
   "canonical_id_rule": "GSIS when available, otherwise Sleeper ID, otherwise ESPN ID",
@@ -2786,7 +2786,7 @@
       "sleeper_id": "11579",
       "espn_id": null,
       "gsis_id": null,
-      "status": "Active",
+      "status": "Inactive",
       "active": true
     },
     {
@@ -16586,7 +16586,7 @@
       "sleeper_id": "13349",
       "espn_id": null,
       "gsis_id": null,
-      "status": "Active",
+      "status": "Inactive",
       "active": true
     },
     {
@@ -22246,7 +22246,7 @@
       "name": "Jamari Thrash",
       "normalized_name": "jamarithrash",
       "position": "WR",
-      "team": "CLE",
+      "team": null,
       "sleeper_id": "11633",
       "espn_id": null,
       "gsis_id": null,
@@ -24358,7 +24358,7 @@
       "name": "Jermar Jefferson",
       "normalized_name": "jermarjefferson",
       "position": "RB",
-      "team": "MIN",
+      "team": null,
       "sleeper_id": "7599",
       "espn_id": null,
       "gsis_id": null,
@@ -33230,7 +33230,7 @@
       "sleeper_id": "8800",
       "espn_id": null,
       "gsis_id": null,
-      "status": "Active",
+      "status": "Inactive",
       "active": true
     },
     {
@@ -36514,7 +36514,7 @@
       "name": "Miller Moss",
       "normalized_name": "millermoss",
       "position": "QB",
-      "team": null,
+      "team": "CHI",
       "sleeper_id": "13310",
       "espn_id": null,
       "gsis_id": null,
@@ -46850,7 +46850,7 @@
       "sleeper_id": "4351",
       "espn_id": "3134353",
       "gsis_id": "00-0033375",
-      "status": "Active",
+      "status": "Inactive",
       "active": true
     },
     {
