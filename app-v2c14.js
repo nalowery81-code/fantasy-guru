@@ -9,9 +9,9 @@
     if(typeof fg12WireAlerts==='function')fg12WireAlerts();
   }
   function paint(d,youTeam,themTeam,intels,refreshing){
-    const teams={you:youTeam,them:themTeam},edge=Number(d.you?.projection||0)-Number(d.them?.projection||0),edgeTxt=`${edge>=0?'+':''}${edge.toFixed(1)} projected ${edge>=0?'advantage':'deficit'}`;
+    const teams={you:youTeam,them:themTeam},edge=Number(d.you?.projection||0)-Number(d.them?.projection||0),edgeTxt=`${edge>=0?'+':''}${edge.toFixed(1)} live projected ${edge>=0?'advantage':'deficit'}`;
     const freshNote=refreshing?'<span class="fg14Refreshing">Updating uncached intel…</span>':'';
-    $('content').innerHTML=`<div class="fg10Wrap"><div class="fg10Title"><div><h2>⚔️ Matchup Center</h2><span>Live score, projections and cached player intel for both teams. ${freshNote}</span></div><b>Week ${esc(C.current_week)}</b></div><section class="fg10Score"><div><b>${esc(d.you.team)}</b><strong>${Number(d.you.actual||0).toFixed(1)}</strong><small>Proj ${Number(d.you.projection||0).toFixed(1)}</small></div><span>VS</span><div><b>${esc(d.them.team)}</b><strong>${Number(d.them.actual||0).toFixed(1)}</strong><small>Proj ${Number(d.them.projection||0).toFixed(1)}</small></div><em class="${edge>=0?'good':'bad'}">${esc(edgeTxt)}</em></section>${fg10AlertHTML(d,teams,intels)}<div class="fg10Teams">${fg10TeamCard(d.you.team,d.you,youTeam,intels.you)}${fg10TeamCard(d.them.team,d.them,themTeam,intels.them)}</div></div>`;
+    $('content').innerHTML=`<div class="fg10Wrap"><div class="fg10Title"><div><h2>⚔️ Matchup Center</h2><span>Live score, live projected finish and cached player intel for both teams. ${freshNote}</span></div><b>Week ${esc(C.current_week)}</b></div><section class="fg10Score"><div><b>${esc(d.you.team)}</b><strong>${Number(d.you.actual||0).toFixed(1)}</strong><small>Live Proj ${Number(d.you.projection||0).toFixed(1)}</small></div><span>VS</span><div><b>${esc(d.them.team)}</b><strong>${Number(d.them.actual||0).toFixed(1)}</strong><small>Live Proj ${Number(d.them.projection||0).toFixed(1)}</small></div><em class="${edge>=0?'good':'bad'}">${esc(edgeTxt)}</em></section>${fg10AlertHTML(d,teams,intels)}<div class="fg10Teams">${fg10TeamCard(d.you.team,d.you,youTeam,intels.you)}${fg10TeamCard(d.them.team,d.them,themTeam,intels.them)}</div></div>`;
     wireMatchup();
   }
   async function progressiveMatchup(){
