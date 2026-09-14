@@ -1,8 +1,31 @@
 const finite=v=>v!==null&&v!==undefined&&v!==''&&Number.isFinite(Number(v));
 const posNorm=p=>String(p||'').toUpperCase()==='DST'?'DEF':String(p||'').toUpperCase();
 const norm=s=>String(s||'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]/g,'');
+const teamNorm=t=>String(t||'').toUpperCase().replace(/[^A-Z]/g,'');
 function playerKey(p){return norm(p?.name)+'|'+posNorm(p?.position)}
 function actualForPlayer(p,map){if(!map)return null;const ids=[p?.sleeper_id,p?.espn_id,p?.gsis_id,p?.id].filter(v=>v!==null&&v!==undefined&&String(v)!=='').map(String);for(const id of ids){if(finite(map[id]))return Number(map[id])}const key=playerKey(p);return finite(map[key])?Number(map[key]):null}
+
+async function nflGameStates(){
+  try{
+    const r=await fetch('https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard',{headers:{Accept:'application/json','User-Agent':'FantasyGuru/1.0'}});if(!r.ok)return{};
+    const d=await r.json(),out={};
+    for(const e of d?.events||[]){const c=e?.competitions?.[0],st=c?.status||{},type=st?.type||{},period=Number(st?.period||0),clock=String(st?.displayClock||'0:00'),state=String(type?.state||'pre').toLowerCase(),completed=!!type?.completed;
+      const parts=clock.split(':').map(Number),clockMin=(Number(parts[0])||0)+(Number(parts[1])||0)/60;let progress=0;
+      if(completed||state==='post')progress=1;else if(state==='in'){if(period<=4)progress=Math.max(0,Math.min(.99,(((Math.max(1,period)-1)*15)+(15-clockMin))/60));else progress=.97}
+      const game={state:completed?'post':state,completed,period,clock,detail:type?.shortDetail||type?.detail||'',progress};
+      for(const x of c?.competitors||[]){const a=teamNorm(x?.team?.abbreviation);if(a)out[a]=game}
+    }
+    return out;
+  }catch{return{}}
+}
+function liveProjection(pregame,actual,game,status){
+  const pre=finite(pregame)?Number(pregame):null,act=finite(actual)?Number(actual):0,s=String(status||'').toUpperCase();
+  if(/^(OUT|IR|PUP|NFI)$/.test(s)&&(!game||game.state==='pre'))return 0;
+  if(!game||game.state==='pre')return pre;
+  if(game.state==='post'||game.completed)return finite(actual)?Number(actual):pre;
+  if(game.state==='in')return pre==null?(finite(actual)?Number(actual):null):act+(pre*Math.max(0,1-Number(game.progress||0)));
+  return pre;
+}
 
 async function sleeperLiveMatchup(context){
   const leagueId=context?.league?.id,week=context?.current_week,myId=Number(context?.my_team?.roster_id);if(!leagueId||!week||!myId)return null;
@@ -27,24 +50,27 @@ async function espnLiveMatchup(context){
 }
 function sourceStrength(lineup=[]){if(!lineup.length)return'No trusted lineup';const n=Math.min(...lineup.map(x=>Number(x.source_count||0)));return n>=3?'3-source throughout':n===2?'At least 2-source throughout':n===1?'Includes single-source values':'Incomplete source data'}
 function rowStrength(n){n=Number(n||0);return n>=3?'3-source':n===2?'2-source':n===1?'Single Source':'No trusted value'}
-function cleanLineup(lineup=[],teamPlayers=[],actualMap={}){const lookup=new Map((teamPlayers||[]).map(p=>[playerKey(p),p]));return lineup.map(x=>{const p=lookup.get(playerKey(x))||x,actual=actualForPlayer(p,actualMap),proj=finite(x.value)?Number(Number(x.value).toFixed(1)):null;return{slot:x.slot,name:x.name,position:x.position,value:proj,actual_points:finite(actual)?Number(Number(actual).toFixed(1)):null,source_count:Number(x.source_count||0),source_strength:finite(actual)?`Actual ${Number(actual).toFixed(1)} · Projected ${proj?.toFixed?.(1)??'—'}`:rowStrength(x.source_count),sources:Array.isArray(x.sources)?x.sources:[],injury_status:x.injury_status||p.injury_status||null}})}
-function cleanBench(teamPlayers=[],lineup=[],actualMap={}){
+function cleanLineup(lineup=[],teamPlayers=[],actualMap={},games={}){const lookup=new Map((teamPlayers||[]).map(p=>[playerKey(p),p]));return lineup.map(x=>{const p=lookup.get(playerKey(x))||x,actual=actualForPlayer(p,actualMap),pregame=finite(x.value)?Number(Number(x.value).toFixed(1)):null,status=x.injury_status||p.injury_status||null,game=games[teamNorm(p.team||x.team)],lp=liveProjection(pregame,actual,game,status);return{slot:x.slot,name:x.name,position:x.position,value:finite(lp)?Number(Number(lp).toFixed(1)):pregame,live_projection:finite(lp)?Number(Number(lp).toFixed(1)):null,pregame_projection:pregame,actual_points:finite(actual)?Number(Number(actual).toFixed(1)):null,game_state:game?.state||'unknown',game_detail:game?.detail||'',source_count:Number(x.source_count||0),source_strength:finite(actual)?`Actual ${Number(actual).toFixed(1)} · Live proj ${finite(lp)?Number(lp).toFixed(1):'—'} · Pregame ${pregame?.toFixed?.(1)??'—'}`:rowStrength(x.source_count),sources:Array.isArray(x.sources)?x.sources:[],injury_status:status}})}
+function cleanBench(teamPlayers=[],lineup=[],actualMap={},games={}){
   const starterKeys=new Set((lineup||[]).map(playerKey));
-  return (teamPlayers||[]).filter(p=>!starterKeys.has(playerKey(p))).map(p=>{const actual=actualForPlayer(p,actualMap),proj=finite(p.weekly_points)?Number(Number(p.weekly_points).toFixed(1)):null;return{slot:'BN',name:p.name,position:p.position,value:proj,actual_points:finite(actual)?Number(Number(actual).toFixed(1)):null,source_count:Number(p.weekly_source_count||0),source_strength:finite(actual)?`Actual ${Number(actual).toFixed(1)} · Projected ${proj?.toFixed?.(1)??'—'}`:rowStrength(p.weekly_source_count),sources:Array.isArray(p.weekly_sources)?p.weekly_sources:[],injury_status:p.injury_status||null}}).sort((a,b)=>Number(b.value||0)-Number(a.value||0))
+  return (teamPlayers||[]).filter(p=>!starterKeys.has(playerKey(p))).map(p=>{const actual=actualForPlayer(p,actualMap),pregame=finite(p.weekly_points)?Number(Number(p.weekly_points).toFixed(1)):null,status=p.injury_status||null,game=games[teamNorm(p.team)],lp=liveProjection(pregame,actual,game,status);return{slot:'BN',name:p.name,position:p.position,value:finite(lp)?Number(Number(lp).toFixed(1)):pregame,live_projection:finite(lp)?Number(Number(lp).toFixed(1)):null,pregame_projection:pregame,actual_points:finite(actual)?Number(Number(actual).toFixed(1)):null,game_state:game?.state||'unknown',game_detail:game?.detail||'',source_count:Number(p.weekly_source_count||0),source_strength:finite(actual)?`Actual ${Number(actual).toFixed(1)} · Live proj ${finite(lp)?Number(lp).toFixed(1):'—'} · Pregame ${pregame?.toFixed?.(1)??'—'}`:rowStrength(p.weekly_source_count),sources:Array.isArray(p.weekly_sources)?p.weekly_sources:[],injury_status:status}}).sort((a,b)=>Number(b.value||0)-Number(a.value||0))
 }
 function starterComparisons(myLine=[],opLine=[]){const order=['QB','RB','WR','TE','FLEX','SUPER_FLEX','DEF','K'],rows=[];for(const slot of order){const mine=myLine.filter(x=>x.slot===slot),opp=opLine.filter(x=>x.slot===slot),n=Math.max(mine.length,opp.length);for(let i=0;i<n;i++){const a=mine[i],b=opp[i],av=Number(a?.value||0),bv=Number(b?.value||0),label=slot+(n>1?' '+(i+1):'')+' · '+(a?.name||'Empty')+' vs '+(b?.name||'Empty');rows.push({group:label,you:Number(av.toFixed(1)),opponent:Number(bv.toFixed(1)),edge:Number((av-bv).toFixed(1)),slot,you_player:a?.name||null,opponent_player:b?.name||null})}}return rows}
+const sumProjection=rows=>Number((rows||[]).reduce((n,x)=>n+(finite(x?.value)?Number(x.value):0),0).toFixed(1));
 
 export default async function handler(req,res){
   if(req.method!=='POST')return res.status(405).json({error:'POST only'});
   try{
     const {context,analysis}=req.body||{};if(!context||!analysis?.team_details)return res.status(400).json({error:'Context and current ranking analysis are required'});
-    const platform=String(context.platform||'').toUpperCase(),live=platform==='SLEEPER'?await sleeperLiveMatchup(context):platform==='ESPN'?await espnLiveMatchup(context):null,opponentId=live?.opponentId||null;
+    const platform=String(context.platform||'').toUpperCase();
+    const [live,games]=await Promise.all([platform==='SLEEPER'?sleeperLiveMatchup(context):platform==='ESPN'?espnLiveMatchup(context):null,nflGameStates()]);
+    const opponentId=live?.opponentId||null;
     if(!opponentId)return res.json({available:false,message:'Current opponent could not be identified from the league platform.'});
     const mine=analysis.team_details.find(t=>String(t.roster_id)===String(context.my_team?.roster_id)||t.team===context.my_team?.team),opp=analysis.team_details.find(t=>String(t.roster_id)===String(opponentId));
     if(!mine||!opp)return res.json({available:false,message:'Opponent was identified, but its normalized roster was not found in the current analysis.'});
     const myLine=mine.weekly_lineup||[],opLine=opp.weekly_lineup||[];if(!finite(mine.weekly_starters)||!finite(opp.weekly_starters))return res.json({available:false,message:'Matchup analytics withheld because one side lacks a complete trusted weekly starter projection.'});
-    const cleanMine=cleanLineup(myLine,mine.players||[],live?.myActuals||{}),cleanOpp=cleanLineup(opLine,opp.players||[],live?.oppActuals||{}),myBench=cleanBench(mine.players||[],myLine,live?.myActuals||{}),oppBench=cleanBench(opp.players||[],opLine,live?.oppActuals||{});
-    const position_edges=starterComparisons(myLine,opLine),flags=[...myLine.map(x=>({side:'YOU',...x})),...opLine.map(x=>({side:'OPP',...x}))].filter(x=>x.injury_status&&String(x.injury_status).toUpperCase()!=='ACTIVE').map(x=>({side:x.side,name:x.name,status:x.injury_status,slot:x.slot})),margin=Number((mine.weekly_starters-opp.weekly_starters).toFixed(1));
-    return res.json({available:true,opponent:{team:opp.team,roster_id:opp.roster_id},you:{team:mine.team,projection:Number(mine.weekly_starters.toFixed(1)),actual:finite(live?.myTotal)?Number(Number(live.myTotal).toFixed(1)):null,source_strength:sourceStrength(myLine),lineup:cleanMine,bench:myBench},them:{team:opp.team,projection:Number(opp.weekly_starters.toFixed(1)),actual:finite(live?.oppTotal)?Number(Number(live.oppTotal).toFixed(1)):null,source_strength:sourceStrength(opLine),lineup:cleanOpp,bench:oppBench},projected_margin:margin,lean:margin>5?'ADVANTAGE YOU':margin<-5?'ADVANTAGE OPPONENT':'CLOSE MATCHUP',position_edges,injury_flags:flags,score_refreshed_at:live?.refreshedAt||new Date().toISOString(),score_source:live?.scoreSource||context.platform||'League platform',note:'Actual starter and bench fantasy points refresh directly from the league platform whenever the matchup loads. Projected values remain the trusted weekly consensus.'})
+    const cleanMine=cleanLineup(myLine,mine.players||[],live?.myActuals||{},games),cleanOpp=cleanLineup(opLine,opp.players||[],live?.oppActuals||{},games),myBench=cleanBench(mine.players||[],myLine,live?.myActuals||{},games),oppBench=cleanBench(opp.players||[],opLine,live?.oppActuals||{},games);
+    const myLiveProj=sumProjection(cleanMine),oppLiveProj=sumProjection(cleanOpp),position_edges=starterComparisons(cleanMine,cleanOpp),flags=[...myLine.map(x=>({side:'YOU',...x})),...opLine.map(x=>({side:'OPP',...x}))].filter(x=>x.injury_status&&String(x.injury_status).toUpperCase()!=='ACTIVE').map(x=>({side:x.side,name:x.name,status:x.injury_status,slot:x.slot})),margin=Number((myLiveProj-oppLiveProj).toFixed(1));
+    return res.json({available:true,opponent:{team:opp.team,roster_id:opp.roster_id},you:{team:mine.team,projection:myLiveProj,live_projection:myLiveProj,pregame_projection:Number(mine.weekly_starters.toFixed(1)),actual:finite(live?.myTotal)?Number(Number(live.myTotal).toFixed(1)):null,source_strength:sourceStrength(myLine),lineup:cleanMine,bench:myBench},them:{team:opp.team,projection:oppLiveProj,live_projection:oppLiveProj,pregame_projection:Number(opp.weekly_starters.toFixed(1)),actual:finite(live?.oppTotal)?Number(Number(live.oppTotal).toFixed(1)):null,source_strength:sourceStrength(opLine),lineup:cleanOpp,bench:oppBench},projected_margin:margin,lean:margin>5?'ADVANTAGE YOU':margin<-5?'ADVANTAGE OPPONENT':'CLOSE MATCHUP',position_edges,injury_flags:flags,score_refreshed_at:live?.refreshedAt||new Date().toISOString(),score_source:live?.scoreSource||context.platform||'League platform',projection_mode:'live_finish',note:'Live projection = actual points already scored plus the remaining share of the trusted pregame projection based on NFL game time remaining. Completed players lock to actual; unstarted players retain the trusted pregame projection.'})
   }catch(e){return res.status(500).json({error:e.message})}
 }
