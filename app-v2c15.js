@@ -38,9 +38,7 @@
     document.querySelectorAll('.fg15TeamToggle button').forEach(b=>b.classList.toggle('active',b.dataset.side===mobileSide));
   }
 
-  function enhance(){
-    mobileShell();wireMobileNav();ensureTeamToggle();
-  }
+  function enhance(){mobileShell();wireMobileNav();ensureTeamToggle()}
 
   const style=document.createElement('style');style.textContent=`
     @media(max-width:700px){
@@ -50,8 +48,8 @@
       body.fg15Mobile .panel{min-height:0!important;padding:6px!important;overflow:visible!important}
       body.fg15Mobile .topbar{display:none!important}
 
-      body.fg15Mobile .sidebar{display:flex!important;position:fixed!important;left:0!important;top:0!important;bottom:0!important;width:min(82vw,300px)!important;z-index:250!important;transform:translateX(0)!important;transition:transform .2s ease!important;box-shadow:12px 0 35px rgba(0,0,0,.5)!important}
-      body.fg15Mobile.fg11NavHidden .sidebar{transform:translateX(-105%)!important;left:0!important}
+      body.fg15Mobile .sidebar{display:flex!important;position:fixed!important;left:0!important;top:0!important;bottom:0!important;width:min(82vw,300px)!important;z-index:250!important;transform:translateX(0)!important;transition:transform .2s ease,visibility .2s ease!important;box-shadow:12px 0 35px rgba(0,0,0,.5)!important;visibility:visible!important;pointer-events:auto!important;overflow:hidden!important}
+      body.fg15Mobile.fg11NavHidden .sidebar{transform:translateX(-110%)!important;left:0!important;visibility:hidden!important;pointer-events:none!important;box-shadow:none!important}
       body.fg15Mobile #fg11NavShow{display:grid!important;position:fixed!important;left:10px!important;top:10px!important;width:42px!important;height:42px!important;border-radius:10px!important;font-size:22px!important;z-index:260!important}
       body.fg15Mobile:not(.fg11NavHidden) #fg11NavShow{display:none!important}
       body.fg15Mobile #fg11NavToggle{display:grid!important}
@@ -67,7 +65,6 @@
       body.fg15Mobile .fg10Title h2{font-size:18px!important}
       body.fg15Mobile .fg10Title span{font-size:10px!important;line-height:1.35!important}
       body.fg15Mobile .fg10Title>b{font-size:11px!important;padding-top:3px!important}
-
       body.fg15Mobile .fg10Score{grid-template-columns:1fr 38px 1fr!important;gap:5px!important;padding:9px 7px 28px!important;margin-bottom:9px!important}
       body.fg15Mobile .fg10Score>div b{font-size:11px!important;white-space:normal!important}
       body.fg15Mobile .fg10Score strong{font-size:24px!important}
@@ -118,9 +115,13 @@
 
       body.fg15Mobile .fg6Dash{width:100%!important;max-width:none!important;display:block!important}
       body.fg15Mobile .fg6Dash>*{margin-bottom:8px!important}
-      body.fg15Mobile .fg6Split,body.fg15Mobile .fg6WeekGrid,body.fg15Mobile .fg8ActionPair{grid-template-columns:1fr!important}
+      body.fg15Mobile .fg6Split,body.fg15Mobile .fg6WeekGrid,body.fg15Mobile .fg8ActionPair{display:grid!important;grid-template-columns:minmax(0,1fr)!important;width:100%!important}
       body.fg15Mobile .fg6Ranks{grid-template-columns:repeat(5,minmax(0,1fr))!important}
-      body.fg15Mobile .fg6Card{padding:9px!important}
+      body.fg15Mobile .fg6Card{padding:9px!important;min-width:0!important;width:100%!important;overflow:hidden!important}
+      body.fg15Mobile .fg6NewsRow{display:grid!important;grid-template-columns:minmax(0,1fr)!important;gap:4px!important;width:100%!important;min-width:0!important;padding:8px 0!important;align-items:start!important}
+      body.fg15Mobile .fg6NewsRow>a,body.fg15Mobile .fg6NewsRow>b{display:block!important;width:100%!important;min-width:0!important;max-width:100%!important;white-space:normal!important;overflow-wrap:anywhere!important;word-break:normal!important;font-size:11px!important;line-height:1.35!important}
+      body.fg15Mobile .fg6NewsRow>span{display:block!important;width:100%!important;min-width:0!important;max-width:100%!important;white-space:normal!important;overflow-wrap:anywhere!important;word-break:normal!important;font-size:9.5px!important;line-height:1.4!important;text-align:left!important;margin:0!important}
+      body.fg15Mobile .fg6Bottom{display:grid!important;grid-template-columns:minmax(0,1fr)!important;width:100%!important}
     }
     @media(min-width:701px){.fg15TeamToggle{display:none!important}}
   `;document.head.appendChild(style);
