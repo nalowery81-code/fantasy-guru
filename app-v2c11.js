@@ -11,7 +11,7 @@
     #fg11NavToggle:hover{border-color:#38bdf8;background:#102a43}
     #fg11NavShow,#fg11GuruShow{position:fixed;z-index:120;border:1px solid #3974a3;background:#0a1a2a;color:#d9f2ff;border-radius:9px;font-weight:900;box-shadow:0 5px 18px rgba(0,0,0,.28)}
     #fg11NavShow{left:9px;top:9px;width:38px;height:38px;padding:0;font-size:20px;display:grid;place-items:center}
-    #fg11GuruShow{right:12px;top:74px;padding:10px 14px;font-size:13px;background:#102a43;border-color:#38bdf8;color:#f0f9ff;letter-spacing:.1px}
+    #fg11GuruShow{right:14px;top:auto;bottom:16px;padding:10px 14px;font-size:13px;background:#102a43;border-color:#38bdf8;color:#f0f9ff;letter-spacing:.1px}
     #fg11GuruShow:hover{background:#153a59;border-color:#67e8f9;transform:translateY(-1px)}
     body:not(.fg11NavHidden) #fg11NavShow,body:not(.fg11GuruHidden) #fg11GuruShow{display:none!important}
     #fg11GuruHide{border:1px solid #315b7f;background:#0b1b2c;color:#d6efff;border-radius:7px;padding:5px 8px;font-size:9px;font-weight:900}
@@ -44,10 +44,9 @@
     body.fg11Focus .fg10Detail b{font-size:10px!important}
     body.fg11Focus .fg10Detail span{font-size:11px!important;line-height:1.45!important}
     @media(max-width:1450px){body.fg11Focus .fg10Identity b{font-size:12px!important}}
-    @media(max-width:1100px){#fg11NavShow,#fg11GuruShow{display:none!important}}
+    @media(max-width:1100px){#fg11NavShow{display:none!important}}
   `;document.head.appendChild(style);
 
-  function boolRead(k,def){try{const v=localStorage.getItem(k);return v==null?def:v==='1'}catch{return def}}
   function boolSave(k,v){try{localStorage.setItem(k,v?'1':'0')}catch{}}
   function setNav(hidden,persist=false){document.body.classList.toggle('fg11NavHidden',!!hidden);if(persist)boolSave(LS_NAV,!!hidden)}
   function setGuru(hidden,persist=false){document.body.classList.toggle('fg11GuruHidden',!!hidden);if(persist)boolSave(LS_GURU,!!hidden)}
@@ -62,10 +61,10 @@
   }
   function applyView(v){
     ensureButtons();const focus=v==='matchup';document.body.classList.toggle('fg11Focus',focus);
-    if(focus){setNav(boolRead(LS_NAV,true));setGuru(boolRead(LS_GURU,true))}
-    else{setNav(false);setGuru(false)}
+    setNav(focus);
+    setGuru(true);
   }
   const baseShow=showView;showView=function(v){const out=baseShow(v);applyView(v);return out};
   const baseShell=renderShell;renderShell=function(idx){const out=baseShell(idx);setTimeout(()=>applyView(currentView||'dashboard'),0);return out};
-  ensureButtons();applyView(currentView||'dashboard');
+  ensureButtons();setGuru(true);applyView(currentView||'dashboard');
 })();
