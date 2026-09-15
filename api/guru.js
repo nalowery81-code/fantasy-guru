@@ -10,7 +10,7 @@ function historicalWeekFromQuestion(qtext,currentWeek){
   return null;
 }
 function espnWeeklyActual(p,week){const stats=Array.isArray(p?.stats)?p.stats:[];const exact=stats.find(s=>Number(s?.statSourceId)===0&&Number(s?.statSplitTypeId)===1&&Number(s?.scoringPeriodId)===Number(week)&&finite(s?.appliedTotal));if(exact)return Number(exact.appliedTotal);const fallback=stats.find(s=>Number(s?.statSourceId)===0&&Number(s?.scoringPeriodId)===Number(week)&&finite(s?.appliedTotal));return fallback?Number(fallback.appliedTotal):null}
-function espnEntryActual(e,week){const pool=e?.playerPoolEntry||{};for(const v of [pool.appliedStatTotal,e?.appliedStatTotal,pool.appliedTotal,e?.appliedTotal])if(finite(v))return Number(v);return espnWeeklyActual(pool.player||e?.player||{},week)}
+function espnEntryActual(e,week){const pool=e?.playerPoolEntry||{},p=pool.player||e?.player||{},exact=espnWeeklyActual(p,week);if(finite(exact))return Number(exact);const period=e?.scoringPeriodId??pool?.scoringPeriodId??e?.playerPoolEntry?.scoringPeriodId;if(Number(period)!==Number(week))return null;for(const v of [pool.appliedStatTotal,e?.appliedStatTotal,pool.appliedTotal,e?.appliedTotal])if(finite(v))return Number(v);return null}
 function espnHistoryPlayer(e,week){const p=e?.playerPoolEntry?.player||e?.player||{},slot=Number(e?.lineupSlotId),actual=espnEntryActual(e,week);return{id:String(p.id||e?.playerId||''),name:p.fullName||p.name||('Player '+(p.id||e?.playerId||'')),position:ESPN_POS[p.defaultPositionId]||String(p.defaultPositionId||''),slot:ESPN_SLOT[slot]||String(slot),starter:![20,21].includes(slot),actual_points:finite(actual)?Number(actual):null}}
 function splitEspn(entries=[],week){const rows=(entries||[]).map(e=>espnHistoryPlayer(e,week));return{starters:rows.filter(x=>x.starter),bench:rows.filter(x=>!x.starter)}}
 function totalStarters(rows=[]){const a=rows.filter(x=>finite(x?.actual_points));return a.length?Number(a.reduce((n,x)=>n+Number(x.actual_points),0).toFixed(2)):null}
@@ -25,9 +25,9 @@ async function fetchEspnHistory(context,week){
   for(const m of d?.schedule||[]){
     const home=Number(m?.home?.teamId),away=Number(m?.away?.teamId);if(home!==myId&&away!==myId)continue;
     const mine=home===myId?m.home:m.away,opp=home===myId?m.away:m.home;if(!opp?.teamId)continue;
-    const entries=s=>s?.rosterForCurrentScoringPeriod?.entries||s?.rosterForMatchupPeriod?.entries||s?.roster?.entries||[];
-    const my=splitEspn(entries(mine),week),them=splitEspn(entries(opp),week);
-    return{week,source:'ESPN historical boxscore',verified:true,you:{team:context?.my_team?.team||teamNames.get(String(myId))||'Your team',roster_id:myId,total:finite(mine?.totalPoints)?Number(mine.totalPoints):totalStarters(my.starters),starters:my.starters,bench:my.bench},opponent:{team:teamNames.get(String(opp.teamId))||('Team '+opp.teamId),roster_id:Number(opp.teamId),total:finite(opp?.totalPoints)?Number(opp.totalPoints):totalStarters(them.starters),starters:them.starters,bench:them.bench}};
+    const entries=s=>s?.rosterForMatchupPeriod?.entries||s?.rosterForCurrentScoringPeriod?.entries||s?.roster?.entries||[];
+    const my=splitEspn(entries(mine),week),them=splitEspn(entries(opp),week),myTotal=totalStarters(my.starters),oppTotal=totalStarters(them.starters);
+    return{week,source:'ESPN historical boxscore',verified:true,you:{team:context?.my_team?.team||teamNames.get(String(myId))||'Your team',roster_id:myId,total:finite(myTotal)?Number(myTotal):(finite(mine?.totalPoints)?Number(mine.totalPoints):null),starters:my.starters,bench:my.bench},opponent:{team:teamNames.get(String(opp.teamId))||('Team '+opp.teamId),roster_id:Number(opp.teamId),total:finite(oppTotal)?Number(oppTotal):(finite(opp?.totalPoints)?Number(opp.totalPoints):null),starters:them.starters,bench:them.bench}};
   }
   return null;
 }
