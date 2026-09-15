@@ -1,5 +1,5 @@
 import { readFileSync } from 'node:fs';
-import { scoreConsensusStats } from './league-scoring.js';
+import { scoreConsensusStats } from '../lib/league-scoring.js';
 const projections=JSON.parse(readFileSync(new URL('../data/ffanalytics_projections.json',import.meta.url),'utf8'));
 
 const present=v=>v!==null&&v!==undefined&&v!==''&&Number.isFinite(Number(v));
