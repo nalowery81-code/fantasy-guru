@@ -1,4 +1,5 @@
 import { buildValuation } from '../lib/valuation-engine.js';
+import { runPredictionCycle } from '../lib/prediction-cycle.js';
 
 const FC_TTL_MS=5*60*1000;
 const fcCache=new Map();
@@ -88,5 +89,11 @@ function attachIntel(data,fc,trends){
 
 export default async function handler(req,res){
   if(req.method!=='POST')return res.status(405).json({error:'POST only'});
-  try{const {context}=req.body||{};const [data,fc,trends]=await Promise.all([buildValuation(context,{includeWaivers:true}),getFantasyCalc(context),getSleeperTrends()]);return res.json(attachIntel(data,fc,trends))}catch(e){return res.status(500).json({error:e.message})}
+  try{
+    const {context}=req.body||{};
+    const [data,fc,trends]=await Promise.all([buildValuation(context,{includeWaivers:true}),getFantasyCalc(context),getSleeperTrends()]);
+    const output=attachIntel(data,fc,trends);
+    try{output.evaluation_ledger=await runPredictionCycle(context,output)}catch(e){output.evaluation_ledger={status:'ERROR',error:e.message}}
+    return res.json(output);
+  }catch(e){return res.status(500).json({error:e.message})}
 }
