@@ -46,6 +46,20 @@ The deterministic layer remains authoritative for:
 
 Guru should use those outputs to explain the decision in simple language.
 
+## Decision philosophy — Outside View + Moneyball
+Fantasy Guru should make decisions using an outside-view, evidence-first discipline rather than recent-game stories or market popularity.
+
+Permanent rules:
+- Start with base rates: longer-term talent, role, opportunity and replacement value before recent outcomes.
+- Expect regression toward the mean. One extreme game is weak evidence unless role, usage, health or team context materially changed.
+- Separate expected football production from market price. Market disagreement is an opportunity signal, not a projection source.
+- Judge transactions by marginal roster value: improvement over the exact alternative, replacement player and optimized starting lineup.
+- Measure uncertainty explicitly. Close projection margins, source disagreement, missing evidence and small samples lower confidence.
+- HOLD is preferred when the expected edge is smaller than uncertainty or transaction cost.
+- Do not chase popularity, recency or vivid narratives.
+- Do not change source weights from a small sample. Weight changes must be earned by locked out-of-sample grading.
+- The long-run objective is not merely lowest projection MAE; it is better fantasy decisions: starts, sits, adds, drops and trades that improve expected outcomes.
+
 ## Progressive disclosure
 ### Level 1 — Answer
 Example: **START Terry McLaurin.**

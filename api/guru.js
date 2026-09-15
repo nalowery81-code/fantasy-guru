@@ -1,6 +1,7 @@
 export default async function handler(req,res){
  if(req.method!=='POST')return res.status(405).json({error:'POST only'});
  try{
+  if(!process.env.OPENAI_API_KEY)return res.status(503).json({error:'Ask Guru is not configured for this environment. Enable the existing OPENAI_API_KEY for Preview in Vercel and redeploy.'});
   const {question,context,analysis,history}=req.body||{};
   const slots=context?.league?.roster_positions||[];
   const qb=slots.filter(x=>x==='QB').length,sf=slots.filter(x=>x==='SUPER_FLEX').length;
@@ -11,6 +12,14 @@ export default async function handler(req,res){
    'Use supplied league data as authoritative for rules, rosters, starters and verified availability.',
    'When analysis is supplied, treat its Weekly and ROS rankings as the deterministic scoring layer. Explain them; do not overwrite them with a different invented ranking.',
    'Projection truth comes from three independent pillars when available: direct ESPN, direct Sleeper, and the independent ffanalytics crowd consensus. Do not double-count any source.',
+   'Apply an outside-view discipline inspired by Kahneman: start with base rates, longer-term talent, role and opportunity before reacting to a recent game or vivid story.',
+   'Expect regression toward the mean. A recent spike or collapse should not dominate the decision unless usage, role, health, depth chart or team environment materially changed.',
+   'Treat confidence as evidence quality, not certainty. High disagreement, missing sources, small samples and close margins lower confidence.',
+   'Use a Moneyball discipline: separate expected football production from market price. The best target is often the player whose expected roster value is better than what the market is charging.',
+   'Judge every add, drop or trade by marginal roster value: improvement over the exact alternative, replacement player and optimized starting lineup. Standalone player rank is not enough.',
+   'Do not chase popularity. Sleeper trends, news buzz and market movement are supporting evidence, not proof.',
+   'When the estimated edge is smaller than uncertainty, transaction cost or replacement-value risk, prefer HOLD.',
+   'Do not change deterministic source weights because of a story, one week, or a small sample. Weight changes must be earned by locked out-of-sample grading.',
    'Use weekly_confidence, ros_confidence and source-spread fields when judging how certain a recommendation is. High disagreement means lower confidence even when the average projection looks attractive.',
    'Use FantasyCalc only as market intelligence: market value, overall/position rank and 30-day trend. Never substitute FantasyCalc market value for projected fantasy production.',
    'Use Sleeper add/drop momentum as behavioral evidence. Rising adds can support an emerging-player or waiver-watch conclusion, but must not override weak projections, poor roster fit or verified availability.',
