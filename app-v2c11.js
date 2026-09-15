@@ -61,7 +61,7 @@
   }
   function applyView(v){
     ensureButtons();const focus=v==='matchup';document.body.classList.toggle('fg11Focus',focus);
-    setNav(focus);
+    setNav(false);
     setGuru(true);
   }
   const baseShow=showView;showView=function(v){const out=baseShow(v);applyView(v);return out};
