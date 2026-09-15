@@ -63,6 +63,28 @@ function projectionHealth(players=[]){
   return{status:unavailable.length?'DEGRADED':'HEALTHY',players_checked:players.length,sources:detail,unavailable_sources:unavailable};
 }
 
+function sanitizeWeeklyActuals(data){
+  const players=[];
+  for(const t of data?.team_details||[])for(const p of t?.players||[])players.push(p);
+  const actuals=players.filter(p=>finite(p?.actual_weekly_points)).map(p=>Number(p.actual_weekly_points));
+  const nonZero=actuals.filter(v=>Math.abs(v)>1e-9).length;
+  if(!actuals.length){
+    data.actuals_integrity={status:'NO_ACTUALS',actual_values_seen:0,nonzero_values_seen:0};
+    return data;
+  }
+  if(nonZero===0){
+    for(const p of players)if(finite(p?.actual_weekly_points))p.actual_weekly_points=null;
+    data.actuals_integrity={status:'PREGAME_ZERO_PLACEHOLDERS_REMOVED',actual_values_seen:actuals.length,nonzero_values_seen:0,rule:'An all-zero weekly actual feed is treated as a pregame placeholder, not completed scoring.'};
+    return data;
+  }
+  let zeroPlaceholdersRemoved=0;
+  for(const p of players){
+    if(finite(p?.actual_weekly_points)&&Math.abs(Number(p.actual_weekly_points))<=1e-9){p.actual_weekly_points=null;zeroPlaceholdersRemoved++}
+  }
+  data.actuals_integrity={status:'SCORING_IN_PROGRESS',actual_values_seen:actuals.length,nonzero_values_seen:nonZero,zero_placeholders_removed:zeroPlaceholdersRemoved,rule:'While the current week is in progress, zero placeholders are not graded until game-completion evidence is available.'};
+  return data;
+}
+
 function attachIntel(data,fc,trends){
   const idx=marketIndexes(fc.rows),lookup=p=>(p?.sleeper_id&&idx.bySleeper.get(String(p.sleeper_id)))||(p?.espn_id&&idx.byEspn.get(String(p.espn_id)))||idx.byNamePos.get(`${norm(p?.name)}|${pos(p?.position)}`)||null;
   let matched=0,total=0;const all=[];
@@ -92,6 +114,7 @@ export default async function handler(req,res){
   try{
     const {context}=req.body||{};
     const [data,fc,trends]=await Promise.all([buildValuation(context,{includeWaivers:true}),getFantasyCalc(context),getSleeperTrends()]);
+    sanitizeWeeklyActuals(data);
     const output=attachIntel(data,fc,trends);
     try{output.evaluation_ledger=await runPredictionCycle(context,output)}catch(e){output.evaluation_ledger={status:'ERROR',error:e.message}}
     return res.json(output);
