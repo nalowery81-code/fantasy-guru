@@ -1,5 +1,5 @@
-import { scoreConsensusStats } from './league-scoring.js';
-import { getIdentityIndexes, identityMapStatus } from './player-identity.js';
+import { scoreConsensusStats } from '../lib/league-scoring.js';
+import { getIdentityIndexes, identityMapStatus } from '../lib/player-identity.js';
 
 const POS={1:'QB',2:'RB',3:'WR',4:'TE',5:'K',16:'DEF'};
 const finite=v=>v!==null&&v!==undefined&&v!==''&&Number.isFinite(Number(v));
