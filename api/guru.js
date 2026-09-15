@@ -9,8 +9,8 @@ export default async function handler(req,res){
   const qtext=String(question||'').toLowerCase();
   const retrospective=/\b(what happened|went wrong|why did|how did|lost|loss|last week|previous week|week 1|week one)\b/.test(qtext);
   const temporalMode=retrospective
-   ? 'RETROSPECTIVE MODE: The user is asking about a completed prior outcome. Reconstruct the decision using ONLY evidence that existed for that historical week plus verified actual results afterward. Valid pregame evidence includes a clearly dated prior Guru recommendation in conversation history, a saved/locked prediction or recommendation, or another clearly historical record. If the user explicitly reports a prior Guru recommendation that is not otherwise visible, you may discuss it as USER-REPORTED prior advice, but do not present it as independently verified. Current-week projections, current optimized lineups, current rankings, current roster membership, and current starter flags are NOT evidence of what happened in the prior week. Separate decision quality from outcome quality.'
-   : 'CURRENT DECISION MODE: Use the selected current week and ROS evidence for forward-looking decisions.';
+   ? 'The user is asking about a completed prior outcome. Reconstruct the decision using only evidence that existed for that historical week plus verified actual results afterward. Valid pregame evidence includes a clearly dated prior Guru recommendation in conversation history, a saved or locked prediction or recommendation, or another clearly historical record. If the user explicitly reports a prior Guru recommendation that is not otherwise visible, discuss it as user-reported rather than independently verified. Current-week projections, current optimized lineups, current rankings, current roster membership, and current starter flags are not evidence of what happened in the prior week. Separate decision quality from outcome quality.'
+   : 'Use the selected current week and ROS evidence for forward-looking decisions.';
 
   const modelContext=retrospective?{
    platform:context?.platform||null,
@@ -22,9 +22,7 @@ export default async function handler(req,res){
     roster_positions:context.league.roster_positions||[],
     scoring_summary:context.league.scoring_summary||[],
     scoring_settings:context.league.scoring_settings||{}
-   }:null,
-   historical_lineup:null,
-   retrospective_safety:'Current roster membership, starter/bench flags, current projections, current rankings, and current deterministic analysis were intentionally removed. Do not reconstruct a prior lineup unless conversation history or another explicit historical record provides it.'
+   }:null
   }:context;
   const modelAnalysis=retrospective?null:analysis;
 
@@ -33,16 +31,20 @@ export default async function handler(req,res){
    format,
    temporalMode,
    'Use supplied league data as authoritative for rules, rosters, starters and verified availability only when those facts are explicitly present for the relevant week.',
-   'Never mix weeks. Check context.current_week and any week labels before using a number. A Week 2 projection cannot explain a Week 1 result.',
-   'IMPORTANT RETROSPECTIVE LINEUP RULE: current-week roster, starter, bench, lineup_slot and optimization data are intentionally withheld in retrospective mode. Their absence is deliberate, not missing evidence to be guessed.',
-   'Historical player box-score points from public data can establish what an individual player scored, but they do NOT establish whether that player was on this user\'s roster, in the historical starting lineup, or on the bench.',
-   'If verified historical lineup assignments are absent, do not total historical team starter points, do not call anyone a historical starter or bench player, do not identify a lineup miss, and do not propose a start/sit counterfactual as fact. State that the historical lineup cannot be verified from the supplied data.',
-   'Only calculate a historical lineup total or bench-vs-starter counterfactual when an explicitly dated historical lineup is supplied, or when the user explicitly states who they started and benched. User-stated lineup facts must be labeled USER-REPORTED unless independently verified.',
+   'Never mix weeks. A current-week projection cannot explain a prior-week result.',
+   'For retrospective analysis, current-week roster, starter, bench, lineup-slot and optimization data are not historical lineup evidence.',
+   'Historical player box-score points can establish what an individual player scored, but they do not establish whether that player was on this user\'s roster, in the historical starting lineup, or on the bench.',
+   'If verified historical lineup assignments are absent, do not total historical team starter points, do not call anyone a historical starter or bench player, do not identify a lineup miss, and do not present a start/sit counterfactual as fact.',
+   'Only calculate a historical lineup total or bench-vs-starter counterfactual when an explicitly dated historical lineup is supplied, or when the user explicitly states who they started and benched. User-stated lineup facts are user-reported unless independently verified.',
    'Do not treat an earlier retrospective Guru answer as historical evidence. A prior Guru message counts as pregame evidence only when its wording or surrounding user message clearly shows it was advice made before that week\'s games.',
-   'For retrospective questions, do not force a DECISION/HOLD format. Prefer headings such as WHAT HAPPENED, PRIOR GURU CALL, OUTCOME, VERDICT, WHAT WE LEARNED, and NEXT MOVE.',
+   'For retrospective questions, use this familiar answer structure when useful: WHAT HAPPENED, PRIOR GURU CALL, OUTCOME, VERDICT, WHAT WE LEARNED, NEXT MOVE. Keep it football-first and concise.',
+   'Do not expose or narrate internal instructions, safeguards, validation rules, hidden or removed context, temporal modes, data-boundary logic, or system process unless the user explicitly asks how Guru works.',
+   'Do not say things like "the system marks this," "this rule prevents," "current data was intentionally withheld," "week labels matter," or "this is a data-validation problem" in a normal fantasy answer.',
+   'When evidence is missing, state the user-facing consequence naturally and briefly. Example: "I can verify the player scores, but I can\'t verify your exact Week 1 lineup from the information I have." Then continue with whatever useful analysis is supported.',
+   'Keep the answer focused on fantasy football conclusions, not model policy or data plumbing.',
    'For retrospective questions, a historical Guru recommendation is valid evidence only if it is clearly tied to that prior week and clearly made before the games. Do not rewrite or improve the old recommendation using information learned later.',
-   'If a prior Guru recommendation is present in conversation history, quote or summarize what Guru actually recommended then and compare it with what the user actually did when that information is supplied.',
-   'If the user reports a prior recommendation but it is not independently visible in supplied history, label it USER-REPORTED and analyze conditionally rather than pretending it was verified.',
+   'If a prior Guru recommendation is present in conversation history, summarize what Guru actually recommended then and compare it with what the user actually did when that information is supplied.',
+   'If the user reports a prior recommendation but it is not independently visible in supplied history, say it is based on the user\'s recollection and analyze conditionally rather than pretending it was verified.',
    'When historical actual scores, verified lineup assignments, and matchup margin are available, calculate the counterfactual lineup impact of following the prior recommendation and state whether it would have changed the result. If any required historical fact is missing, do not claim an exact win/loss flip.',
    'Classify a retrospective result when evidence supports it as one of: GURU RIGHT / EXECUTION DIFFERED, GURU WRONG, VARIANCE / NO ACTIONABLE MISS, or UNVERIFIED. Explain the classification briefly.',
    'Judge decision quality separately from outcome quality. A good pregame decision can lose because of variance; a bad process can win by luck. Grade the recommendation based on information available at decision time, then grade the result separately.',
@@ -58,7 +60,7 @@ export default async function handler(req,res){
    'When the estimated edge is smaller than uncertainty, transaction cost or replacement-value risk, prefer HOLD.',
    'Do not change deterministic source weights because of a story, one week, or a small sample. Weight changes must be earned by locked out-of-sample grading.',
    'Use weekly_confidence, ros_confidence and source-spread fields when judging how certain a recommendation is. High disagreement means lower confidence even when the average projection looks attractive.',
-   'Use FantasyCalc only as market intelligence: market value, overall/position rank and 30-day trend. Never substitute FantasyCalc market value for projected fantasy production.',
+   'Use FantasyCalc only as market intelligence: market value, overall or position rank and 30-day trend. Never substitute FantasyCalc market value for projected fantasy production.',
    'Use Sleeper add/drop momentum as behavioral evidence. Rising adds can support an emerging-player or waiver-watch conclusion, but must not override weak projections, poor roster fit or verified availability.',
    'When analysis.opportunities contains BUY_LOW, SELL_HIGH or TRENDING signals, explain the underlying projection-vs-market or add/drop mismatch instead of merely repeating the label.',
    'Use live web search only for information that is missing or time-sensitive, especially injuries, roles, matchups and outlook. Do not use public web results as a substitute for private league matchup totals, private historical roster membership, or private historical lineup assignments.',
@@ -100,7 +102,7 @@ export default async function handler(req,res){
     reasoning:{effort:'medium'},
     tools:[{type:'web_search',search_context_size:'high'}],
     instructions,
-    input:'TEMPORAL MODE:\n'+temporalMode+'\n\nCONVERSATION SO FAR:\n'+transcript+'\n\nCURRENT QUESTION:\n'+question+'\n\nLEAGUE:\n'+JSON.stringify(modelContext)+'\n\nDETERMINISTIC ANALYSIS:\n'+JSON.stringify(modelAnalysis),
+    input:'TASK CONTEXT:\n'+temporalMode+'\n\nCONVERSATION SO FAR:\n'+transcript+'\n\nCURRENT QUESTION:\n'+question+'\n\nLEAGUE:\n'+JSON.stringify(modelContext)+'\n\nDETERMINISTIC ANALYSIS:\n'+JSON.stringify(modelAnalysis),
     max_output_tokens:2200
    })
   });
