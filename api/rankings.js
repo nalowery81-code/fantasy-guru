@@ -1,4 +1,4 @@
-import { buildValuation } from './valuation-engine.js';
+import { buildValuation } from '../lib/valuation-engine.js';
 
 const FC_TTL_MS=5*60*1000;
 const fcCache=new Map();
