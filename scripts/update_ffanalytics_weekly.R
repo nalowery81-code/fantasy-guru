@@ -49,7 +49,32 @@ if (!length(working_sources)) stop("No weekly ffanalytics sources returned usabl
 attr(scrapes,"season") <- season; attr(scrapes,"week") <- week
 
 source_pts <- ffanalytics::source_points(scrapes, scoring_rules=ffanalytics::scoring) %>%
-  filter(!is.na(id), !is.na(raw_points), is.finite(raw_points)) %>% mutate(id=as.character(id))
+  filter(!is.na(id), !is.na(raw_points), is.finite(raw_points)) %>%
+  mutate(id=as.character(id), pos=as.character(pos), data_src=as.character(data_src))
+
+# Keep the crowd's disagreement instead of throwing it away after taking the mean.
+# These values use ffanalytics' common scoring only as an uncertainty/ranking signal;
+# Fantasy Guru still scores the consensus raw stats with the selected league rules.
+source_ranked <- source_pts %>%
+  group_by(data_src,pos) %>%
+  arrange(desc(raw_points), .by_group=TRUE) %>%
+  mutate(source_rank=dense_rank(desc(raw_points))) %>%
+  ungroup()
+source_summary <- source_ranked %>%
+  group_by(id,pos) %>%
+  summarise(
+    point_source_mean=mean(raw_points,na.rm=TRUE),
+    point_source_sd=ifelse(n_distinct(data_src)>1,sd(raw_points,na.rm=TRUE),0),
+    point_source_min=min(raw_points,na.rm=TRUE),
+    point_source_max=max(raw_points,na.rm=TRUE),
+    point_source_count=n_distinct(data_src),
+    source_rank_mean=mean(source_rank,na.rm=TRUE),
+    source_rank_sd=ifelse(n_distinct(data_src)>1,sd(source_rank,na.rm=TRUE),0),
+    source_rank_min=min(source_rank,na.rm=TRUE),
+    source_rank_max=max(source_rank,na.rm=TRUE),
+    sources=list(sort(unique(data_src))),
+    .groups="drop"
+  )
 
 stat_rows <- list()
 for (pos in names(scrapes)) {
@@ -83,12 +108,38 @@ meta <- meta %>% distinct(id,.keep_all=TRUE)
 default_pts <- source_pts %>% group_by(id,pos) %>% summarise(default_scoring_points=mean(raw_points,na.rm=TRUE),source_count=n_distinct(data_src),sources=list(sort(unique(as.character(data_src)))),.groups="drop")
 keys <- stat_long %>% distinct(id,pos); players <- vector("list",nrow(keys))
 for(i in seq_len(nrow(keys))){
-  kid <- keys$id[[i]]; kpos <- keys$pos[[i]]; s <- stat_long %>% filter(id==kid,pos==kpos); m <- meta %>% filter(id==kid) %>% slice_head(n=1); d <- default_pts %>% filter(id==kid,pos==kpos) %>% slice_head(n=1)
+  kid <- keys$id[[i]]; kpos <- keys$pos[[i]]; s <- stat_long %>% filter(id==kid,pos==kpos); m <- meta %>% filter(id==kid) %>% slice_head(n=1); d <- default_pts %>% filter(id==kid,pos==kpos) %>% slice_head(n=1); u <- source_summary %>% filter(id==kid,pos==kpos) %>% slice_head(n=1)
   nm <- if(nrow(m)&&!is.na(m$name[[1]])&&m$name[[1]]!="") m$name[[1]] else kid; ppos <- if(nrow(m)&&!is.na(m$position[[1]])&&m$position[[1]]!="") m$position[[1]] else kpos
-  players[[i]] <- list(name=nm,position=ppos,gsis_id=if(nrow(m)&&!is.na(m$gsis_id[[1]])&&m$gsis_id[[1]]!="")m$gsis_id[[1]] else NULL,sleeper_id=NULL,espn_id=if(nrow(m)&&!is.na(m$espn_id[[1]])&&m$espn_id[[1]]!="")m$espn_id[[1]] else NULL,consensus_stats=as.list(setNames(s$value,s$stat)),stat_source_counts=as.list(setNames(s$source_count,s$stat)),default_scoring_points=if(nrow(d)&&is.finite(d$default_scoring_points[[1]]))d$default_scoring_points[[1]] else NULL,source_count=if(nrow(d))d$source_count[[1]] else max(s$source_count,na.rm=TRUE),sources=if(nrow(d))d$sources[[1]] else character())
+  players[[i]] <- list(
+    name=nm,position=ppos,
+    gsis_id=if(nrow(m)&&!is.na(m$gsis_id[[1]])&&m$gsis_id[[1]]!="")m$gsis_id[[1]] else NULL,
+    sleeper_id=NULL,
+    espn_id=if(nrow(m)&&!is.na(m$espn_id[[1]])&&m$espn_id[[1]]!="")m$espn_id[[1]] else NULL,
+    consensus_stats=as.list(setNames(s$value,s$stat)),
+    stat_source_counts=as.list(setNames(s$source_count,s$stat)),
+    default_scoring_points=if(nrow(d)&&is.finite(d$default_scoring_points[[1]]))d$default_scoring_points[[1]] else NULL,
+    source_count=if(nrow(d))d$source_count[[1]] else max(s$source_count,na.rm=TRUE),
+    sources=if(nrow(d))d$sources[[1]] else character(),
+    point_source_mean=if(nrow(u)&&is.finite(u$point_source_mean[[1]]))u$point_source_mean[[1]] else NULL,
+    point_source_sd=if(nrow(u)&&is.finite(u$point_source_sd[[1]]))u$point_source_sd[[1]] else NULL,
+    point_source_min=if(nrow(u)&&is.finite(u$point_source_min[[1]]))u$point_source_min[[1]] else NULL,
+    point_source_max=if(nrow(u)&&is.finite(u$point_source_max[[1]]))u$point_source_max[[1]] else NULL,
+    point_source_count=if(nrow(u))u$point_source_count[[1]] else NULL,
+    source_rank_mean=if(nrow(u)&&is.finite(u$source_rank_mean[[1]]))u$source_rank_mean[[1]] else NULL,
+    source_rank_sd=if(nrow(u)&&is.finite(u$source_rank_sd[[1]]))u$source_rank_sd[[1]] else NULL,
+    source_rank_min=if(nrow(u)&&is.finite(u$source_rank_min[[1]]))u$source_rank_min[[1]] else NULL,
+    source_rank_max=if(nrow(u)&&is.finite(u$source_rank_max[[1]]))u$source_rank_max[[1]] else NULL
+  )
 }
 
-out <- list(schema_version="2.0",season=season,week=week,generated_at=format(Sys.time(),tz="UTC",usetz=TRUE),source="ffanalytics independent crowd consensus",projection_type="weekly_projection_stats",scoring_basis="unscored source-stat consensus; score at request time with exact league rules",averaging_rule="equal_weight_by_stat",requested_sources=sources,working_sources=unique(working_sources),failed_sources=unique(failed_sources),excluded_sources=c("ESPN","FantasyPros"),players=players)
+out <- list(
+  schema_version="2.0",season=season,week=week,generated_at=format(Sys.time(),tz="UTC",usetz=TRUE),
+  source="ffanalytics independent crowd consensus",projection_type="weekly_projection_stats",
+  scoring_basis="unscored source-stat consensus; score at request time with exact league rules",
+  averaging_rule="equal_weight_by_stat",
+  uncertainty_basis="individual ffanalytics source point spread and within-position source ranks; context/confidence only, not a second projection vote",
+  requested_sources=sources,working_sources=unique(working_sources),failed_sources=unique(failed_sources),excluded_sources=c("ESPN","FantasyPros"),players=players
+)
 dir.create("data",recursive=TRUE,showWarnings=FALSE)
 jsonlite::write_json(out,"data/ffanalytics_weekly.json",pretty=TRUE,auto_unbox=TRUE,null="null",na="null")
-message("Wrote ",length(players)," weekly players from ",length(unique(working_sources))," independent working sources.")
+message("Wrote ",length(players)," weekly players from ",length(unique(working_sources))," independent working sources with crowd uncertainty metadata.")
