@@ -1,7 +1,7 @@
 {
   "schema_version": "2.0",
   "season": 2026,
-  "generated_at": "2026-09-16 14:14:06 UTC",
+  "generated_at": "2026-09-16 17:41:05 UTC",
   "source": "ffanalytics independent crowd consensus",
   "projection_type": "season_projection_stats",
   "scoring_basis": "unscored source-stat consensus; score at request time with exact league rules",
@@ -3763,12 +3763,12 @@
         "pass_int": 0,
         "pass_tds": 0,
         "pass_yds": 0,
-        "rec": 2.8,
-        "rec_tds": 0.13,
-        "rec_yds": 17.72,
-        "rush_att": 4.86,
-        "rush_tds": 0.16,
-        "rush_yds": 19.59
+        "rec": 1.4,
+        "rec_tds": 0.065,
+        "rec_yds": 10.86,
+        "rush_att": 17.43,
+        "rush_tds": 0.08,
+        "rush_yds": 73.295
       },
       "stat_source_counts": {
         "pass_att": 1,
@@ -3776,16 +3776,16 @@
         "pass_int": 1,
         "pass_tds": 1,
         "pass_yds": 1,
-        "rec": 1,
-        "rec_tds": 1,
-        "rec_yds": 1,
-        "rush_att": 1,
-        "rush_tds": 1,
-        "rush_yds": 1
+        "rec": 2,
+        "rec_tds": 2,
+        "rec_yds": 2,
+        "rush_att": 2,
+        "rush_tds": 2,
+        "rush_yds": 2
       },
-      "default_scoring_points": 5.471,
-      "source_count": 1,
-      "sources": "FanDuel"
+      "default_scoring_points": 9.2855,
+      "source_count": 2,
+      "sources": ["CBS", "FanDuel"]
     },
     {
       "name": "Breece Hall",
@@ -5229,12 +5229,12 @@
         "pass_int": 0,
         "pass_tds": 0,
         "pass_yds": 0,
-        "rec": 7.305,
-        "rec_tds": 0.08,
-        "rec_yds": 52.225,
-        "rush_att": 21.625,
-        "rush_tds": 0.58,
-        "rush_yds": 86.07
+        "rec": 6.87,
+        "rec_tds": 0.0533,
+        "rec_yds": 48.8167,
+        "rush_att": 23.0833,
+        "rush_tds": 0.3867,
+        "rush_yds": 85.7133
       },
       "stat_source_counts": {
         "pass_att": 1,
@@ -5242,16 +5242,16 @@
         "pass_int": 1,
         "pass_tds": 1,
         "pass_yds": 1,
-        "rec": 2,
-        "rec_tds": 2,
-        "rec_yds": 2,
-        "rush_att": 2,
-        "rush_tds": 2,
-        "rush_yds": 2
+        "rec": 3,
+        "rec_tds": 3,
+        "rec_yds": 3,
+        "rush_att": 3,
+        "rush_tds": 3,
+        "rush_yds": 3
       },
-      "default_scoring_points": 17.7895,
-      "source_count": 2,
-      "sources": ["FanDuel", "FFToday"]
+      "default_scoring_points": 16.093,
+      "source_count": 3,
+      "sources": ["CBS", "FanDuel", "FFToday"]
     },
     {
       "name": "Ray Davis",
@@ -5699,10 +5699,10 @@
         "pass_yds": 0,
         "rec": 0,
         "rec_tds": 0,
-        "rec_yds": 1.5,
-        "rush_att": 20.81,
-        "rush_tds": 0.155,
-        "rush_yds": 88.625
+        "rec_yds": 0,
+        "rush_att": 13.62,
+        "rush_tds": 0.31,
+        "rush_yds": 55.25
       },
       "stat_source_counts": {
         "pass_att": 1,
@@ -5710,16 +5710,16 @@
         "pass_int": 1,
         "pass_tds": 1,
         "pass_yds": 1,
-        "rec": 2,
-        "rec_tds": 2,
-        "rec_yds": 2,
-        "rush_att": 2,
-        "rush_tds": 2,
-        "rush_yds": 2
+        "rec": 1,
+        "rec_tds": 1,
+        "rec_yds": 1,
+        "rush_att": 1,
+        "rush_tds": 1,
+        "rush_yds": 1
       },
-      "default_scoring_points": 9.9425,
-      "source_count": 2,
-      "sources": ["CBS", "FanDuel"]
+      "default_scoring_points": 7.385,
+      "source_count": 1,
+      "sources": "FanDuel"
     },
     {
       "name": "Jacob Saylors",
@@ -6597,12 +6597,12 @@
         "pass_int": 0,
         "pass_tds": 0,
         "pass_yds": 0,
-        "rec": 2.555,
-        "rec_tds": 0.08,
-        "rec_yds": 21.22,
-        "rush_att": 26.755,
-        "rush_tds": 0.255,
-        "rush_yds": 106
+        "rec": 4.11,
+        "rec_tds": 0.16,
+        "rec_yds": 28.44,
+        "rush_att": 22.51,
+        "rush_tds": 0.51,
+        "rush_yds": 91
       },
       "stat_source_counts": {
         "pass_att": 1,
@@ -6610,16 +6610,16 @@
         "pass_int": 1,
         "pass_tds": 1,
         "pass_yds": 1,
-        "rec": 2,
-        "rec_tds": 2,
-        "rec_yds": 2,
-        "rush_att": 2,
-        "rush_tds": 2,
-        "rush_yds": 2
+        "rec": 1,
+        "rec_tds": 1,
+        "rec_yds": 1,
+        "rush_att": 1,
+        "rush_tds": 1,
+        "rush_yds": 1
       },
-      "default_scoring_points": 14.732,
-      "source_count": 2,
-      "sources": ["CBS", "FanDuel"]
+      "default_scoring_points": 15.964,
+      "source_count": 1,
+      "sources": "FanDuel"
     },
     {
       "name": "Josh Williams",
@@ -8079,12 +8079,12 @@
         "pass_int": 0,
         "pass_tds": 0,
         "pass_yds": 0,
-        "rec": 33.69,
-        "rec_tds": 2.4,
-        "rec_yds": 350.82,
-        "rush_att": 2.1567,
-        "rush_tds": 0.0567,
-        "rush_yds": 11.1933
+        "rec": 30.035,
+        "rec_tds": 2.1,
+        "rec_yds": 344.73,
+        "rush_att": 2.235,
+        "rush_tds": 0.085,
+        "rush_yds": 10.29
       },
       "stat_source_counts": {
         "pass_att": 1,
@@ -8092,16 +8092,16 @@
         "pass_int": 1,
         "pass_tds": 1,
         "pass_yds": 1,
-        "rec": 3,
-        "rec_tds": 3,
-        "rec_yds": 3,
-        "rush_att": 3,
-        "rush_tds": 3,
-        "rush_yds": 3
+        "rec": 2,
+        "rec_tds": 2,
+        "rec_yds": 2,
+        "rush_att": 2,
+        "rush_tds": 2,
+        "rush_yds": 2
       },
-      "default_scoring_points": 50.9413,
-      "source_count": 3,
-      "sources": ["CBS", "FanDuel", "FFToday"]
+      "default_scoring_points": 48.612,
+      "source_count": 2,
+      "sources": ["FanDuel", "FFToday"]
     },
     {
       "name": "CeeDee Lamb",
@@ -13797,12 +13797,12 @@
         "pass_int": 0,
         "pass_tds": 0,
         "pass_yds": 0,
-        "rec": 16.035,
-        "rec_tds": 1.3,
-        "rec_yds": 177.91,
-        "rush_att": 0,
+        "rec": 21.69,
+        "rec_tds": 1.5333,
+        "rec_yds": 264.2733,
+        "rush_att": 0.6667,
         "rush_tds": 0,
-        "rush_yds": 0
+        "rush_yds": 3.6667
       },
       "stat_source_counts": {
         "pass_att": 1,
@@ -13810,16 +13810,16 @@
         "pass_int": 1,
         "pass_tds": 1,
         "pass_yds": 1,
-        "rec": 2,
-        "rec_tds": 2,
-        "rec_yds": 2,
-        "rush_att": 2,
-        "rush_tds": 2,
-        "rush_yds": 2
+        "rec": 3,
+        "rec_tds": 3,
+        "rec_yds": 3,
+        "rush_att": 3,
+        "rush_tds": 3,
+        "rush_yds": 3
       },
-      "default_scoring_points": 25.591,
-      "source_count": 2,
-      "sources": ["FanDuel", "FFToday"]
+      "default_scoring_points": 34.994,
+      "source_count": 3,
+      "sources": ["CBS", "FanDuel", "FFToday"]
     },
     {
       "name": "Zavion Thomas",
