@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-09-15T14:18:31.110Z",
+  "generated_at": "2026-09-16T14:10:47.650Z",
   "source": "Sleeper master player endpoint",
-  "player_count": 4264,
+  "player_count": 4265,
   "canonical_id_rule": "GSIS when available, otherwise Sleeper ID, otherwise ESPN ID",
   "players": [
     {
@@ -3664,6 +3664,18 @@
       "gsis_id": null,
       "status": "Inactive",
       "active": false
+    },
+    {
+      "canonical_player_id": "sleeper:11273",
+      "name": "Ben VanSumeren",
+      "normalized_name": "benvansumeren",
+      "position": "RB",
+      "team": "KC",
+      "sleeper_id": "11273",
+      "espn_id": null,
+      "gsis_id": null,
+      "status": "Active",
+      "active": true
     },
     {
       "canonical_player_id": "sleeper:13065",
@@ -10774,7 +10786,7 @@
       "name": "Dalen Cambre",
       "normalized_name": "dalencambre",
       "position": "WR",
-      "team": "NYG",
+      "team": null,
       "sleeper_id": "12888",
       "espn_id": null,
       "gsis_id": null,
@@ -16154,7 +16166,7 @@
       "sleeper_id": "12469",
       "espn_id": null,
       "gsis_id": null,
-      "status": "Active",
+      "status": "Inactive",
       "active": true
     },
     {
@@ -17122,7 +17134,7 @@
       "name": "Eric Gray",
       "normalized_name": "ericgray",
       "position": "RB",
-      "team": null,
+      "team": "CLE",
       "sleeper_id": "10223",
       "espn_id": null,
       "gsis_id": null,
@@ -17914,7 +17926,7 @@
       "name": "Gage Larvadain",
       "normalized_name": "gagelarvadain",
       "position": "WR",
-      "team": null,
+      "team": "BAL",
       "sleeper_id": "13101",
       "espn_id": null,
       "gsis_id": null,
@@ -19198,7 +19210,7 @@
       "name": "Hassan Haskins",
       "normalized_name": "hassanhaskins",
       "position": "RB",
-      "team": "NE",
+      "team": null,
       "sleeper_id": "8123",
       "espn_id": null,
       "gsis_id": null,
@@ -20578,11 +20590,11 @@
       "name": "Jack Stoll",
       "normalized_name": "jackstoll",
       "position": "TE",
-      "team": null,
+      "team": "SF",
       "sleeper_id": "7946",
       "espn_id": null,
       "gsis_id": null,
-      "status": "Inactive",
+      "status": "Active",
       "active": true
     },
     {
@@ -27574,7 +27586,7 @@
       "name": "Josiah Deguara",
       "normalized_name": "josiahdeguara",
       "position": "TE",
-      "team": null,
+      "team": "PHI",
       "sleeper_id": "7050",
       "espn_id": "3914151",
       "gsis_id": null,
@@ -29066,7 +29078,7 @@
       "sleeper_id": "12670",
       "espn_id": null,
       "gsis_id": null,
-      "status": "Active",
+      "status": "Inactive",
       "active": true
     },
     {
@@ -34210,7 +34222,7 @@
       "name": "Marquez Valdes-Scantling",
       "normalized_name": "marquezvaldesscantling",
       "position": "WR",
-      "team": null,
+      "team": "LAC",
       "sleeper_id": "5086",
       "espn_id": "3051738",
       "gsis_id": "00-0034272",
@@ -44926,7 +44938,7 @@
       "name": "Sterling Shepard",
       "normalized_name": "sterlingshepard",
       "position": "WR",
-      "team": null,
+      "team": "NYJ",
       "sleeper_id": "3200",
       "espn_id": "2976592",
       "gsis_id": "00-0032385",
@@ -49174,7 +49186,7 @@
       "name": "Tyler Johnson",
       "normalized_name": "tylerjohnson",
       "position": "WR",
-      "team": null,
+      "team": "NYJ",
       "sleeper_id": "6960",
       "espn_id": "2310331",
       "gsis_id": null,
