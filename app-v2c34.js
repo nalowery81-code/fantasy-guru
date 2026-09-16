@@ -1,90 +1,63 @@
-/* Commit 1: visual league/team switcher + remember the last league used. */
+// Evaluation Lab — development-only shadow analysis for Evaluation Engine v2.
+// Reads the valuation data already loaded by Fantasy Guru; no extra API request is made.
 (function(){
-  const LAST_INDEX='fg-last-league-index';
-  const LAST_KEY='fg-last-league-key';
-  const esc34=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[c]));
-  const leagueKey=x=>x?`${String(x.platform||'').toLowerCase()}:${String(x.id||'')}:${String(x.rid||'')}`:'';
+  if(!Array.isArray(NAV)||NAV.some(x=>x[0]==='evalLab'))return;
+  NAV.push(['evalLab','🧪 Evaluation Lab']);
 
-  function activeIndex(){
-    const ls=leagues();
-    if(C){
-      const i=ls.findIndex(x=>String(x.id)===String(C?.league?.id)&&String(x.platform).toLowerCase()===String(C?.platform).toLowerCase()&&String(x.rid)===String(C?.my_team?.roster_id));
-      if(i>=0)return i;
-      const j=ls.findIndex(x=>String(x.id)===String(C?.league?.id)&&String(x.platform).toLowerCase()===String(C?.platform).toLowerCase());
-      if(j>=0)return j;
-    }
-    return 0;
-  }
-
-  function rememberedIndex(){
-    const ls=leagues();
-    const key=localStorage.getItem(LAST_KEY)||'';
-    if(key){const i=ls.findIndex(x=>leagueKey(x)===key);if(i>=0)return i;}
-    const raw=Number(localStorage.getItem(LAST_INDEX));
-    return Number.isInteger(raw)&&raw>=0&&raw<ls.length?raw:0;
-  }
-
-  function remember(i){
-    const x=leagues()[i];if(!x)return;
-    try{localStorage.setItem(LAST_INDEX,String(i));localStorage.setItem(LAST_KEY,leagueKey(x));}catch{}
-  }
-
-  function switcherMarkup(idx){
-    const ls=leagues(),x=ls[idx]||ls[0]||{};
-    const options=ls.map((q,i)=>`<button type="button" class="fg34Option ${i===idx?'current':''}" data-fg34-index="${i}"><span class="fg34Icon">${q.platform==='ESPN'?'🏆':'🏈'}</span><span class="fg34OptionText"><b>${esc34(q.team||q.name||'Fantasy Team')}</b><small>${esc34(q.name||'League')} · ${esc34(q.platform||'')}</small></span>${i===idx?'<em>CURRENT</em>':'<em>OPEN</em>'}</button>`).join('');
-    return `<button type="button" class="fg34Current" id="fg34Current" aria-haspopup="true" aria-expanded="false"><span class="fg34CurrentIcon">${x.platform==='ESPN'?'🏆':'🏈'}</span><span><b>${esc34(x.team||x.name||'Fantasy Team')}</b><small>${esc34(x.name||'League')} · ${esc34(x.platform||'')}</small></span><span class="fg34Chevron">⌄</span></button><div class="fg34Menu hidden" id="fg34Menu"><div class="fg34MenuHead">SWITCH TEAM / LEAGUE</div>${options}<button type="button" class="fg34Manage" id="fg34Manage">+ Add a League</button></div>`;
-  }
-
-  function closeMenu(){const m=document.getElementById('fg34Menu'),b=document.getElementById('fg34Current');if(m)m.classList.add('hidden');if(b)b.setAttribute('aria-expanded','false');}
-
-  function renderSwitcher(idx=activeIndex()){
-    const select=$('leagueSelect');if(!select)return;
-    select.classList.add('fg34NativeSelect');select.setAttribute('aria-hidden','true');select.tabIndex=-1;
-    let host=document.getElementById('fg34LeagueSwitcher');
-    if(!host){host=document.createElement('div');host.id='fg34LeagueSwitcher';host.className='fg34Switcher';select.parentNode.insertBefore(host,select);}
-    host.innerHTML=switcherMarkup(idx);
-    const current=document.getElementById('fg34Current'),menu=document.getElementById('fg34Menu');
-    if(current&&menu)current.onclick=e=>{e.stopPropagation();const opening=menu.classList.contains('hidden');menu.classList.toggle('hidden',!opening);current.setAttribute('aria-expanded',opening?'true':'false');};
-    host.querySelectorAll('[data-fg34-index]').forEach(b=>b.onclick=async e=>{e.stopPropagation();const i=Number(b.dataset.fg34Index);closeMenu();if(i===activeIndex())return;await openLeague(i);});
-    const manage=document.getElementById('fg34Manage');if(manage)manage.onclick=e=>{e.stopPropagation();closeMenu();showAddForm();};
-  }
-
-  document.addEventListener('click',e=>{const h=document.getElementById('fg34LeagueSwitcher');if(h&&!h.contains(e.target))closeMenu();});
-  document.addEventListener('keydown',e=>{if(e.key==='Escape')closeMenu();});
-
-  const baseRenderShell=renderShell;
-  renderShell=function(idx){const out=baseRenderShell(idx);renderSwitcher(idx);return out;};
-
-  const baseOpen=openLeague;
-  openLeague=async function(i){
-    const out=await baseOpen(i);
-    const x=leagues()[i];
-    const loaded=!!(x&&C&&String(x.id)===String(C?.league?.id)&&String(x.platform).toLowerCase()===String(C?.platform).toLowerCase());
-    if(loaded){remember(i);renderSwitcher(i);}
-    return out;
+  const oldShowView=showView;
+  showView=function(v){
+    if(v!=='evalLab')return oldShowView(v);
+    currentView=v;
+    $('nav').querySelectorAll('button').forEach(b=>b.classList.toggle('active',b.dataset.view===v));
+    renderEvaluationLab();
   };
 
-  const preferred=rememberedIndex();
-  if(preferred>0)document.body.classList.add('fg34RestoringLeague');
-  function restorePreferred(){
-    if(preferred<=0){renderSwitcher(activeIndex());return;}
-    if(loadingLeague){setTimeout(restorePreferred,50);return;}
-    if(activeIndex()===preferred&&C){renderSwitcher(preferred);document.body.classList.remove('fg34RestoringLeague');return;}
-    Promise.resolve(openLeague(preferred)).finally(()=>document.body.classList.remove('fg34RestoringLeague'));
+  const num=v=>finite(v)?Number(v):null;
+  const mean=a=>a.length?a.reduce((s,x)=>s+x,0)/a.length:null;
+  const sd=a=>{if(a.length<2)return 0;const m=mean(a);return Math.sqrt(a.reduce((s,x)=>s+(x-m)**2,0)/a.length)};
+  const confidence=p=>{
+    const vals=[p.espn_weekly_points,p.sleeper_weekly_points,p.ffanalytics_weekly_points].filter(finite).map(Number);
+    if(!vals.length)return{score:0,label:'LOW',sources:0,spread:null};
+    const m=mean(vals),cv=Math.abs(m)>.01?sd(vals)/Math.abs(m):1,source=vals.length===3?1:vals.length===2?.78:.48,agree=Math.max(0,Math.min(1,1-cv));
+    const score=Math.round((source*.65+agree*.35)*100);
+    return{score,label:score>=80?'HIGH':score>=60?'MEDIUM':'LOW',sources:vals.length,spread:vals.length>1?Math.max(...vals)-Math.min(...vals):0};
+  };
+  function allPlayers(){const out=[],seen=new Set();for(const t of analysis?.team_details||[])for(const p of t.players||[]){const k=ident(p);if(!seen.has(k)){seen.add(k);out.push(p)}}return out}
+  function actualRows(players){return players.filter(p=>finite(p.actual_weekly_points)&&finite(p.weekly_points)).map(p=>{const actual=Number(p.actual_weekly_points),c=confidence(p),sources={ESPN:num(p.espn_weekly_points),Sleeper:num(p.sleeper_weekly_points),ffanalytics:num(p.ffanalytics_weekly_points)};return{p,actual,c,guru:Math.abs(Number(p.weekly_points)-actual),sources}})}
+  function mae(rows,getter){const a=[];for(const r of rows){const v=getter(r);if(finite(v))a.push(Math.abs(Number(v)-r.actual))}return a.length?{n:a.length,v:mean(a)}:{n:0,v:null}}
+  function fmt(x){return finite(x)?Number(x).toFixed(2):'—'}
+  function sampleMessage(n,target=25){return n<target?`Not enough data yet. ${n} graded player${n===1?'':'s'}; target at least ${target} before drawing conclusions.`:`${n} graded players. Results are useful, but Guru will keep learning as the sample grows.`}
+  function ledgerStatus(ledger){
+    if(!ledger)return'No ledger result returned yet.';
+    if(ledger.status==='NOT_CONFIGURED')return'Durable storage is ready in code but Vercel still needs the Supabase server credentials.';
+    if(ledger.status==='CAPTURED')return`This week's pre-game snapshot is locked with ${ledger.players_snapshotted||0} players.`;
+    if(ledger.status==='LOCKED')return`This week's snapshot is locked with ${ledger.players_snapshotted||0} players and is waiting for completed-game actuals.`;
+    if(ledger.status==='GRADED')return`This week's locked snapshot has ${ledger.players_graded||0} graded players.`;
+    if(ledger.status==='MISSED_PREGAME')return'This week was intentionally skipped because scoring had already begun before a clean snapshot existed.';
+    if(ledger.status==='WAITING_FOR_MATCHES')return'Actual scoring exists, but none of it matches the locked tracked-player snapshot yet.';
+    if(ledger.status==='ERROR')return`Ledger error: ${ledger.error||'Unknown error'}`;
+    return ledger.reason||ledger.note||`Ledger status: ${ledger.status||'unknown'}`;
   }
-  setTimeout(restorePreferred,0);
-
-  const style=document.createElement('style');style.textContent=`
-    .fg34NativeSelect{display:none!important}
-    .fg34Switcher{position:relative;width:100%;margin-bottom:7px}
-    .fg34Current{width:100%;display:grid;grid-template-columns:28px minmax(0,1fr) 18px;gap:7px;align-items:center;text-align:left;background:#07111e;color:#f8fafc;border:1px solid #2c4d6b;border-radius:10px;padding:9px 8px;box-shadow:0 5px 18px rgba(0,0,0,.12)}
-    .fg34Current:hover,.fg34Current[aria-expanded="true"]{border-color:#38bdf8;background:#0a1a2b}
-    .fg34CurrentIcon{font-size:18px}.fg34Current b{display:block;font-size:10px;line-height:1.2;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.fg34Current small{display:block;font-size:8px;color:#8fa6bf;margin-top:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.fg34Chevron{color:#7dd3fc;font-size:16px;text-align:right}
-    .fg34Menu{position:absolute;left:0;top:calc(100% + 6px);z-index:500;width:310px;max-width:min(310px,calc(100vw - 24px));background:#0b1627;border:1px solid #35506b;border-radius:12px;padding:7px;box-shadow:0 18px 48px rgba(0,0,0,.46)}
-    .fg34MenuHead{padding:5px 7px 7px;color:#7890a7;font-size:8px;font-weight:900;letter-spacing:.08em}
-    .fg34Option{width:100%;display:grid;grid-template-columns:30px minmax(0,1fr) auto;gap:8px;align-items:center;text-align:left;background:#07111e;color:#e8f2ff;border:1px solid #20364e;border-radius:9px;padding:9px;margin-bottom:6px}.fg34Option:hover{border-color:#38bdf8;background:#0b2033}.fg34Option.current{border-color:#216a56;background:#0a201c}.fg34Icon{font-size:18px}.fg34OptionText b{display:block;font-size:11px}.fg34OptionText small{display:block;font-size:8px;color:#8fa6bf;margin-top:2px}.fg34Option em{font-style:normal;font-size:7px;font-weight:900;color:#b9dcf5;border:1px solid #2d5e86;border-radius:999px;padding:3px 5px}.fg34Option.current em{color:#9df5ca;border-color:#216a56;background:#0c2b26}
-    .fg34Manage{width:100%;border:1px dashed #35506b;background:#0b1b2d;color:#b9dcf5;border-radius:9px;padding:8px;font-size:9px;font-weight:900}.fg34Manage:hover{border-color:#38bdf8;color:#fff}
-    body.fg34RestoringLeague #shell{visibility:hidden!important}
-    @media(max-width:700px){.fg34Menu{width:100%;max-width:none;position:relative;top:auto;margin-top:6px}.fg34Current b{font-size:12px}.fg34Current small{font-size:9px}}
-  `;document.head.appendChild(style);
+  function renderEvaluationLab(){
+    const players=allPlayers(),rows=actualRows(players),guru=mae(rows,r=>r.p.weekly_points),espn=mae(rows,r=>r.sources.ESPN),sleeper=mae(rows,r=>r.sources.Sleeper),ffa=mae(rows,r=>r.sources.ffanalytics);
+    const conf=players.map(confidence).filter(x=>x.sources),avgConf=conf.length?mean(conf.map(x=>x.score)):null;
+    const byPos=['QB','RB','WR','TE'].map(position=>{const x=rows.filter(r=>pos(r.p.position)===position),g=mae(x,r=>r.p.weekly_points);return{position,n:g.n,mae:g.v}});
+    const best=[['Guru consensus',guru],['ESPN',espn],['Sleeper',sleeper],['ffanalytics',ffa]].filter(x=>finite(x[1].v)).sort((a,b)=>a[1].v-b[1].v)[0];
+    const headline=rows.length<25?'Collecting baseline data':best?`${best[0]} currently has the lowest error`:'Waiting for completed-game actuals';
+    const ledger=analysis?.evaluation_ledger||null,hist=ledger?.history&&!ledger.history.error?ledger.history:null;
+    const histSource=hist?.source_accuracy||{},histCards=[['Guru consensus',{n:hist?.players_graded||0,mae:hist?.consensus_mae}],['ESPN',histSource.espn],['Sleeper',histSource.sleeper],['ffanalytics',histSource.ffanalytics]];
+    const histBest=histCards.filter(x=>finite(x[1]?.mae)).sort((a,b)=>Number(a[1].mae)-Number(b[1].mae))[0];
+    const tuningText=hist?.ready_for_weight_tuning?'Baseline threshold reached. Source-weight review is allowed, but weights should still change only after the evidence is inspected.':`Keep collecting locked predictions. ${hist?.players_graded||0}/100 graded player observations toward the source-weight review threshold.`;
+    $('content').innerHTML=`<h2>🧪 Evaluation Lab</h2><div class="sub">Shadow testing for Evaluation Engine v2. This page does not change Guru recommendations.</div>
+      <div class="card" style="margin-top:16px"><h3>${esc(headline)}</h3><div class="muted">${esc(sampleMessage(rows.length))}</div><div class="muted" style="margin-top:6px">V2 projection confidence: ${fmt(avgConf)} / 100 across ${conf.length} players.</div></div>
+      <div class="card" style="margin-top:14px"><h3>Durable prediction ledger</h3><div><b>${esc(ledger?.status||'NOT RUN')}</b></div><div class="muted" style="margin-top:5px">${esc(ledgerStatus(ledger))}</div>${hist?`<div class="muted" style="margin-top:8px">Selected-league history: ${hist.graded_snapshots||0} graded week${hist.graded_snapshots===1?'':'s'} · ${hist.players_graded||0} player grades${histBest?` · lowest historical MAE: ${esc(histBest[0])} ${fmt(histBest[1].mae)}`:''}</div><div class="muted" style="margin-top:5px">${esc(tuningText)}</div>`:''}</div>
+      ${hist?`<div class="dashboardGrid" style="margin-top:14px">${histCards.map(([name,x])=>`<div class="card"><div class="muted">${esc(name)} historical MAE</div><h3 style="font-size:28px;margin:5px 0">${fmt(x?.mae)}</h3><div class="muted">${x?.n||0} locked predictions · selected league</div></div>`).join('')}</div>`:''}
+      <div class="dashboardGrid" style="margin-top:14px">
+        ${[['Guru consensus',guru],['ESPN',espn],['Sleeper',sleeper],['ffanalytics',ffa]].map(([name,x])=>`<div class="card"><div class="muted">${esc(name)} current-week MAE</div><h3 style="font-size:28px;margin:5px 0">${fmt(x.v)}</h3><div class="muted">${x.n} loaded actuals · lower is better</div></div>`).join('')}
+      </div>
+      <div class="card" style="margin-top:14px"><h3>Current-week accuracy by position</h3>${byPos.map(x=>`<div class="row"><b>${x.position}</b><div class="muted">MAE ${fmt(x.mae)} · ${x.n} graded</div></div>`).join('')}</div>
+      <div class="card" style="margin-top:14px"><h3>What V2 is testing</h3><div class="row"><b>Source agreement</b><div class="muted">Confidence falls when ESPN, Sleeper and ffanalytics disagree.</div></div><div class="row"><b>Decision-specific value</b><div class="muted">Start/sit, waiver and trade questions use different evidence weights.</div></div><div class="row"><b>Replacement value</b><div class="muted">Players are judged against what the league can realistically replace at that position.</div></div><div class="row"><b>HOLD discipline</b><div class="muted">Small edges should not become forced recommendations.</div></div></div>
+      <div class="card" style="margin-top:14px"><h3>V1 vs V2 recommendation test</h3><div class="muted">Shadow comparison is ready for recommendation snapshots. Until enough pre-game decisions are captured, Guru will not claim V2 is better.</div></div>`;
+  }
+  window.renderEvaluationLab=renderEvaluationLab;
 })();
