@@ -1,6 +1,6 @@
 /* Central interaction controller for active Fantasy Guru pages. */
 (function(){
-  const E=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[c]));
+  const E=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot',"'":'&#039;'}[c]));
   const F=v=>v!==null&&v!==undefined&&v!==''&&Number.isFinite(Number(v));
   const N=(v,d=1)=>F(v)?Number(v).toFixed(d):'—';
   const POS=p=>typeof pos==='function'?pos(p?.position):String(p?.position||'').toUpperCase();
@@ -37,7 +37,7 @@
       ['Value over replacement',c.value_over_replacement,20],
       ['FantasyCalc market',c.market,15],
       ['Starter impact',c.starter_impact,10],
-      ['Weekly trend',c.weekly_trend,5],
+      ['Week Outlook',F(c.week_outlook)?c.week_outlook:c.weekly_trend,5],
       ['Confidence / risk',c.confidence_risk,5]
     ].filter(([,v])=>F(v));
     const weight=rows.reduce((n,r)=>n+r[2],0)||1;
