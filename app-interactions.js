@@ -1,6 +1,6 @@
 /* Central interaction controller for active Fantasy Guru pages. */
 (function(){
-  const E=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot',"'":'&#039;'}[c]));
+  const E=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[c]));
   const F=v=>v!==null&&v!==undefined&&v!==''&&Number.isFinite(Number(v));
   const N=(v,d=1)=>F(v)?Number(v).toFixed(d):'—';
   const POS=p=>typeof pos==='function'?pos(p?.position):String(p?.position||'').toUpperCase();
