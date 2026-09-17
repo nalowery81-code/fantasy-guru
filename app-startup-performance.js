@@ -97,7 +97,7 @@
 
   /* Load Evaluation Lab on-demand check actions after the lab renderer is available. */
   const evalActions=document.createElement('script');
-  evalActions.src='/app-evaluation-actions.js?v=20260917checks1';
+  evalActions.src='/app-evaluation-actions.js?v=20260917checks2';
   document.head.appendChild(evalActions);
 
   /* Warm non-critical public data after the main dashboard has had time to paint. */
