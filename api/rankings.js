@@ -86,6 +86,34 @@ function sanitizeWeeklyActuals(data){
   return data;
 }
 
+function restrictEspnWaiverPool(context,data){
+  if(String(context?.platform||'').toUpperCase()!=='ESPN')return data;
+  const allowed=Array.isArray(context?.available_trending_players)?context.available_trending_players:[];
+  const before=Array.isArray(data?.waiver_pool)?data.waiver_pool.length:0;
+  if(!allowed.length){
+    data.waiver_availability_guard={platform:'ESPN',status:'NO_ESPN_AVAILABILITY_FEED',before,after:0,removed:before};
+    data.waiver_pool=[];
+    return data;
+  }
+  const espnIds=new Set(),sleeperIds=new Set(),canonicalIds=new Set(),namePos=new Set();
+  for(const p of allowed){
+    if(p?.espn_id!=null)espnIds.add(String(p.espn_id));
+    if(p?.id!=null)espnIds.add(String(p.id));
+    if(p?.sleeper_id!=null)sleeperIds.add(String(p.sleeper_id));
+    if(p?.canonical_player_id)canonicalIds.add(String(p.canonical_player_id));
+    if(p?.name)namePos.add(`${norm(p.name)}|${pos(p.position)}`);
+  }
+  data.waiver_pool=(data.waiver_pool||[]).filter(p=>
+    (p?.espn_id!=null&&espnIds.has(String(p.espn_id)))||
+    (p?.sleeper_id!=null&&sleeperIds.has(String(p.sleeper_id)))||
+    (p?.canonical_player_id&&canonicalIds.has(String(p.canonical_player_id)))||
+    (p?.name&&namePos.has(`${norm(p.name)}|${pos(p.position)}`))
+  );
+  const after=data.waiver_pool.length;
+  data.waiver_availability_guard={platform:'ESPN',status:'AUTHORITATIVE_ESPN_FILTER',espn_available_count:allowed.length,before,after,removed:before-after,rule:'ESPN FREEAGENT/WAIVERS status is authoritative for availability. Projection providers do not determine roster ownership.'};
+  return data;
+}
+
 function attachIntel(data,fc,trends){
   const idx=marketIndexes(fc.rows),lookup=p=>(p?.sleeper_id&&idx.bySleeper.get(String(p.sleeper_id)))||(p?.espn_id&&idx.byEspn.get(String(p.espn_id)))||idx.byNamePos.get(`${norm(p?.name)}|${pos(p?.position)}`)||null;
   let matched=0,total=0;const all=[];
@@ -105,7 +133,7 @@ function attachIntel(data,fc,trends){
   data.source_health=health;
   data.integrity_guard={status:health.status==='HEALTHY'&&cautionCount===0?'PASS':'CAUTION',rule:'Actionable projection-based opportunities require at least two independent projection sources.',players_with_caution:cautionCount,total_players_checked:all.length,behavior:'Single-source or unavailable evidence may still be displayed, but it cannot create BUY_LOW or SELL_HIGH signals.'};
   data.market={source:'FantasyCalc',role:'market realism only; not a projection source',available:fc.rows.length>0,cache:fc.cache,ttl_seconds:300,error:fc.error,config:fc.config,matched_players:matched,total_players_enriched:total,coverage_pct:total?Math.round(matched/total*100):0};
-  data.opportunities={buy_low:buys.sort((a,b)=>(Number(b.market_position_rank||0)-Number(b.projection_position_rank||0))-(Number(a.market_position_rank||0)-Number(a.projection_position_rank||0))).slice(0,10).map(simple),sell_high:sells.sort((a,b)=>Number(b.market_trend_30d||0)-Number(a.market_trend_30d||0)).slice(0,10).map(simple),sleeper_trending:emerging.sort((a,b)=>Number(b.sleeper_net_24h||0)-Number(a.sleeper_net_24h||0)).slice(0,10).map(simple)};
+  data.opportunities={buy_low:buys.sort((a,b)=>(Number(b.market_position_rank||0)-Number(b.projection_position_rank||0))-(Number(a.market_position_rank||0)-Number(a.projection_position_rank||0))).slice(0,10).map(simple),sell_high:sells.sort((a,b)=>Number(b.market_trend_30d||0)-Number(a.projection_position_rank||0)).slice(0,10).map(simple),sleeper_trending:emerging.sort((a,b)=>Number(b.sleeper_net_24h||0)-Number(a.sleeper_net_24h||0)).slice(0,10).map(simple)};
   data.evidence_policy={projection_sources:['ESPN','Sleeper','Independent ffanalytics crowd'],projection_rule:'Equal average of available independent sources',confidence_rule:'Source count plus cross-source spread; smaller disagreement means higher confidence',minimum_actionable_sources:2,missing_source_rule:'Missing evidence is explicit and cannot independently create BUY_LOW or SELL_HIGH signals.',market_source:'FantasyCalc',behavioral_source:'Sleeper 24h add/drop trends'};
   return data;
 }
@@ -116,6 +144,7 @@ export default async function handler(req,res){
     const {context}=req.body||{};
     const [data,fc,trends]=await Promise.all([buildValuation(context,{includeWaivers:true}),getFantasyCalc(context),getSleeperTrends()]);
     sanitizeWeeklyActuals(data);
+    restrictEspnWaiverPool(context,data);
     const output=attachTradeValues(context,attachIntel(data,fc,trends));
     try{output.evaluation_ledger=await runPredictionCycle(context,output)}catch(e){output.evaluation_ledger={status:'ERROR',error:e.message}}
     return res.json(output);
