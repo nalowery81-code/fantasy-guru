@@ -5,7 +5,7 @@ import { attachTradeValues } from '../lib/trade-value.js';
 const FC_TTL_MS=5*60*1000;
 const fcCache=new Map();
 const norm=s=>String(s||'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]/g,'');
-const pos=p=>String(p||'').toUpperCase()==='DST'?'DEF':String(p||'').toUpperCase();
+const pos=p=>{const q=String(p||'').toUpperCase();return ['DST','D/ST','DEFENSE'].includes(q)?'DEF':q};
 const finite=v=>v!==null&&v!==undefined&&v!==''&&Number.isFinite(Number(v));
 
 function leagueMarketConfig(context){
@@ -23,6 +23,14 @@ function leagueMarketConfig(context){
   return{isDynasty:false,numQbs,numTeams,ppr};
 }
 
+function fantasyCalcRows(payload){
+  if(Array.isArray(payload))return{rows:payload,schema:'ARRAY'};
+  if(Array.isArray(payload?.data?.items))return{rows:payload.data.items,schema:'DATA_ITEMS'};
+  if(Array.isArray(payload?.items))return{rows:payload.items,schema:'ITEMS'};
+  if(Array.isArray(payload?.data))return{rows:payload.data,schema:'DATA_ARRAY'};
+  return{rows:[],schema:'UNKNOWN'};
+}
+
 async function getFantasyCalc(context){
   const cfg=leagueMarketConfig(context),key=`${cfg.numTeams}-${cfg.numQbs}-${cfg.ppr}`;
   const cached=fcCache.get(key);
@@ -31,8 +39,8 @@ async function getFantasyCalc(context){
   try{
     const r=await fetch(`https://api.fantasycalc.com/values/current?${q}`,{headers:{Accept:'application/json','User-Agent':'FantasyGuru/1.0'}});
     if(!r.ok)throw new Error(`FantasyCalc ${r.status}`);
-    const rows=await r.json(),value={ts:Date.now(),rows:Array.isArray(rows)?rows:[],config:cfg,cache:'miss',error:null};fcCache.set(key,value);return value;
-  }catch(e){if(cached)return{...cached,cache:'stale',error:e.message};return{ts:Date.now(),rows:[],config:cfg,cache:'unavailable',error:e.message}}
+    const payload=await r.json(),parsed=fantasyCalcRows(payload),value={ts:Date.now(),rows:parsed.rows,schema:parsed.schema,config:cfg,cache:'miss',error:null};fcCache.set(key,value);return value;
+  }catch(e){if(cached)return{...cached,cache:'stale',error:e.message};return{ts:Date.now(),rows:[],schema:'ERROR',config:cfg,cache:'unavailable',error:e.message}}
 }
 
 async function getSleeperTrends(){
@@ -44,9 +52,19 @@ async function getSleeperTrends(){
 }
 
 function marketIndexes(rows=[]){
-  const bySleeper=new Map(),byEspn=new Map(),byNamePos=new Map();
-  for(const item of rows){const p=item?.player||{},rec={market_value:finite(item?.value)?Number(item.value):null,market_overall_rank:item?.overallRank??null,market_position_rank:item?.positionRank??null,market_trend_30d:finite(item?.trend30Day)?Number(item.trend30Day):null};if(p?.sleeperId!=null)bySleeper.set(String(p.sleeperId),rec);if(p?.espnId!=null)byEspn.set(String(p.espnId),rec);if(p?.name)byNamePos.set(`${norm(p.name)}|${pos(p.position)}`,rec)}
-  return{bySleeper,byEspn,byNamePos};
+  const bySleeper=new Map(),byEspn=new Map(),byNamePos=new Map(),byName=new Map();
+  for(const item of rows){
+    const p=item?.player||item||{};
+    const rawValue=finite(item?.value)?item.value:finite(item?.redraftValue)?item.redraftValue:finite(p?.value)?p.value:null;
+    const rec={market_value:finite(rawValue)?Number(rawValue):null,market_overall_rank:item?.overallRank??p?.overallRank??null,market_position_rank:item?.positionRank??p?.positionRank??null,market_trend_30d:finite(item?.trend30Day)?Number(item.trend30Day):finite(p?.trend30Day)?Number(p.trend30Day):null};
+    const sleeperId=p?.sleeperId??p?.sleeper_id??item?.sleeperId??item?.sleeper_id;
+    const espnId=p?.espnId??p?.espn_id??item?.espnId??item?.espn_id;
+    const name=p?.name??item?.name,position=p?.position??item?.position;
+    if(sleeperId!=null)bySleeper.set(String(sleeperId),rec);
+    if(espnId!=null)byEspn.set(String(espnId),rec);
+    if(name){const nk=norm(name);byName.set(nk,rec);if(position)byNamePos.set(`${nk}|${pos(position)}`,rec)}
+  }
+  return{bySleeper,byEspn,byNamePos,byName};
 }
 
 function sourceConfidence(values=[]){
@@ -69,19 +87,10 @@ function sanitizeWeeklyActuals(data){
   for(const t of data?.team_details||[])for(const p of t?.players||[])players.push(p);
   const actuals=players.filter(p=>finite(p?.actual_weekly_points)).map(p=>Number(p.actual_weekly_points));
   const nonZero=actuals.filter(v=>Math.abs(v)>1e-9).length;
-  if(!actuals.length){
-    data.actuals_integrity={status:'NO_ACTUALS',actual_values_seen:0,nonzero_values_seen:0};
-    return data;
-  }
-  if(nonZero===0){
-    for(const p of players)if(finite(p?.actual_weekly_points))p.actual_weekly_points=null;
-    data.actuals_integrity={status:'PREGAME_ZERO_PLACEHOLDERS_REMOVED',actual_values_seen:actuals.length,nonzero_values_seen:0,rule:'An all-zero weekly actual feed is treated as a pregame placeholder, not completed scoring.'};
-    return data;
-  }
+  if(!actuals.length){data.actuals_integrity={status:'NO_ACTUALS',actual_values_seen:0,nonzero_values_seen:0};return data}
+  if(nonZero===0){for(const p of players)if(finite(p?.actual_weekly_points))p.actual_weekly_points=null;data.actuals_integrity={status:'PREGAME_ZERO_PLACEHOLDERS_REMOVED',actual_values_seen:actuals.length,nonzero_values_seen:0,rule:'An all-zero weekly actual feed is treated as a pregame placeholder, not completed scoring.'};return data}
   let zeroPlaceholdersRemoved=0;
-  for(const p of players){
-    if(finite(p?.actual_weekly_points)&&Math.abs(Number(p.actual_weekly_points))<=1e-9){p.actual_weekly_points=null;zeroPlaceholdersRemoved++}
-  }
+  for(const p of players){if(finite(p?.actual_weekly_points)&&Math.abs(Number(p.actual_weekly_points))<=1e-9){p.actual_weekly_points=null;zeroPlaceholdersRemoved++}}
   data.actuals_integrity={status:'SCORING_IN_PROGRESS',actual_values_seen:actuals.length,nonzero_values_seen:nonZero,zero_placeholders_removed:zeroPlaceholdersRemoved,rule:'While the current week is in progress, zero placeholders are not graded until game-completion evidence is available.'};
   return data;
 }
@@ -90,35 +99,27 @@ function restrictEspnWaiverPool(context,data){
   if(String(context?.platform||'').toUpperCase()!=='ESPN')return data;
   const allowed=Array.isArray(context?.available_trending_players)?context.available_trending_players:[];
   const before=Array.isArray(data?.waiver_pool)?data.waiver_pool.length:0;
-  if(!allowed.length){
-    data.waiver_availability_guard={platform:'ESPN',status:'NO_ESPN_AVAILABILITY_FEED',before,after:0,removed:before};
-    data.waiver_pool=[];
-    return data;
-  }
+  if(!allowed.length){data.waiver_availability_guard={platform:'ESPN',status:'NO_ESPN_AVAILABILITY_FEED',before,after:0,removed:before};data.waiver_pool=[];return data}
   const espnIds=new Set(),sleeperIds=new Set(),canonicalIds=new Set(),namePos=new Set();
-  for(const p of allowed){
-    if(p?.espn_id!=null)espnIds.add(String(p.espn_id));
-    if(p?.id!=null)espnIds.add(String(p.id));
-    if(p?.sleeper_id!=null)sleeperIds.add(String(p.sleeper_id));
-    if(p?.canonical_player_id)canonicalIds.add(String(p.canonical_player_id));
-    if(p?.name)namePos.add(`${norm(p.name)}|${pos(p.position)}`);
-  }
-  data.waiver_pool=(data.waiver_pool||[]).filter(p=>
-    (p?.espn_id!=null&&espnIds.has(String(p.espn_id)))||
-    (p?.sleeper_id!=null&&sleeperIds.has(String(p.sleeper_id)))||
-    (p?.canonical_player_id&&canonicalIds.has(String(p.canonical_player_id)))||
-    (p?.name&&namePos.has(`${norm(p.name)}|${pos(p.position)}`))
-  );
+  for(const p of allowed){if(p?.espn_id!=null)espnIds.add(String(p.espn_id));if(p?.id!=null)espnIds.add(String(p.id));if(p?.sleeper_id!=null)sleeperIds.add(String(p.sleeper_id));if(p?.canonical_player_id)canonicalIds.add(String(p.canonical_player_id));if(p?.name)namePos.add(`${norm(p.name)}|${pos(p.position)}`)}
+  data.waiver_pool=(data.waiver_pool||[]).filter(p=>(p?.espn_id!=null&&espnIds.has(String(p.espn_id)))||(p?.sleeper_id!=null&&sleeperIds.has(String(p.sleeper_id)))||(p?.canonical_player_id&&canonicalIds.has(String(p.canonical_player_id)))||(p?.name&&namePos.has(`${norm(p.name)}|${pos(p.position)}`)));
   const after=data.waiver_pool.length;
   data.waiver_availability_guard={platform:'ESPN',status:'AUTHORITATIVE_ESPN_FILTER',espn_available_count:allowed.length,before,after,removed:before-after,rule:'ESPN FREEAGENT/WAIVERS status is authoritative for availability. Projection providers do not determine roster ownership.'};
   return data;
 }
 
 function attachIntel(data,fc,trends){
-  const idx=marketIndexes(fc.rows),lookup=p=>(p?.sleeper_id&&idx.bySleeper.get(String(p.sleeper_id)))||(p?.espn_id&&idx.byEspn.get(String(p.espn_id)))||idx.byNamePos.get(`${norm(p?.name)}|${pos(p?.position)}`)||null;
+  const idx=marketIndexes(fc.rows),matchCounts={sleeper_id:0,espn_id:0,name_position:0,name_only:0,unmatched:0};
+  const lookup=p=>{
+    if(p?.sleeper_id&&idx.bySleeper.has(String(p.sleeper_id)))return{rec:idx.bySleeper.get(String(p.sleeper_id)),method:'sleeper_id'};
+    if(p?.espn_id&&idx.byEspn.has(String(p.espn_id)))return{rec:idx.byEspn.get(String(p.espn_id)),method:'espn_id'};
+    const np=`${norm(p?.name)}|${pos(p?.position)}`;if(p?.name&&idx.byNamePos.has(np))return{rec:idx.byNamePos.get(np),method:'name_position'};
+    const n=norm(p?.name);if(n&&idx.byName.has(n))return{rec:idx.byName.get(n),method:'name_only'};
+    return null;
+  };
   let matched=0,total=0;const all=[];
   const enrich=p=>{
-    total++;const m=lookup(p);if(m){Object.assign(p,m,{market_source:'FantasyCalc'});matched++}else Object.assign(p,{market_value:null,market_source:null,market_overall_rank:null,market_position_rank:null,market_trend_30d:null});
+    total++;const hit=lookup(p),m=hit?.rec||null;if(m){Object.assign(p,m,{market_source:'FantasyCalc',market_match_method:hit.method});matched++;matchCounts[hit.method]++}else{Object.assign(p,{market_value:null,market_source:null,market_match_method:null,market_overall_rank:null,market_position_rank:null,market_trend_30d:null});matchCounts.unmatched++}
     const w=sourceConfidence([p.espn_weekly_points,p.sleeper_weekly_points,p.ffanalytics_weekly_points]),r=sourceConfidence([p.espn_ros_points,p.sleeper_ros_points,p.ffanalytics_ros_points]);
     const weeklyTrusted=w.source_count>=2,rosTrusted=r.source_count>=2;
     Object.assign(p,{weekly_confidence:w.label,weekly_spread_pct:w.spread_pct,weekly_source_count_verified:w.source_count,weekly_evidence_trusted:weeklyTrusted,ros_confidence:r.label,ros_spread_pct:r.spread_pct,ros_source_count_verified:r.source_count,ros_evidence_trusted:rosTrusted,evidence_guard:weeklyTrusted&&rosTrusted?'PASS':'CAUTION'});
@@ -132,7 +133,7 @@ function attachIntel(data,fc,trends){
   const health=projectionHealth(all),cautionCount=all.filter(p=>p.evidence_guard==='CAUTION').length;
   data.source_health=health;
   data.integrity_guard={status:health.status==='HEALTHY'&&cautionCount===0?'PASS':'CAUTION',rule:'Actionable projection-based opportunities require at least two independent projection sources.',players_with_caution:cautionCount,total_players_checked:all.length,behavior:'Single-source or unavailable evidence may still be displayed, but it cannot create BUY_LOW or SELL_HIGH signals.'};
-  data.market={source:'FantasyCalc',role:'market realism only; not a projection source',available:fc.rows.length>0,cache:fc.cache,ttl_seconds:300,error:fc.error,config:fc.config,matched_players:matched,total_players_enriched:total,coverage_pct:total?Math.round(matched/total*100):0};
+  data.market={source:'FantasyCalc',role:'market realism only; not a projection source',available:fc.rows.length>0,cache:fc.cache,ttl_seconds:300,error:fc.error,config:fc.config,payload_schema:fc.schema||'UNKNOWN',rows_received:fc.rows.length,matched_players:matched,total_players_enriched:total,coverage_pct:total?Math.round(matched/total*100):0,match_methods:matchCounts};
   data.opportunities={buy_low:buys.sort((a,b)=>(Number(b.market_position_rank||0)-Number(b.projection_position_rank||0))-(Number(a.market_position_rank||0)-Number(a.projection_position_rank||0))).slice(0,10).map(simple),sell_high:sells.sort((a,b)=>Number(b.market_trend_30d||0)-Number(a.market_trend_30d||0)).slice(0,10).map(simple),sleeper_trending:emerging.sort((a,b)=>Number(b.sleeper_net_24h||0)-Number(a.sleeper_net_24h||0)).slice(0,10).map(simple)};
   data.evidence_policy={projection_sources:['ESPN','Sleeper','Independent ffanalytics crowd'],projection_rule:'Equal average of available independent sources',confidence_rule:'Source count plus cross-source spread; smaller disagreement means higher confidence',minimum_actionable_sources:2,missing_source_rule:'Missing evidence is explicit and cannot independently create BUY_LOW or SELL_HIGH signals.',market_source:'FantasyCalc',behavioral_source:'Sleeper 24h add/drop trends'};
   return data;
