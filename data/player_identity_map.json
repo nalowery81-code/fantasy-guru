@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-09-16T17:37:55.746Z",
+  "generated_at": "2026-09-17T14:16:13.230Z",
   "source": "Sleeper master player endpoint",
   "player_count": 4265,
   "canonical_id_rule": "GSIS when available, otherwise Sleeper ID, otherwise ESPN ID",
@@ -10786,7 +10786,7 @@
       "name": "Dalen Cambre",
       "normalized_name": "dalencambre",
       "position": "WR",
-      "team": null,
+      "team": "NYG",
       "sleeper_id": "12888",
       "espn_id": null,
       "gsis_id": null,
@@ -12902,7 +12902,7 @@
       "sleeper_id": "13417",
       "espn_id": null,
       "gsis_id": null,
-      "status": "Active",
+      "status": "Inactive",
       "active": true
     },
     {
@@ -20306,7 +20306,7 @@
       "sleeper_id": "13293",
       "espn_id": null,
       "gsis_id": null,
-      "status": "Active",
+      "status": "Inactive",
       "active": true
     },
     {
@@ -21578,7 +21578,7 @@
       "sleeper_id": "8698",
       "espn_id": null,
       "gsis_id": null,
-      "status": "Active",
+      "status": "Inactive",
       "active": true
     },
     {
@@ -24418,11 +24418,11 @@
       "name": "Jerome Ford",
       "normalized_name": "jeromeford",
       "position": "RB",
-      "team": null,
+      "team": "MIN",
       "sleeper_id": "8143",
       "espn_id": null,
       "gsis_id": null,
-      "status": "Inactive",
+      "status": "Active",
       "active": true
     },
     {
@@ -26366,7 +26366,7 @@
       "sleeper_id": "8408",
       "espn_id": null,
       "gsis_id": null,
-      "status": "Active",
+      "status": "Inactive",
       "active": true
     },
     {
@@ -30586,7 +30586,7 @@
       "name": "Khalil Herbert",
       "normalized_name": "khalilherbert",
       "position": "RB",
-      "team": null,
+      "team": "ATL",
       "sleeper_id": "7608",
       "espn_id": null,
       "gsis_id": null,
@@ -40114,7 +40114,7 @@
       "name": "Quincy Skinner",
       "normalized_name": "quincyskinner",
       "position": "WR",
-      "team": null,
+      "team": "GB",
       "sleeper_id": "12884",
       "espn_id": null,
       "gsis_id": null,
