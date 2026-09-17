@@ -1,5 +1,6 @@
 import { buildValuation } from '../lib/valuation-engine.js';
 import { runPredictionCycle } from '../lib/prediction-cycle.js';
+import { attachTradeValues } from '../lib/trade-value.js';
 
 const FC_TTL_MS=5*60*1000;
 const fcCache=new Map();
@@ -99,7 +100,7 @@ function attachIntel(data,fc,trends){
   const byPos={};for(const p of all){const q=pos(p.position);(byPos[q]||(byPos[q]=[])).push(p)}for(const group of Object.values(byPos))group.filter(p=>finite(p.ros_points)).sort((a,b)=>Number(b.ros_points)-Number(a.ros_points)).forEach((p,i)=>p.projection_position_rank=i+1);
   const buys=[],sells=[],emerging=[];
   for(const p of all){const pr=Number(p.projection_position_rank||0),mr=Number(p.market_position_rank||0),trend=Number(p.market_trend_30d||0),gap=pr&&mr?mr-pr:0;if(gap>=5&&trend<=0&&p.ros_evidence_trusted){p.opportunity_signal='BUY_LOW';p.opportunity_reason=`Projection rank #${pr} is ${gap} spots stronger than market rank #${mr}.`;buys.push(p)}else if(gap<=-5&&trend>0&&p.ros_evidence_trusted){p.opportunity_signal='SELL_HIGH';p.opportunity_reason=`Market rank #${mr} is ${Math.abs(gap)} spots stronger than projection rank #${pr}.`;sells.push(p)}if(Number(p.sleeper_net_24h||0)>=250){if(!p.opportunity_signal)p.opportunity_signal='TRENDING';p.sleeper_momentum='HOT';emerging.push(p)}}
-  const simple=p=>({name:p.name,position:p.position,team:p.team||null,projection_position_rank:p.projection_position_rank||null,market_position_rank:p.market_position_rank||null,market_trend_30d:p.market_trend_30d??null,sleeper_net_24h:p.sleeper_net_24h||0,signal:p.opportunity_signal||null,reason:p.opportunity_reason||null,weekly_confidence:p.weekly_confidence,ros_confidence:p.ros_confidence,evidence_guard:p.evidence_guard});
+  const simple=p=>({name:p.name,position:p.position,team:p.team||null,projection_position_rank:p.projection_position_rank||null,market_position_rank:p.market_position_rank||null,market_trend_30d:p.market_trend_30d??null,sleeper_net_24h:p.sleeper_net_24h||0,signal:p.opportunity_signal||null,reason:p.opportunity_reason||null,weekly_confidence:p.weekly_confidence,ros_confidence:p.ros_confidence,evidence_guard:p.evidence_guard,trade_value:p.trade_value??null});
   const health=projectionHealth(all),cautionCount=all.filter(p=>p.evidence_guard==='CAUTION').length;
   data.source_health=health;
   data.integrity_guard={status:health.status==='HEALTHY'&&cautionCount===0?'PASS':'CAUTION',rule:'Actionable projection-based opportunities require at least two independent projection sources.',players_with_caution:cautionCount,total_players_checked:all.length,behavior:'Single-source or unavailable evidence may still be displayed, but it cannot create BUY_LOW or SELL_HIGH signals.'};
@@ -115,7 +116,7 @@ export default async function handler(req,res){
     const {context}=req.body||{};
     const [data,fc,trends]=await Promise.all([buildValuation(context,{includeWaivers:true}),getFantasyCalc(context),getSleeperTrends()]);
     sanitizeWeeklyActuals(data);
-    const output=attachIntel(data,fc,trends);
+    const output=attachTradeValues(context,attachIntel(data,fc,trends));
     try{output.evaluation_ledger=await runPredictionCycle(context,output)}catch(e){output.evaluation_ledger={status:'ERROR',error:e.message}}
     return res.json(output);
   }catch(e){return res.status(500).json({error:e.message})}
