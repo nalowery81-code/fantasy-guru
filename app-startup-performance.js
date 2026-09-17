@@ -95,6 +95,11 @@
   style.textContent='body.fg34RestoringLeague #shell{visibility:visible!important}';
   document.head.appendChild(style);
 
+  /* Load Evaluation Lab on-demand check actions after the lab renderer is available. */
+  const evalActions=document.createElement('script');
+  evalActions.src='/app-evaluation-actions.js?v=20260917checks1';
+  document.head.appendChild(evalActions);
+
   /* Warm non-critical public data after the main dashboard has had time to paint. */
   setTimeout(startPublicData,1500);
 })();
