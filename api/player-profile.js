@@ -3,7 +3,8 @@ import { scoreConsensusStats } from '../lib/league-scoring.js';
 const PLAYER_TTL=6*60*60*1000;
 const STATS_TTL=15*60*1000;
 const SCHEDULE_TTL=60*60*1000;
-let playerCache={ts:0,data:null};
+const NEWS_TTL=10*60*1000;
+let playerCache={ts:0,data:null},newsCache={ts:0,data:[]};
 const statsCache=new Map();
 const scheduleCache=new Map();
 
@@ -47,6 +48,20 @@ async function teamSchedule(team,season){
   }
 }
 
+async function nflNews(){
+  if(newsCache.data.length&&Date.now()-newsCache.ts<NEWS_TTL)return newsCache.data;
+  try{
+    const data=await json('https://site.api.espn.com/apis/site/v2/sports/football/nfl/news?limit=75');
+    const rows=Array.isArray(data?.articles)?data.articles:[];newsCache={ts:Date.now(),data:rows};return rows;
+  }catch{return newsCache.data||[]}
+}
+
+function playerNews(rows=[],name=''){
+  const full=String(name||'').trim().toLowerCase();
+  if(!full)return[];
+  return rows.filter(x=>`${x?.headline||''} ${x?.description||''} ${x?.story||''}`.toLowerCase().includes(full)).slice(0,4).map(x=>({headline:x?.headline||'NFL update',description:x?.description||'',published:x?.published||x?.lastModified||null,link:x?.links?.web?.href||null}));
+}
+
 function findStatRow(payload,sleeperId){
   if(!payload||!sleeperId)return null;
   if(Array.isArray(payload))return payload.find(x=>String(x?.player_id||x?.playerId||x?.id||'')===String(sleeperId))||null;
@@ -73,7 +88,7 @@ function statLine(s={},position=''){
     if(finite(s.pass_yd))parts.push(`${n(s.pass_yd)} pass yd`);
     if(finite(s.pass_td))parts.push(`${n(s.pass_td)} pass TD`);
     if(finite(s.pass_int)&&n(s.pass_int))parts.push(`${n(s.pass_int)} INT`);
-    if(n(s.rush_yd)||n(s.rush_td)){parts.push(`${n(s.rush_yd)} rush yd${n(s.rush_td)?`, ${n(s.rush_td)} rush TD`:''}`)}
+    if(n(s.rush_yd)||n(s.rush_td))parts.push(`${n(s.rush_yd)} rush yd${n(s.rush_td)?`, ${n(s.rush_td)} rush TD`:''}`);
   }else if(['RB','WR','TE'].includes(p)){
     if(finite(s.rush_yd)&&(n(s.rush_yd)||p==='RB'))parts.push(`${n(s.rush_yd)} rush yd${n(s.rush_td)?`, ${n(s.rush_td)} rush TD`:''}`);
     if(finite(s.rec))parts.push(`${n(s.rec)} rec`);
@@ -102,9 +117,9 @@ function normalizeSchedule(payload,team){
 }
 
 function bioFromSleeper(p={},fallback={}){
+  const fullName=p.full_name||((p.first_name||p.last_name)?`${p.first_name||''} ${p.last_name||''}`.trim():null)||fallback.name||null;
   return {
-    name:p.full_name||p.first_name&&p.last_name?`${p.first_name||''} ${p.last_name||''}`.trim():fallback.name||null,
-    team:p.team||fallback.team||null,position:p.position||fallback.position||null,number:p.number??null,
+    name:fullName,team:p.team||fallback.team||null,position:p.position||fallback.position||null,number:p.number??null,
     age:p.age??null,height:p.height??null,weight:p.weight??null,experience:p.years_exp??p.yearsExperience??null,
     college:p.college??null,birth_date:p.birth_date??null,status:p.status??fallback.status??null,injury_status:p.injury_status??fallback.injury_status??null,
     sleeper_id:p.player_id||fallback.sleeper_id||null,espn_id:p.espn_id||fallback.espn_id||null,gsis_id:p.gsis_id||fallback.gsis_id||null
@@ -120,10 +135,11 @@ export default async function handler(req,res){
     const sleeperId=String(player?.sleeper_id||'');
     const master=await sleeperPlayers();
     let meta=sleeperId?master?.[sleeperId]:null;
-    if(!meta&&player?.espn_id){meta=Object.values(master).find(x=>String(x?.espn_id||'')===String(player.espn_id))||null}
+    if(!meta&&player?.espn_id)meta=Object.values(master).find(x=>String(x?.espn_id||'')===String(player.espn_id))||null;
     if(!meta&&player?.name){const q=String(player.name).toLowerCase();meta=Object.values(master).find(x=>String(x?.full_name||'').toLowerCase()===q&&(!player.position||upper(x?.position)===upper(player.position)))||null}
     const bio=bioFromSleeper(meta||{},player),sid=String(bio.sleeper_id||sleeperId||'');
-    const scheduleRaw=bio.team?await teamSchedule(bio.team,season):{events:[]},schedule=normalizeSchedule(scheduleRaw,bio.team);
+    const [scheduleRaw,newsRows]=await Promise.all([bio.team?teamSchedule(bio.team,season):Promise.resolve({events:[]}),nflNews()]);
+    const schedule=normalizeSchedule(scheduleRaw,bio.team),news=playerNews(newsRows,bio.name||player.name);
     const history=[];
     for(let week=1;week<=currentWeek;week++){
       const payload=await weeklyStats(season,week),row=findStatRow(payload,sid);
@@ -135,6 +151,6 @@ export default async function handler(req,res){
     const seasonRows=schedule.map(s=>({...s,...(byWeek.get(s.week)||{}),guru_projection:s.week===currentWeek&&finite(player.weekly_points)?Number(player.weekly_points):null}));
     for(const h of history)if(!seasonRows.some(x=>x.week===h.week))seasonRows.push({...h,opponent:null,status:'FINAL',result:null,guru_projection:h.week===currentWeek&&finite(player.weekly_points)?Number(player.weekly_points):null});
     seasonRows.sort((a,b)=>a.week-b.week);
-    return res.status(200).json({available:true,season,current_week:currentWeek,bio,schedule:seasonRows,history,source:{bio:'Sleeper master player feed',stats:'Sleeper weekly NFL stats',schedule:'ESPN NFL team schedule',fantasy_points:'League-specific Guru scoring rules'}});
-  }catch(e){return res.status(200).json({available:false,error:e?.message||'Player profile enrichment failed',bio:null,schedule:[],history:[]})}
+    return res.status(200).json({available:true,season,current_week:currentWeek,bio,schedule:seasonRows,history,news,source:{bio:'Sleeper master player feed',stats:'Sleeper weekly NFL stats',schedule:'ESPN NFL team schedule',news:'ESPN NFL news filtered to exact player name',fantasy_points:'League-specific Guru scoring rules'}});
+  }catch(e){return res.status(200).json({available:false,error:e?.message||'Player profile enrichment failed',bio:null,schedule:[],history:[],news:[]})}
 }
