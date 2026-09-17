@@ -5,10 +5,14 @@
 
   const finite=v=>v!==null&&v!==undefined&&v!==''&&Number.isFinite(Number(v));
   const escLocal=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  function liveAnalysis(){
+    try{return (typeof analysis!=='undefined'&&analysis)?analysis:(window.analysis||null)}catch{return window.analysis||null}
+  }
 
   function rosteredPlayers(){
+    const a=liveAnalysis();
     const out=[],seen=new Set();
-    for(const t of window.analysis?.team_details||[])for(const p of t.players||[]){
+    for(const t of a?.team_details||[])for(const p of t.players||[]){
       const k=String(p?.canonical_player_id||p?.sleeper_id||p?.espn_id||p?.id||`${p?.name}|${p?.position}`);
       if(!seen.has(k)){seen.add(k);out.push(p)}
     }
@@ -16,8 +20,9 @@
   }
 
   function allPlayers(){
+    const a=liveAnalysis();
     const out=rosteredPlayers(),seen=new Set(out.map(p=>String(p?.canonical_player_id||p?.sleeper_id||p?.espn_id||p?.id||`${p?.name}|${p?.position}`)));
-    for(const p of window.analysis?.waiver_pool||[]){
+    for(const p of a?.waiver_pool||[]){
       const k=String(p?.canonical_player_id||p?.sleeper_id||p?.espn_id||p?.id||`${p?.name}|${p?.position}`);
       if(!seen.has(k)){seen.add(k);out.push(p)}
     }
@@ -44,7 +49,7 @@
   }
 
   function marketResult(){
-    const m=window.analysis?.market||{};
+    const m=liveAnalysis()?.market||{};
     if(m.available===false)return{tone:'problem',text:'Check complete: FantasyCalc is unavailable right now. Guru is protecting the model by using conservative market fallbacks instead of making the other inputs count more.'};
     const total=Number(m.total_players_enriched||0),matched=Number(m.matched_players||0),coverage=Number(m.coverage_pct||0),rows=Number(m.rows_received||0);
     if(!total)return{tone:'watch',text:'Check complete: market data is connected, but there is not enough matching information loaded to judge coverage yet.'};
@@ -91,7 +96,7 @@
 
   const previousShowView=window.showView;
   if(typeof previousShowView==='function')window.showView=function(v){const r=previousShowView(v);if(v==='evalLab')setTimeout(injectButtons,0);return r};
-  if(window.currentView==='evalLab')setTimeout(injectButtons,0);
+  try{if(typeof currentView!=='undefined'&&currentView==='evalLab')setTimeout(injectButtons,0)}catch{}
 
   const style=document.createElement('style');
   style.textContent=`.fgEvalCheckBtn{margin-top:10px;border:1px solid #2685b8;background:#0c6fa4;color:#fff;border-radius:8px;padding:8px 11px;font-size:11px;font-weight:900;cursor:pointer}.fgEvalCheckBtn:hover{filter:brightness(1.08)}.fgEvalCheckBtn:disabled{opacity:.65;cursor:wait}.fgEvalCheckResult{margin-top:9px;border-radius:8px;padding:9px 10px;font-size:11px;line-height:1.4;border:1px solid #36526c;background:#0a1828;color:#dcecff}.fgEvalCheckResult.good{border-color:#1f7a5b;background:#0a201a}.fgEvalCheckResult.watch{border-color:#9b750d;background:#211b08}.fgEvalCheckResult.problem{border-color:#a53645;background:#291016}`;
