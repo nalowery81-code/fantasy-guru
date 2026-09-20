@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-09-19T13:06:48.999Z",
+  "generated_at": "2026-09-20T13:33:57.611Z",
   "source": "Sleeper master player endpoint",
   "player_count": 4265,
   "canonical_id_rule": "GSIS when available, otherwise Sleeper ID, otherwise ESPN ID",
@@ -11614,7 +11614,7 @@
       "name": "Danny Gray",
       "normalized_name": "dannygray",
       "position": "WR",
-      "team": "PHI",
+      "team": null,
       "sleeper_id": "8176",
       "espn_id": null,
       "gsis_id": null,
@@ -38210,7 +38210,7 @@
       "sleeper_id": "13276",
       "espn_id": null,
       "gsis_id": null,
-      "status": "Active",
+      "status": "Inactive",
       "active": true
     },
     {
