@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-09-21T15:52:30.119Z",
+  "generated_at": "2026-09-22T14:01:49.707Z",
   "source": "Sleeper master player endpoint",
   "player_count": 4265,
   "canonical_id_rule": "GSIS when available, otherwise Sleeper ID, otherwise ESPN ID",
@@ -7922,7 +7922,7 @@
       "sleeper_id": "8127",
       "espn_id": null,
       "gsis_id": null,
-      "status": "Active",
+      "status": "Inactive",
       "active": true
     },
     {
@@ -11878,7 +11878,7 @@
       "name": "Darius Slayton",
       "normalized_name": "dariusslayton",
       "position": "WR",
-      "team": null,
+      "team": "IND",
       "sleeper_id": "6149",
       "espn_id": "3916945",
       "gsis_id": "00-0035535",
@@ -12470,7 +12470,7 @@
       "sleeper_id": "4033",
       "espn_id": "3123076",
       "gsis_id": "00-0033885",
-      "status": "Active",
+      "status": "Inactive",
       "active": true
     },
     {
@@ -50758,7 +50758,7 @@
       "name": "Zach Ertz",
       "normalized_name": "zachertz",
       "position": "TE",
-      "team": null,
+      "team": "PHI",
       "sleeper_id": "1339",
       "espn_id": "15835",
       "gsis_id": "00-0030061",
