@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-09-23T14:12:52.306Z",
+  "generated_at": "2026-09-24T14:11:11.217Z",
   "source": "Sleeper master player endpoint",
   "player_count": 4265,
   "canonical_id_rule": "GSIS when available, otherwise Sleeper ID, otherwise ESPN ID",
@@ -902,7 +902,7 @@
       "sleeper_id": "8142",
       "espn_id": null,
       "gsis_id": null,
-      "status": "Active",
+      "status": "Inactive",
       "active": true
     },
     {
@@ -1498,7 +1498,7 @@
       "name": "Anderson Castle",
       "normalized_name": "andersoncastle",
       "position": "RB",
-      "team": "IND",
+      "team": null,
       "sleeper_id": "14041",
       "espn_id": null,
       "gsis_id": null,
@@ -1670,7 +1670,7 @@
       "sleeper_id": "10226",
       "espn_id": null,
       "gsis_id": null,
-      "status": "Active",
+      "status": "Inactive",
       "active": true
     },
     {
@@ -2782,7 +2782,7 @@
       "name": "Audric Estime",
       "normalized_name": "audricestime",
       "position": "RB",
-      "team": "NO",
+      "team": null,
       "sleeper_id": "11579",
       "espn_id": null,
       "gsis_id": null,
@@ -3238,7 +3238,7 @@
       "name": "Bailey Zappe",
       "normalized_name": "baileyzappe",
       "position": "QB",
-      "team": "NYJ",
+      "team": null,
       "sleeper_id": "8157",
       "espn_id": null,
       "gsis_id": null,
@@ -16294,7 +16294,7 @@
       "name": "E.J. Williams",
       "normalized_name": "ejwilliams",
       "position": "WR",
-      "team": "CAR",
+      "team": null,
       "sleeper_id": "13805",
       "espn_id": null,
       "gsis_id": null,
@@ -16546,7 +16546,7 @@
       "name": "Eli Pancol",
       "normalized_name": "elipancol",
       "position": "WR",
-      "team": null,
+      "team": "IND",
       "sleeper_id": "12909",
       "espn_id": null,
       "gsis_id": null,
@@ -18178,7 +18178,7 @@
       "name": "Gary Jennings",
       "normalized_name": "garyjennings",
       "position": "WR",
-      "team": "LAC",
+      "team": null,
       "sleeper_id": "6045",
       "espn_id": "3916071",
       "gsis_id": "00-0035589",
@@ -26114,7 +26114,7 @@
       "sleeper_id": "11583",
       "espn_id": null,
       "gsis_id": null,
-      "status": "Active",
+      "status": "Inactive",
       "active": true
     },
     {
@@ -33202,11 +33202,11 @@
       "name": "Malick Meiga",
       "normalized_name": "malickmeiga",
       "position": "WR",
-      "team": null,
+      "team": "SEA",
       "sleeper_id": "14058",
       "espn_id": null,
       "gsis_id": null,
-      "status": "Inactive",
+      "status": "Active",
       "active": true
     },
     {
@@ -42254,7 +42254,7 @@
       "sleeper_id": "8195",
       "espn_id": null,
       "gsis_id": null,
-      "status": "Active",
+      "status": "Inactive",
       "active": true
     },
     {
@@ -47770,7 +47770,7 @@
       "name": "Trayvon Rudolph",
       "normalized_name": "trayvonrudolph",
       "position": "WR",
-      "team": "MIN",
+      "team": null,
       "sleeper_id": "14038",
       "espn_id": null,
       "gsis_id": null,
