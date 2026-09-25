@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-09-24T14:11:11.217Z",
+  "generated_at": "2026-09-25T14:35:02.633Z",
   "source": "Sleeper master player endpoint",
   "player_count": 4265,
   "canonical_id_rule": "GSIS when available, otherwise Sleeper ID, otherwise ESPN ID",
@@ -706,7 +706,7 @@
       "name": "AJ Henning",
       "normalized_name": "ajhenning",
       "position": "WR",
-      "team": null,
+      "team": "MIA",
       "sleeper_id": "12865",
       "espn_id": null,
       "gsis_id": null,
@@ -18178,7 +18178,7 @@
       "name": "Gary Jennings",
       "normalized_name": "garyjennings",
       "position": "WR",
-      "team": null,
+      "team": "LAC",
       "sleeper_id": "6045",
       "espn_id": "3916071",
       "gsis_id": "00-0035589",
@@ -23498,7 +23498,7 @@
       "sleeper_id": "12508",
       "espn_id": null,
       "gsis_id": null,
-      "status": "Active",
+      "status": "Inactive",
       "active": true
     },
     {
