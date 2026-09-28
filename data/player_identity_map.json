@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-09-27T14:40:22.732Z",
+  "generated_at": "2026-09-28T17:37:34.756Z",
   "source": "Sleeper master player endpoint",
   "player_count": 4265,
   "canonical_id_rule": "GSIS when available, otherwise Sleeper ID, otherwise ESPN ID",
@@ -20170,7 +20170,7 @@
       "name": "J.J. McCarthy",
       "normalized_name": "jjmccarthy",
       "position": "QB",
-      "team": "MIN",
+      "team": "NYG",
       "sleeper_id": "11565",
       "espn_id": null,
       "gsis_id": null,
@@ -20498,7 +20498,7 @@
       "sleeper_id": "12483",
       "espn_id": null,
       "gsis_id": null,
-      "status": "Active",
+      "status": "Inactive",
       "active": true
     },
     {
