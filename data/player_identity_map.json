@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-09-28T17:37:34.756Z",
+  "generated_at": "2026-09-29T15:45:44.274Z",
   "source": "Sleeper master player endpoint",
   "player_count": 4265,
   "canonical_id_rule": "GSIS when available, otherwise Sleeper ID, otherwise ESPN ID",
@@ -12890,7 +12890,7 @@
       "sleeper_id": "9226",
       "espn_id": null,
       "gsis_id": null,
-      "status": "Active",
+      "status": "Inactive",
       "active": true
     },
     {
@@ -36478,11 +36478,11 @@
       "name": "Miles Kitselman",
       "normalized_name": "mileskitselman",
       "position": "TE",
-      "team": null,
+      "team": "DET",
       "sleeper_id": "13431",
       "espn_id": null,
       "gsis_id": null,
-      "status": "Inactive",
+      "status": "Active",
       "active": true
     },
     {
@@ -36646,7 +36646,7 @@
       "name": "Mitchell Tinsley",
       "normalized_name": "mitchelltinsley",
       "position": "WR",
-      "team": "HOU",
+      "team": "CIN",
       "sleeper_id": "11068",
       "espn_id": null,
       "gsis_id": null,
@@ -49342,7 +49342,7 @@
       "name": "Tyler Scott",
       "normalized_name": "tylerscott",
       "position": "WR",
-      "team": null,
+      "team": "LV",
       "sleeper_id": "9490",
       "espn_id": null,
       "gsis_id": null,
