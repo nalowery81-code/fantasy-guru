@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-10-01T16:23:33.924Z",
+  "generated_at": "2026-10-02T15:45:14.192Z",
   "source": "Sleeper master player endpoint",
   "player_count": 4266,
   "canonical_id_rule": "GSIS when available, otherwise Sleeper ID, otherwise ESPN ID",
@@ -7922,7 +7922,7 @@
       "sleeper_id": "8127",
       "espn_id": null,
       "gsis_id": null,
-      "status": "Inactive",
+      "status": "Active",
       "active": true
     },
     {
@@ -33370,7 +33370,7 @@
       "name": "Malik Turner",
       "normalized_name": "malikturner",
       "position": "WR",
-      "team": null,
+      "team": "SF",
       "sleeper_id": "5781",
       "espn_id": "3115928",
       "gsis_id": "00-0034867",
@@ -47606,7 +47606,7 @@
       "sleeper_id": "7543",
       "espn_id": null,
       "gsis_id": null,
-      "status": "Active",
+      "status": "Inactive",
       "active": true
     },
     {
@@ -49678,7 +49678,7 @@
       "name": "Ulysses Bentley",
       "normalized_name": "ulyssesbentley",
       "position": "RB",
-      "team": null,
+      "team": "NO",
       "sleeper_id": "12826",
       "espn_id": null,
       "gsis_id": null,
@@ -50726,7 +50726,7 @@
       "sleeper_id": "9753",
       "espn_id": null,
       "gsis_id": null,
-      "status": "Active",
+      "status": "Inactive",
       "active": true
     },
     {
