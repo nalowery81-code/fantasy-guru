@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-10-02T15:45:14.192Z",
+  "generated_at": "2026-10-03T14:17:57.287Z",
   "source": "Sleeper master player endpoint",
   "player_count": 4266,
   "canonical_id_rule": "GSIS when available, otherwise Sleeper ID, otherwise ESPN ID",
@@ -5654,7 +5654,7 @@
       "sleeper_id": "12171",
       "espn_id": null,
       "gsis_id": null,
-      "status": "Active",
+      "status": "Inactive",
       "active": true
     },
     {
@@ -30538,7 +30538,7 @@
       "name": "KhaDarel Hodge",
       "normalized_name": "khadarelhodge",
       "position": "WR",
-      "team": "SF",
+      "team": null,
       "sleeper_id": "5773",
       "espn_id": "3047876",
       "gsis_id": "00-0034854",
@@ -46298,7 +46298,7 @@
       "sleeper_id": "12487",
       "espn_id": null,
       "gsis_id": null,
-      "status": "Active",
+      "status": "Inactive",
       "active": true
     },
     {
