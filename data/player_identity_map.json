@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-10-03T14:17:57.287Z",
+  "generated_at": "2026-10-04T14:45:46.211Z",
   "source": "Sleeper master player endpoint",
   "player_count": 4266,
   "canonical_id_rule": "GSIS when available, otherwise Sleeper ID, otherwise ESPN ID",
@@ -21014,7 +21014,7 @@
       "sleeper_id": "13286",
       "espn_id": null,
       "gsis_id": null,
-      "status": "Active",
+      "status": "Inactive",
       "active": true
     },
     {
@@ -50534,7 +50534,7 @@
       "sleeper_id": "11626",
       "espn_id": null,
       "gsis_id": null,
-      "status": "Active",
+      "status": "Inactive",
       "active": true
     },
     {
@@ -50578,7 +50578,7 @@
       "name": "Xavier Smith",
       "normalized_name": "xaviersmith",
       "position": "WR",
-      "team": "LAR",
+      "team": null,
       "sleeper_id": "11168",
       "espn_id": null,
       "gsis_id": null,
