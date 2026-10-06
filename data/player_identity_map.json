@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-10-05T18:22:30.847Z",
+  "generated_at": "2026-10-06T15:54:21.232Z",
   "source": "Sleeper master player endpoint",
   "player_count": 4266,
   "canonical_id_rule": "GSIS when available, otherwise Sleeper ID, otherwise ESPN ID",
@@ -4958,7 +4958,7 @@
       "sleeper_id": "5121",
       "espn_id": "3123075",
       "gsis_id": "00-0034419",
-      "status": "Active",
+      "status": "Inactive",
       "active": true
     },
     {
@@ -25090,7 +25090,7 @@
       "name": "Joe Mixon",
       "normalized_name": "joemixon",
       "position": "RB",
-      "team": null,
+      "team": "SEA",
       "sleeper_id": "4018",
       "espn_id": "3116385",
       "gsis_id": "00-0033897",
@@ -41722,7 +41722,7 @@
       "name": "Robert Henry",
       "normalized_name": "roberthenry",
       "position": "RB",
-      "team": "WAS",
+      "team": "SEA",
       "sleeper_id": "13418",
       "espn_id": null,
       "gsis_id": null,
@@ -45566,7 +45566,7 @@
       "sleeper_id": "9225",
       "espn_id": null,
       "gsis_id": null,
-      "status": "Active",
+      "status": "Inactive",
       "active": true
     },
     {
