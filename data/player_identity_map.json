@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-10-08T16:25:57.725Z",
+  "generated_at": "2026-10-09T16:09:00.188Z",
   "source": "Sleeper master player endpoint",
   "player_count": 4266,
   "canonical_id_rule": "GSIS when available, otherwise Sleeper ID, otherwise ESPN ID",
@@ -41445,7 +41445,7 @@
       "canonical_player_id": "sleeper:13433",
       "name": "Riley Nowakowski",
       "normalized_name": "rileynowakowski",
-      "position": "TE",
+      "position": "RB",
       "team": "PIT",
       "sleeper_id": "13433",
       "espn_id": null,
