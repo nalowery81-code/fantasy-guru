@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-10-09T16:09:00.188Z",
+  "generated_at": "2026-10-10T15:19:59.567Z",
   "source": "Sleeper master player endpoint",
   "player_count": 4266,
   "canonical_id_rule": "GSIS when available, otherwise Sleeper ID, otherwise ESPN ID",
@@ -11650,7 +11650,7 @@
       "name": "Dante Pettis",
       "normalized_name": "dantepettis",
       "position": "WR",
-      "team": "SF",
+      "team": null,
       "sleeper_id": "4992",
       "espn_id": "3127306",
       "gsis_id": "00-0034860",
@@ -16942,7 +16942,7 @@
       "name": "Emari Demercado",
       "normalized_name": "emaridemercado",
       "position": "RB",
-      "team": "DAL",
+      "team": null,
       "sleeper_id": "11199",
       "espn_id": null,
       "gsis_id": null,
@@ -29026,7 +29026,7 @@
       "name": "Kaytron Allen",
       "normalized_name": "kaytronallen",
       "position": "RB",
-      "team": "WAS",
+      "team": "MIA",
       "sleeper_id": "13405",
       "espn_id": null,
       "gsis_id": null,
@@ -38486,7 +38486,7 @@
       "sleeper_id": "12492",
       "espn_id": null,
       "gsis_id": null,
-      "status": "Active",
+      "status": "Inactive",
       "active": true
     },
     {
