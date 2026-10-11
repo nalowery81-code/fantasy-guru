@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-10-10T15:19:59.567Z",
+  "generated_at": "2026-10-11T15:36:56.334Z",
   "source": "Sleeper master player endpoint",
   "player_count": 4266,
   "canonical_id_rule": "GSIS when available, otherwise Sleeper ID, otherwise ESPN ID",
@@ -1906,7 +1906,7 @@
       "name": "Andy Dalton",
       "normalized_name": "andydalton",
       "position": "QB",
-      "team": "PHI",
+      "team": null,
       "sleeper_id": "829",
       "espn_id": "14012",
       "gsis_id": "00-0027973",
@@ -3698,7 +3698,7 @@
       "sleeper_id": "13121",
       "espn_id": null,
       "gsis_id": null,
-      "status": "Inactive",
+      "status": "Active",
       "active": true
     },
     {
@@ -8402,7 +8402,7 @@
       "sleeper_id": "11370",
       "espn_id": null,
       "gsis_id": null,
-      "status": "Active",
+      "status": "Inactive",
       "active": true
     },
     {
@@ -19626,18 +19626,6 @@
       "active": true
     },
     {
-      "canonical_player_id": "sleeper:8861",
-      "name": "Irv Charles",
-      "normalized_name": "irvcharles",
-      "position": "WR",
-      "team": "SEA",
-      "sleeper_id": "8861",
-      "espn_id": null,
-      "gsis_id": null,
-      "status": "Inactive",
-      "active": true
-    },
-    {
       "canonical_player_id": "00-0034970",
       "name": "Irv Smith",
       "normalized_name": "irvsmith",
@@ -19646,6 +19634,18 @@
       "sleeper_id": "6126",
       "espn_id": "4040980",
       "gsis_id": "00-0034970",
+      "status": "Inactive",
+      "active": true
+    },
+    {
+      "canonical_player_id": "sleeper:8861",
+      "name": "Irvin Charles",
+      "normalized_name": "irvincharles",
+      "position": "WR",
+      "team": "SEA",
+      "sleeper_id": "8861",
+      "espn_id": null,
+      "gsis_id": null,
       "status": "Inactive",
       "active": true
     },
@@ -33038,7 +33038,7 @@
       "sleeper_id": "4177",
       "espn_id": "2991662",
       "gsis_id": "00-0033555",
-      "status": "Active",
+      "status": "Inactive",
       "active": true
     },
     {
@@ -35870,7 +35870,7 @@
       "sleeper_id": "6819",
       "espn_id": "4035687",
       "gsis_id": null,
-      "status": "Active",
+      "status": "Inactive",
       "active": true
     },
     {
@@ -41006,7 +41006,7 @@
       "sleeper_id": "7204",
       "espn_id": "4039505",
       "gsis_id": null,
-      "status": "Active",
+      "status": "Inactive",
       "active": true
     },
     {
@@ -46874,7 +46874,7 @@
       "sleeper_id": "4351",
       "espn_id": "3134353",
       "gsis_id": "00-0033375",
-      "status": "Inactive",
+      "status": "Active",
       "active": true
     },
     {
@@ -48410,7 +48410,7 @@
       "sleeper_id": "7610",
       "espn_id": null,
       "gsis_id": null,
-      "status": "Active",
+      "status": "Inactive",
       "active": true
     },
     {
