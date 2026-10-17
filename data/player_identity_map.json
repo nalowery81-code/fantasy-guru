@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-10-16T13:55:42.660Z",
+  "generated_at": "2026-10-17T12:56:10.641Z",
   "source": "Sleeper master player endpoint",
   "player_count": 4266,
   "canonical_id_rule": "GSIS when available, otherwise Sleeper ID, otherwise ESPN ID",
@@ -11878,7 +11878,7 @@
       "name": "Darius Slayton",
       "normalized_name": "dariusslayton",
       "position": "WR",
-      "team": "IND",
+      "team": null,
       "sleeper_id": "6149",
       "espn_id": "3916945",
       "gsis_id": "00-0035535",
@@ -25078,7 +25078,7 @@
       "name": "Joe Milton",
       "normalized_name": "joemilton",
       "position": "QB",
-      "team": "DAL",
+      "team": "PHI",
       "sleeper_id": "11557",
       "espn_id": null,
       "gsis_id": null,
@@ -31622,7 +31622,7 @@
       "sleeper_id": "4881",
       "espn_id": "3916387",
       "gsis_id": "00-0034796",
-      "status": "Active",
+      "status": "Inactive",
       "active": true
     },
     {
@@ -47126,7 +47126,7 @@
       "sleeper_id": "6588",
       "espn_id": "3126997",
       "gsis_id": "00-0035544",
-      "status": "Active",
+      "status": "Inactive",
       "active": true
     },
     {
@@ -48254,7 +48254,7 @@
       "sleeper_id": "12531",
       "espn_id": null,
       "gsis_id": null,
-      "status": "Inactive",
+      "status": "Active",
       "active": true
     },
     {
@@ -50318,7 +50318,7 @@
       "sleeper_id": "11577",
       "espn_id": null,
       "gsis_id": null,
-      "status": "Active",
+      "status": "Inactive",
       "active": true
     },
     {
