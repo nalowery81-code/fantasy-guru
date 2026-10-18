@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-10-17T12:56:10.641Z",
+  "generated_at": "2026-10-18T13:13:55.381Z",
   "source": "Sleeper master player endpoint",
   "player_count": 4266,
   "canonical_id_rule": "GSIS when available, otherwise Sleeper ID, otherwise ESPN ID",
@@ -14,7 +14,7 @@
       "sleeper_id": "5859",
       "espn_id": "4047646",
       "gsis_id": "00-0035676",
-      "status": "Inactive",
+      "status": "Active",
       "active": true
     },
     {
@@ -20318,7 +20318,7 @@
       "sleeper_id": "13293",
       "espn_id": null,
       "gsis_id": null,
-      "status": "Inactive",
+      "status": "Active",
       "active": true
     },
     {
@@ -21794,7 +21794,7 @@
       "sleeper_id": "6904",
       "espn_id": "4040715",
       "gsis_id": null,
-      "status": "Active",
+      "status": "Inactive",
       "active": true
     },
     {
@@ -29090,7 +29090,7 @@
       "sleeper_id": "12670",
       "espn_id": null,
       "gsis_id": null,
-      "status": "Inactive",
+      "status": "Active",
       "active": true
     },
     {
@@ -38222,7 +38222,7 @@
       "sleeper_id": "13276",
       "espn_id": null,
       "gsis_id": null,
-      "status": "Inactive",
+      "status": "Active",
       "active": true
     },
     {
@@ -42074,7 +42074,7 @@
       "sleeper_id": "11630",
       "espn_id": null,
       "gsis_id": null,
-      "status": "Active",
+      "status": "Inactive",
       "active": true
     },
     {
@@ -43394,7 +43394,7 @@
       "sleeper_id": "12482",
       "espn_id": null,
       "gsis_id": null,
-      "status": "Inactive",
+      "status": "Active",
       "active": true
     },
     {
@@ -44522,7 +44522,7 @@
       "sleeper_id": "8168",
       "espn_id": null,
       "gsis_id": null,
-      "status": "Active",
+      "status": "Inactive",
       "active": true
     },
     {
@@ -50270,7 +50270,7 @@
       "sleeper_id": "10220",
       "espn_id": null,
       "gsis_id": null,
-      "status": "Inactive",
+      "status": "Active",
       "active": true
     },
     {
