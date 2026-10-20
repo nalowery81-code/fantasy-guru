@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-10-19T16:25:53.170Z",
+  "generated_at": "2026-10-20T14:16:24.972Z",
   "source": "Sleeper master player endpoint",
   "player_count": 4266,
   "canonical_id_rule": "GSIS when available, otherwise Sleeper ID, otherwise ESPN ID",
@@ -4022,7 +4022,7 @@
       "sleeper_id": "11058",
       "espn_id": null,
       "gsis_id": null,
-      "status": "Active",
+      "status": "Inactive",
       "active": true
     },
     {
@@ -20966,7 +20966,7 @@
       "sleeper_id": "12533",
       "espn_id": null,
       "gsis_id": null,
-      "status": "Active",
+      "status": "Inactive",
       "active": true
     },
     {
@@ -21502,7 +21502,7 @@
       "name": "Jake Moody",
       "normalized_name": "jakemoody",
       "position": "K",
-      "team": null,
+      "team": "BAL",
       "sleeper_id": "10937",
       "espn_id": null,
       "gsis_id": null,
@@ -24218,7 +24218,7 @@
       "sleeper_id": "4219",
       "espn_id": "3127586",
       "gsis_id": "00-0033955",
-      "status": "Inactive",
+      "status": "Active",
       "active": true
     },
     {
@@ -42146,7 +42146,7 @@
       "sleeper_id": "8121",
       "espn_id": null,
       "gsis_id": null,
-      "status": "Active",
+      "status": "Inactive",
       "active": true
     },
     {
@@ -42742,7 +42742,7 @@
       "name": "Ryan Miller",
       "normalized_name": "ryanmiller",
       "position": "WR",
-      "team": null,
+      "team": "NE",
       "sleeper_id": "11421",
       "espn_id": null,
       "gsis_id": null,
