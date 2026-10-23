@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-10-22T14:29:15.830Z",
+  "generated_at": "2026-10-23T14:12:36.406Z",
   "source": "Sleeper master player endpoint",
   "player_count": 4266,
   "canonical_id_rule": "GSIS when available, otherwise Sleeper ID, otherwise ESPN ID",
@@ -12542,7 +12542,7 @@
       "sleeper_id": "6154",
       "espn_id": "3871102",
       "gsis_id": "00-0035359",
-      "status": "Inactive",
+      "status": "Active",
       "active": true
     },
     {
@@ -16658,7 +16658,7 @@
       "sleeper_id": "12521",
       "espn_id": null,
       "gsis_id": null,
-      "status": "Active",
+      "status": "Inactive",
       "active": true
     },
     {
@@ -23614,7 +23614,7 @@
       "name": "Jaydon Blue",
       "normalized_name": "jaydonblue",
       "position": "RB",
-      "team": null,
+      "team": "PHI",
       "sleeper_id": "12457",
       "espn_id": null,
       "gsis_id": null,
@@ -37090,7 +37090,7 @@
       "name": "Nate Carter",
       "normalized_name": "natecarter",
       "position": "RB",
-      "team": "KC",
+      "team": null,
       "sleeper_id": "12897",
       "espn_id": null,
       "gsis_id": null,
@@ -48055,8 +48055,8 @@
     },
     {
       "canonical_player_id": "00-0034487",
-      "name": "Trent Sherfield Sr.",
-      "normalized_name": "trentsherfieldsr",
+      "name": "Trent Sherfield",
+      "normalized_name": "trentsherfield",
       "position": "WR",
       "team": "BUF",
       "sleeper_id": "5154",
@@ -49354,7 +49354,7 @@
       "name": "Tyler Scott",
       "normalized_name": "tylerscott",
       "position": "WR",
-      "team": "LV",
+      "team": null,
       "sleeper_id": "9490",
       "espn_id": null,
       "gsis_id": null,
@@ -50726,7 +50726,7 @@
       "sleeper_id": "9753",
       "espn_id": null,
       "gsis_id": null,
-      "status": "Inactive",
+      "status": "Active",
       "active": true
     },
     {
