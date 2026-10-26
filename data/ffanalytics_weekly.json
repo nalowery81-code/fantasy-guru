@@ -2,7 +2,7 @@
   "schema_version": "2.0",
   "season": 2026,
   "week": 7,
-  "generated_at": "2026-10-25 13:44:48 UTC",
+  "generated_at": "2026-10-26 16:09:06 UTC",
   "source": "ffanalytics independent crowd consensus",
   "projection_type": "weekly_projection_stats",
   "scoring_basis": "unscored source-stat consensus; score at request time with exact league rules",
@@ -98,10 +98,10 @@
       "point_source_min": 0.2752,
       "point_source_max": 0.926,
       "point_source_count": 2,
-      "source_rank_mean": 32,
-      "source_rank_sd": 2.8284,
+      "source_rank_mean": 31.5,
+      "source_rank_sd": 2.1213,
       "source_rank_min": 30,
-      "source_rank_max": 34
+      "source_rank_max": 33
     },
     {
       "name": "Kirk Cousins",
@@ -208,9 +208,9 @@
         "rec": 0,
         "rec_tds": 0,
         "rec_yds": 0,
-        "rush_att": 3.42,
+        "rush_att": 3.37,
         "rush_tds": 0.115,
-        "rush_yds": 13.21
+        "rush_yds": 12.71
       },
       "stat_source_counts": {
         "pass_att": 2,
@@ -225,13 +225,13 @@
         "rush_tds": 2,
         "rush_yds": 2
       },
-      "default_scoring_points": 15.332,
+      "default_scoring_points": 15.282,
       "source_count": 2,
       "sources": ["CBS", "FanDuel"],
-      "point_source_mean": 15.332,
-      "point_source_sd": 2.2316,
+      "point_source_mean": 15.282,
+      "point_source_sd": 2.1609,
       "point_source_min": 13.754,
-      "point_source_max": 16.91,
+      "point_source_max": 16.81,
       "point_source_count": 2,
       "source_rank_mean": 14.5,
       "source_rank_sd": 6.364,
@@ -323,10 +323,10 @@
       "point_source_min": 0.2928,
       "point_source_max": 0.864,
       "point_source_count": 2,
-      "source_rank_mean": 34,
-      "source_rank_sd": 7.0711,
+      "source_rank_mean": 33.5,
+      "source_rank_sd": 6.364,
       "source_rank_min": 29,
-      "source_rank_max": 39
+      "source_rank_max": 38
     },
     {
       "name": "Jared Goff",
@@ -426,10 +426,10 @@
       "espn_id": null,
       "consensus_stats": {
         "pass_att": 37.185,
-        "pass_comp": 23.75,
+        "pass_comp": 23.7,
         "pass_int": 0.78,
         "pass_tds": 1.6,
-        "pass_yds": 252.21,
+        "pass_yds": 251.71,
         "rec": 0,
         "rec_tds": 0,
         "rec_yds": 0,
@@ -450,12 +450,12 @@
         "rush_tds": 2,
         "rush_yds": 2
       },
-      "default_scoring_points": 16.1494,
+      "default_scoring_points": 16.1294,
       "source_count": 2,
       "sources": ["CBS", "FanDuel"],
-      "point_source_mean": 16.1494,
-      "point_source_sd": 0.8618,
-      "point_source_min": 15.54,
+      "point_source_mean": 16.1294,
+      "point_source_sd": 0.8901,
+      "point_source_min": 15.5,
       "point_source_max": 16.7588,
       "point_source_count": 2,
       "source_rank_mean": 11,
@@ -560,17 +560,17 @@
       "sleeper_id": null,
       "espn_id": null,
       "consensus_stats": {
-        "pass_att": 33.29,
+        "pass_att": 33.34,
         "pass_comp": 20.88,
         "pass_int": 0.735,
         "pass_tds": 1.315,
-        "pass_yds": 224.71,
+        "pass_yds": 224.21,
         "rec": 0,
         "rec_tds": 0,
         "rec_yds": 0,
         "rush_att": 3.53,
         "rush_tds": 0.155,
-        "rush_yds": 16.865
+        "rush_yds": 16.815
       },
       "stat_source_counts": {
         "pass_att": 2,
@@ -585,12 +585,12 @@
         "rush_tds": 2,
         "rush_yds": 2
       },
-      "default_scoring_points": 14.6599,
+      "default_scoring_points": 14.6349,
       "source_count": 2,
       "sources": ["CBS", "FanDuel"],
-      "point_source_mean": 14.6599,
-      "point_source_sd": 0.707,
-      "point_source_min": 14.16,
+      "point_source_mean": 14.6349,
+      "point_source_sd": 0.7423,
+      "point_source_min": 14.11,
       "point_source_max": 15.1598,
       "point_source_count": 2,
       "source_rank_mean": 17.5,
@@ -638,9 +638,9 @@
       "point_source_min": 0,
       "point_source_max": 0.938,
       "point_source_count": 2,
-      "source_rank_mean": 40,
-      "source_rank_sd": 11.3137,
-      "source_rank_min": 32,
+      "source_rank_mean": 39.5,
+      "source_rank_sd": 12.0208,
+      "source_rank_min": 31,
       "source_rank_max": 48
     },
     {
@@ -740,11 +740,11 @@
       "sleeper_id": null,
       "espn_id": null,
       "consensus_stats": {
-        "pass_att": 30.065,
-        "pass_comp": 19.57,
+        "pass_att": 30.115,
+        "pass_comp": 19.62,
         "pass_int": 0.91,
-        "pass_tds": 1.475,
-        "pass_yds": 224.735,
+        "pass_tds": 1.525,
+        "pass_yds": 225.235,
         "rec": 0,
         "rec_tds": 0,
         "rec_yds": 0,
@@ -765,12 +765,12 @@
         "rush_tds": 2,
         "rush_yds": 2
       },
-      "default_scoring_points": 12.7459,
+      "default_scoring_points": 12.9659,
       "source_count": 2,
       "sources": ["CBS", "FanDuel"],
-      "point_source_mean": 12.7459,
-      "point_source_sd": 0.7013,
-      "point_source_min": 12.25,
+      "point_source_mean": 12.9659,
+      "point_source_sd": 0.3902,
+      "point_source_min": 12.69,
       "point_source_max": 13.2418,
       "point_source_count": 2,
       "source_rank_mean": 22,
@@ -818,9 +818,9 @@
       "point_source_min": 0,
       "point_source_max": 0.886,
       "point_source_count": 2,
-      "source_rank_mean": 42.5,
-      "source_rank_sd": 7.7782,
-      "source_rank_min": 37,
+      "source_rank_mean": 42,
+      "source_rank_sd": 8.4853,
+      "source_rank_min": 36,
       "source_rank_max": 48
     },
     {
@@ -875,42 +875,42 @@
       "sleeper_id": null,
       "espn_id": null,
       "consensus_stats": {
-        "pass_att": 0.6,
-        "pass_comp": 0.4,
+        "pass_att": 0,
+        "pass_comp": 0,
         "pass_int": 0,
-        "pass_tds": 0.05,
-        "pass_yds": 4.4,
+        "pass_tds": 0,
+        "pass_yds": 0,
         "rec": 0,
         "rec_tds": 0,
         "rec_yds": 0,
-        "rush_att": 0.15,
+        "rush_att": 0,
         "rush_tds": 0,
-        "rush_yds": 0.45
+        "rush_yds": 0
       },
       "stat_source_counts": {
-        "pass_att": 2,
-        "pass_comp": 2,
-        "pass_int": 2,
-        "pass_tds": 2,
-        "pass_yds": 2,
+        "pass_att": 1,
+        "pass_comp": 1,
+        "pass_int": 1,
+        "pass_tds": 1,
+        "pass_yds": 1,
         "rec": 1,
         "rec_tds": 1,
         "rec_yds": 1,
-        "rush_att": 2,
-        "rush_tds": 2,
-        "rush_yds": 2
+        "rush_att": 1,
+        "rush_tds": 1,
+        "rush_yds": 1
       },
-      "default_scoring_points": 0.421,
-      "source_count": 2,
-      "sources": ["CBS", "FanDuel"],
-      "point_source_mean": 0.421,
-      "point_source_sd": 0.5954,
+      "default_scoring_points": 0,
+      "source_count": 1,
+      "sources": "FanDuel",
+      "point_source_mean": 0,
+      "point_source_sd": 0,
       "point_source_min": 0,
-      "point_source_max": 0.842,
-      "point_source_count": 2,
-      "source_rank_mean": 45,
-      "source_rank_sd": 4.2426,
-      "source_rank_min": 42,
+      "point_source_max": 0,
+      "point_source_count": 1,
+      "source_rank_mean": 48,
+      "source_rank_sd": 0,
+      "source_rank_min": 48,
       "source_rank_max": 48
     },
     {
@@ -1272,7 +1272,7 @@
         "pass_comp": 0.6,
         "pass_int": 0.01,
         "pass_tds": 0.06,
-        "pass_yds": 6.26,
+        "pass_yds": 6.21,
         "rec": 0,
         "rec_tds": 0,
         "rec_yds": 0,
@@ -1293,13 +1293,13 @@
         "rush_tds": 2,
         "rush_yds": 2
       },
-      "default_scoring_points": 0.5304,
+      "default_scoring_points": 0.5284,
       "source_count": 2,
       "sources": ["CBS", "FanDuel"],
-      "point_source_mean": 0.5304,
-      "point_source_sd": 0.4718,
+      "point_source_mean": 0.5284,
+      "point_source_sd": 0.469,
       "point_source_min": 0.1968,
-      "point_source_max": 0.864,
+      "point_source_max": 0.86,
       "point_source_count": 2,
       "source_rank_mean": 40,
       "source_rank_sd": 1.4142,
@@ -1391,9 +1391,9 @@
       "point_source_min": 0,
       "point_source_max": 0.886,
       "point_source_count": 2,
-      "source_rank_mean": 42.5,
-      "source_rank_sd": 7.7782,
-      "source_rank_min": 37,
+      "source_rank_mean": 42,
+      "source_rank_sd": 8.4853,
+      "source_rank_min": 36,
       "source_rank_max": 48
     },
     {
@@ -1481,9 +1481,9 @@
       "point_source_min": 0.224,
       "point_source_max": 0.99,
       "point_source_count": 2,
-      "source_rank_mean": 32.5,
-      "source_rank_sd": 2.1213,
-      "source_rank_min": 31,
+      "source_rank_mean": 32,
+      "source_rank_sd": 2.8284,
+      "source_rank_min": 30,
       "source_rank_max": 34
     },
     {
@@ -1526,9 +1526,9 @@
       "point_source_min": 0.1948,
       "point_source_max": 0.916,
       "point_source_count": 2,
-      "source_rank_mean": 38.5,
-      "source_rank_sd": 4.9497,
-      "source_rank_min": 35,
+      "source_rank_mean": 38,
+      "source_rank_sd": 5.6569,
+      "source_rank_min": 34,
       "source_rank_max": 42
     },
     {
@@ -1673,15 +1673,15 @@
       "sleeper_id": null,
       "espn_id": null,
       "consensus_stats": {
-        "pass_att": 13.45,
-        "pass_comp": 8.65,
+        "pass_att": 13.35,
+        "pass_comp": 8.55,
         "pass_int": 0.2,
         "pass_tds": 0.65,
-        "pass_yds": 92,
+        "pass_yds": 91,
         "rec": 0,
         "rec_tds": 0,
         "rec_yds": 0,
-        "rush_att": 1.4,
+        "rush_att": 1.45,
         "rush_tds": 0,
         "rush_yds": 3.85
       },
@@ -1698,13 +1698,13 @@
         "rush_tds": 2,
         "rush_yds": 2
       },
-      "default_scoring_points": 5.915,
+      "default_scoring_points": 5.875,
       "source_count": 2,
       "sources": ["CBS", "FanDuel"],
-      "point_source_mean": 5.915,
-      "point_source_sd": 8.3651,
+      "point_source_mean": 5.875,
+      "point_source_sd": 8.3085,
       "point_source_min": 0,
-      "point_source_max": 11.83,
+      "point_source_max": 11.75,
       "point_source_count": 2,
       "source_rank_mean": 36,
       "source_rank_sd": 16.9706,
@@ -1726,9 +1726,9 @@
         "rec": 0,
         "rec_tds": 0,
         "rec_yds": 0,
-        "rush_att": 2.94,
+        "rush_att": 3.09,
         "rush_tds": 0.195,
-        "rush_yds": 13.095
+        "rush_yds": 13.195
       },
       "stat_source_counts": {
         "pass_att": 2,
@@ -1743,13 +1743,13 @@
         "rush_tds": 2,
         "rush_yds": 2
       },
-      "default_scoring_points": 17.8149,
+      "default_scoring_points": 17.8249,
       "source_count": 2,
       "sources": ["CBS", "FanDuel"],
-      "point_source_mean": 17.8149,
-      "point_source_sd": 0.488,
+      "point_source_mean": 17.8249,
+      "point_source_sd": 0.5022,
       "point_source_min": 17.4698,
-      "point_source_max": 18.16,
+      "point_source_max": 18.18,
       "point_source_count": 2,
       "source_rank_mean": 5,
       "source_rank_sd": 2.8284,
@@ -1886,9 +1886,9 @@
       "point_source_min": 0,
       "point_source_max": 0.9,
       "point_source_count": 2,
-      "source_rank_mean": 42,
-      "source_rank_sd": 8.4853,
-      "source_rank_min": 36,
+      "source_rank_mean": 41.5,
+      "source_rank_sd": 9.1924,
+      "source_rank_min": 35,
       "source_rank_max": 48
     },
     {
@@ -2168,17 +2168,17 @@
       "sleeper_id": null,
       "espn_id": null,
       "consensus_stats": {
-        "pass_att": 14.435,
-        "pass_comp": 8.095,
-        "pass_int": 0.56,
+        "pass_att": 15.185,
+        "pass_comp": 8.495,
+        "pass_int": 0.61,
         "pass_tds": 0.61,
-        "pass_yds": 90.31,
+        "pass_yds": 94.81,
         "rec": 0,
         "rec_tds": 0,
         "rec_yds": 0,
-        "rush_att": 1.88,
-        "rush_tds": 0.065,
-        "rush_yds": 8.675
+        "rush_att": 1.93,
+        "rush_tds": 0.115,
+        "rush_yds": 9.025
       },
       "stat_source_counts": {
         "pass_att": 2,
@@ -2193,13 +2193,13 @@
         "rush_tds": 2,
         "rush_yds": 2
       },
-      "default_scoring_points": 5.4799,
+      "default_scoring_points": 5.8449,
       "source_count": 2,
       "sources": ["CBS", "FanDuel"],
-      "point_source_mean": 5.4799,
-      "point_source_sd": 6.6469,
+      "point_source_mean": 5.8449,
+      "point_source_sd": 7.1631,
       "point_source_min": 0.7798,
-      "point_source_max": 10.18,
+      "point_source_max": 10.91,
       "point_source_count": 2,
       "source_rank_mean": 27.5,
       "source_rank_sd": 0.7071,
@@ -2217,7 +2217,7 @@
         "pass_comp": 0.8,
         "pass_int": 0,
         "pass_tds": 0.1,
-        "pass_yds": 8.2,
+        "pass_yds": 8.1,
         "rush_att": 0.3,
         "rush_tds": 0,
         "rush_yds": 1.1
@@ -2232,13 +2232,13 @@
         "rush_tds": 1,
         "rush_yds": 1
       },
-      "default_scoring_points": 0.838,
+      "default_scoring_points": 0.834,
       "source_count": 1,
       "sources": "CBS",
-      "point_source_mean": 0.838,
+      "point_source_mean": 0.834,
       "point_source_sd": 0,
-      "point_source_min": 0.838,
-      "point_source_max": 0.838,
+      "point_source_min": 0.834,
+      "point_source_max": 0.834,
       "point_source_count": 1,
       "source_rank_mean": 43,
       "source_rank_sd": 0,
@@ -2285,9 +2285,9 @@
       "point_source_min": 0.1768,
       "point_source_max": 0.874,
       "point_source_count": 2,
-      "source_rank_mean": 42,
-      "source_rank_sd": 5.6569,
-      "source_rank_min": 38,
+      "source_rank_mean": 41.5,
+      "source_rank_sd": 6.364,
+      "source_rank_min": 37,
       "source_rank_max": 46
     },
     {
@@ -2305,9 +2305,9 @@
         "rec": 0,
         "rec_tds": 0,
         "rec_yds": 0,
-        "rush_att": 2.735,
+        "rush_att": 2.935,
         "rush_tds": 0.17,
-        "rush_yds": 11.55
+        "rush_yds": 12.2
       },
       "stat_source_counts": {
         "pass_att": 2,
@@ -2322,13 +2322,13 @@
         "rush_tds": 2,
         "rush_yds": 2
       },
-      "default_scoring_points": 11.2606,
+      "default_scoring_points": 11.3256,
       "source_count": 2,
       "sources": ["CBS", "FanDuel"],
-      "point_source_mean": 11.2606,
-      "point_source_sd": 0.3386,
+      "point_source_mean": 11.3256,
+      "point_source_sd": 0.4305,
       "point_source_min": 11.0212,
-      "point_source_max": 11.5,
+      "point_source_max": 11.63,
       "point_source_count": 2,
       "source_rank_mean": 25,
       "source_rank_sd": 0,
@@ -2792,42 +2792,42 @@
       "sleeper_id": null,
       "espn_id": null,
       "consensus_stats": {
-        "pass_att": 1.85,
-        "pass_comp": 1.2,
-        "pass_int": 0.05,
-        "pass_tds": 0.1,
-        "pass_yds": 14,
+        "pass_att": 0,
+        "pass_comp": 0,
+        "pass_int": 0,
+        "pass_tds": 0,
+        "pass_yds": 0,
         "rec": 0,
         "rec_tds": 0,
         "rec_yds": 0,
-        "rush_att": 0.2,
+        "rush_att": 0,
         "rush_tds": 0,
-        "rush_yds": 0.9
+        "rush_yds": 0
       },
       "stat_source_counts": {
-        "pass_att": 2,
-        "pass_comp": 2,
-        "pass_int": 2,
-        "pass_tds": 2,
-        "pass_yds": 2,
+        "pass_att": 1,
+        "pass_comp": 1,
+        "pass_int": 1,
+        "pass_tds": 1,
+        "pass_yds": 1,
         "rec": 1,
         "rec_tds": 1,
         "rec_yds": 1,
-        "rush_att": 2,
-        "rush_tds": 2,
-        "rush_yds": 2
+        "rush_att": 1,
+        "rush_tds": 1,
+        "rush_yds": 1
       },
-      "default_scoring_points": 0.9,
-      "source_count": 2,
-      "sources": ["CBS", "FanDuel"],
-      "point_source_mean": 0.9,
-      "point_source_sd": 1.2728,
+      "default_scoring_points": 0,
+      "source_count": 1,
+      "sources": "FanDuel",
+      "point_source_mean": 0,
+      "point_source_sd": 0,
       "point_source_min": 0,
-      "point_source_max": 1.8,
-      "point_source_count": 2,
-      "source_rank_mean": 38.5,
-      "source_rank_sd": 13.435,
-      "source_rank_min": 29,
+      "point_source_max": 0,
+      "point_source_count": 1,
+      "source_rank_mean": 48,
+      "source_rank_sd": 0,
+      "source_rank_min": 48,
       "source_rank_max": 48
     },
     {
@@ -3050,9 +3050,9 @@
       "point_source_min": 0,
       "point_source_max": 0.938,
       "point_source_count": 2,
-      "source_rank_mean": 40.5,
-      "source_rank_sd": 10.6066,
-      "source_rank_min": 33,
+      "source_rank_mean": 40,
+      "source_rank_sd": 11.3137,
+      "source_rank_min": 32,
       "source_rank_max": 48
     },
     {
@@ -3404,10 +3404,10 @@
       "point_source_min": 1.062,
       "point_source_max": 1.062,
       "point_source_count": 1,
-      "source_rank_mean": 30,
+      "source_rank_mean": 29,
       "source_rank_sd": 0,
-      "source_rank_min": 30,
-      "source_rank_max": 30
+      "source_rank_min": 29,
+      "source_rank_max": 29
     },
     {
       "name": "Aaron Rodgers",
@@ -3828,10 +3828,10 @@
       "point_source_min": 4.07,
       "point_source_max": 4.07,
       "point_source_count": 1,
-      "source_rank_mean": 44,
+      "source_rank_mean": 43,
       "source_rank_sd": 0,
-      "source_rank_min": 44,
-      "source_rank_max": 44
+      "source_rank_min": 43,
+      "source_rank_max": 43
     },
     {
       "name": "James Conner",
@@ -3918,9 +3918,9 @@
       "point_source_min": 0,
       "point_source_max": 2.2,
       "point_source_count": 2,
-      "source_rank_mean": 69.5,
-      "source_rank_sd": 20.5061,
-      "source_rank_min": 55,
+      "source_rank_mean": 69,
+      "source_rank_sd": 21.2132,
+      "source_rank_min": 54,
       "source_rank_max": 84
     },
     {
@@ -4027,10 +4027,10 @@
         "pass_yds": 0,
         "rec": 2.06,
         "rec_tds": 0.085,
-        "rec_yds": 15.265,
+        "rec_yds": 15.215,
         "rush_att": 16.28,
         "rush_tds": 0.345,
-        "rush_yds": 76.64
+        "rush_yds": 76.59
       },
       "stat_source_counts": {
         "pass_att": 1,
@@ -4045,12 +4045,12 @@
         "rush_tds": 2,
         "rush_yds": 2
       },
-      "default_scoring_points": 11.6205,
+      "default_scoring_points": 11.6105,
       "source_count": 2,
       "sources": ["CBS", "FanDuel"],
-      "point_source_mean": 11.6205,
-      "point_source_sd": 0.7927,
-      "point_source_min": 11.06,
+      "point_source_mean": 11.6105,
+      "point_source_sd": 0.8068,
+      "point_source_min": 11.04,
       "point_source_max": 12.181,
       "point_source_count": 2,
       "source_rank_mean": 14.5,
@@ -4143,9 +4143,9 @@
       "point_source_min": 0,
       "point_source_max": 11.53,
       "point_source_count": 2,
-      "source_rank_mean": 48.5,
-      "source_rank_sd": 50.2046,
-      "source_rank_min": 13,
+      "source_rank_mean": 49,
+      "source_rank_sd": 49.4975,
+      "source_rank_min": 14,
       "source_rank_max": 84
     },
     {
@@ -4160,12 +4160,12 @@
         "pass_int": 0,
         "pass_tds": 0,
         "pass_yds": 0,
-        "rec": 0.415,
+        "rec": 0.365,
         "rec_tds": 0.055,
-        "rec_yds": 3,
-        "rush_att": 4.015,
+        "rec_yds": 2.75,
+        "rush_att": 3.215,
         "rush_tds": 0.065,
-        "rush_yds": 13
+        "rush_yds": 10.5
       },
       "stat_source_counts": {
         "pass_att": 1,
@@ -4180,13 +4180,13 @@
         "rush_tds": 2,
         "rush_yds": 2
       },
-      "default_scoring_points": 2.32,
+      "default_scoring_points": 2.045,
       "source_count": 2,
       "sources": ["CBS", "FanDuel"],
-      "point_source_mean": 2.32,
-      "point_source_sd": 1.8526,
+      "point_source_mean": 2.045,
+      "point_source_sd": 1.4637,
       "point_source_min": 1.01,
-      "point_source_max": 3.63,
+      "point_source_max": 3.08,
       "point_source_count": 2,
       "source_rank_mean": 56.5,
       "source_rank_sd": 13.435,
@@ -4233,10 +4233,10 @@
       "point_source_min": 0.27,
       "point_source_max": 0.494,
       "point_source_count": 2,
-      "source_rank_mean": 78.5,
-      "source_rank_sd": 4.9497,
+      "source_rank_mean": 75.5,
+      "source_rank_sd": 0.7071,
       "source_rank_min": 75,
-      "source_rank_max": 82
+      "source_rank_max": 76
     },
     {
       "name": "Tony Pollard",
@@ -4250,12 +4250,12 @@
         "pass_int": 0,
         "pass_tds": 0,
         "pass_yds": 0,
-        "rec": 1.595,
+        "rec": 1.695,
         "rec_tds": 0.015,
-        "rec_yds": 7.83,
-        "rush_att": 13.42,
+        "rec_yds": 8.13,
+        "rush_att": 14.52,
         "rush_tds": 0.275,
-        "rush_yds": 55.755
+        "rush_yds": 59.605
       },
       "stat_source_counts": {
         "pass_att": 1,
@@ -4270,17 +4270,17 @@
         "rush_tds": 2,
         "rush_yds": 2
       },
-      "default_scoring_points": 7.9485,
+      "default_scoring_points": 8.3635,
       "source_count": 2,
       "sources": ["CBS", "FanDuel"],
-      "point_source_mean": 7.9485,
-      "point_source_sd": 0.4971,
+      "point_source_mean": 8.3635,
+      "point_source_sd": 1.084,
       "point_source_min": 7.597,
-      "point_source_max": 8.3,
+      "point_source_max": 9.13,
       "point_source_count": 2,
-      "source_rank_mean": 26,
-      "source_rank_sd": 0,
-      "source_rank_min": 26,
+      "source_rank_mean": 24.5,
+      "source_rank_sd": 2.1213,
+      "source_rank_min": 23,
       "source_rank_max": 26
     },
     {
@@ -4555,12 +4555,12 @@
         "pass_int": 0,
         "pass_tds": 0,
         "pass_yds": 0,
-        "rec": 0.49,
-        "rec_tds": 0.005,
-        "rec_yds": 3.595,
-        "rush_att": 3.665,
-        "rush_tds": 0.105,
-        "rush_yds": 13.185
+        "rec": 0.48,
+        "rec_tds": 0.01,
+        "rec_yds": 4.19,
+        "rush_att": 4.23,
+        "rush_tds": 0.11,
+        "rush_yds": 16.77
       },
       "stat_source_counts": {
         "pass_att": 1,
@@ -4568,25 +4568,25 @@
         "pass_int": 1,
         "pass_tds": 1,
         "pass_yds": 1,
-        "rec": 2,
-        "rec_tds": 2,
-        "rec_yds": 2,
-        "rush_att": 2,
-        "rush_tds": 2,
-        "rush_yds": 2
+        "rec": 1,
+        "rec_tds": 1,
+        "rec_yds": 1,
+        "rush_att": 1,
+        "rush_tds": 1,
+        "rush_yds": 1
       },
-      "default_scoring_points": 2.338,
-      "source_count": 2,
-      "sources": ["CBS", "FanDuel"],
-      "point_source_mean": 2.338,
-      "point_source_sd": 0.676,
-      "point_source_min": 1.86,
+      "default_scoring_points": 2.816,
+      "source_count": 1,
+      "sources": "FanDuel",
+      "point_source_mean": 2.816,
+      "point_source_sd": 0,
+      "point_source_min": 2.816,
       "point_source_max": 2.816,
-      "point_source_count": 2,
-      "source_rank_mean": 52,
-      "source_rank_sd": 5.6569,
+      "point_source_count": 1,
+      "source_rank_mean": 48,
+      "source_rank_sd": 0,
       "source_rank_min": 48,
-      "source_rank_max": 56
+      "source_rank_max": 48
     },
     {
       "name": "DeeJay Dallas",
@@ -4628,9 +4628,9 @@
       "point_source_min": 0.541,
       "point_source_max": 0.65,
       "point_source_count": 2,
-      "source_rank_mean": 73,
-      "source_rank_sd": 0,
-      "source_rank_min": 73,
+      "source_rank_mean": 71,
+      "source_rank_sd": 2.8284,
+      "source_rank_min": 69,
       "source_rank_max": 73
     },
     {
@@ -4853,10 +4853,10 @@
       "point_source_min": 3.7,
       "point_source_max": 4.781,
       "point_source_count": 2,
-      "source_rank_mean": 43,
-      "source_rank_sd": 4.2426,
+      "source_rank_mean": 42.5,
+      "source_rank_sd": 3.5355,
       "source_rank_min": 40,
-      "source_rank_max": 46
+      "source_rank_max": 45
     },
     {
       "name": "Javonte Williams",
@@ -4872,10 +4872,10 @@
         "pass_yds": 0,
         "rec": 2.22,
         "rec_tds": 0.08,
-        "rec_yds": 12.13,
+        "rec_yds": 12.08,
         "rush_att": 17.23,
         "rush_tds": 0.74,
-        "rush_yds": 67.94
+        "rush_yds": 67.84
       },
       "stat_source_counts": {
         "pass_att": 1,
@@ -4890,18 +4890,18 @@
         "rush_tds": 2,
         "rush_yds": 2
       },
-      "default_scoring_points": 12.777,
+      "default_scoring_points": 12.762,
       "source_count": 2,
       "sources": ["CBS", "FanDuel"],
-      "point_source_mean": 12.777,
-      "point_source_sd": 0.42,
-      "point_source_min": 12.48,
+      "point_source_mean": 12.762,
+      "point_source_sd": 0.4412,
+      "point_source_min": 12.45,
       "point_source_max": 13.074,
       "point_source_count": 2,
-      "source_rank_mean": 10,
-      "source_rank_sd": 1.4142,
+      "source_rank_mean": 10.5,
+      "source_rank_sd": 2.1213,
       "source_rank_min": 9,
-      "source_rank_max": 11
+      "source_rank_max": 12
     },
     {
       "name": "Rhamondre Stevenson",
@@ -4963,9 +4963,9 @@
         "rec": 2.245,
         "rec_tds": 0.18,
         "rec_yds": 13.595,
-        "rush_att": 18.66,
+        "rush_att": 19.56,
         "rush_tds": 0.69,
-        "rush_yds": 81.49
+        "rush_yds": 82.09
       },
       "stat_source_counts": {
         "pass_att": 1,
@@ -4980,13 +4980,13 @@
         "rush_tds": 2,
         "rush_yds": 2
       },
-      "default_scoring_points": 14.5785,
+      "default_scoring_points": 14.6385,
       "source_count": 2,
       "sources": ["CBS", "FanDuel"],
-      "point_source_mean": 14.5785,
-      "point_source_sd": 1.6426,
+      "point_source_mean": 14.6385,
+      "point_source_sd": 1.7275,
       "point_source_min": 13.417,
-      "point_source_max": 15.74,
+      "point_source_max": 15.86,
       "point_source_count": 2,
       "source_rank_mean": 5,
       "source_rank_sd": 1.4142,
@@ -5023,10 +5023,10 @@
       "point_source_min": 1.43,
       "point_source_max": 1.43,
       "point_source_count": 1,
-      "source_rank_mean": 60,
+      "source_rank_mean": 58,
       "source_rank_sd": 0,
-      "source_rank_min": 60,
-      "source_rank_max": 60
+      "source_rank_min": 58,
+      "source_rank_max": 58
     },
     {
       "name": "Kene Nwangwu",
@@ -5042,10 +5042,10 @@
         "pass_yds": 0,
         "rec": 0,
         "rec_tds": 0,
-        "rec_yds": 0.15,
-        "rush_att": 0.95,
-        "rush_tds": 0.05,
-        "rush_yds": 3.65
+        "rec_yds": 0,
+        "rush_att": 0,
+        "rush_tds": 0,
+        "rush_yds": 0
       },
       "stat_source_counts": {
         "pass_att": 1,
@@ -5053,24 +5053,24 @@
         "pass_int": 1,
         "pass_tds": 1,
         "pass_yds": 1,
-        "rec": 2,
-        "rec_tds": 2,
-        "rec_yds": 2,
-        "rush_att": 2,
-        "rush_tds": 2,
-        "rush_yds": 2
+        "rec": 1,
+        "rec_tds": 1,
+        "rec_yds": 1,
+        "rush_att": 1,
+        "rush_tds": 1,
+        "rush_yds": 1
       },
-      "default_scoring_points": 0.68,
-      "source_count": 2,
-      "sources": ["CBS", "FanDuel"],
-      "point_source_mean": 0.68,
-      "point_source_sd": 0.9617,
+      "default_scoring_points": 0,
+      "source_count": 1,
+      "sources": "FanDuel",
+      "point_source_mean": 0,
+      "point_source_sd": 0,
       "point_source_min": 0,
-      "point_source_max": 1.36,
-      "point_source_count": 2,
-      "source_rank_mean": 73.5,
-      "source_rank_sd": 14.8492,
-      "source_rank_min": 63,
+      "point_source_max": 0,
+      "point_source_count": 1,
+      "source_rank_mean": 84,
+      "source_rank_sd": 0,
+      "source_rank_min": 84,
       "source_rank_max": 84
     },
     {
@@ -5130,12 +5130,12 @@
         "pass_int": 0,
         "pass_tds": 0,
         "pass_yds": 0,
-        "rec": 1.285,
-        "rec_tds": 0.045,
-        "rec_yds": 11.42,
-        "rush_att": 9.475,
-        "rush_tds": 0.215,
-        "rush_yds": 41.405
+        "rec": 2.47,
+        "rec_tds": 0.09,
+        "rec_yds": 21.54,
+        "rush_att": 18.25,
+        "rush_tds": 0.43,
+        "rush_yds": 79.91
       },
       "stat_source_counts": {
         "pass_att": 1,
@@ -5143,25 +5143,25 @@
         "pass_int": 1,
         "pass_tds": 1,
         "pass_yds": 1,
-        "rec": 2,
-        "rec_tds": 2,
-        "rec_yds": 2,
-        "rush_att": 2,
-        "rush_tds": 2,
-        "rush_yds": 2
+        "rec": 1,
+        "rec_tds": 1,
+        "rec_yds": 1,
+        "rush_att": 1,
+        "rush_tds": 1,
+        "rush_yds": 1
       },
-      "default_scoring_points": 6.8425,
-      "source_count": 2,
-      "sources": ["CBS", "FanDuel"],
-      "point_source_mean": 6.8425,
-      "point_source_sd": 9.0828,
-      "point_source_min": 0.42,
+      "default_scoring_points": 13.265,
+      "source_count": 1,
+      "sources": "FanDuel",
+      "point_source_mean": 13.265,
+      "point_source_sd": 0,
+      "point_source_min": 13.265,
       "point_source_max": 13.265,
-      "point_source_count": 2,
-      "source_rank_mean": 42.5,
-      "source_rank_sd": 48.7904,
+      "point_source_count": 1,
+      "source_rank_mean": 8,
+      "source_rank_sd": 0,
       "source_rank_min": 8,
-      "source_rank_max": 77
+      "source_rank_max": 8
     },
     {
       "name": "Kyren Williams",
@@ -5222,10 +5222,10 @@
         "pass_yds": 0,
         "rec": 2.77,
         "rec_tds": 0.13,
-        "rec_yds": 18.955,
-        "rush_att": 19.07,
+        "rec_yds": 18.905,
+        "rush_att": 19.02,
         "rush_tds": 0.59,
-        "rush_yds": 91.18
+        "rush_yds": 90.98
       },
       "stat_source_counts": {
         "pass_att": 1,
@@ -5240,13 +5240,13 @@
         "rush_tds": 2,
         "rush_yds": 2
       },
-      "default_scoring_points": 15.1835,
+      "default_scoring_points": 15.1585,
       "source_count": 2,
       "sources": ["CBS", "FanDuel"],
-      "point_source_mean": 15.1835,
-      "point_source_sd": 0.7729,
+      "point_source_mean": 15.1585,
+      "point_source_sd": 0.7375,
       "point_source_min": 14.637,
-      "point_source_max": 15.73,
+      "point_source_max": 15.68,
       "point_source_count": 2,
       "source_rank_mean": 5,
       "source_rank_sd": 0,
@@ -5383,9 +5383,9 @@
       "point_source_min": 2.261,
       "point_source_max": 2.58,
       "point_source_count": 2,
-      "source_rank_mean": 52.5,
-      "source_rank_sd": 0.7071,
-      "source_rank_min": 52,
+      "source_rank_mean": 52,
+      "source_rank_sd": 1.4142,
+      "source_rank_min": 51,
       "source_rank_max": 53
     },
     {
@@ -5518,9 +5518,9 @@
       "point_source_min": 2.338,
       "point_source_max": 6.45,
       "point_source_count": 2,
-      "source_rank_mean": 40.5,
-      "source_rank_sd": 14.8492,
-      "source_rank_min": 30,
+      "source_rank_mean": 41,
+      "source_rank_sd": 14.1421,
+      "source_rank_min": 31,
       "source_rank_max": 51
     },
     {
@@ -5540,7 +5540,7 @@
         "rec_yds": 2.845,
         "rush_att": 3.505,
         "rush_tds": 0.045,
-        "rush_yds": 12.02
+        "rush_yds": 11.97
       },
       "stat_source_counts": {
         "pass_att": 1,
@@ -5555,18 +5555,18 @@
         "rush_tds": 2,
         "rush_yds": 2
       },
-      "default_scoring_points": 1.8465,
+      "default_scoring_points": 1.8415,
       "source_count": 2,
       "sources": ["CBS", "FanDuel"],
-      "point_source_mean": 1.8465,
-      "point_source_sd": 0.9143,
-      "point_source_min": 1.2,
+      "point_source_mean": 1.8415,
+      "point_source_sd": 0.9214,
+      "point_source_min": 1.19,
       "point_source_max": 2.493,
       "point_source_count": 2,
-      "source_rank_mean": 57,
-      "source_rank_sd": 11.3137,
+      "source_rank_mean": 55,
+      "source_rank_sd": 8.4853,
       "source_rank_min": 49,
-      "source_rank_max": 65
+      "source_rank_max": 61
     },
     {
       "name": "Pierre Strong Jr.",
@@ -5598,10 +5598,10 @@
       "point_source_min": 0.65,
       "point_source_max": 0.65,
       "point_source_count": 1,
-      "source_rank_mean": 73,
+      "source_rank_mean": 69,
       "source_rank_sd": 0,
-      "source_rank_min": 73,
-      "source_rank_max": 73
+      "source_rank_min": 69,
+      "source_rank_max": 69
     },
     {
       "name": "Malik Davis",
@@ -5868,9 +5868,9 @@
       "point_source_min": 0.3,
       "point_source_max": 0.342,
       "point_source_count": 2,
-      "source_rank_mean": 81,
-      "source_rank_sd": 0,
-      "source_rank_min": 81,
+      "source_rank_mean": 78,
+      "source_rank_sd": 4.2426,
+      "source_rank_min": 75,
       "source_rank_max": 81
     },
     {
@@ -5913,10 +5913,10 @@
       "point_source_min": 9.02,
       "point_source_max": 9.055,
       "point_source_count": 2,
-      "source_rank_mean": 21.5,
-      "source_rank_sd": 2.1213,
+      "source_rank_mean": 22,
+      "source_rank_sd": 2.8284,
       "source_rank_min": 20,
-      "source_rank_max": 23
+      "source_rank_max": 24
     },
     {
       "name": "Bijan Robinson",
@@ -6065,12 +6065,12 @@
         "pass_int": 0,
         "pass_tds": 0,
         "pass_yds": 0,
-        "rec": 1.935,
-        "rec_tds": 0.015,
-        "rec_yds": 11.27,
-        "rush_att": 6.81,
-        "rush_tds": 0.215,
-        "rush_yds": 26.38
+        "rec": 1.37,
+        "rec_tds": 0.03,
+        "rec_yds": 7.34,
+        "rush_att": 8.02,
+        "rush_tds": 0.23,
+        "rush_yds": 32.16
       },
       "stat_source_counts": {
         "pass_att": 1,
@@ -6078,25 +6078,25 @@
         "pass_int": 1,
         "pass_tds": 1,
         "pass_yds": 1,
-        "rec": 2,
-        "rec_tds": 2,
-        "rec_yds": 2,
-        "rush_att": 2,
-        "rush_tds": 2,
-        "rush_yds": 2
+        "rec": 1,
+        "rec_tds": 1,
+        "rec_yds": 1,
+        "rush_att": 1,
+        "rush_tds": 1,
+        "rush_yds": 1
       },
-      "default_scoring_points": 4.995,
-      "source_count": 2,
-      "sources": ["CBS", "FanDuel"],
-      "point_source_mean": 4.995,
-      "point_source_sd": 0.7283,
-      "point_source_min": 4.48,
+      "default_scoring_points": 5.51,
+      "source_count": 1,
+      "sources": "FanDuel",
+      "point_source_mean": 5.51,
+      "point_source_sd": 0,
+      "point_source_min": 5.51,
       "point_source_max": 5.51,
-      "point_source_count": 2,
-      "source_rank_mean": 39,
-      "source_rank_sd": 2.8284,
+      "point_source_count": 1,
+      "source_rank_mean": 37,
+      "source_rank_sd": 0,
       "source_rank_min": 37,
-      "source_rank_max": 41
+      "source_rank_max": 37
     },
     {
       "name": "Sean Tucker",
@@ -6138,10 +6138,10 @@
       "point_source_min": 0.95,
       "point_source_max": 2.024,
       "point_source_count": 2,
-      "source_rank_mean": 63,
-      "source_rank_sd": 7.0711,
+      "source_rank_mean": 61,
+      "source_rank_sd": 4.2426,
       "source_rank_min": 58,
-      "source_rank_max": 68
+      "source_rank_max": 64
     },
     {
       "name": "Zach Charbonnet",
@@ -6273,9 +6273,9 @@
       "point_source_min": 1.611,
       "point_source_max": 4.14,
       "point_source_count": 2,
-      "source_rank_mean": 52.5,
-      "source_rank_sd": 13.435,
-      "source_rank_min": 43,
+      "source_rank_mean": 52,
+      "source_rank_sd": 14.1421,
+      "source_rank_min": 42,
       "source_rank_max": 62
     },
     {
@@ -6308,10 +6308,10 @@
       "point_source_min": 11.38,
       "point_source_max": 11.38,
       "point_source_count": 1,
-      "source_rank_mean": 14,
+      "source_rank_mean": 15,
       "source_rank_sd": 0,
-      "source_rank_min": 14,
-      "source_rank_max": 14
+      "source_rank_min": 15,
+      "source_rank_max": 15
     },
     {
       "name": "Lew Nichols",
@@ -6343,10 +6343,10 @@
       "point_source_min": 1.49,
       "point_source_max": 1.49,
       "point_source_count": 1,
-      "source_rank_mean": 59,
+      "source_rank_mean": 57,
       "source_rank_sd": 0,
-      "source_rank_min": 59,
-      "source_rank_max": 59
+      "source_rank_min": 57,
+      "source_rank_max": 57
     },
     {
       "name": "Emari Demercado",
@@ -6378,10 +6378,10 @@
       "point_source_min": 1.06,
       "point_source_max": 1.06,
       "point_source_count": 1,
-      "source_rank_mean": 67,
+      "source_rank_mean": 63,
       "source_rank_sd": 0,
-      "source_rank_min": 67,
-      "source_rank_max": 67
+      "source_rank_min": 63,
+      "source_rank_max": 63
     },
     {
       "name": "Chris Brooks",
@@ -6468,9 +6468,9 @@
       "point_source_min": 1.083,
       "point_source_max": 3.56,
       "point_source_count": 2,
-      "source_rank_mean": 56.5,
-      "source_rank_sd": 12.0208,
-      "source_rank_min": 48,
+      "source_rank_mean": 55.5,
+      "source_rank_sd": 13.435,
+      "source_rank_min": 46,
       "source_rank_max": 65
     },
     {
@@ -6513,10 +6513,10 @@
       "point_source_min": 0.59,
       "point_source_max": 0.982,
       "point_source_count": 2,
-      "source_rank_mean": 71,
-      "source_rank_sd": 5.6569,
+      "source_rank_mean": 68.5,
+      "source_rank_sd": 2.1213,
       "source_rank_min": 67,
-      "source_rank_max": 75
+      "source_rank_max": 70
     },
     {
       "name": "Emanuel Wilson",
@@ -6535,7 +6535,7 @@
         "rec_yds": 5.47,
         "rush_att": 14.43,
         "rush_tds": 0.335,
-        "rush_yds": 50.925
+        "rush_yds": 50.825
       },
       "stat_source_counts": {
         "pass_att": 1,
@@ -6550,17 +6550,17 @@
         "rush_tds": 2,
         "rush_yds": 2
       },
-      "default_scoring_points": 7.8295,
+      "default_scoring_points": 7.8195,
       "source_count": 2,
       "sources": ["CBS", "FanDuel"],
-      "point_source_mean": 7.8295,
-      "point_source_sd": 1.6553,
+      "point_source_mean": 7.8195,
+      "point_source_sd": 1.6412,
       "point_source_min": 6.659,
-      "point_source_max": 9,
+      "point_source_max": 8.98,
       "point_source_count": 2,
-      "source_rank_mean": 27.5,
-      "source_rank_sd": 4.9497,
-      "source_rank_min": 24,
+      "source_rank_mean": 28,
+      "source_rank_sd": 4.2426,
+      "source_rank_min": 25,
       "source_rank_max": 31
     },
     {
@@ -6665,12 +6665,12 @@
         "pass_int": 0,
         "pass_tds": 0,
         "pass_yds": 0,
-        "rec": 0.05,
+        "rec": 0,
         "rec_tds": 0,
-        "rec_yds": 0.35,
-        "rush_att": 0.8,
-        "rush_tds": 0.05,
-        "rush_yds": 2.8
+        "rec_yds": 0,
+        "rush_att": 0,
+        "rush_tds": 0,
+        "rush_yds": 0
       },
       "stat_source_counts": {
         "pass_att": 1,
@@ -6678,24 +6678,24 @@
         "pass_int": 1,
         "pass_tds": 1,
         "pass_yds": 1,
-        "rec": 2,
-        "rec_tds": 2,
-        "rec_yds": 2,
-        "rush_att": 2,
-        "rush_tds": 2,
-        "rush_yds": 2
+        "rec": 1,
+        "rec_tds": 1,
+        "rec_yds": 1,
+        "rush_att": 1,
+        "rush_tds": 1,
+        "rush_yds": 1
       },
-      "default_scoring_points": 0.615,
-      "source_count": 2,
-      "sources": ["CBS", "FanDuel"],
-      "point_source_mean": 0.615,
-      "point_source_sd": 0.8697,
+      "default_scoring_points": 0,
+      "source_count": 1,
+      "sources": "FanDuel",
+      "point_source_mean": 0,
+      "point_source_sd": 0,
       "point_source_min": 0,
-      "point_source_max": 1.23,
-      "point_source_count": 2,
-      "source_rank_mean": 74,
-      "source_rank_sd": 14.1421,
-      "source_rank_min": 64,
+      "point_source_max": 0,
+      "point_source_count": 1,
+      "source_rank_mean": 84,
+      "source_rank_sd": 0,
+      "source_rank_min": 84,
       "source_rank_max": 84
     },
     {
@@ -6710,12 +6710,12 @@
         "pass_int": 0,
         "pass_tds": 0,
         "pass_yds": 0,
-        "rec": 1.315,
+        "rec": 1.365,
         "rec_tds": 0.015,
-        "rec_yds": 7.775,
-        "rush_att": 10.735,
-        "rush_tds": 0.45,
-        "rush_yds": 45.5
+        "rec_yds": 8.175,
+        "rush_att": 11.685,
+        "rush_tds": 0.5,
+        "rush_yds": 47.75
       },
       "stat_source_counts": {
         "pass_att": 1,
@@ -6730,17 +6730,17 @@
         "rush_tds": 2,
         "rush_yds": 2
       },
-      "default_scoring_points": 7.9675,
+      "default_scoring_points": 8.5325,
       "source_count": 2,
       "sources": ["CBS", "FanDuel"],
-      "point_source_mean": 7.9675,
-      "point_source_sd": 4.7836,
+      "point_source_mean": 8.5325,
+      "point_source_sd": 5.5826,
       "point_source_min": 4.585,
-      "point_source_max": 11.35,
+      "point_source_max": 12.48,
       "point_source_count": 2,
-      "source_rank_mean": 28,
-      "source_rank_sd": 18.3848,
-      "source_rank_min": 15,
+      "source_rank_mean": 26,
+      "source_rank_sd": 21.2132,
+      "source_rank_min": 11,
       "source_rank_max": 41
     },
     {
@@ -6828,9 +6828,9 @@
       "point_source_min": 11.446,
       "point_source_max": 12.2,
       "point_source_count": 2,
-      "source_rank_mean": 13,
-      "source_rank_sd": 1.4142,
-      "source_rank_min": 12,
+      "source_rank_mean": 13.5,
+      "source_rank_sd": 0.7071,
+      "source_rank_min": 13,
       "source_rank_max": 14
     },
     {
@@ -6918,10 +6918,10 @@
       "point_source_min": 3.72,
       "point_source_max": 9.068,
       "point_source_count": 2,
-      "source_rank_mean": 32,
-      "source_rank_sd": 18.3848,
+      "source_rank_mean": 31.5,
+      "source_rank_sd": 17.6777,
       "source_rank_min": 19,
-      "source_rank_max": 45
+      "source_rank_max": 44
     },
     {
       "name": "George Holani",
@@ -6940,7 +6940,7 @@
         "rec_yds": 6.49,
         "rush_att": 4.98,
         "rush_tds": 0.155,
-        "rush_yds": 16.685
+        "rush_yds": 16.635
       },
       "stat_source_counts": {
         "pass_att": 1,
@@ -6955,18 +6955,18 @@
         "rush_tds": 2,
         "rush_yds": 2
       },
-      "default_scoring_points": 3.0075,
+      "default_scoring_points": 3.0025,
       "source_count": 2,
       "sources": ["CBS", "FanDuel"],
-      "point_source_mean": 3.0075,
+      "point_source_mean": 3.0025,
       "point_source_sd": 0.0035,
-      "point_source_min": 3.005,
-      "point_source_max": 3.01,
+      "point_source_min": 3,
+      "point_source_max": 3.005,
       "point_source_count": 2,
-      "source_rank_mean": 47.5,
-      "source_rank_sd": 2.1213,
+      "source_rank_mean": 47,
+      "source_rank_sd": 1.4142,
       "source_rank_min": 46,
-      "source_rank_max": 49
+      "source_rank_max": 48
     },
     {
       "name": "Jaylen Wright",
@@ -7008,10 +7008,10 @@
       "point_source_min": 2.59,
       "point_source_max": 4.512,
       "point_source_count": 2,
-      "source_rank_mean": 47,
-      "source_rank_sd": 5.6569,
+      "source_rank_mean": 46.5,
+      "source_rank_sd": 4.9497,
       "source_rank_min": 43,
-      "source_rank_max": 51
+      "source_rank_max": 50
     },
     {
       "name": "Carson Steele",
@@ -7098,9 +7098,9 @@
       "point_source_min": 0.832,
       "point_source_max": 1.2,
       "point_source_count": 2,
-      "source_rank_mean": 67.5,
-      "source_rank_sd": 3.5355,
-      "source_rank_min": 65,
+      "source_rank_mean": 65,
+      "source_rank_sd": 7.0711,
+      "source_rank_min": 60,
       "source_rank_max": 70
     },
     {
@@ -7143,10 +7143,10 @@
       "point_source_min": 1.4,
       "point_source_max": 2.187,
       "point_source_count": 2,
-      "source_rank_mean": 58.5,
-      "source_rank_sd": 4.9497,
+      "source_rank_mean": 57,
+      "source_rank_sd": 2.8284,
       "source_rank_min": 55,
-      "source_rank_max": 62
+      "source_rank_max": 59
     },
     {
       "name": "Isaac Guerendo",
@@ -7223,10 +7223,10 @@
       "point_source_min": 0.3,
       "point_source_max": 0.3,
       "point_source_count": 1,
-      "source_rank_mean": 80,
+      "source_rank_mean": 74,
       "source_rank_sd": 0,
-      "source_rank_min": 80,
-      "source_rank_max": 80
+      "source_rank_min": 74,
+      "source_rank_max": 74
     },
     {
       "name": "Tyrone Tracy",
@@ -7290,7 +7290,7 @@
         "rec_yds": 3.48,
         "rush_att": 1.795,
         "rush_tds": 0.06,
-        "rush_yds": 8.065
+        "rush_yds": 7.565
       },
       "stat_source_counts": {
         "pass_att": 1,
@@ -7305,17 +7305,17 @@
         "rush_tds": 2,
         "rush_yds": 2
       },
-      "default_scoring_points": 1.5445,
+      "default_scoring_points": 1.4945,
       "source_count": 2,
       "sources": ["CBS", "FanDuel"],
-      "point_source_mean": 1.5445,
-      "point_source_sd": 1.3796,
+      "point_source_mean": 1.4945,
+      "point_source_sd": 1.3089,
       "point_source_min": 0.569,
-      "point_source_max": 2.52,
+      "point_source_max": 2.42,
       "point_source_count": 2,
-      "source_rank_mean": 62.5,
-      "source_rank_sd": 13.435,
-      "source_rank_min": 53,
+      "source_rank_mean": 62,
+      "source_rank_sd": 14.1421,
+      "source_rank_min": 52,
       "source_rank_max": 72
     },
     {
@@ -7403,10 +7403,10 @@
       "point_source_min": 0.38,
       "point_source_max": 0.916,
       "point_source_count": 2,
-      "source_rank_mean": 73.5,
-      "source_rank_sd": 7.7782,
+      "source_rank_mean": 70.5,
+      "source_rank_sd": 3.5355,
       "source_rank_min": 68,
-      "source_rank_max": 79
+      "source_rank_max": 73
     },
     {
       "name": "Ashton Jeanty",
@@ -7493,9 +7493,9 @@
       "point_source_min": 6.132,
       "point_source_max": 6.19,
       "point_source_count": 2,
-      "source_rank_mean": 32,
-      "source_rank_sd": 1.4142,
-      "source_rank_min": 31,
+      "source_rank_mean": 32.5,
+      "source_rank_sd": 0.7071,
+      "source_rank_min": 32,
       "source_rank_max": 33
     },
     {
@@ -7510,12 +7510,12 @@
         "pass_int": 0,
         "pass_tds": 0,
         "pass_yds": 0,
-        "rec": 1.65,
+        "rec": 1.6,
         "rec_tds": 0.025,
-        "rec_yds": 14.135,
-        "rush_att": 11.9,
+        "rec_yds": 13.435,
+        "rush_att": 13.25,
         "rush_tds": 0.32,
-        "rush_yds": 46.845
+        "rush_yds": 51.545
       },
       "stat_source_counts": {
         "pass_att": 1,
@@ -7530,18 +7530,18 @@
         "rush_tds": 2,
         "rush_yds": 2
       },
-      "default_scoring_points": 8.018,
+      "default_scoring_points": 8.418,
       "source_count": 2,
       "sources": ["CBS", "FanDuel"],
-      "point_source_mean": 8.018,
-      "point_source_sd": 3.3489,
-      "point_source_min": 5.65,
+      "point_source_mean": 8.418,
+      "point_source_sd": 2.7832,
+      "point_source_min": 6.45,
       "point_source_max": 10.386,
       "point_source_count": 2,
-      "source_rank_mean": 25.5,
-      "source_rank_sd": 12.0208,
+      "source_rank_mean": 23.5,
+      "source_rank_sd": 9.1924,
       "source_rank_min": 17,
-      "source_rank_max": 34
+      "source_rank_max": 30
     },
     {
       "name": "Dylan Sampson",
@@ -7600,12 +7600,12 @@
         "pass_int": 0,
         "pass_tds": 0,
         "pass_yds": 0,
-        "rec": 1.14,
-        "rec_tds": 0.05,
-        "rec_yds": 7.77,
-        "rush_att": 5.74,
-        "rush_tds": 0.12,
-        "rush_yds": 21.06
+        "rec": 2.28,
+        "rec_tds": 0.1,
+        "rec_yds": 15.44,
+        "rush_att": 9.78,
+        "rush_tds": 0.24,
+        "rush_yds": 34.82
       },
       "stat_source_counts": {
         "pass_att": 1,
@@ -7613,25 +7613,25 @@
         "pass_int": 1,
         "pass_tds": 1,
         "pass_yds": 1,
-        "rec": 2,
-        "rec_tds": 2,
-        "rec_yds": 2,
-        "rush_att": 2,
-        "rush_tds": 2,
-        "rush_yds": 2
+        "rec": 1,
+        "rec_tds": 1,
+        "rec_yds": 1,
+        "rush_att": 1,
+        "rush_tds": 1,
+        "rush_yds": 1
       },
-      "default_scoring_points": 3.903,
-      "source_count": 2,
-      "sources": ["CBS", "FanDuel"],
-      "point_source_mean": 3.903,
-      "point_source_sd": 4.4732,
-      "point_source_min": 0.74,
+      "default_scoring_points": 7.066,
+      "source_count": 1,
+      "sources": "FanDuel",
+      "point_source_mean": 7.066,
+      "point_source_sd": 0,
+      "point_source_min": 7.066,
       "point_source_max": 7.066,
-      "point_source_count": 2,
-      "source_rank_mean": 48.5,
-      "source_rank_sd": 30.4056,
+      "point_source_count": 1,
+      "source_rank_mean": 27,
+      "source_rank_sd": 0,
       "source_rank_min": 27,
-      "source_rank_max": 70
+      "source_rank_max": 27
     },
     {
       "name": "Brashard Smith",
@@ -7718,10 +7718,10 @@
       "point_source_min": 8.76,
       "point_source_max": 10.619,
       "point_source_count": 2,
-      "source_rank_mean": 20,
-      "source_rank_sd": 7.0711,
+      "source_rank_mean": 20.5,
+      "source_rank_sd": 7.7782,
       "source_rank_min": 15,
-      "source_rank_max": 25
+      "source_rank_max": 26
     },
     {
       "name": "Woody Marks",
@@ -7808,10 +7808,10 @@
       "point_source_min": 0.55,
       "point_source_max": 0.645,
       "point_source_count": 2,
-      "source_rank_mean": 73.5,
-      "source_rank_sd": 3.5355,
+      "source_rank_mean": 71,
+      "source_rank_sd": 0,
       "source_rank_min": 71,
-      "source_rank_max": 76
+      "source_rank_max": 71
     },
     {
       "name": "Trevor Etienne",
@@ -7853,9 +7853,9 @@
       "point_source_min": 0,
       "point_source_max": 0.21,
       "point_source_count": 2,
-      "source_rank_mean": 83.5,
-      "source_rank_sd": 0.7071,
-      "source_rank_min": 83,
+      "source_rank_mean": 80.5,
+      "source_rank_sd": 4.9497,
+      "source_rank_min": 77,
       "source_rank_max": 84
     },
     {
@@ -7888,10 +7888,10 @@
       "point_source_min": 0.39,
       "point_source_max": 0.39,
       "point_source_count": 1,
-      "source_rank_mean": 78,
+      "source_rank_mean": 72,
       "source_rank_sd": 0,
-      "source_rank_min": 78,
-      "source_rank_max": 78
+      "source_rank_min": 72,
+      "source_rank_max": 72
     },
     {
       "name": "Ollie Gordon II",
@@ -7978,9 +7978,9 @@
       "point_source_min": 0.177,
       "point_source_max": 0.67,
       "point_source_count": 2,
-      "source_rank_mean": 77.5,
-      "source_rank_sd": 7.7782,
-      "source_rank_min": 72,
+      "source_rank_mean": 75.5,
+      "source_rank_sd": 10.6066,
+      "source_rank_min": 68,
       "source_rank_max": 83
     },
     {
@@ -8113,9 +8113,9 @@
       "point_source_min": 5.777,
       "point_source_max": 5.97,
       "point_source_count": 2,
-      "source_rank_mean": 33.5,
-      "source_rank_sd": 2.1213,
-      "source_rank_min": 32,
+      "source_rank_mean": 34,
+      "source_rank_sd": 1.4142,
+      "source_rank_min": 33,
       "source_rank_max": 35
     },
     {
@@ -8148,10 +8148,10 @@
       "point_source_min": 0.73,
       "point_source_max": 0.73,
       "point_source_count": 1,
-      "source_rank_mean": 71,
+      "source_rank_mean": 67,
       "source_rank_sd": 0,
-      "source_rank_min": 71,
-      "source_rank_max": 71
+      "source_rank_min": 67,
+      "source_rank_max": 67
     },
     {
       "name": "Robbie Ouzts",
@@ -8238,10 +8238,10 @@
       "point_source_min": 1.15,
       "point_source_max": 1.758,
       "point_source_count": 2,
-      "source_rank_mean": 62.5,
-      "source_rank_sd": 4.9497,
+      "source_rank_mean": 60.5,
+      "source_rank_sd": 2.1213,
       "source_rank_min": 59,
-      "source_rank_max": 66
+      "source_rank_max": 62
     },
     {
       "name": "Ahmani Marshall",
@@ -8318,10 +8318,10 @@
       "point_source_min": 1.56,
       "point_source_max": 1.56,
       "point_source_count": 1,
-      "source_rank_mean": 58,
+      "source_rank_mean": 56,
       "source_rank_sd": 0,
-      "source_rank_min": 58,
-      "source_rank_max": 58
+      "source_rank_min": 56,
+      "source_rank_max": 56
     },
     {
       "name": "Jeremiyah Love",
@@ -8453,10 +8453,10 @@
       "point_source_min": 2.79,
       "point_source_max": 2.973,
       "point_source_count": 2,
-      "source_rank_mean": 48.5,
-      "source_rank_sd": 2.1213,
+      "source_rank_mean": 48,
+      "source_rank_sd": 1.4142,
       "source_rank_min": 47,
-      "source_rank_max": 50
+      "source_rank_max": 49
     },
     {
       "name": "Seth McGowan",
@@ -8498,10 +8498,10 @@
       "point_source_min": 0.78,
       "point_source_max": 2.213,
       "point_source_count": 2,
-      "source_rank_mean": 61.5,
-      "source_rank_sd": 10.6066,
+      "source_rank_mean": 59.5,
+      "source_rank_sd": 7.7782,
       "source_rank_min": 54,
-      "source_rank_max": 69
+      "source_rank_max": 65
     },
     {
       "name": "Nicholas Singleton",
@@ -8515,12 +8515,12 @@
         "pass_int": 0,
         "pass_tds": 0,
         "pass_yds": 0,
-        "rec": 0.05,
+        "rec": 0,
         "rec_tds": 0,
-        "rec_yds": 0.45,
-        "rush_att": 2.46,
-        "rush_tds": 0.045,
-        "rush_yds": 8.69
+        "rec_yds": 0,
+        "rush_att": 3.32,
+        "rush_tds": 0.09,
+        "rush_yds": 11.88
       },
       "stat_source_counts": {
         "pass_att": 1,
@@ -8528,25 +8528,25 @@
         "pass_int": 1,
         "pass_tds": 1,
         "pass_yds": 1,
-        "rec": 2,
-        "rec_tds": 2,
-        "rec_yds": 2,
-        "rush_att": 2,
-        "rush_tds": 2,
-        "rush_yds": 2
+        "rec": 1,
+        "rec_tds": 1,
+        "rec_yds": 1,
+        "rush_att": 1,
+        "rush_tds": 1,
+        "rush_yds": 1
       },
-      "default_scoring_points": 1.184,
-      "source_count": 2,
-      "sources": ["CBS", "FanDuel"],
-      "point_source_mean": 1.184,
-      "point_source_sd": 0.7693,
-      "point_source_min": 0.64,
+      "default_scoring_points": 1.728,
+      "source_count": 1,
+      "sources": "FanDuel",
+      "point_source_mean": 1.728,
+      "point_source_sd": 0,
+      "point_source_min": 1.728,
       "point_source_max": 1.728,
-      "point_source_count": 2,
-      "source_rank_mean": 67,
-      "source_rank_sd": 9.8995,
+      "point_source_count": 1,
+      "source_rank_mean": 60,
+      "source_rank_sd": 0,
       "source_rank_min": 60,
-      "source_rank_max": 74
+      "source_rank_max": 60
     },
     {
       "name": "Jonah Coleman",
@@ -8623,10 +8623,10 @@
       "point_source_min": 0.74,
       "point_source_max": 0.74,
       "point_source_count": 1,
-      "source_rank_mean": 70,
+      "source_rank_mean": 66,
       "source_rank_sd": 0,
-      "source_rank_min": 70,
-      "source_rank_max": 70
+      "source_rank_min": 66,
+      "source_rank_max": 66
     },
     {
       "name": "Jaydn Ott",
@@ -8685,12 +8685,12 @@
         "pass_int": 0,
         "pass_tds": 0,
         "pass_yds": 0,
-        "rec": 0.18,
-        "rec_tds": 0.005,
-        "rec_yds": 1.055,
-        "rush_att": 1.7,
-        "rush_tds": 0.075,
-        "rush_yds": 6.685
+        "rec": 0.26,
+        "rec_tds": 0.01,
+        "rec_yds": 1.41,
+        "rush_att": 1.5,
+        "rush_tds": 0.05,
+        "rush_yds": 5.97
       },
       "stat_source_counts": {
         "pass_att": 1,
@@ -8698,24 +8698,24 @@
         "pass_int": 1,
         "pass_tds": 1,
         "pass_yds": 1,
-        "rec": 2,
-        "rec_tds": 2,
-        "rec_yds": 2,
-        "rush_att": 2,
-        "rush_tds": 2,
-        "rush_yds": 2
+        "rec": 1,
+        "rec_tds": 1,
+        "rec_yds": 1,
+        "rush_att": 1,
+        "rush_tds": 1,
+        "rush_yds": 1
       },
-      "default_scoring_points": 1.254,
-      "source_count": 2,
-      "sources": ["CBS", "FanDuel"],
-      "point_source_mean": 1.254,
-      "point_source_sd": 0.2206,
+      "default_scoring_points": 1.098,
+      "source_count": 1,
+      "sources": "FanDuel",
+      "point_source_mean": 1.098,
+      "point_source_sd": 0,
       "point_source_min": 1.098,
-      "point_source_max": 1.41,
-      "point_source_count": 2,
-      "source_rank_mean": 62.5,
-      "source_rank_sd": 2.1213,
-      "source_rank_min": 61,
+      "point_source_max": 1.098,
+      "point_source_count": 1,
+      "source_rank_mean": 64,
+      "source_rank_sd": 0,
+      "source_rank_min": 64,
       "source_rank_max": 64
     },
     {
@@ -8758,9 +8758,9 @@
       "point_source_min": 3.314,
       "point_source_max": 5.91,
       "point_source_count": 2,
-      "source_rank_mean": 38.5,
-      "source_rank_sd": 7.7782,
-      "source_rank_min": 33,
+      "source_rank_mean": 39,
+      "source_rank_sd": 7.0711,
+      "source_rank_min": 34,
       "source_rank_max": 44
     },
     {
@@ -8803,9 +8803,9 @@
       "point_source_min": 4.19,
       "point_source_max": 4.53,
       "point_source_count": 2,
-      "source_rank_mean": 42,
-      "source_rank_sd": 0,
-      "source_rank_min": 42,
+      "source_rank_mean": 41.5,
+      "source_rank_sd": 0.7071,
+      "source_rank_min": 41,
       "source_rank_max": 42
     },
     {
@@ -9028,9 +9028,9 @@
       "point_source_min": 2.158,
       "point_source_max": 2.22,
       "point_source_count": 2,
-      "source_rank_mean": 55,
-      "source_rank_sd": 1.4142,
-      "source_rank_min": 54,
+      "source_rank_mean": 54.5,
+      "source_rank_sd": 2.1213,
+      "source_rank_min": 53,
       "source_rank_max": 56
     },
     {
@@ -9343,9 +9343,9 @@
       "point_source_min": 0.365,
       "point_source_max": 1.74,
       "point_source_count": 2,
-      "source_rank_mean": 67.5,
-      "source_rank_sd": 14.8492,
-      "source_rank_min": 57,
+      "source_rank_mean": 66.5,
+      "source_rank_sd": 16.2635,
+      "source_rank_min": 55,
       "source_rank_max": 78
     },
     {
@@ -9523,10 +9523,10 @@
       "point_source_min": 4.09,
       "point_source_max": 5.456,
       "point_source_count": 2,
-      "source_rank_mean": 53,
-      "source_rank_sd": 18.3848,
+      "source_rank_mean": 52.5,
+      "source_rank_sd": 17.6777,
       "source_rank_min": 40,
-      "source_rank_max": 66
+      "source_rank_max": 65
     },
     {
       "name": "Davante Adams",
@@ -9613,10 +9613,10 @@
       "point_source_min": 2.96,
       "point_source_max": 4.259,
       "point_source_count": 2,
-      "source_rank_mean": 69,
-      "source_rank_sd": 18.3848,
+      "source_rank_mean": 68,
+      "source_rank_sd": 16.9706,
       "source_rank_min": 56,
-      "source_rank_max": 82
+      "source_rank_max": 80
     },
     {
       "name": "Demarcus Robinson",
@@ -9767,7 +9767,7 @@
         "pass_yds": 0,
         "rec": 2.65,
         "rec_tds": 0.2,
-        "rec_yds": 31.275,
+        "rec_yds": 31.325,
         "rush_att": 0,
         "rush_tds": 0,
         "rush_yds": 0.05
@@ -9785,13 +9785,13 @@
         "rush_tds": 2,
         "rush_yds": 2
       },
-      "default_scoring_points": 4.3325,
+      "default_scoring_points": 4.3375,
       "source_count": 2,
       "sources": ["CBS", "FanDuel"],
-      "point_source_mean": 4.3325,
-      "point_source_sd": 0.251,
+      "point_source_mean": 4.3375,
+      "point_source_sd": 0.2581,
       "point_source_min": 4.155,
-      "point_source_max": 4.51,
+      "point_source_max": 4.52,
       "point_source_count": 2,
       "source_rank_mean": 55.5,
       "source_rank_sd": 2.1213,
@@ -9928,9 +9928,9 @@
       "point_source_min": 0.855,
       "point_source_max": 2.01,
       "point_source_count": 2,
-      "source_rank_mean": 100.5,
-      "source_rank_sd": 9.1924,
-      "source_rank_min": 94,
+      "source_rank_mean": 99,
+      "source_rank_sd": 11.3137,
+      "source_rank_min": 91,
       "source_rank_max": 107
     },
     {
@@ -9973,9 +9973,9 @@
       "point_source_min": 3.978,
       "point_source_max": 4.84,
       "point_source_count": 2,
-      "source_rank_mean": 54,
-      "source_rank_sd": 8.4853,
-      "source_rank_min": 48,
+      "source_rank_mean": 54.5,
+      "source_rank_sd": 7.7782,
+      "source_rank_min": 49,
       "source_rank_max": 60
     },
     {
@@ -9990,12 +9990,12 @@
         "pass_int": 0,
         "pass_tds": 0,
         "pass_yds": 0,
-        "rec": 1.945,
-        "rec_tds": 0.14,
-        "rec_yds": 29.13,
-        "rush_att": 0.05,
+        "rec": 2.39,
+        "rec_tds": 0.18,
+        "rec_yds": 33.56,
+        "rush_att": 0,
         "rush_tds": 0,
-        "rush_yds": 0.55
+        "rush_yds": 0
       },
       "stat_source_counts": {
         "pass_att": 1,
@@ -10003,25 +10003,25 @@
         "pass_int": 1,
         "pass_tds": 1,
         "pass_yds": 1,
-        "rec": 2,
-        "rec_tds": 2,
-        "rec_yds": 2,
-        "rush_att": 2,
-        "rush_tds": 2,
-        "rush_yds": 2
+        "rec": 1,
+        "rec_tds": 1,
+        "rec_yds": 1,
+        "rush_att": 1,
+        "rush_tds": 1,
+        "rush_yds": 1
       },
-      "default_scoring_points": 3.808,
-      "source_count": 2,
-      "sources": ["CBS", "FanDuel"],
-      "point_source_mean": 3.808,
-      "point_source_sd": 0.8881,
-      "point_source_min": 3.18,
+      "default_scoring_points": 4.436,
+      "source_count": 1,
+      "sources": "FanDuel",
+      "point_source_mean": 4.436,
+      "point_source_sd": 0,
+      "point_source_min": 4.436,
       "point_source_max": 4.436,
-      "point_source_count": 2,
-      "source_rank_mean": 66.5,
-      "source_rank_sd": 17.6777,
+      "point_source_count": 1,
+      "source_rank_mean": 54,
+      "source_rank_sd": 0,
       "source_rank_min": 54,
-      "source_rank_max": 79
+      "source_rank_max": 54
     },
     {
       "name": "Courtland Sutton",
@@ -10108,9 +10108,9 @@
       "point_source_min": 1.836,
       "point_source_max": 4.77,
       "point_source_count": 2,
-      "source_rank_mean": 71.5,
-      "source_rank_sd": 31.8198,
-      "source_rank_min": 49,
+      "source_rank_mean": 72,
+      "source_rank_sd": 31.1127,
+      "source_rank_min": 50,
       "source_rank_max": 94
     },
     {
@@ -10260,9 +10260,9 @@
         "pass_int": 0,
         "pass_tds": 0,
         "pass_yds": 0,
-        "rec": 1.1,
+        "rec": 1.05,
         "rec_tds": 0.1,
-        "rec_yds": 13.45,
+        "rec_yds": 13.3,
         "rush_att": 0.25,
         "rush_tds": 0,
         "rush_yds": 1.5
@@ -10280,13 +10280,13 @@
         "rush_tds": 2,
         "rush_yds": 2
       },
-      "default_scoring_points": 2.095,
+      "default_scoring_points": 2.08,
       "source_count": 2,
       "sources": ["CBS", "FanDuel"],
-      "point_source_mean": 2.095,
-      "point_source_sd": 2.9628,
+      "point_source_mean": 2.08,
+      "point_source_sd": 2.9416,
       "point_source_min": 0,
-      "point_source_max": 4.19,
+      "point_source_max": 4.16,
       "point_source_count": 2,
       "source_rank_mean": 96,
       "source_rank_sd": 45.2548,
@@ -10513,9 +10513,9 @@
       "point_source_min": 1.759,
       "point_source_max": 2.71,
       "point_source_count": 2,
-      "source_rank_mean": 91.5,
-      "source_rank_sd": 7.7782,
-      "source_rank_min": 86,
+      "source_rank_mean": 90.5,
+      "source_rank_sd": 9.1924,
+      "source_rank_min": 84,
       "source_rank_max": 97
     },
     {
@@ -10575,12 +10575,12 @@
         "pass_int": 0,
         "pass_tds": 0,
         "pass_yds": 0,
-        "rec": 1.645,
+        "rec": 1.29,
         "rec_tds": 0.1,
-        "rec_yds": 14.985,
-        "rush_att": 0.05,
+        "rec_yds": 13.27,
+        "rush_att": 0,
         "rush_tds": 0,
-        "rush_yds": 0.25
+        "rush_yds": 0
       },
       "stat_source_counts": {
         "pass_att": 1,
@@ -10588,24 +10588,24 @@
         "pass_int": 1,
         "pass_tds": 1,
         "pass_yds": 1,
-        "rec": 2,
-        "rec_tds": 2,
-        "rec_yds": 2,
-        "rush_att": 2,
-        "rush_tds": 2,
-        "rush_yds": 2
+        "rec": 1,
+        "rec_tds": 1,
+        "rec_yds": 1,
+        "rush_att": 1,
+        "rush_tds": 1,
+        "rush_yds": 1
       },
-      "default_scoring_points": 2.1235,
-      "source_count": 2,
-      "sources": ["CBS", "FanDuel"],
-      "point_source_mean": 2.1235,
-      "point_source_sd": 0.2779,
+      "default_scoring_points": 1.927,
+      "source_count": 1,
+      "sources": "FanDuel",
+      "point_source_mean": 1.927,
+      "point_source_sd": 0,
       "point_source_min": 1.927,
-      "point_source_max": 2.32,
-      "point_source_count": 2,
-      "source_rank_mean": 91,
-      "source_rank_sd": 2.8284,
-      "source_rank_min": 89,
+      "point_source_max": 1.927,
+      "point_source_count": 1,
+      "source_rank_mean": 93,
+      "source_rank_sd": 0,
+      "source_rank_min": 93,
       "source_rank_max": 93
     },
     {
@@ -10622,7 +10622,7 @@
         "pass_yds": 0,
         "rec": 6.595,
         "rec_tds": 0.48,
-        "rec_yds": 83.885,
+        "rec_yds": 83.735,
         "rush_att": 0.385,
         "rush_tds": 0.01,
         "rush_yds": 1.045
@@ -10640,13 +10640,13 @@
         "rush_tds": 2,
         "rush_yds": 2
       },
-      "default_scoring_points": 11.433,
+      "default_scoring_points": 11.418,
       "source_count": 2,
       "sources": ["CBS", "FanDuel"],
-      "point_source_mean": 11.433,
-      "point_source_sd": 0.3776,
+      "point_source_mean": 11.418,
+      "point_source_sd": 0.3564,
       "point_source_min": 11.166,
-      "point_source_max": 11.7,
+      "point_source_max": 11.67,
       "point_source_count": 2,
       "source_rank_mean": 7.5,
       "source_rank_sd": 0.7071,
@@ -10693,9 +10693,9 @@
       "point_source_min": 2.544,
       "point_source_max": 4.16,
       "point_source_count": 2,
-      "source_rank_mean": 75,
-      "source_rank_sd": 14.1421,
-      "source_rank_min": 65,
+      "source_rank_mean": 74.5,
+      "source_rank_sd": 14.8492,
+      "source_rank_min": 64,
       "source_rank_max": 85
     },
     {
@@ -10908,9 +10908,9 @@
       "point_source_min": 1.475,
       "point_source_max": 3.41,
       "point_source_count": 2,
-      "source_rank_mean": 88,
-      "source_rank_sd": 18.3848,
-      "source_rank_min": 75,
+      "source_rank_mean": 87.5,
+      "source_rank_sd": 19.0919,
+      "source_rank_min": 74,
       "source_rank_max": 101
     },
     {
@@ -10953,9 +10953,9 @@
       "point_source_min": 3.091,
       "point_source_max": 3.44,
       "point_source_count": 2,
-      "source_rank_mean": 74,
-      "source_rank_sd": 1.4142,
-      "source_rank_min": 73,
+      "source_rank_mean": 73.5,
+      "source_rank_sd": 2.1213,
+      "source_rank_min": 72,
       "source_rank_max": 75
     },
     {
@@ -11187,7 +11187,7 @@
         "pass_yds": 0,
         "rec": 1.05,
         "rec_tds": 0.05,
-        "rec_yds": 11.1,
+        "rec_yds": 11,
         "rush_att": 0.15,
         "rush_tds": 0,
         "rush_yds": 0.55
@@ -11205,17 +11205,17 @@
         "rush_tds": 2,
         "rush_yds": 2
       },
-      "default_scoring_points": 1.465,
+      "default_scoring_points": 1.455,
       "source_count": 2,
       "sources": ["CBS", "FanDuel"],
-      "point_source_mean": 1.465,
-      "point_source_sd": 2.0718,
+      "point_source_mean": 1.455,
+      "point_source_sd": 2.0577,
       "point_source_min": 0,
-      "point_source_max": 2.93,
+      "point_source_max": 2.91,
       "point_source_count": 2,
-      "source_rank_mean": 105.5,
-      "source_rank_sd": 31.8198,
-      "source_rank_min": 83,
+      "source_rank_mean": 104.5,
+      "source_rank_sd": 33.234,
+      "source_rank_min": 81,
       "source_rank_max": 128
     },
     {
@@ -11338,10 +11338,10 @@
       "point_source_min": 2.53,
       "point_source_max": 3.704,
       "point_source_count": 2,
-      "source_rank_mean": 75.5,
-      "source_rank_sd": 17.6777,
+      "source_rank_mean": 74.5,
+      "source_rank_sd": 16.2635,
       "source_rank_min": 63,
-      "source_rank_max": 88
+      "source_rank_max": 86
     },
     {
       "name": "Simi Fehoko",
@@ -11463,10 +11463,10 @@
       "point_source_min": 2.78,
       "point_source_max": 2.78,
       "point_source_count": 1,
-      "source_rank_mean": 84,
+      "source_rank_mean": 82,
       "source_rank_sd": 0,
-      "source_rank_min": 84,
-      "source_rank_max": 84
+      "source_rank_min": 82,
+      "source_rank_max": 82
     },
     {
       "name": "Drake London",
@@ -11705,9 +11705,9 @@
         "pass_int": 0,
         "pass_tds": 0,
         "pass_yds": 0,
-        "rec": 3.76,
+        "rec": 4.01,
         "rec_tds": 0.225,
-        "rec_yds": 32.805,
+        "rec_yds": 33.855,
         "rush_att": 0.24,
         "rush_tds": 0.01,
         "rush_yds": 0.85
@@ -11725,17 +11725,17 @@
         "rush_tds": 2,
         "rush_yds": 2
       },
-      "default_scoring_points": 4.7755,
+      "default_scoring_points": 4.8805,
       "source_count": 2,
       "sources": ["CBS", "FanDuel"],
-      "point_source_mean": 4.7755,
-      "point_source_sd": 0.3458,
+      "point_source_mean": 4.8805,
+      "point_source_sd": 0.4943,
       "point_source_min": 4.531,
-      "point_source_max": 5.02,
+      "point_source_max": 5.23,
       "point_source_count": 2,
-      "source_rank_mean": 49.5,
-      "source_rank_sd": 4.9497,
-      "source_rank_min": 46,
+      "source_rank_mean": 50,
+      "source_rank_sd": 4.2426,
+      "source_rank_min": 47,
       "source_rank_max": 53
     },
     {
@@ -11797,7 +11797,7 @@
         "pass_yds": 0,
         "rec": 5.205,
         "rec_tds": 0.33,
-        "rec_yds": 71.39,
+        "rec_yds": 71.24,
         "rush_att": 0,
         "rush_tds": 0,
         "rush_yds": -0.05
@@ -11815,12 +11815,12 @@
         "rush_tds": 2,
         "rush_yds": 2
       },
-      "default_scoring_points": 9.114,
+      "default_scoring_points": 9.099,
       "source_count": 2,
       "sources": ["CBS", "FanDuel"],
-      "point_source_mean": 9.114,
-      "point_source_sd": 0.1047,
-      "point_source_min": 9.04,
+      "point_source_mean": 9.099,
+      "point_source_sd": 0.1259,
+      "point_source_min": 9.01,
       "point_source_max": 9.188,
       "point_source_count": 2,
       "source_rank_mean": 14.5,
@@ -12138,10 +12138,10 @@
       "point_source_min": 3.3,
       "point_source_max": 5.758,
       "point_source_count": 2,
-      "source_rank_mean": 56,
-      "source_rank_sd": 29.6985,
+      "source_rank_mean": 55.5,
+      "source_rank_sd": 28.9914,
       "source_rank_min": 35,
-      "source_rank_max": 77
+      "source_rank_max": 76
     },
     {
       "name": "Jalen Tolbert",
@@ -12273,9 +12273,9 @@
       "point_source_min": 0.285,
       "point_source_max": 1.46,
       "point_source_count": 2,
-      "source_rank_mean": 110.5,
-      "source_rank_sd": 17.6777,
-      "source_rank_min": 98,
+      "source_rank_mean": 110,
+      "source_rank_sd": 18.3848,
+      "source_rank_min": 97,
       "source_rank_max": 123
     },
     {
@@ -12381,11 +12381,11 @@
         "pass_tds": 0,
         "pass_yds": 0,
         "rec": 2.48,
-        "rec_tds": 0.135,
-        "rec_yds": 32.07,
+        "rec_tds": 0.185,
+        "rec_yds": 32.12,
         "rush_att": 1.11,
         "rush_tds": 0.085,
-        "rush_yds": 6.225
+        "rush_yds": 6.175
       },
       "stat_source_counts": {
         "pass_att": 1,
@@ -12400,18 +12400,18 @@
         "rush_tds": 2,
         "rush_yds": 2
       },
-      "default_scoring_points": 4.9995,
+      "default_scoring_points": 5.2995,
       "source_count": 2,
       "sources": ["CBS", "FanDuel"],
-      "point_source_mean": 4.9995,
-      "point_source_sd": 0.3387,
-      "point_source_min": 4.76,
-      "point_source_max": 5.239,
+      "point_source_mean": 5.2995,
+      "point_source_sd": 0.0856,
+      "point_source_min": 5.239,
+      "point_source_max": 5.36,
       "point_source_count": 2,
-      "source_rank_mean": 46.5,
-      "source_rank_sd": 4.9497,
+      "source_rank_mean": 44.5,
+      "source_rank_sd": 2.1213,
       "source_rank_min": 43,
-      "source_rank_max": 50
+      "source_rank_max": 46
     },
     {
       "name": "Jayden Reed",
@@ -12472,7 +12472,7 @@
         "pass_yds": 0,
         "rec": 6.63,
         "rec_tds": 0.625,
-        "rec_yds": 93.71,
+        "rec_yds": 93.91,
         "rush_att": 0.455,
         "rush_tds": 0.015,
         "rush_yds": 2.42
@@ -12490,13 +12490,13 @@
         "rush_tds": 2,
         "rush_yds": 2
       },
-      "default_scoring_points": 13.453,
+      "default_scoring_points": 13.473,
       "source_count": 2,
       "sources": ["CBS", "FanDuel"],
-      "point_source_mean": 13.453,
-      "point_source_sd": 1.1696,
+      "point_source_mean": 13.473,
+      "point_source_sd": 1.1978,
       "point_source_min": 12.626,
-      "point_source_max": 14.28,
+      "point_source_max": 14.32,
       "point_source_count": 2,
       "source_rank_mean": 2,
       "source_rank_sd": 1.4142,
@@ -12588,10 +12588,10 @@
       "point_source_min": 5.58,
       "point_source_max": 6.205,
       "point_source_count": 2,
-      "source_rank_mean": 35.5,
-      "source_rank_sd": 9.1924,
+      "source_rank_mean": 35,
+      "source_rank_sd": 8.4853,
       "source_rank_min": 29,
-      "source_rank_max": 42
+      "source_rank_max": 41
     },
     {
       "name": "Marvin Mims",
@@ -12633,9 +12633,9 @@
       "point_source_min": 1.516,
       "point_source_max": 2.08,
       "point_source_count": 2,
-      "source_rank_mean": 96,
-      "source_rank_sd": 4.2426,
-      "source_rank_min": 93,
+      "source_rank_mean": 94.5,
+      "source_rank_sd": 6.364,
+      "source_rank_min": 90,
       "source_rank_max": 99
     },
     {
@@ -12713,10 +12713,10 @@
       "point_source_min": 4.06,
       "point_source_max": 4.393,
       "point_source_count": 2,
-      "source_rank_mean": 61,
-      "source_rank_sd": 8.4853,
+      "source_rank_mean": 60.5,
+      "source_rank_sd": 7.7782,
       "source_rank_min": 55,
-      "source_rank_max": 67
+      "source_rank_max": 66
     },
     {
       "name": "Rashee Rice",
@@ -13208,9 +13208,9 @@
       "point_source_min": 2.04,
       "point_source_max": 2.24,
       "point_source_count": 2,
-      "source_rank_mean": 91.5,
-      "source_rank_sd": 0.7071,
-      "source_rank_min": 91,
+      "source_rank_mean": 90,
+      "source_rank_sd": 2.8284,
+      "source_rank_min": 88,
       "source_rank_max": 92
     },
     {
@@ -13302,6 +13302,41 @@
       "source_rank_sd": 0,
       "source_rank_min": 118,
       "source_rank_max": 118
+    },
+    {
+      "name": "Xavier Smith",
+      "position": "WR",
+      "gsis_id": null,
+      "sleeper_id": null,
+      "espn_id": null,
+      "consensus_stats": {
+        "rec": 0.7,
+        "rec_tds": 0.1,
+        "rec_yds": 10.6,
+        "rush_att": 0.1,
+        "rush_tds": 0,
+        "rush_yds": 1.3
+      },
+      "stat_source_counts": {
+        "rec": 1,
+        "rec_tds": 1,
+        "rec_yds": 1,
+        "rush_att": 1,
+        "rush_tds": 1,
+        "rush_yds": 1
+      },
+      "default_scoring_points": 1.79,
+      "source_count": 1,
+      "sources": "CBS",
+      "point_source_mean": 1.79,
+      "point_source_sd": 0,
+      "point_source_min": 1.79,
+      "point_source_max": 1.79,
+      "point_source_count": 1,
+      "source_rank_mean": 94,
+      "source_rank_sd": 0,
+      "source_rank_min": 94,
+      "source_rank_max": 94
     },
     {
       "name": "Chris Blair",
@@ -13523,9 +13558,9 @@
       "point_source_min": 3.198,
       "point_source_max": 3.53,
       "point_source_count": 2,
-      "source_rank_mean": 72.5,
-      "source_rank_sd": 2.1213,
-      "source_rank_min": 71,
+      "source_rank_mean": 72,
+      "source_rank_sd": 2.8284,
+      "source_rank_min": 70,
       "source_rank_max": 74
     },
     {
@@ -13542,7 +13577,7 @@
         "pass_yds": 0,
         "rec": 3.975,
         "rec_tds": 0.205,
-        "rec_yds": 42.7,
+        "rec_yds": 42.6,
         "rush_att": 0.45,
         "rush_tds": 0.05,
         "rush_yds": 2.35
@@ -13560,13 +13595,13 @@
         "rush_tds": 2,
         "rush_yds": 2
       },
-      "default_scoring_points": 6.035,
+      "default_scoring_points": 6.025,
       "source_count": 2,
       "sources": ["CBS", "FanDuel"],
-      "point_source_mean": 6.035,
-      "point_source_sd": 0.3182,
+      "point_source_mean": 6.025,
+      "point_source_sd": 0.3041,
       "point_source_min": 5.81,
-      "point_source_max": 6.26,
+      "point_source_max": 6.24,
       "point_source_count": 2,
       "source_rank_mean": 34.5,
       "source_rank_sd": 0.7071,
@@ -13603,10 +13638,10 @@
       "point_source_min": 4.91,
       "point_source_max": 4.91,
       "point_source_count": 1,
-      "source_rank_mean": 47,
+      "source_rank_mean": 48,
       "source_rank_sd": 0,
-      "source_rank_min": 47,
-      "source_rank_max": 47
+      "source_rank_min": 48,
+      "source_rank_max": 48
     },
     {
       "name": "Jamari Thrash",
@@ -13670,7 +13705,7 @@
         "rec_yds": 40.78,
         "rush_att": 0.05,
         "rush_tds": 0,
-        "rush_yds": 0.05
+        "rush_yds": 0
       },
       "stat_source_counts": {
         "pass_att": 1,
@@ -13685,13 +13720,13 @@
         "rush_tds": 2,
         "rush_yds": 2
       },
-      "default_scoring_points": 5.133,
+      "default_scoring_points": 5.128,
       "source_count": 2,
       "sources": ["CBS", "FanDuel"],
-      "point_source_mean": 5.133,
-      "point_source_sd": 0.4483,
+      "point_source_mean": 5.128,
+      "point_source_sd": 0.4412,
       "point_source_min": 4.816,
-      "point_source_max": 5.45,
+      "point_source_max": 5.44,
       "point_source_count": 2,
       "source_rank_mean": 47,
       "source_rank_sd": 4.2426,
@@ -13805,7 +13840,7 @@
         "rec_yds": 21.225,
         "rush_att": 0.395,
         "rush_tds": 0.01,
-        "rush_yds": 2.74
+        "rush_yds": 2.59
       },
       "stat_source_counts": {
         "pass_att": 1,
@@ -13820,13 +13855,13 @@
         "rush_tds": 2,
         "rush_yds": 2
       },
-      "default_scoring_points": 3.3265,
+      "default_scoring_points": 3.3115,
       "source_count": 2,
       "sources": ["CBS", "FanDuel"],
-      "point_source_mean": 3.3265,
-      "point_source_sd": 1.3767,
+      "point_source_mean": 3.3115,
+      "point_source_sd": 1.3555,
       "point_source_min": 2.353,
-      "point_source_max": 4.3,
+      "point_source_max": 4.27,
       "point_source_count": 2,
       "source_rank_mean": 74.5,
       "source_rank_sd": 17.6777,
@@ -13873,9 +13908,9 @@
       "point_source_min": 0.739,
       "point_source_max": 2.64,
       "point_source_count": 2,
-      "source_rank_mean": 99,
-      "source_rank_sd": 16.9706,
-      "source_rank_min": 87,
+      "source_rank_mean": 98,
+      "source_rank_sd": 18.3848,
+      "source_rank_min": 85,
       "source_rank_max": 111
     },
     {
@@ -14162,7 +14197,7 @@
         "pass_yds": 0,
         "rec": 3.115,
         "rec_tds": 0.21,
-        "rec_yds": 34.005,
+        "rec_yds": 33.955,
         "rush_att": 0.05,
         "rush_tds": 0,
         "rush_yds": 0.3
@@ -14180,12 +14215,12 @@
         "rush_tds": 2,
         "rush_yds": 2
       },
-      "default_scoring_points": 4.6905,
+      "default_scoring_points": 4.6855,
       "source_count": 2,
       "sources": ["CBS", "FanDuel"],
-      "point_source_mean": 4.6905,
-      "point_source_sd": 0.4108,
-      "point_source_min": 4.4,
+      "point_source_mean": 4.6855,
+      "point_source_sd": 0.4179,
+      "point_source_min": 4.39,
       "point_source_max": 4.981,
       "point_source_count": 2,
       "source_rank_mean": 52.5,
@@ -14458,10 +14493,10 @@
       "point_source_min": 2.29,
       "point_source_max": 4.873,
       "point_source_count": 2,
-      "source_rank_mean": 69,
-      "source_rank_sd": 29.6985,
+      "source_rank_mean": 67.5,
+      "source_rank_sd": 27.5772,
       "source_rank_min": 48,
-      "source_rank_max": 90
+      "source_rank_max": 87
     },
     {
       "name": "Ryan Miller",
@@ -14507,6 +14542,41 @@
       "source_rank_sd": 0,
       "source_rank_min": 117,
       "source_rank_max": 117
+    },
+    {
+      "name": "Bryce Oliver",
+      "position": "WR",
+      "gsis_id": null,
+      "sleeper_id": null,
+      "espn_id": null,
+      "consensus_stats": {
+        "rec": 0.7,
+        "rec_tds": 0.1,
+        "rec_yds": 10.4,
+        "rush_att": 0,
+        "rush_tds": 0,
+        "rush_yds": 0.1
+      },
+      "stat_source_counts": {
+        "rec": 1,
+        "rec_tds": 1,
+        "rec_yds": 1,
+        "rush_att": 1,
+        "rush_tds": 1,
+        "rush_yds": 1
+      },
+      "default_scoring_points": 1.65,
+      "source_count": 1,
+      "sources": "CBS",
+      "point_source_mean": 1.65,
+      "point_source_sd": 0,
+      "point_source_min": 1.65,
+      "point_source_max": 1.65,
+      "point_source_count": 1,
+      "source_rank_mean": 95,
+      "source_rank_sd": 0,
+      "source_rank_min": 95,
+      "source_rank_max": 95
     },
     {
       "name": "Luther Burden",
@@ -14610,9 +14680,9 @@
         "pass_int": 0,
         "pass_tds": 0,
         "pass_yds": 0,
-        "rec": 1.465,
+        "rec": 1.565,
         "rec_tds": 0.185,
-        "rec_yds": 20.865,
+        "rec_yds": 21.765,
         "rush_att": 0,
         "rush_tds": 0,
         "rush_yds": 0
@@ -14630,17 +14700,17 @@
         "rush_tds": 2,
         "rush_yds": 2
       },
-      "default_scoring_points": 3.1965,
+      "default_scoring_points": 3.2865,
       "source_count": 2,
       "sources": ["CBS", "FanDuel"],
-      "point_source_mean": 3.1965,
-      "point_source_sd": 0.8535,
+      "point_source_mean": 3.2865,
+      "point_source_sd": 0.9808,
       "point_source_min": 2.593,
-      "point_source_max": 3.8,
+      "point_source_max": 3.98,
       "point_source_count": 2,
-      "source_rank_mean": 75,
-      "source_rank_sd": 8.4853,
-      "source_rank_min": 69,
+      "source_rank_mean": 74,
+      "source_rank_sd": 9.8995,
+      "source_rank_min": 67,
       "source_rank_max": 81
     },
     {
@@ -14728,9 +14798,9 @@
       "point_source_min": 2.276,
       "point_source_max": 3.29,
       "point_source_count": 2,
-      "source_rank_mean": 83,
-      "source_rank_sd": 7.0711,
-      "source_rank_min": 78,
+      "source_rank_mean": 82.5,
+      "source_rank_sd": 7.7782,
+      "source_rank_min": 77,
       "source_rank_max": 88
     },
     {
@@ -14863,10 +14933,10 @@
       "point_source_min": 3.16,
       "point_source_max": 3.642,
       "point_source_count": 2,
-      "source_rank_mean": 73,
-      "source_rank_sd": 11.3137,
+      "source_rank_mean": 72,
+      "source_rank_sd": 9.8995,
       "source_rank_min": 65,
-      "source_rank_max": 81
+      "source_rank_max": 79
     },
     {
       "name": "Jaylin Noel",
@@ -15088,9 +15158,9 @@
       "point_source_min": 1.501,
       "point_source_max": 2.19,
       "point_source_count": 2,
-      "source_rank_mean": 96,
-      "source_rank_sd": 5.6569,
-      "source_rank_min": 92,
+      "source_rank_mean": 94.5,
+      "source_rank_sd": 7.7782,
+      "source_rank_min": 89,
       "source_rank_max": 100
     },
     {
@@ -15178,9 +15248,9 @@
       "point_source_min": 0.895,
       "point_source_max": 2.53,
       "point_source_count": 2,
-      "source_rank_mean": 97,
-      "source_rank_sd": 12.7279,
-      "source_rank_min": 88,
+      "source_rank_mean": 96,
+      "source_rank_sd": 14.1421,
+      "source_rank_min": 86,
       "source_rank_max": 106
     },
     {
@@ -15242,7 +15312,7 @@
         "pass_yds": 0,
         "rec": 1.065,
         "rec_tds": 0.175,
-        "rec_yds": 13.98,
+        "rec_yds": 14.03,
         "rush_att": 0,
         "rush_tds": 0,
         "rush_yds": 0.05
@@ -15260,17 +15330,17 @@
         "rush_tds": 2,
         "rush_yds": 2
       },
-      "default_scoring_points": 2.453,
+      "default_scoring_points": 2.458,
       "source_count": 2,
       "sources": ["CBS", "FanDuel"],
-      "point_source_mean": 2.453,
-      "point_source_sd": 0.3917,
+      "point_source_mean": 2.458,
+      "point_source_sd": 0.3988,
       "point_source_min": 2.176,
-      "point_source_max": 2.73,
+      "point_source_max": 2.74,
       "point_source_count": 2,
-      "source_rank_mean": 87.5,
-      "source_rank_sd": 3.5355,
-      "source_rank_min": 85,
+      "source_rank_mean": 86.5,
+      "source_rank_sd": 4.9497,
+      "source_rank_min": 83,
       "source_rank_max": 90
     },
     {
@@ -15313,10 +15383,10 @@
       "point_source_min": 1.97,
       "point_source_max": 5.858,
       "point_source_count": 2,
-      "source_rank_mean": 64,
-      "source_rank_sd": 43.8406,
+      "source_rank_mean": 62.5,
+      "source_rank_sd": 41.7193,
       "source_rank_min": 33,
-      "source_rank_max": 95
+      "source_rank_max": 92
     },
     {
       "name": "Isaac TeSlaa",
@@ -15628,9 +15698,9 @@
       "point_source_min": 1.822,
       "point_source_max": 3.31,
       "point_source_count": 2,
-      "source_rank_mean": 85.5,
-      "source_rank_sd": 13.435,
-      "source_rank_min": 76,
+      "source_rank_mean": 85,
+      "source_rank_sd": 14.1421,
+      "source_rank_min": 75,
       "source_rank_max": 95
     },
     {
@@ -15782,7 +15852,7 @@
         "pass_yds": 0,
         "rec": 2.03,
         "rec_tds": 0.27,
-        "rec_yds": 31.685,
+        "rec_yds": 31.485,
         "rush_att": 0,
         "rush_tds": 0,
         "rush_yds": 0
@@ -15800,17 +15870,17 @@
         "rush_tds": 2,
         "rush_yds": 2
       },
-      "default_scoring_points": 4.7885,
+      "default_scoring_points": 4.7685,
       "source_count": 2,
       "sources": ["CBS", "FanDuel"],
-      "point_source_mean": 4.7885,
-      "point_source_sd": 1.1335,
+      "point_source_mean": 4.7685,
+      "point_source_sd": 1.1052,
       "point_source_min": 3.987,
-      "point_source_max": 5.59,
+      "point_source_max": 5.55,
       "point_source_count": 2,
-      "source_rank_mean": 50,
-      "source_rank_sd": 12.7279,
-      "source_rank_min": 41,
+      "source_rank_mean": 50.5,
+      "source_rank_sd": 12.0208,
+      "source_rank_min": 42,
       "source_rank_max": 59
     },
     {
@@ -16005,9 +16075,9 @@
         "pass_int": 0,
         "pass_tds": 0,
         "pass_yds": 0,
-        "rec": 3.79,
+        "rec": 4.04,
         "rec_tds": 0.235,
-        "rec_yds": 45.52,
+        "rec_yds": 47.32,
         "rush_att": 0.05,
         "rush_tds": 0,
         "rush_yds": 0.15
@@ -16025,13 +16095,13 @@
         "rush_tds": 2,
         "rush_yds": 2
       },
-      "default_scoring_points": 5.827,
+      "default_scoring_points": 5.857,
       "source_count": 2,
       "sources": ["CBS", "FanDuel"],
-      "point_source_mean": 5.827,
-      "point_source_sd": 1.6589,
+      "point_source_mean": 5.857,
+      "point_source_sd": 1.7013,
       "point_source_min": 4.654,
-      "point_source_max": 7,
+      "point_source_max": 7.06,
       "point_source_count": 2,
       "source_rank_mean": 40.5,
       "source_rank_sd": 16.2635,
@@ -16097,7 +16167,7 @@
         "pass_yds": 0,
         "rec": 2.615,
         "rec_tds": 0.145,
-        "rec_yds": 28.96,
+        "rec_yds": 28.76,
         "rush_att": 0.1,
         "rush_tds": 0,
         "rush_yds": -0.15
@@ -16115,17 +16185,17 @@
         "rush_tds": 2,
         "rush_yds": 2
       },
-      "default_scoring_points": 3.601,
+      "default_scoring_points": 3.581,
       "source_count": 2,
       "sources": ["CBS", "FanDuel"],
-      "point_source_mean": 3.601,
-      "point_source_sd": 1.4694,
+      "point_source_mean": 3.581,
+      "point_source_sd": 1.4411,
       "point_source_min": 2.562,
-      "point_source_max": 4.64,
+      "point_source_max": 4.6,
       "point_source_count": 2,
-      "source_rank_mean": 67,
-      "source_rank_sd": 22.6274,
-      "source_rank_min": 51,
+      "source_rank_mean": 67.5,
+      "source_rank_sd": 21.9203,
+      "source_rank_min": 52,
       "source_rank_max": 83
     },
     {
@@ -16393,10 +16463,10 @@
       "point_source_min": 3.54,
       "point_source_max": 4.025,
       "point_source_count": 2,
-      "source_rank_mean": 64,
-      "source_rank_sd": 8.4853,
+      "source_rank_mean": 63.5,
+      "source_rank_sd": 7.7782,
       "source_rank_min": 58,
-      "source_rank_max": 70
+      "source_rank_max": 69
     },
     {
       "name": "Zachariah Branch",
@@ -16430,17 +16500,17 @@
         "rush_tds": 2,
         "rush_yds": 2
       },
-      "default_scoring_points": 1.7175,
+      "default_scoring_points": 1.5675,
       "source_count": 2,
       "sources": ["CBS", "FanDuel"],
-      "point_source_mean": 1.7175,
-      "point_source_sd": 0.2722,
+      "point_source_mean": 1.5675,
+      "point_source_sd": 0.0601,
       "point_source_min": 1.525,
-      "point_source_max": 1.91,
+      "point_source_max": 1.61,
       "point_source_count": 2,
-      "source_rank_mean": 97.5,
-      "source_rank_sd": 0.7071,
-      "source_rank_min": 97,
+      "source_rank_mean": 97,
+      "source_rank_sd": 1.4142,
+      "source_rank_min": 96,
       "source_rank_max": 98
     },
     {
@@ -16528,9 +16598,9 @@
       "point_source_min": 0.555,
       "point_source_max": 3.17,
       "point_source_count": 2,
-      "source_rank_mean": 96.5,
-      "source_rank_sd": 23.3345,
-      "source_rank_min": 80,
+      "source_rank_mean": 95.5,
+      "source_rank_sd": 24.7487,
+      "source_rank_min": 78,
       "source_rank_max": 113
     },
     {
@@ -16573,10 +16643,10 @@
       "point_source_min": 3.42,
       "point_source_max": 3.777,
       "point_source_count": 2,
-      "source_rank_mean": 67.5,
-      "source_rank_sd": 9.1924,
+      "source_rank_mean": 67,
+      "source_rank_sd": 8.4853,
       "source_rank_min": 61,
-      "source_rank_max": 74
+      "source_rank_max": 73
     },
     {
       "name": "De'Zhaun Stribling",
@@ -17103,9 +17173,9 @@
       "point_source_min": 0.547,
       "point_source_max": 1.95,
       "point_source_count": 2,
-      "source_rank_mean": 105,
-      "source_rank_sd": 12.7279,
-      "source_rank_min": 96,
+      "source_rank_mean": 103.5,
+      "source_rank_sd": 14.8492,
+      "source_rank_min": 93,
       "source_rank_max": 114
     },
     {
@@ -17138,10 +17208,10 @@
       "point_source_min": 3.52,
       "point_source_max": 3.52,
       "point_source_count": 1,
-      "source_rank_mean": 72,
+      "source_rank_mean": 71,
       "source_rank_sd": 0,
-      "source_rank_min": 72,
-      "source_rank_max": 72
+      "source_rank_min": 71,
+      "source_rank_max": 71
     },
     {
       "name": "Caleb Douglas",
@@ -17578,10 +17648,10 @@
       "point_source_min": 4.63,
       "point_source_max": 4.63,
       "point_source_count": 1,
-      "source_rank_mean": 52,
+      "source_rank_mean": 51,
       "source_rank_sd": 0,
-      "source_rank_min": 52,
-      "source_rank_max": 52
+      "source_rank_min": 51,
+      "source_rank_max": 51
     },
     {
       "name": "Montorie Foster",
@@ -17732,7 +17802,7 @@
         "pass_yds": 0,
         "rec": 4.75,
         "rec_tds": 0.285,
-        "rec_yds": 53.9,
+        "rec_yds": 53.75,
         "rush_att": 0,
         "rush_tds": 0,
         "rush_yds": 0
@@ -17750,12 +17820,12 @@
         "rush_tds": 1,
         "rush_yds": 1
       },
-      "default_scoring_points": 7.1,
+      "default_scoring_points": 7.085,
       "source_count": 2,
       "sources": ["CBS", "FanDuel"],
-      "point_source_mean": 7.1,
-      "point_source_sd": 0.099,
-      "point_source_min": 7.03,
+      "point_source_mean": 7.085,
+      "point_source_sd": 0.1202,
+      "point_source_min": 7,
       "point_source_max": 7.17,
       "point_source_count": 2,
       "source_rank_mean": 9,
@@ -17803,10 +17873,10 @@
       "point_source_min": 0.28,
       "point_source_max": 0.484,
       "point_source_count": 2,
-      "source_rank_mean": 75,
-      "source_rank_sd": 7.0711,
+      "source_rank_mean": 73.5,
+      "source_rank_sd": 4.9497,
       "source_rank_min": 70,
-      "source_rank_max": 80
+      "source_rank_max": 77
     },
     {
       "name": "Darren Waller",
@@ -17911,7 +17981,7 @@
         "pass_tds": 0,
         "pass_yds": 0,
         "rec": 1.385,
-        "rec_tds": 0.105,
+        "rec_tds": 0.155,
         "rec_yds": 14.645,
         "rush_att": 0,
         "rush_tds": 0,
@@ -17930,18 +18000,18 @@
         "rush_tds": 1,
         "rush_yds": 1
       },
-      "default_scoring_points": 2.0945,
+      "default_scoring_points": 2.3945,
       "source_count": 2,
       "sources": ["CBS", "FanDuel"],
-      "point_source_mean": 2.0945,
-      "point_source_sd": 0.0064,
-      "point_source_min": 2.09,
-      "point_source_max": 2.099,
+      "point_source_mean": 2.3945,
+      "point_source_sd": 0.4179,
+      "point_source_min": 2.099,
+      "point_source_max": 2.69,
       "point_source_count": 2,
-      "source_rank_mean": 40,
-      "source_rank_sd": 4.2426,
+      "source_rank_mean": 37,
+      "source_rank_sd": 0,
       "source_rank_min": 37,
-      "source_rank_max": 43
+      "source_rank_max": 37
     },
     {
       "name": "Tyler Higbee",
@@ -18012,10 +18082,10 @@
       "point_source_min": 1.14,
       "point_source_max": 1.14,
       "point_source_count": 1,
-      "source_rank_mean": 62,
+      "source_rank_mean": 59,
       "source_rank_sd": 0,
-      "source_rank_min": 62,
-      "source_rank_max": 62
+      "source_rank_min": 59,
+      "source_rank_max": 59
     },
     {
       "name": "Chris Manhertz",
@@ -18057,9 +18127,9 @@
       "point_source_min": 0.623,
       "point_source_max": 1.08,
       "point_source_count": 2,
-      "source_rank_mean": 65.5,
-      "source_rank_sd": 2.1213,
-      "source_rank_min": 64,
+      "source_rank_mean": 64,
+      "source_rank_sd": 4.2426,
+      "source_rank_min": 61,
       "source_rank_max": 67
     },
     {
@@ -18404,7 +18474,7 @@
         "pass_yds": 0,
         "rec": 4.185,
         "rec_tds": 0.38,
-        "rec_yds": 44.94,
+        "rec_yds": 44.69,
         "rush_att": 0,
         "rush_tds": 0,
         "rush_yds": 0
@@ -18422,13 +18492,13 @@
         "rush_tds": 1,
         "rush_yds": 1
       },
-      "default_scoring_points": 6.774,
+      "default_scoring_points": 6.749,
       "source_count": 2,
       "sources": ["CBS", "FanDuel"],
-      "point_source_mean": 6.774,
-      "point_source_sd": 1.5217,
+      "point_source_mean": 6.749,
+      "point_source_sd": 1.4863,
       "point_source_min": 5.698,
-      "point_source_max": 7.85,
+      "point_source_max": 7.8,
       "point_source_count": 2,
       "source_rank_mean": 8.5,
       "source_rank_sd": 3.5355,
@@ -18520,9 +18590,9 @@
       "point_source_min": 0.317,
       "point_source_max": 1.24,
       "point_source_count": 2,
-      "source_rank_mean": 67.5,
-      "source_rank_sd": 12.0208,
-      "source_rank_min": 59,
+      "source_rank_mean": 66.5,
+      "source_rank_sd": 13.435,
+      "source_rank_min": 57,
       "source_rank_max": 76
     },
     {
@@ -18610,10 +18680,10 @@
       "point_source_min": 0.35,
       "point_source_max": 1.347,
       "point_source_count": 2,
-      "source_rank_mean": 63.5,
-      "source_rank_sd": 20.5061,
+      "source_rank_mean": 62,
+      "source_rank_sd": 18.3848,
       "source_rank_min": 49,
-      "source_rank_max": 78
+      "source_rank_max": 75
     },
     {
       "name": "Noah Fant",
@@ -18729,10 +18799,10 @@
       "point_source_min": 1.17,
       "point_source_max": 1.17,
       "point_source_count": 1,
-      "source_rank_mean": 61,
+      "source_rank_mean": 58,
       "source_rank_sd": 0,
-      "source_rank_min": 61,
-      "source_rank_max": 61
+      "source_rank_min": 58,
+      "source_rank_max": 58
     },
     {
       "name": "Josh Oliver",
@@ -18909,10 +18979,10 @@
       "point_source_min": 2.32,
       "point_source_max": 2.482,
       "point_source_count": 2,
-      "source_rank_mean": 34,
-      "source_rank_sd": 5.6569,
+      "source_rank_mean": 34.5,
+      "source_rank_sd": 6.364,
       "source_rank_min": 30,
-      "source_rank_max": 38
+      "source_rank_max": 39
     },
     {
       "name": "Adam Trautman",
@@ -18954,10 +19024,10 @@
       "point_source_min": 1.078,
       "point_source_max": 1.29,
       "point_source_count": 2,
-      "source_rank_mean": 55,
-      "source_rank_sd": 2.8284,
+      "source_rank_mean": 54,
+      "source_rank_sd": 1.4142,
       "source_rank_min": 53,
-      "source_rank_max": 57
+      "source_rank_max": 55
     },
     {
       "name": "Colby Parkinson",
@@ -19028,10 +19098,10 @@
       "point_source_min": 1,
       "point_source_max": 1,
       "point_source_count": 1,
-      "source_rank_mean": 65,
+      "source_rank_mean": 62,
       "source_rank_sd": 0,
-      "source_rank_min": 65,
-      "source_rank_max": 65
+      "source_rank_min": 62,
+      "source_rank_max": 62
     },
     {
       "name": "Charlie Woerner",
@@ -19388,10 +19458,10 @@
       "point_source_min": 0.27,
       "point_source_max": 1.952,
       "point_source_count": 2,
-      "source_rank_mean": 59.5,
-      "source_rank_sd": 30.4056,
+      "source_rank_mean": 58,
+      "source_rank_sd": 28.2843,
       "source_rank_min": 38,
-      "source_rank_max": 81
+      "source_rank_max": 78
     },
     {
       "name": "Noah Gray",
@@ -19407,7 +19477,7 @@
         "pass_yds": 0,
         "rec": 1.315,
         "rec_tds": 0.11,
-        "rec_yds": 13.835,
+        "rec_yds": 13.785,
         "rush_att": 0,
         "rush_tds": 0,
         "rush_yds": 0
@@ -19425,12 +19495,12 @@
         "rush_tds": 1,
         "rush_yds": 1
       },
-      "default_scoring_points": 2.0435,
+      "default_scoring_points": 2.0385,
       "source_count": 2,
       "sources": ["CBS", "FanDuel"],
-      "point_source_mean": 2.0435,
-      "point_source_sd": 0.5989,
-      "point_source_min": 1.62,
+      "point_source_mean": 2.0385,
+      "point_source_sd": 0.606,
+      "point_source_min": 1.61,
       "point_source_max": 2.467,
       "point_source_count": 2,
       "source_rank_mean": 41,
@@ -19450,9 +19520,9 @@
         "pass_int": 0,
         "pass_tds": 0,
         "pass_yds": 0,
-        "rec": 0.44,
-        "rec_tds": 0.015,
-        "rec_yds": 4.37,
+        "rec": 0.38,
+        "rec_tds": 0.03,
+        "rec_yds": 3.54,
         "rush_att": 0,
         "rush_tds": 0,
         "rush_yds": 0
@@ -19463,25 +19533,25 @@
         "pass_int": 1,
         "pass_tds": 1,
         "pass_yds": 1,
-        "rec": 2,
-        "rec_tds": 2,
-        "rec_yds": 2,
+        "rec": 1,
+        "rec_tds": 1,
+        "rec_yds": 1,
         "rush_att": 1,
         "rush_tds": 1,
         "rush_yds": 1
       },
-      "default_scoring_points": 0.527,
-      "source_count": 2,
-      "sources": ["CBS", "FanDuel"],
-      "point_source_mean": 0.527,
-      "point_source_sd": 0.0099,
-      "point_source_min": 0.52,
+      "default_scoring_points": 0.534,
+      "source_count": 1,
+      "sources": "FanDuel",
+      "point_source_mean": 0.534,
+      "point_source_sd": 0,
+      "point_source_min": 0.534,
       "point_source_max": 0.534,
-      "point_source_count": 2,
-      "source_rank_mean": 71.5,
-      "source_rank_sd": 4.9497,
+      "point_source_count": 1,
+      "source_rank_mean": 68,
+      "source_rank_sd": 0,
       "source_rank_min": 68,
-      "source_rank_max": 75
+      "source_rank_max": 68
     },
     {
       "name": "Jack Stoll",
@@ -19507,10 +19577,10 @@
       "point_source_min": 0.84,
       "point_source_max": 0.84,
       "point_source_count": 1,
-      "source_rank_mean": 67,
+      "source_rank_mean": 64,
       "source_rank_sd": 0,
-      "source_rank_min": 67,
-      "source_rank_max": 67
+      "source_rank_min": 64,
+      "source_rank_max": 64
     },
     {
       "name": "Brock Wright",
@@ -19751,7 +19821,7 @@
         "pass_yds": 0,
         "rec": 3.275,
         "rec_tds": 0.315,
-        "rec_yds": 24.66,
+        "rec_yds": 24.61,
         "rush_att": 0,
         "rush_tds": 0,
         "rush_yds": 0
@@ -19769,13 +19839,13 @@
         "rush_tds": 1,
         "rush_yds": 1
       },
-      "default_scoring_points": 4.206,
+      "default_scoring_points": 4.201,
       "source_count": 2,
       "sources": ["CBS", "FanDuel"],
-      "point_source_mean": 4.206,
-      "point_source_sd": 0.8118,
+      "point_source_mean": 4.201,
+      "point_source_sd": 0.8047,
       "point_source_min": 3.632,
-      "point_source_max": 4.78,
+      "point_source_max": 4.77,
       "point_source_count": 2,
       "source_rank_mean": 23.5,
       "source_rank_sd": 2.1213,
@@ -19912,9 +19982,9 @@
       "point_source_min": 0,
       "point_source_max": 0.61,
       "point_source_count": 2,
-      "source_rank_mean": 76,
-      "source_rank_sd": 4.2426,
-      "source_rank_min": 73,
+      "source_rank_mean": 74.5,
+      "source_rank_sd": 6.364,
+      "source_rank_min": 70,
       "source_rank_max": 79
     },
     {
@@ -19957,10 +20027,10 @@
       "point_source_min": 0.345,
       "point_source_max": 0.43,
       "point_source_count": 2,
-      "source_rank_mean": 75,
-      "source_rank_sd": 2.8284,
+      "source_rank_mean": 73.5,
+      "source_rank_sd": 0.7071,
       "source_rank_min": 73,
-      "source_rank_max": 77
+      "source_rank_max": 74
     },
     {
       "name": "Daniel Bellinger",
@@ -19974,9 +20044,9 @@
         "pass_int": 0,
         "pass_tds": 0,
         "pass_yds": 0,
-        "rec": 1.13,
+        "rec": 1.23,
         "rec_tds": 0.085,
-        "rec_yds": 10.815,
+        "rec_yds": 11.215,
         "rush_att": 0,
         "rush_tds": 0,
         "rush_yds": 0
@@ -19994,13 +20064,13 @@
         "rush_tds": 1,
         "rush_yds": 1
       },
-      "default_scoring_points": 1.5915,
+      "default_scoring_points": 1.6315,
       "source_count": 2,
       "sources": ["CBS", "FanDuel"],
-      "point_source_mean": 1.5915,
-      "point_source_sd": 0.3373,
+      "point_source_mean": 1.6315,
+      "point_source_sd": 0.3939,
       "point_source_min": 1.353,
-      "point_source_max": 1.83,
+      "point_source_max": 1.91,
       "point_source_count": 2,
       "source_rank_mean": 48,
       "source_rank_sd": 0,
@@ -20031,10 +20101,10 @@
       "point_source_min": 2.67,
       "point_source_max": 2.67,
       "point_source_count": 1,
-      "source_rank_mean": 37,
+      "source_rank_mean": 38,
       "source_rank_sd": 0,
-      "source_rank_min": 37,
-      "source_rank_max": 37
+      "source_rank_min": 38,
+      "source_rank_max": 38
     },
     {
       "name": "James Mitchell",
@@ -20121,9 +20191,9 @@
       "point_source_min": 0.634,
       "point_source_max": 0.92,
       "point_source_count": 2,
-      "source_rank_mean": 66,
-      "source_rank_sd": 0,
-      "source_rank_min": 66,
+      "source_rank_mean": 64.5,
+      "source_rank_sd": 2.1213,
+      "source_rank_min": 63,
       "source_rank_max": 66
     },
     {
@@ -20211,10 +20281,10 @@
       "point_source_min": 0.3,
       "point_source_max": 0.316,
       "point_source_count": 2,
-      "source_rank_mean": 78,
-      "source_rank_sd": 1.4142,
-      "source_rank_min": 77,
-      "source_rank_max": 79
+      "source_rank_mean": 76.5,
+      "source_rank_sd": 0.7071,
+      "source_rank_min": 76,
+      "source_rank_max": 77
     },
     {
       "name": "Nick Muse",
@@ -20526,9 +20596,9 @@
       "point_source_min": 0.32,
       "point_source_max": 1.13,
       "point_source_count": 2,
-      "source_rank_mean": 69,
-      "source_rank_sd": 8.4853,
-      "source_rank_min": 63,
+      "source_rank_mean": 67.5,
+      "source_rank_sd": 10.6066,
+      "source_rank_min": 60,
       "source_rank_max": 75
     },
     {
@@ -20571,9 +20641,9 @@
       "point_source_min": 1.581,
       "point_source_max": 2.26,
       "point_source_count": 2,
-      "source_rank_mean": 43,
-      "source_rank_sd": 4.2426,
-      "source_rank_min": 40,
+      "source_rank_mean": 43.5,
+      "source_rank_sd": 3.5355,
+      "source_rank_min": 41,
       "source_rank_max": 46
     },
     {
@@ -20661,10 +20731,10 @@
       "point_source_min": 0.754,
       "point_source_max": 0.77,
       "point_source_count": 2,
-      "source_rank_mean": 64.5,
-      "source_rank_sd": 4.9497,
+      "source_rank_mean": 63,
+      "source_rank_sd": 2.8284,
       "source_rank_min": 61,
-      "source_rank_max": 68
+      "source_rank_max": 65
     },
     {
       "name": "Tucker Kraft",
@@ -20751,9 +20821,9 @@
       "point_source_min": 0,
       "point_source_max": 0.63,
       "point_source_count": 2,
-      "source_rank_mean": 75.5,
-      "source_rank_sd": 4.9497,
-      "source_rank_min": 72,
+      "source_rank_mean": 74,
+      "source_rank_sd": 7.0711,
+      "source_rank_min": 69,
       "source_rank_max": 79
     },
     {
@@ -20796,9 +20866,9 @@
       "point_source_min": 1.679,
       "point_source_max": 2.31,
       "point_source_count": 2,
-      "source_rank_mean": 41.5,
-      "source_rank_sd": 3.5355,
-      "source_rank_min": 39,
+      "source_rank_mean": 42,
+      "source_rank_sd": 2.8284,
+      "source_rank_min": 40,
       "source_rank_max": 44
     },
     {
@@ -21021,9 +21091,9 @@
       "point_source_min": 0.639,
       "point_source_max": 1.3,
       "point_source_count": 2,
-      "source_rank_mean": 60.5,
-      "source_rank_sd": 6.364,
-      "source_rank_min": 56,
+      "source_rank_mean": 59.5,
+      "source_rank_sd": 7.7782,
+      "source_rank_min": 54,
       "source_rank_max": 65
     },
     {
@@ -21038,9 +21108,9 @@
         "pass_int": 0,
         "pass_tds": 0,
         "pass_yds": 0,
-        "rec": 0.35,
-        "rec_tds": 0.05,
-        "rec_yds": 3.25,
+        "rec": 0,
+        "rec_tds": 0,
+        "rec_yds": 0,
         "rush_att": 0,
         "rush_tds": 0,
         "rush_yds": 0
@@ -21051,24 +21121,24 @@
         "pass_int": 1,
         "pass_tds": 1,
         "pass_yds": 1,
-        "rec": 2,
-        "rec_tds": 2,
-        "rec_yds": 2,
+        "rec": 1,
+        "rec_tds": 1,
+        "rec_yds": 1,
         "rush_att": 1,
         "rush_tds": 1,
         "rush_yds": 1
       },
-      "default_scoring_points": 0.625,
-      "source_count": 2,
-      "sources": ["CBS", "FanDuel"],
-      "point_source_mean": 0.625,
-      "point_source_sd": 0.8839,
+      "default_scoring_points": 0,
+      "source_count": 1,
+      "sources": "FanDuel",
+      "point_source_mean": 0,
+      "point_source_sd": 0,
       "point_source_min": 0,
-      "point_source_max": 1.25,
-      "point_source_count": 2,
-      "source_rank_mean": 68.5,
-      "source_rank_sd": 14.8492,
-      "source_rank_min": 58,
+      "point_source_max": 0,
+      "point_source_count": 1,
+      "source_rank_mean": 79,
+      "source_rank_sd": 0,
+      "source_rank_min": 79,
       "source_rank_max": 79
     },
     {
@@ -21095,10 +21165,10 @@
       "point_source_min": 1.17,
       "point_source_max": 1.17,
       "point_source_count": 1,
-      "source_rank_mean": 61,
+      "source_rank_mean": 58,
       "source_rank_sd": 0,
-      "source_rank_min": 61,
-      "source_rank_max": 61
+      "source_rank_min": 58,
+      "source_rank_max": 58
     },
     {
       "name": "Brevyn Spann-Ford",
@@ -21140,10 +21210,10 @@
       "point_source_min": 0.72,
       "point_source_max": 1.194,
       "point_source_count": 2,
-      "source_rank_mean": 59.5,
-      "source_rank_sd": 13.435,
+      "source_rank_mean": 58,
+      "source_rank_sd": 11.3137,
       "source_rank_min": 50,
-      "source_rank_max": 69
+      "source_rank_max": 66
     },
     {
       "name": "Jared Wiley",
@@ -21185,9 +21255,9 @@
       "point_source_min": 0,
       "point_source_max": 0.52,
       "point_source_count": 2,
-      "source_rank_mean": 77,
-      "source_rank_sd": 2.8284,
-      "source_rank_min": 75,
+      "source_rank_mean": 75.5,
+      "source_rank_sd": 4.9497,
+      "source_rank_min": 72,
       "source_rank_max": 79
     },
     {
@@ -21294,7 +21364,7 @@
         "pass_yds": 0,
         "rec": 2.74,
         "rec_tds": 0.22,
-        "rec_yds": 25.24,
+        "rec_yds": 25.29,
         "rush_att": 0.91,
         "rush_tds": 0.04,
         "rush_yds": 4.19
@@ -21312,12 +21382,12 @@
         "rush_tds": 1,
         "rush_yds": 1
       },
-      "default_scoring_points": 4.1735,
+      "default_scoring_points": 4.1785,
       "source_count": 2,
       "sources": ["CBS", "FanDuel"],
-      "point_source_mean": 4.1735,
-      "point_source_sd": 1.108,
-      "point_source_min": 3.39,
+      "point_source_mean": 4.1785,
+      "point_source_sd": 1.101,
+      "point_source_min": 3.4,
       "point_source_max": 4.957,
       "point_source_count": 2,
       "source_rank_mean": 24.5,
@@ -21410,9 +21480,9 @@
       "point_source_min": 0,
       "point_source_max": 1.17,
       "point_source_count": 2,
-      "source_rank_mean": 70,
-      "source_rank_sd": 12.7279,
-      "source_rank_min": 61,
+      "source_rank_mean": 68.5,
+      "source_rank_sd": 14.8492,
+      "source_rank_min": 58,
       "source_rank_max": 79
     },
     {
@@ -21455,9 +21525,9 @@
       "point_source_min": 0.891,
       "point_source_max": 1.25,
       "point_source_count": 2,
-      "source_rank_mean": 58.5,
-      "source_rank_sd": 0.7071,
-      "source_rank_min": 58,
+      "source_rank_mean": 57.5,
+      "source_rank_sd": 2.1213,
+      "source_rank_min": 56,
       "source_rank_max": 59
     },
     {
@@ -21607,9 +21677,9 @@
         "pass_int": 0,
         "pass_tds": 0,
         "pass_yds": 0,
-        "rec": 1.965,
+        "rec": 2.115,
         "rec_tds": 0.105,
-        "rec_yds": 15.215,
+        "rec_yds": 15.715,
         "rush_att": 0,
         "rush_tds": 0,
         "rush_yds": 0
@@ -21627,13 +21697,13 @@
         "rush_tds": 1,
         "rush_yds": 1
       },
-      "default_scoring_points": 2.1515,
+      "default_scoring_points": 2.2015,
       "source_count": 2,
       "sources": ["CBS", "FanDuel"],
-      "point_source_mean": 2.1515,
-      "point_source_sd": 0.0445,
-      "point_source_min": 2.12,
-      "point_source_max": 2.183,
+      "point_source_mean": 2.2015,
+      "point_source_sd": 0.0262,
+      "point_source_min": 2.183,
+      "point_source_max": 2.22,
       "point_source_count": 2,
       "source_rank_mean": 38.5,
       "source_rank_sd": 4.9497,
@@ -21680,10 +21750,10 @@
       "point_source_min": 2.16,
       "point_source_max": 2.301,
       "point_source_count": 2,
-      "source_rank_mean": 37.5,
-      "source_rank_sd": 4.9497,
+      "source_rank_mean": 38.5,
+      "source_rank_sd": 6.364,
       "source_rank_min": 34,
-      "source_rank_max": 41
+      "source_rank_max": 43
     },
     {
       "name": "Terrance Ferguson",
@@ -21905,9 +21975,9 @@
       "point_source_min": 0,
       "point_source_max": 0.53,
       "point_source_count": 2,
-      "source_rank_mean": 76.5,
-      "source_rank_sd": 3.5355,
-      "source_rank_min": 74,
+      "source_rank_mean": 75,
+      "source_rank_sd": 5.6569,
+      "source_rank_min": 71,
       "source_rank_max": 79
     },
     {
@@ -22265,9 +22335,9 @@
       "point_source_min": 0,
       "point_source_max": 0.43,
       "point_source_count": 2,
-      "source_rank_mean": 78,
-      "source_rank_sd": 1.4142,
-      "source_rank_min": 77,
+      "source_rank_mean": 76.5,
+      "source_rank_sd": 3.5355,
+      "source_rank_min": 74,
       "source_rank_max": 79
     },
     {
@@ -22294,10 +22364,10 @@
       "point_source_min": 1.3,
       "point_source_max": 1.3,
       "point_source_count": 1,
-      "source_rank_mean": 56,
+      "source_rank_mean": 54,
       "source_rank_sd": 0,
-      "source_rank_min": 56,
-      "source_rank_max": 56
+      "source_rank_min": 54,
+      "source_rank_max": 54
     },
     {
       "name": "Max Klare",
@@ -22311,9 +22381,9 @@
         "pass_int": 0,
         "pass_tds": 0,
         "pass_yds": 0,
-        "rec": 0.35,
-        "rec_tds": 0.05,
-        "rec_yds": 3.95,
+        "rec": 0,
+        "rec_tds": 0,
+        "rec_yds": 0,
         "rush_att": 0,
         "rush_tds": 0,
         "rush_yds": 0
@@ -22324,24 +22394,24 @@
         "pass_int": 1,
         "pass_tds": 1,
         "pass_yds": 1,
-        "rec": 2,
-        "rec_tds": 2,
-        "rec_yds": 2,
+        "rec": 1,
+        "rec_tds": 1,
+        "rec_yds": 1,
         "rush_att": 1,
         "rush_tds": 1,
         "rush_yds": 1
       },
-      "default_scoring_points": 0.695,
-      "source_count": 2,
-      "sources": ["CBS", "FanDuel"],
-      "point_source_mean": 0.695,
-      "point_source_sd": 0.9829,
+      "default_scoring_points": 0,
+      "source_count": 1,
+      "sources": "FanDuel",
+      "point_source_mean": 0,
+      "point_source_sd": 0,
       "point_source_min": 0,
-      "point_source_max": 1.39,
-      "point_source_count": 2,
-      "source_rank_mean": 67,
-      "source_rank_sd": 16.9706,
-      "source_rank_min": 55,
+      "point_source_max": 0,
+      "point_source_count": 1,
+      "source_rank_mean": 79,
+      "source_rank_sd": 0,
+      "source_rank_min": 79,
       "source_rank_max": 79
     },
     {
@@ -22384,9 +22454,9 @@
       "point_source_min": 0,
       "point_source_max": 0.46,
       "point_source_count": 2,
-      "source_rank_mean": 77.5,
-      "source_rank_sd": 2.1213,
-      "source_rank_min": 76,
+      "source_rank_mean": 76,
+      "source_rank_sd": 4.2426,
+      "source_rank_min": 73,
       "source_rank_max": 79
     },
     {
@@ -22429,10 +22499,10 @@
       "point_source_min": 0.71,
       "point_source_max": 1.186,
       "point_source_count": 2,
-      "source_rank_mean": 60.5,
-      "source_rank_sd": 13.435,
+      "source_rank_mean": 59,
+      "source_rank_sd": 11.3137,
       "source_rank_min": 51,
-      "source_rank_max": 70
+      "source_rank_max": 67
     },
     {
       "name": "Joe Royer",
@@ -22519,10 +22589,10 @@
       "point_source_min": 0.64,
       "point_source_max": 0.96,
       "point_source_count": 2,
-      "source_rank_mean": 64,
-      "source_rank_sd": 9.8995,
+      "source_rank_mean": 62.5,
+      "source_rank_sd": 7.7782,
       "source_rank_min": 57,
-      "source_rank_max": 71
+      "source_rank_max": 68
     },
     {
       "name": "Marlin Klein",
@@ -22536,9 +22606,9 @@
         "pass_int": 0,
         "pass_tds": 0,
         "pass_yds": 0,
-        "rec": 0.35,
-        "rec_tds": 0.05,
-        "rec_yds": 4.1,
+        "rec": 0,
+        "rec_tds": 0,
+        "rec_yds": 0,
         "rush_att": 0,
         "rush_tds": 0,
         "rush_yds": 0
@@ -22549,24 +22619,24 @@
         "pass_int": 1,
         "pass_tds": 1,
         "pass_yds": 1,
-        "rec": 2,
-        "rec_tds": 2,
-        "rec_yds": 2,
+        "rec": 1,
+        "rec_tds": 1,
+        "rec_yds": 1,
         "rush_att": 1,
         "rush_tds": 1,
         "rush_yds": 1
       },
-      "default_scoring_points": 0.71,
-      "source_count": 2,
-      "sources": ["CBS", "FanDuel"],
-      "point_source_mean": 0.71,
-      "point_source_sd": 1.0041,
+      "default_scoring_points": 0,
+      "source_count": 1,
+      "sources": "FanDuel",
+      "point_source_mean": 0,
+      "point_source_sd": 0,
       "point_source_min": 0,
-      "point_source_max": 1.42,
-      "point_source_count": 2,
-      "source_rank_mean": 66.5,
-      "source_rank_sd": 17.6777,
-      "source_rank_min": 54,
+      "point_source_max": 0,
+      "point_source_count": 1,
+      "source_rank_mean": 79,
+      "source_rank_sd": 0,
+      "source_rank_min": 79,
       "source_rank_max": 79
     },
     {
@@ -22831,9 +22901,9 @@
       "point_source_min": 0,
       "point_source_max": 0.46,
       "point_source_count": 2,
-      "source_rank_mean": 77.5,
-      "source_rank_sd": 2.1213,
-      "source_rank_min": 76,
+      "source_rank_mean": 76,
+      "source_rank_sd": 4.2426,
+      "source_rank_min": 73,
       "source_rank_max": 79
     },
     {
@@ -22876,9 +22946,9 @@
       "point_source_min": 0,
       "point_source_max": 0.72,
       "point_source_count": 2,
-      "source_rank_mean": 74,
-      "source_rank_sd": 7.0711,
-      "source_rank_min": 69,
+      "source_rank_mean": 72.5,
+      "source_rank_sd": 9.1924,
+      "source_rank_min": 66,
       "source_rank_max": 79
     },
     {
@@ -22938,9 +23008,9 @@
         "pass_int": 0,
         "pass_tds": 0,
         "pass_yds": 0,
-        "rec": 0.35,
-        "rec_tds": 0.05,
-        "rec_yds": 3.05,
+        "rec": 0,
+        "rec_tds": 0,
+        "rec_yds": 0,
         "rush_att": 0,
         "rush_tds": 0,
         "rush_yds": 0
@@ -22951,24 +23021,24 @@
         "pass_int": 1,
         "pass_tds": 1,
         "pass_yds": 1,
-        "rec": 2,
-        "rec_tds": 2,
-        "rec_yds": 2,
+        "rec": 1,
+        "rec_tds": 1,
+        "rec_yds": 1,
         "rush_att": 1,
         "rush_tds": 1,
         "rush_yds": 1
       },
-      "default_scoring_points": 0.605,
-      "source_count": 2,
-      "sources": ["CBS", "FanDuel"],
-      "point_source_mean": 0.605,
-      "point_source_sd": 0.8556,
+      "default_scoring_points": 0,
+      "source_count": 1,
+      "sources": "FanDuel",
+      "point_source_mean": 0,
+      "point_source_sd": 0,
       "point_source_min": 0,
-      "point_source_max": 1.21,
-      "point_source_count": 2,
-      "source_rank_mean": 69.5,
-      "source_rank_sd": 13.435,
-      "source_rank_min": 60,
+      "point_source_max": 0,
+      "point_source_count": 1,
+      "source_rank_mean": 79,
+      "source_rank_sd": 0,
+      "source_rank_min": 79,
       "source_rank_max": 79
     },
     {
@@ -23136,9 +23206,9 @@
       "point_source_min": 3.54,
       "point_source_max": 7.1,
       "point_source_count": 2,
-      "source_rank_mean": 12.5,
-      "source_rank_sd": 2.1213,
-      "source_rank_min": 11,
+      "source_rank_mean": 13,
+      "source_rank_sd": 1.4142,
+      "source_rank_min": 12,
       "source_rank_max": 14
     },
     {
@@ -23430,7 +23500,7 @@
       "consensus_stats": {
         "dst_fum_rec": 0.9,
         "dst_int": 0.91,
-        "dst_pts_allowed": 22.95,
+        "dst_pts_allowed": 23.15,
         "dst_safety": 0,
         "dst_td": 0.175,
         "dst_yds_allowed": 319.275
@@ -23486,10 +23556,10 @@
       "point_source_min": 3.51,
       "point_source_max": 5.3,
       "point_source_count": 2,
-      "source_rank_mean": 18,
-      "source_rank_sd": 4.2426,
+      "source_rank_mean": 18.5,
+      "source_rank_sd": 4.9497,
       "source_rank_min": 15,
-      "source_rank_max": 21
+      "source_rank_max": 22
     },
     {
       "name": "Seattle Seahawks",
@@ -23500,10 +23570,10 @@
       "consensus_stats": {
         "dst_fum_rec": 0.6,
         "dst_int": 0.74,
-        "dst_pts_allowed": 20.25,
+        "dst_pts_allowed": 20.15,
         "dst_safety": 0,
         "dst_td": 0.195,
-        "dst_yds_allowed": 329.935
+        "dst_yds_allowed": 328.935
       },
       "stat_source_counts": {
         "dst_fum_rec": 1,
@@ -23513,18 +23583,18 @@
         "dst_td": 2,
         "dst_yds_allowed": 2
       },
-      "default_scoring_points": 5.335,
+      "default_scoring_points": 5.385,
       "source_count": 2,
       "sources": ["CBS", "FanDuel"],
-      "point_source_mean": 5.335,
-      "point_source_sd": 2.3547,
+      "point_source_mean": 5.385,
+      "point_source_sd": 2.4254,
       "point_source_min": 3.67,
-      "point_source_max": 7,
+      "point_source_max": 7.1,
       "point_source_count": 2,
-      "source_rank_mean": 11,
-      "source_rank_sd": 1.4142,
+      "source_rank_mean": 10.5,
+      "source_rank_sd": 0.7071,
       "source_rank_min": 10,
-      "source_rank_max": 12
+      "source_rank_max": 11
     },
     {
       "name": "Dallas Cowboys",
@@ -23535,10 +23605,10 @@
       "consensus_stats": {
         "dst_fum_rec": 0.4,
         "dst_int": 0.515,
-        "dst_pts_allowed": 19.75,
+        "dst_pts_allowed": 19.7,
         "dst_safety": 0,
         "dst_td": 0.14,
-        "dst_yds_allowed": 311.3
+        "dst_yds_allowed": 310.3
       },
       "stat_source_counts": {
         "dst_fum_rec": 1,
@@ -23556,10 +23626,10 @@
       "point_source_min": 3.62,
       "point_source_max": 4.7,
       "point_source_count": 2,
-      "source_rank_mean": 17.5,
-      "source_rank_sd": 9.1924,
+      "source_rank_mean": 18,
+      "source_rank_sd": 9.8995,
       "source_rank_min": 11,
-      "source_rank_max": 24
+      "source_rank_max": 25
     },
     {
       "name": "New York Giants",
@@ -23591,10 +23661,10 @@
       "point_source_min": 3.21,
       "point_source_max": 4.8,
       "point_source_count": 2,
-      "source_rank_mean": 22.5,
-      "source_rank_sd": 0.7071,
+      "source_rank_mean": 23,
+      "source_rank_sd": 1.4142,
       "source_rank_min": 22,
-      "source_rank_max": 23
+      "source_rank_max": 24
     },
     {
       "name": "Philadelphia Eagles",
@@ -23605,10 +23675,10 @@
       "consensus_stats": {
         "dst_fum_rec": 0.6,
         "dst_int": 0.79,
-        "dst_pts_allowed": 23.95,
+        "dst_pts_allowed": 23.7,
         "dst_safety": 0,
-        "dst_td": 0.12,
-        "dst_yds_allowed": 347.59
+        "dst_td": 0.17,
+        "dst_yds_allowed": 347.09
       },
       "stat_source_counts": {
         "dst_fum_rec": 1,
@@ -23618,18 +23688,18 @@
         "dst_td": 2,
         "dst_yds_allowed": 2
       },
-      "default_scoring_points": 4.035,
+      "default_scoring_points": 4.385,
       "source_count": 2,
       "sources": ["CBS", "FanDuel"],
-      "point_source_mean": 4.035,
-      "point_source_sd": 0.9405,
+      "point_source_mean": 4.385,
+      "point_source_sd": 1.4354,
       "point_source_min": 3.37,
-      "point_source_max": 4.7,
+      "point_source_max": 5.4,
       "point_source_count": 2,
-      "source_rank_mean": 21.5,
-      "source_rank_sd": 3.5355,
+      "source_rank_mean": 20,
+      "source_rank_sd": 1.4142,
       "source_rank_min": 19,
-      "source_rank_max": 24
+      "source_rank_max": 21
     },
     {
       "name": "Arizona Cardinals",
@@ -23661,10 +23731,10 @@
       "point_source_min": 3.31,
       "point_source_max": 4.8,
       "point_source_count": 2,
-      "source_rank_mean": 22,
-      "source_rank_sd": 1.4142,
+      "source_rank_mean": 22.5,
+      "source_rank_sd": 2.1213,
       "source_rank_min": 21,
-      "source_rank_max": 23
+      "source_rank_max": 24
     },
     {
       "name": "Chicago Bears",
@@ -23766,10 +23836,10 @@
       "point_source_min": 3.21,
       "point_source_max": 5,
       "point_source_count": 2,
-      "source_rank_mean": 22,
-      "source_rank_sd": 0,
+      "source_rank_mean": 22.5,
+      "source_rank_sd": 0.7071,
       "source_rank_min": 22,
-      "source_rank_max": 22
+      "source_rank_max": 23
     },
     {
       "name": "Minnesota Vikings",
