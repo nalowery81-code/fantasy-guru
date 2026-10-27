@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-10-26T16:05:06.758Z",
+  "generated_at": "2026-10-27T15:19:30.616Z",
   "source": "Sleeper master player endpoint",
   "player_count": 4266,
   "canonical_id_rule": "GSIS when available, otherwise Sleeper ID, otherwise ESPN ID",
@@ -6802,7 +6802,7 @@
       "name": "Cam Grandy",
       "normalized_name": "camgrandy",
       "position": "TE",
-      "team": "MIN",
+      "team": "CIN",
       "sleeper_id": "12062",
       "espn_id": null,
       "gsis_id": null,
@@ -14654,7 +14654,7 @@
       "sleeper_id": "12486",
       "espn_id": null,
       "gsis_id": null,
-      "status": "Inactive",
+      "status": "Active",
       "active": true
     },
     {
@@ -16610,7 +16610,7 @@
       "sleeper_id": "13349",
       "espn_id": null,
       "gsis_id": null,
-      "status": "Inactive",
+      "status": "Active",
       "active": true
     },
     {
@@ -18698,7 +18698,7 @@
       "sleeper_id": "8177",
       "espn_id": null,
       "gsis_id": null,
-      "status": "Inactive",
+      "status": "Active",
       "active": true
     },
     {
