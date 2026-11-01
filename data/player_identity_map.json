@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-10-31T15:17:40.916Z",
+  "generated_at": "2026-11-01T15:58:30.503Z",
   "source": "Sleeper master player endpoint",
   "player_count": 4266,
   "canonical_id_rule": "GSIS when available, otherwise Sleeper ID, otherwise ESPN ID",
@@ -20510,7 +20510,7 @@
       "sleeper_id": "12483",
       "espn_id": null,
       "gsis_id": null,
-      "status": "Inactive",
+      "status": "Active",
       "active": true
     },
     {
@@ -41558,7 +41558,7 @@
       "sleeper_id": "12489",
       "espn_id": null,
       "gsis_id": null,
-      "status": "Active",
+      "status": "Inactive",
       "active": true
     },
     {
