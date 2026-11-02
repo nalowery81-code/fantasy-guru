@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-11-01T15:58:30.503Z",
+  "generated_at": "2026-11-02T19:26:29.604Z",
   "source": "Sleeper master player endpoint",
   "player_count": 4266,
   "canonical_id_rule": "GSIS when available, otherwise Sleeper ID, otherwise ESPN ID",
@@ -13966,7 +13966,7 @@
       "name": "Deuce Vaughn",
       "normalized_name": "deucevaughn",
       "position": "RB",
-      "team": "HOU",
+      "team": null,
       "sleeper_id": "9505",
       "espn_id": null,
       "gsis_id": null,
@@ -27562,11 +27562,11 @@
       "name": "Joshua Pitsenberger",
       "normalized_name": "joshuapitsenberger",
       "position": "RB",
-      "team": null,
+      "team": "HOU",
       "sleeper_id": "13923",
       "espn_id": null,
       "gsis_id": null,
-      "status": "Inactive",
+      "status": "Active",
       "active": true
     },
     {
@@ -31622,7 +31622,7 @@
       "sleeper_id": "4881",
       "espn_id": "3916387",
       "gsis_id": "00-0034796",
-      "status": "Active",
+      "status": "Inactive",
       "active": true
     },
     {
