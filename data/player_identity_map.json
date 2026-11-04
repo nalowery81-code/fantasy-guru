@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-11-03T16:59:29.532Z",
+  "generated_at": "2026-11-04T17:10:31.704Z",
   "source": "Sleeper master player endpoint",
   "player_count": 4266,
   "canonical_id_rule": "GSIS when available, otherwise Sleeper ID, otherwise ESPN ID",
@@ -2782,7 +2782,7 @@
       "name": "Audric Estime",
       "normalized_name": "audricestime",
       "position": "RB",
-      "team": "CLE",
+      "team": "NO",
       "sleeper_id": "11579",
       "espn_id": null,
       "gsis_id": null,
@@ -11530,7 +11530,7 @@
       "name": "Daniel Sobkowicz",
       "normalized_name": "danielsobkowicz",
       "position": "WR",
-      "team": null,
+      "team": "HOU",
       "sleeper_id": "13861",
       "espn_id": null,
       "gsis_id": null,
@@ -12926,7 +12926,7 @@
       "sleeper_id": "13315",
       "espn_id": null,
       "gsis_id": null,
-      "status": "Active",
+      "status": "Inactive",
       "active": true
     },
     {
@@ -19222,7 +19222,7 @@
       "name": "Hassan Haskins",
       "normalized_name": "hassanhaskins",
       "position": "RB",
-      "team": null,
+      "team": "CLE",
       "sleeper_id": "8123",
       "espn_id": null,
       "gsis_id": null,
@@ -22942,7 +22942,7 @@
       "name": "Jaret Patterson",
       "normalized_name": "jaretpatterson",
       "position": "RB",
-      "team": null,
+      "team": "DEN",
       "sleeper_id": "7537",
       "espn_id": null,
       "gsis_id": null,
@@ -24122,7 +24122,7 @@
       "sleeper_id": "13287",
       "espn_id": null,
       "gsis_id": null,
-      "status": "Active",
+      "status": "Inactive",
       "active": true
     },
     {
@@ -24218,7 +24218,7 @@
       "sleeper_id": "4219",
       "espn_id": "3127586",
       "gsis_id": "00-0033955",
-      "status": "Active",
+      "status": "Inactive",
       "active": true
     },
     {
@@ -26770,7 +26770,7 @@
       "name": "Joseph Manjack",
       "normalized_name": "josephmanjack",
       "position": "WR",
-      "team": null,
+      "team": "NYJ",
       "sleeper_id": "13743",
       "espn_id": null,
       "gsis_id": null,
@@ -29702,7 +29702,7 @@
       "sleeper_id": "4454",
       "espn_id": "3045523",
       "gsis_id": "00-0033307",
-      "status": "Active",
+      "status": "Inactive",
       "active": true
     },
     {
@@ -41506,7 +41506,7 @@
       "name": "Rivaldo Fairweather",
       "normalized_name": "rivaldofairweather",
       "position": "TE",
-      "team": null,
+      "team": "ARI",
       "sleeper_id": "12851",
       "espn_id": null,
       "gsis_id": null,
@@ -41722,7 +41722,7 @@
       "name": "Robert Henry Jr.",
       "normalized_name": "roberthenryjr",
       "position": "RB",
-      "team": "SEA",
+      "team": "WAS",
       "sleeper_id": "13418",
       "espn_id": null,
       "gsis_id": null,
@@ -49190,7 +49190,7 @@
       "sleeper_id": "7083",
       "espn_id": "4035671",
       "gsis_id": null,
-      "status": "Active",
+      "status": "Inactive",
       "active": true
     },
     {
@@ -49250,7 +49250,7 @@
       "sleeper_id": "12711",
       "espn_id": null,
       "gsis_id": null,
-      "status": "Active",
+      "status": "Inactive",
       "active": true
     },
     {
@@ -50482,7 +50482,7 @@
       "name": "Xavier Guillory",
       "normalized_name": "xavierguillory",
       "position": "WR",
-      "team": null,
+      "team": "CLE",
       "sleeper_id": "13042",
       "espn_id": null,
       "gsis_id": null,
