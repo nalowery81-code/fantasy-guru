@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-11-05T17:20:47.597Z",
+  "generated_at": "2026-11-06T16:43:28.585Z",
   "source": "Sleeper master player endpoint",
   "player_count": 4266,
   "canonical_id_rule": "GSIS when available, otherwise Sleeper ID, otherwise ESPN ID",
@@ -6142,7 +6142,7 @@
       "name": "Bub Means",
       "normalized_name": "bubmeans",
       "position": "WR",
-      "team": null,
+      "team": "KC",
       "sleeper_id": "11748",
       "espn_id": null,
       "gsis_id": null,
@@ -9502,7 +9502,7 @@
       "name": "Cody White",
       "normalized_name": "codywhite",
       "position": "WR",
-      "team": null,
+      "team": "LV",
       "sleeper_id": "7039",
       "espn_id": "4241983",
       "gsis_id": null,
@@ -51098,7 +51098,7 @@
       "sleeper_id": "11299",
       "espn_id": null,
       "gsis_id": null,
-      "status": "Active",
+      "status": "Inactive",
       "active": true
     },
     {
