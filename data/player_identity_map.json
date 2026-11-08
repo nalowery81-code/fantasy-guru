@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-11-07T15:38:05.167Z",
+  "generated_at": "2026-11-08T15:55:54.725Z",
   "source": "Sleeper master player endpoint",
   "player_count": 4266,
   "canonical_id_rule": "GSIS when available, otherwise Sleeper ID, otherwise ESPN ID",
@@ -2986,7 +2986,7 @@
       "name": "Austin Reed",
       "normalized_name": "austinreed",
       "position": "QB",
-      "team": "BAL",
+      "team": null,
       "sleeper_id": "11931",
       "espn_id": null,
       "gsis_id": null,
@@ -3398,7 +3398,7 @@
       "sleeper_id": "12889",
       "espn_id": null,
       "gsis_id": null,
-      "status": "Inactive",
+      "status": "Active",
       "active": true
     },
     {
@@ -5534,7 +5534,7 @@
       "sleeper_id": "8154",
       "espn_id": null,
       "gsis_id": null,
-      "status": "Active",
+      "status": "Inactive",
       "active": true
     },
     {
@@ -7282,7 +7282,7 @@
       "name": "Carsen Ryan",
       "normalized_name": "carsenryan",
       "position": "TE",
-      "team": null,
+      "team": "CLE",
       "sleeper_id": "13580",
       "espn_id": null,
       "gsis_id": null,
@@ -8930,7 +8930,7 @@
       "sleeper_id": "4950",
       "espn_id": "3895856",
       "gsis_id": "00-0034775",
-      "status": "Active",
+      "status": "Inactive",
       "active": true
     },
     {
@@ -11026,7 +11026,7 @@
       "name": "Dameon Pierce",
       "normalized_name": "dameonpierce",
       "position": "RB",
-      "team": "PHI",
+      "team": null,
       "sleeper_id": "8129",
       "espn_id": null,
       "gsis_id": null,
@@ -13226,7 +13226,7 @@
       "sleeper_id": "3286",
       "espn_id": "3043116",
       "gsis_id": "00-0032775",
-      "status": "Inactive",
+      "status": "Active",
       "active": true
     },
     {
@@ -16082,7 +16082,7 @@
       "sleeper_id": "7587",
       "espn_id": null,
       "gsis_id": null,
-      "status": "Active",
+      "status": "Inactive",
       "active": true
     },
     {
@@ -21406,7 +21406,7 @@
       "name": "Jake Haener",
       "normalized_name": "jakehaener",
       "position": "QB",
-      "team": null,
+      "team": "NYG",
       "sleeper_id": "10215",
       "espn_id": null,
       "gsis_id": null,
@@ -26726,7 +26726,7 @@
       "sleeper_id": "13281",
       "espn_id": null,
       "gsis_id": null,
-      "status": "Inactive",
+      "status": "Active",
       "active": true
     },
     {
@@ -33038,7 +33038,7 @@
       "sleeper_id": "4177",
       "espn_id": "2991662",
       "gsis_id": "00-0033555",
-      "status": "Inactive",
+      "status": "Active",
       "active": true
     },
     {
@@ -38486,7 +38486,7 @@
       "sleeper_id": "12492",
       "espn_id": null,
       "gsis_id": null,
-      "status": "Inactive",
+      "status": "Active",
       "active": true
     },
     {
@@ -39034,7 +39034,7 @@
       "name": "Phillip Dorsett II",
       "normalized_name": "phillipdorsettii",
       "position": "WR",
-      "team": "LV",
+      "team": null,
       "sleeper_id": "2334",
       "espn_id": "2579604",
       "gsis_id": "00-0032208",
@@ -42266,7 +42266,7 @@
       "sleeper_id": "8195",
       "espn_id": null,
       "gsis_id": null,
-      "status": "Inactive",
+      "status": "Active",
       "active": true
     },
     {
