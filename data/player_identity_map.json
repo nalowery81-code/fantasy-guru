@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-11-09T19:45:10.572Z",
+  "generated_at": "2026-11-10T16:59:29.638Z",
   "source": "Sleeper master player endpoint",
   "player_count": 4266,
   "canonical_id_rule": "GSIS when available, otherwise Sleeper ID, otherwise ESPN ID",
@@ -13370,7 +13370,7 @@
       "sleeper_id": "13347",
       "espn_id": null,
       "gsis_id": null,
-      "status": "Active",
+      "status": "Inactive",
       "active": true
     },
     {
@@ -25246,7 +25246,7 @@
       "name": "Joey Aguilar",
       "normalized_name": "joeyaguilar",
       "position": "QB",
-      "team": "JAX",
+      "team": "ARI",
       "sleeper_id": "13428",
       "espn_id": null,
       "gsis_id": null,
@@ -27142,7 +27142,7 @@
       "name": "Josh Johnson",
       "normalized_name": "joshjohnson",
       "position": "QB",
-      "team": "CIN",
+      "team": "ARI",
       "sleeper_id": "260",
       "espn_id": "11394",
       "gsis_id": "00-0026300",
@@ -27542,7 +27542,7 @@
       "sleeper_id": "7670",
       "espn_id": null,
       "gsis_id": null,
-      "status": "Active",
+      "status": "Inactive",
       "active": true
     },
     {
@@ -39926,7 +39926,7 @@
       "sleeper_id": "9493",
       "espn_id": null,
       "gsis_id": null,
-      "status": "Active",
+      "status": "Inactive",
       "active": true
     },
     {
