@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-11-14T15:46:36.887Z",
+  "generated_at": "2026-11-15T16:17:43.570Z",
   "source": "Sleeper master player endpoint",
-  "player_count": 4266,
+  "player_count": 4267,
   "canonical_id_rule": "GSIS when available, otherwise Sleeper ID, otherwise ESPN ID",
   "players": [
     {
@@ -8402,7 +8402,7 @@
       "sleeper_id": "11370",
       "espn_id": null,
       "gsis_id": null,
-      "status": "Inactive",
+      "status": "Active",
       "active": true
     },
     {
@@ -19466,7 +19466,7 @@
       "sleeper_id": "7535",
       "espn_id": null,
       "gsis_id": null,
-      "status": "Inactive",
+      "status": "Active",
       "active": true
     },
     {
@@ -27446,7 +27446,7 @@
       "sleeper_id": "10212",
       "espn_id": null,
       "gsis_id": null,
-      "status": "Active",
+      "status": "Inactive",
       "active": true
     },
     {
@@ -35322,6 +35322,18 @@
       "active": true
     },
     {
+      "canonical_player_id": "sleeper:13200",
+      "name": "Max Hurleman",
+      "normalized_name": "maxhurleman",
+      "position": "WR",
+      "team": "PIT",
+      "sleeper_id": "13200",
+      "espn_id": null,
+      "gsis_id": null,
+      "status": "Active",
+      "active": true
+    },
+    {
       "canonical_player_id": "sleeper:13278",
       "name": "Max Klare",
       "normalized_name": "maxklare",
@@ -36698,7 +36710,7 @@
       "sleeper_id": "4054",
       "espn_id": "2998565",
       "gsis_id": "00-0033217",
-      "status": "Active",
+      "status": "Inactive",
       "active": true
     },
     {
@@ -41006,7 +41018,7 @@
       "sleeper_id": "7204",
       "espn_id": "4039505",
       "gsis_id": null,
-      "status": "Inactive",
+      "status": "Active",
       "active": true
     },
     {
@@ -44522,7 +44534,7 @@
       "sleeper_id": "8168",
       "espn_id": null,
       "gsis_id": null,
-      "status": "Inactive",
+      "status": "Active",
       "active": true
     },
     {
@@ -47606,7 +47618,7 @@
       "sleeper_id": "7543",
       "espn_id": null,
       "gsis_id": null,
-      "status": "Inactive",
+      "status": "Active",
       "active": true
     },
     {
@@ -48134,7 +48146,7 @@
       "sleeper_id": "12529",
       "espn_id": null,
       "gsis_id": null,
-      "status": "Active",
+      "status": "Inactive",
       "active": true
     },
     {
@@ -49118,7 +49130,7 @@
       "sleeper_id": "8207",
       "espn_id": null,
       "gsis_id": null,
-      "status": "Active",
+      "status": "Inactive",
       "active": true
     },
     {
@@ -50534,7 +50546,7 @@
       "sleeper_id": "11626",
       "espn_id": null,
       "gsis_id": null,
-      "status": "Inactive",
+      "status": "Active",
       "active": true
     },
     {
