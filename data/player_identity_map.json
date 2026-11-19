@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-11-18T17:59:26.337Z",
+  "generated_at": "2026-11-19T18:12:29.473Z",
   "source": "Sleeper master player endpoint",
   "player_count": 4267,
   "canonical_id_rule": "GSIS when available, otherwise Sleeper ID, otherwise ESPN ID",
@@ -398,7 +398,7 @@
       "sleeper_id": "13302",
       "espn_id": null,
       "gsis_id": null,
-      "status": "Inactive",
+      "status": "Active",
       "active": true
     },
     {
@@ -6142,7 +6142,7 @@
       "name": "Bub Means",
       "normalized_name": "bubmeans",
       "position": "WR",
-      "team": null,
+      "team": "ARI",
       "sleeper_id": "11748",
       "espn_id": null,
       "gsis_id": null,
@@ -7282,7 +7282,7 @@
       "name": "Carsen Ryan",
       "normalized_name": "carsenryan",
       "position": "TE",
-      "team": null,
+      "team": "CLE",
       "sleeper_id": "13580",
       "espn_id": null,
       "gsis_id": null,
@@ -7906,7 +7906,7 @@
       "name": "Charlie Jones",
       "normalized_name": "charliejones",
       "position": "WR",
-      "team": null,
+      "team": "NYG",
       "sleeper_id": "10228",
       "espn_id": null,
       "gsis_id": null,
@@ -13126,7 +13126,7 @@
       "name": "Dee Eskridge",
       "normalized_name": "deeeskridge",
       "position": "WR",
-      "team": null,
+      "team": "MIN",
       "sleeper_id": "7612",
       "espn_id": null,
       "gsis_id": null,
@@ -19822,7 +19822,7 @@
       "name": "Isaiah Hodgins",
       "normalized_name": "isaiahhodgins",
       "position": "WR",
-      "team": "PIT",
+      "team": null,
       "sleeper_id": "6920",
       "espn_id": "4242540",
       "gsis_id": null,
@@ -22910,7 +22910,7 @@
       "sleeper_id": "11595",
       "espn_id": null,
       "gsis_id": null,
-      "status": "Active",
+      "status": "Inactive",
       "active": true
     },
     {
@@ -26174,7 +26174,7 @@
       "sleeper_id": "9756",
       "espn_id": null,
       "gsis_id": null,
-      "status": "Inactive",
+      "status": "Active",
       "active": true
     },
     {
