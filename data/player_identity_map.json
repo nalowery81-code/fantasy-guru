@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-11-20T17:44:48.935Z",
+  "generated_at": "2026-11-21T16:44:37.464Z",
   "source": "Sleeper master player endpoint",
   "player_count": 4267,
   "canonical_id_rule": "GSIS when available, otherwise Sleeper ID, otherwise ESPN ID",
@@ -18895,8 +18895,8 @@
     },
     {
       "canonical_player_id": "sleeper:13603",
-      "name": "Gregory Desrosiers",
-      "normalized_name": "gregorydesrosiers",
+      "name": "Gregory Desrosiers Jr.",
+      "normalized_name": "gregorydesrosiersjr",
       "position": "RB",
       "team": "NYG",
       "sleeper_id": "13603",
