@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-11-21T16:44:37.464Z",
+  "generated_at": "2026-11-22T17:05:45.247Z",
   "source": "Sleeper master player endpoint",
   "player_count": 4267,
   "canonical_id_rule": "GSIS when available, otherwise Sleeper ID, otherwise ESPN ID",
@@ -11494,7 +11494,7 @@
       "name": "Daniel Jones",
       "normalized_name": "danieljones",
       "position": "QB",
-      "team": "IND",
+      "team": null,
       "sleeper_id": "5870",
       "espn_id": "3917792",
       "gsis_id": "00-0035710",
@@ -15254,7 +15254,7 @@
       "sleeper_id": "9486",
       "espn_id": null,
       "gsis_id": null,
-      "status": "Active",
+      "status": "Inactive",
       "active": true
     },
     {
@@ -19606,7 +19606,7 @@
       "name": "Ihmir Smith-Marsette",
       "normalized_name": "ihmirsmithmarsette",
       "position": "WR",
-      "team": "CAR",
+      "team": null,
       "sleeper_id": "7559",
       "espn_id": null,
       "gsis_id": null,
@@ -39118,7 +39118,7 @@
       "name": "Pierre Strong Jr.",
       "normalized_name": "pierrestrongjr",
       "position": "RB",
-      "team": null,
+      "team": "GB",
       "sleeper_id": "8116",
       "espn_id": null,
       "gsis_id": null,
@@ -39938,7 +39938,7 @@
       "sleeper_id": "9493",
       "espn_id": null,
       "gsis_id": null,
-      "status": "Active",
+      "status": "Inactive",
       "active": true
     },
     {
@@ -42086,7 +42086,7 @@
       "sleeper_id": "11630",
       "espn_id": null,
       "gsis_id": null,
-      "status": "Inactive",
+      "status": "Active",
       "active": true
     },
     {
@@ -48938,7 +48938,7 @@
       "sleeper_id": "9508",
       "espn_id": null,
       "gsis_id": null,
-      "status": "Active",
+      "status": "Inactive",
       "active": true
     },
     {
@@ -50330,7 +50330,7 @@
       "sleeper_id": "11577",
       "espn_id": null,
       "gsis_id": null,
-      "status": "Inactive",
+      "status": "Active",
       "active": true
     },
     {
